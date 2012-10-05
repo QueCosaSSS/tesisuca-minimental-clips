@@ -107,8 +107,8 @@ public class MiniMental extends javax.swing.JFrame {
 //        cm.FechaEntrevista.set(2012, 8, 30);
 //        jTextArea1.setText(cm.ConsideraCorrectoMes().toString());
                 
-        dlg_Minimental dll = new dlg_Minimental(this, true);
-        dll.setVisible(true);
+//        dlg_Minimental dll = new dlg_Minimental(this, true);
+//        dll.setVisible(true);
         
 
 //        CLIPS_Manager.CLP_Manager clp = new CLP_Manager();
