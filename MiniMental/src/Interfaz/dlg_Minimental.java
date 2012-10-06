@@ -384,17 +384,17 @@ public class dlg_Minimental extends javax.swing.JDialog {
         cEntrevista Entrevista = new cEntrevista();
         Entrevista.setEscolaridad(jcb_Escolaridad.getSelectedIndex());
         Entrevista.setFechaEntrevista(Integer.parseInt(jcb_entrevista_dia.getSelectedItem().toString()), jcb_entrevista_mes.getSelectedIndex(), Integer.parseInt(jcb_entrevista_ano.getSelectedItem().toString()));
-        Entrevista.getMinimental().setDiaDeSemana(jcb_respuesta_diasemana.getSelectedIndex());
-        Entrevista.getMinimental().setFecha(Integer.parseInt(jcb_respuestas_dia.getSelectedItem().toString()), jcb_respuestas_mes.getSelectedIndex(), Integer.parseInt(jcb_respuestas_ano.getSelectedItem().toString()));
-        Entrevista.getMinimental().setEstacion(jcb_respuesta_estacion.getSelectedIndex());
-        Entrevista.getMinimental().setCiudad(jrb_respuesta_ciudad_si.isSelected());
-        Entrevista.getMinimental().setPais(jrb_respuesta_pais_si.isSelected());
-        Entrevista.getMinimental().setLugar(jrb_respuestas_lugar_si.isSelected());
-        Entrevista.getMinimental().setCalle(jrb_respuesta_calle_si.isSelected());
+        Entrevista.setDiaDeSemana(jcb_respuesta_diasemana.getSelectedIndex());
+        Entrevista.setFecha(Integer.parseInt(jcb_respuestas_dia.getSelectedItem().toString()), jcb_respuestas_mes.getSelectedIndex(), Integer.parseInt(jcb_respuestas_ano.getSelectedItem().toString()));
+        Entrevista.setEstacion(jcb_respuesta_estacion.getSelectedIndex());
+        Entrevista.setCiudad(jrb_respuesta_ciudad_si.isSelected());
+        Entrevista.setPais(jrb_respuesta_pais_si.isSelected());
+        Entrevista.setLugar(jrb_respuestas_lugar_si.isSelected());
+        Entrevista.setCalle(jrb_respuesta_calle_si.isSelected());
         Entrevista.setTraidoTercero(jrb_respuesta_traidotercero_si.isSelected());
         Entrevista.setConsultorioEnAvenida(jrb_respuesta_avenida_si.isSelected());
         Entrevista.setConsultorioEnEntrepiso(jrb_respuesta_entrepiso_si.isSelected());
-        Entrevista.getMinimental().setPiso(jcb_respuesta_piso.getSelectedIndex());
+        Entrevista.setPiso(jcb_respuesta_piso.getSelectedIndex());
         Entrevista.setPisoDelConsultorio(jrb_respuesta_piso_consultorio.getSelectedIndex());
        
 

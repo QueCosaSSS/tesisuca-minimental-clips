@@ -15,13 +15,91 @@ public class cEntrevista {
 
     public cEntrevista() {
         this.FechaEntrevista = new GregorianCalendar();
-        this.MiniMental = new cMiniMental();
     }
     private Boolean TraidoTercero;
     private Boolean ConsultorioEnAvenida;
     private Boolean ConsultorioEnEntrepiso;
     private int Escolaridad;
     private int PisoDelConsultorio;
+    private Calendar FechaEntrevista;
+    private int DiaDeSemana;
+    private Calendar Fecha;
+    private int Estacion;
+    private Boolean Lugar;
+    private Boolean Calle;
+    private int Piso;
+    private Boolean Ciudad;
+    private Boolean Pais;
+
+    public int getDiaDeSemana() {
+        return DiaDeSemana;
+    }
+
+    public Calendar getFecha() {
+        return Fecha;
+    }
+
+    public int getEstacion() {
+        return Estacion;
+    }
+
+    public Boolean getLugar() {
+        return Lugar;
+    }
+
+    public Boolean getCalle() {
+        return Calle;
+    }
+
+    public int getPiso() {
+        return Piso;
+    }
+
+    public Boolean getCiudad() {
+        return Ciudad;
+    }
+
+    public Boolean getPais() {
+        return Pais;
+    }
+
+    public void setDiaDeSemana(int DiaDeSemana) {
+        this.DiaDeSemana = DiaDeSemana;
+    }
+
+    public void setFecha(int d, int m, int a) {
+        GregorianCalendar t = new GregorianCalendar();
+        t.clear();
+        t.set(Calendar.YEAR, a);
+        t.set(Calendar.MONTH, m);
+        t.set(Calendar.YEAR, a);
+
+        this.Fecha = t;
+    }
+
+    public void setEstacion(int Estacion) {
+        this.Estacion = Estacion;
+    }
+
+    public void setLugar(Boolean Lugar) {
+        this.Lugar = Lugar;
+    }
+
+    public void setCalle(Boolean Calle) {
+        this.Calle = Calle;
+    }
+
+    public void setPiso(int Piso) {
+        this.Piso = Piso;
+    }
+
+    public void setCiudad(Boolean Ciudad) {
+        this.Ciudad = Ciudad;
+    }
+
+    public void setPais(Boolean Pais) {
+        this.Pais = Pais;
+    }
 
     public cEntrevista(int d, int m, int a) {
         GregorianCalendar t = new GregorianCalendar();
@@ -32,7 +110,6 @@ public class cEntrevista {
 
         this.FechaEntrevista = t;
     }
-    private Calendar FechaEntrevista;
 
     public void setFechaEntrevista(int d, int m, int a) {
         GregorianCalendar t = new GregorianCalendar();
@@ -48,15 +125,6 @@ public class cEntrevista {
 
         return this.FechaEntrevista;
     }
-    private cMiniMental MiniMental;
-
-    public cMiniMental getMinimental() {
-        return this.MiniMental;
-    }
-
-    public void setMiniMental(cMiniMental minimental) {
-        this.MiniMental = minimental;
-    }
 
     public void setEscolaridad(int Escolaridad) {
         this.Escolaridad = Escolaridad;
@@ -65,33 +133,6 @@ public class cEntrevista {
     public int getEscolaridad() {
         return Escolaridad;
     }
-//    public Boolean ConsideraCorrectoMes() {
-//
-//        GregorianCalendar t_primero = new GregorianCalendar();
-//        t_primero.clear();
-//        t_primero.set(Calendar.YEAR, FechaEntrevista.get(Calendar.YEAR));
-//        t_primero.set(Calendar.MONTH, FechaEntrevista.get(Calendar.MONTH));
-//        t_primero.set(Calendar.DAY_OF_MONTH, 1);
-//
-//        GregorianCalendar t_segundo = new GregorianCalendar();
-//        t_segundo.clear();
-//        t_segundo.set(Calendar.YEAR, FechaEntrevista.get(Calendar.YEAR));
-//        t_segundo.set(Calendar.MONTH, FechaEntrevista.get(Calendar.MONTH));
-//        t_segundo.set(Calendar.DAY_OF_MONTH, 2);
-//
-//        if (getMes() == FechaEntrevista.get(Calendar.MONTH)) {
-//            return true;
-//        } else {
-//            if ((SameDay(FechaEntrevista, UltimoDiaMes(internal_Mes - 1))) && ((FechaEntrevista.get(Calendar.MONTH) + 1) == internal_Mes)) {
-//                return true;
-//            } else {
-//                if ((SameDay(FechaEntrevista, t_primero) || SameDay(FechaEntrevista, t_segundo)) && ((FechaEntrevista.get(Calendar.MONTH) - 1) == internal_Mes)) {
-//                    return true;
-//                }
-//            }
-//            return false;
-//        }
-//    }
 
     public Boolean EsUltimoDiaMes() {
         return (SameDay(FechaEntrevista, UltimoDiaMes(FechaEntrevista.get(Calendar.MONTH))));
@@ -131,10 +172,6 @@ public class cEntrevista {
         return (FechaEntrevista.get(Calendar.DAY_OF_YEAR) < 16);
     }
 
-//21 de marzo hasta 20 de junio :es el otoño.
-//21 de junio hasta20 de septiembre :es el invierno.
-//21 de septiembre hasta el 20 de diciembre : es la primavera
-//21 de diciembre hasta el 20 de marzo : es el verano.
     private Boolean EsUnaSemanaAntesDeOtono() {
 
         GregorianCalendar t_otono_a = new GregorianCalendar();
@@ -300,7 +337,7 @@ public class cEntrevista {
         return ConsultorioEnEntrepiso;
     }
 
-    private int Estacion() {
+    private int EstacionEntrevista() {
         GregorianCalendar t_d = new GregorianCalendar();
         t_d.clear();
         t_d.set(Calendar.YEAR, FechaEntrevista.get(Calendar.YEAR));
@@ -349,32 +386,32 @@ public class cEntrevista {
     }
 
     public Boolean ContestaEstacionSiguiente() {
-        if ((this.Estacion() == cEstacion.Primavera) && (this.MiniMental.getEstacion() == cEstacion.Verano)) {
+        if ((this.EstacionEntrevista() == cEstacion.Primavera) && (this.getEstacion() == cEstacion.Verano)) {
             return true;
         }
-        if ((this.Estacion() == cEstacion.Verano) && (this.MiniMental.getEstacion() == cEstacion.Otono)) {
+        if ((this.EstacionEntrevista() == cEstacion.Verano) && (this.getEstacion() == cEstacion.Otono)) {
             return true;
         }
-        if ((this.Estacion() == cEstacion.Otono) && (this.MiniMental.getEstacion() == cEstacion.Invierno)) {
+        if ((this.EstacionEntrevista() == cEstacion.Otono) && (this.getEstacion() == cEstacion.Invierno)) {
             return true;
         }
-        if ((this.Estacion() == cEstacion.Invierno) && (this.MiniMental.getEstacion() == cEstacion.Primavera)) {
+        if ((this.EstacionEntrevista() == cEstacion.Invierno) && (this.getEstacion() == cEstacion.Primavera)) {
             return true;
         }
         return false;
     }
 
     public Boolean ContestaEstacionAnterior() {
-        if ((this.Estacion() == cEstacion.Primavera) && (this.MiniMental.getEstacion() == cEstacion.Invierno)) {
+        if ((this.EstacionEntrevista() == cEstacion.Primavera) && (this.getEstacion() == cEstacion.Invierno)) {
             return true;
         }
-        if ((this.Estacion() == cEstacion.Verano) && (this.MiniMental.getEstacion() == cEstacion.Primavera)) {
+        if ((this.EstacionEntrevista() == cEstacion.Verano) && (this.getEstacion() == cEstacion.Primavera)) {
             return true;
         }
-        if ((this.Estacion() == cEstacion.Otono) && (this.MiniMental.getEstacion() == cEstacion.Verano)) {
+        if ((this.EstacionEntrevista() == cEstacion.Otono) && (this.getEstacion() == cEstacion.Verano)) {
             return true;
         }
-        if ((this.Estacion() == cEstacion.Invierno) && (this.MiniMental.getEstacion() == cEstacion.Otono)) {
+        if ((this.EstacionEntrevista() == cEstacion.Invierno) && (this.getEstacion() == cEstacion.Otono)) {
             return true;
         }
         return false;
@@ -389,10 +426,10 @@ public class cEntrevista {
     }
 
     public Boolean ContestaMesSiguiente() {
-        if ((this.FechaEntrevista.get(Calendar.MONTH) == 11) && (this.MiniMental.getFecha().get(Calendar.MONTH) == 0)) {
+        if ((this.FechaEntrevista.get(Calendar.MONTH) == 11) && (this.getFecha().get(Calendar.MONTH) == 0)) {
             return true;
         } else {
-            if (this.FechaEntrevista.get(Calendar.MONTH) == (this.MiniMental.getFecha().get(Calendar.MONTH) - 1)) {
+            if (this.FechaEntrevista.get(Calendar.MONTH) == (this.getFecha().get(Calendar.MONTH) - 1)) {
                 return true;
             } else {
                 return false;
@@ -401,10 +438,10 @@ public class cEntrevista {
     }
 
     public Boolean ContestaMesAnterior() {
-        if ((this.FechaEntrevista.get(Calendar.MONTH) == 0) && (this.MiniMental.getFecha().get(Calendar.MONTH) == 11)) {
+        if ((this.FechaEntrevista.get(Calendar.MONTH) == 0) && (this.getFecha().get(Calendar.MONTH) == 11)) {
             return true;
         } else {
-            if (this.FechaEntrevista.get(Calendar.MONTH) == (this.MiniMental.getFecha().get(Calendar.MONTH) + 1)) {
+            if (this.FechaEntrevista.get(Calendar.MONTH) == (this.getFecha().get(Calendar.MONTH) + 1)) {
                 return true;
             } else {
                 return false;
