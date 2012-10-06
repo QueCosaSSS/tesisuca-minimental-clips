@@ -16,6 +16,7 @@ public class cEntrevista {
     public cEntrevista() {
         this.FechaEntrevista = new GregorianCalendar();
     }
+    
     private Boolean TraidoTercero;
     private Boolean ConsultorioEnAvenida;
     private Boolean ConsultorioEnEntrepiso;
@@ -30,6 +31,27 @@ public class cEntrevista {
     private int Piso;
     private Boolean Ciudad;
     private Boolean Pais;
+    private int PalabrasRepetidas;
+    private Boolean PacienteConProblemasAuditivo;
+    private Boolean PacienteDeprimido;
+    private int ClasificacionAtencion;
+    private int PalabrasRecordadas;
+    private Boolean RepitaFraseCorrectamente;
+    private Boolean CumpleOrdenCorrectamente;
+    private Boolean PacienteAnsioso;
+    private Boolean EscribeCorrectamenteFrase;
+    private int ClasificacionAccion;
+    private int CosasNombradas;
+    private Boolean CopiaCorrectamenteDibujo;
+    private Boolean OlvidaHechosRecientes;
+    private Boolean OlvidoProgresa;
+    private Boolean QuejaOlvidoPaciente;
+    private Boolean QuejaOlvidoFamiliar;
+    private Boolean PacienteMinimizaOlvidos;
+    private Boolean HayImpactoFuncional;
+    private Boolean HayImpactoEnCaracter;
+    
+    
 
     public int getDiaDeSemana() {
         return DiaDeSemana;
@@ -448,4 +470,172 @@ public class cEntrevista {
             }
         }
     }
+    
+    public Boolean ContestaAnoCorrecto()
+    {
+        return Fecha.get(Calendar.YEAR) == FechaEntrevista.get(Calendar.YEAR);
+    }
+    
+    public Boolean ContestaPisoCorrecto()
+    {
+        return this.getPiso() == this.PisoDelConsultorio;
+    }
+    
+    public int DiferenciaEntrePisoContestadoReal()
+    {
+        return Math.abs(this.getPiso() - this.PisoDelConsultorio);
+    }
+
+    public int getPalabrasRepetidas() {
+        return PalabrasRepetidas;
+    }
+
+    public void setPalabrasRepetidas(int PalabrasRepetidas) {
+        this.PalabrasRepetidas = PalabrasRepetidas;
+    }
+
+    public Boolean getPacienteConProblemasAuditivo() {
+        return PacienteConProblemasAuditivo;
+    }
+
+    public void setPacienteConProblemasAuditivo(Boolean PacienteConProblemasAuditivo) {
+        this.PacienteConProblemasAuditivo = PacienteConProblemasAuditivo;
+    }
+
+    public Boolean getPacienteDeprimido() {
+        return PacienteDeprimido;
+    }
+
+    public void setPacienteDeprimido(Boolean PacienteDeprimido) {
+        this.PacienteDeprimido = PacienteDeprimido;
+    }
+
+    public int getClasificacionAtencion() {
+        return ClasificacionAtencion;
+    }
+
+    public void setClasificacionAtencion(int ClasificacionAtencion) {
+        this.ClasificacionAtencion = ClasificacionAtencion;
+    }
+
+    public int getPalabrasRecordadas() {
+        return PalabrasRecordadas;
+    }
+
+    public void setPalabrasRecordadas(int PalabrasRecordadas) {
+        this.PalabrasRecordadas = PalabrasRecordadas;
+    }
+
+    public Boolean getRepitaFraseCorrectamente() {
+        return RepitaFraseCorrectamente;
+    }
+
+    public void setRepitaFraseCorrectamente(Boolean RepitaFraseCorrectamente) {
+        this.RepitaFraseCorrectamente = RepitaFraseCorrectamente;
+    }
+
+    public Boolean getCumpleOrdenCorrectamente() {
+        return CumpleOrdenCorrectamente;
+    }
+
+    public void setCumpleOrdenCorrectamente(Boolean CumpleOrdenCorrectamente) {
+        this.CumpleOrdenCorrectamente = CumpleOrdenCorrectamente;
+    }
+
+    public Boolean getPacienteAnsioso() {
+        return PacienteAnsioso;
+    }
+
+    public void setPacienteAnsioso(Boolean PacienteAnsioso) {
+        this.PacienteAnsioso = PacienteAnsioso;
+    }
+
+    public Boolean getEscribeCorrectamenteFrase() {
+        return EscribeCorrectamenteFrase;
+    }
+
+    public void setEscribeCorrectamenteFrase(Boolean EscribeCorrectamenteFrase) {
+        this.EscribeCorrectamenteFrase = EscribeCorrectamenteFrase;
+    }
+
+    public int getClasificacionAccion() {
+        return ClasificacionAccion;
+    }
+
+    public void setClasificacionAccion(int ClasificacionAccion) {
+        this.ClasificacionAccion = ClasificacionAccion;
+    }
+
+    public int getCosasNombradas() {
+        return CosasNombradas;
+    }
+
+    public void setCosasNombradas(int CosasNombradas) {
+        this.CosasNombradas = CosasNombradas;
+    }
+
+    public Boolean getCopiaCorrectamenteDibujo() {
+        return CopiaCorrectamenteDibujo;
+    }
+
+    public void setCopiaCorrectamenteDibujo(Boolean CopiaCorrectamenteDibujo) {
+        this.CopiaCorrectamenteDibujo = CopiaCorrectamenteDibujo;
+    }
+
+    public Boolean getOlvidaHechosRecientes() {
+        return OlvidaHechosRecientes;
+    }
+
+    public void setOlvidaHechosRecientes(Boolean OlvidaHechosRecientes) {
+        this.OlvidaHechosRecientes = OlvidaHechosRecientes;
+    }
+
+    public Boolean getOlvidoProgresa() {
+        return OlvidoProgresa;
+    }
+
+    public void setOlvidoProgresa(Boolean OlvidoProgresa) {
+        this.OlvidoProgresa = OlvidoProgresa;
+    }
+
+    public Boolean getQuejaOlvidoPaciente() {
+        return QuejaOlvidoPaciente;
+    }
+
+    public void setQuejaOlvidoPaciente(Boolean QuejaOlvidoPaciente) {
+        this.QuejaOlvidoPaciente = QuejaOlvidoPaciente;
+    }
+
+    public Boolean getQuejaOlvidoFamiliar() {
+        return QuejaOlvidoFamiliar;
+    }
+
+    public void setQuejaOlvidoFamiliar(Boolean QuejaOlvidoFamiliar) {
+        this.QuejaOlvidoFamiliar = QuejaOlvidoFamiliar;
+    }
+
+    public Boolean getPacienteMinimizaOlvidos() {
+        return PacienteMinimizaOlvidos;
+    }
+
+    public void setPacienteMinimizaOlvidos(Boolean PacienteMinimizaOlvidos) {
+        this.PacienteMinimizaOlvidos = PacienteMinimizaOlvidos;
+    }
+
+    public Boolean getHayImpactoFuncional() {
+        return HayImpactoFuncional;
+    }
+
+    public void setHayImpactoFuncional(Boolean HayImpactoFuncional) {
+        this.HayImpactoFuncional = HayImpactoFuncional;
+    }
+
+    public Boolean getHayImpactoEnCaracter() {
+        return HayImpactoEnCaracter;
+    }
+
+    public void setHayImpactoEnCaracter(Boolean HayImpactoEnCaracter) {
+        this.HayImpactoEnCaracter = HayImpactoEnCaracter;
+    }
+            
 }
