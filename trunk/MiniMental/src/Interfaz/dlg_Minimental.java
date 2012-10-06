@@ -39,10 +39,45 @@ public class dlg_Minimental extends javax.swing.JDialog {
         buttonGroup6 = new javax.swing.ButtonGroup();
         buttonGroup7 = new javax.swing.ButtonGroup();
         buttonGroup8 = new javax.swing.ButtonGroup();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        buttonGroup9 = new javax.swing.ButtonGroup();
+        buttonGroup10 = new javax.swing.ButtonGroup();
+        buttonGroup11 = new javax.swing.ButtonGroup();
+        buttonGroup12 = new javax.swing.ButtonGroup();
+        buttonGroup13 = new javax.swing.ButtonGroup();
+        buttonGroup14 = new javax.swing.ButtonGroup();
+        buttonGroup15 = new javax.swing.ButtonGroup();
+        buttonGroup16 = new javax.swing.ButtonGroup();
+        buttonGroup17 = new javax.swing.ButtonGroup();
+        buttonGroup18 = new javax.swing.ButtonGroup();
+        buttonGroup19 = new javax.swing.ButtonGroup();
+        buttonGroup20 = new javax.swing.ButtonGroup();
+        buttonGroup21 = new javax.swing.ButtonGroup();
+        buttonGroup22 = new javax.swing.ButtonGroup();
+        buttonGroup23 = new javax.swing.ButtonGroup();
         jButton1 = new javax.swing.JButton();
         jTabbedPane2 = new javax.swing.JTabbedPane();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jcb_Escolaridad = new javax.swing.JComboBox();
+        jLabel7 = new javax.swing.JLabel();
+        jcb_entrevista_ano = new javax.swing.JComboBox();
+        jcb_entrevista_mes = new javax.swing.JComboBox();
+        jcb_entrevista_dia = new javax.swing.JComboBox();
+        jLabel24 = new javax.swing.JLabel();
+        jrb_respuesta_problrmas_auditivos_si = new javax.swing.JRadioButton();
+        jRadioButton17 = new javax.swing.JRadioButton();
+        jLabel25 = new javax.swing.JLabel();
+        jRadioButton19 = new javax.swing.JRadioButton();
+        jrb_respuesta_deprimido_si = new javax.swing.JRadioButton();
+        jLabel31 = new javax.swing.JLabel();
+        jrb_respuesta_ansioso_si = new javax.swing.JRadioButton();
+        jRadioButton25 = new javax.swing.JRadioButton();
+        jLabel32 = new javax.swing.JLabel();
+        jrb_respuesta_impacto_caracter_si = new javax.swing.JRadioButton();
+        jRadioButton26 = new javax.swing.JRadioButton();
+        jLabel33 = new javax.swing.JLabel();
+        jrb_respuesta_impacto_funcional_si = new javax.swing.JRadioButton();
+        jRadioButton27 = new javax.swing.JRadioButton();
         jPanel3 = new javax.swing.JPanel();
         jRadioButton6 = new javax.swing.JRadioButton();
         jrb_respuesta_pais_si = new javax.swing.JRadioButton();
@@ -78,16 +113,49 @@ public class dlg_Minimental extends javax.swing.JDialog {
         jcb_respuesta_piso = new javax.swing.JComboBox();
         jrb_respuesta_piso_consultorio = new javax.swing.JComboBox();
         jPanel1 = new javax.swing.JPanel();
-        jcb_Escolaridad = new javax.swing.JComboBox();
-        jcb_entrevista_ano = new javax.swing.JComboBox();
-        jcb_entrevista_mes = new javax.swing.JComboBox();
-        jcb_entrevista_dia = new javax.swing.JComboBox();
+        jLabel4 = new javax.swing.JLabel();
+        jcb_PalabrasRepetidas = new javax.swing.JComboBox();
+        jLabel12 = new javax.swing.JLabel();
+        jcb_ClasificacionAtencion = new javax.swing.JComboBox();
+        jLabel17 = new javax.swing.JLabel();
+        jcb_PalabrasRecordadas = new javax.swing.JComboBox();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel18 = new javax.swing.JLabel();
+        jrb_RepiteFrase_si = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jLabel19 = new javax.swing.JLabel();
+        jrb_OrdenCorrecta_si = new javax.swing.JRadioButton();
+        jRadioButton5 = new javax.swing.JRadioButton();
+        jLabel20 = new javax.swing.JLabel();
+        jrb_EscribeFrase_si = new javax.swing.JRadioButton();
+        jRadioButton9 = new javax.swing.JRadioButton();
+        jLabel21 = new javax.swing.JLabel();
+        jrb_AccionCorecta_si = new javax.swing.JRadioButton();
+        jRadioButton13 = new javax.swing.JRadioButton();
+        jLabel22 = new javax.swing.JLabel();
+        jcb_ObjetosNombrados = new javax.swing.JComboBox();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel23 = new javax.swing.JLabel();
+        jrb_Dibujo_si = new javax.swing.JRadioButton();
+        jRadioButton16 = new javax.swing.JRadioButton();
+        jPanel5 = new javax.swing.JPanel();
+        jRadioButton20 = new javax.swing.JRadioButton();
+        jrb_OlvidaHechosRecientes_si = new javax.swing.JRadioButton();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jrb_OlvidosProgresivo_si = new javax.swing.JRadioButton();
+        jRadioButton21 = new javax.swing.JRadioButton();
+        jLabel28 = new javax.swing.JLabel();
+        jrb_QuejaPaciente_si = new javax.swing.JRadioButton();
+        jRadioButton22 = new javax.swing.JRadioButton();
+        jLabel29 = new javax.swing.JLabel();
+        jrb_QuejaFamiliares_si = new javax.swing.JRadioButton();
+        jRadioButton23 = new javax.swing.JRadioButton();
+        jLabel30 = new javax.swing.JLabel();
+        jrb_MinimizaOlvidos_si = new javax.swing.JRadioButton();
+        jRadioButton24 = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-
-        jLabel6.setText("Escolaridad del paciente:");
-
-        jLabel7.setText("Fecha en la que se realizo la entrevista:");
 
         jButton1.setText("Evaluar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -95,6 +163,160 @@ public class dlg_Minimental extends javax.swing.JDialog {
                 jButton1ActionPerformed(evt);
             }
         });
+
+        jLabel6.setText("Escolaridad del paciente:");
+
+        jcb_Escolaridad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "menos de 6 años", "entre 6 y 12 años", "mas de 12 años" }));
+
+        jLabel7.setText("Fecha en la que se realizo la entrevista:");
+
+        jcb_entrevista_ano.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020" }));
+
+        jcb_entrevista_mes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
+
+        jcb_entrevista_dia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+
+        jLabel24.setText("¿El paciente tiene problemas auditivos?");
+
+        buttonGroup14.add(jrb_respuesta_problrmas_auditivos_si);
+        jrb_respuesta_problrmas_auditivos_si.setSelected(true);
+        jrb_respuesta_problrmas_auditivos_si.setText("Si");
+
+        buttonGroup14.add(jRadioButton17);
+        jRadioButton17.setText("No");
+
+        jLabel25.setText("¿El paciente esta deprimido?");
+
+        buttonGroup15.add(jRadioButton19);
+        jRadioButton19.setText("No");
+
+        buttonGroup15.add(jrb_respuesta_deprimido_si);
+        jrb_respuesta_deprimido_si.setSelected(true);
+        jrb_respuesta_deprimido_si.setText("Si");
+
+        jLabel31.setText("¿El paciente esta ansioso?");
+
+        buttonGroup21.add(jrb_respuesta_ansioso_si);
+        jrb_respuesta_ansioso_si.setSelected(true);
+        jrb_respuesta_ansioso_si.setText("Si");
+
+        buttonGroup21.add(jRadioButton25);
+        jRadioButton25.setText("No");
+
+        jLabel32.setText("¿El paciente o el familiar manifiestan un cambio en el caracter?");
+
+        buttonGroup22.add(jrb_respuesta_impacto_caracter_si);
+        jrb_respuesta_impacto_caracter_si.setSelected(true);
+        jrb_respuesta_impacto_caracter_si.setText("Si");
+
+        buttonGroup22.add(jRadioButton26);
+        jRadioButton26.setText("No");
+
+        jLabel33.setText("¿El paciente o el familiar manifiestan unen como el paciente se desenvuelve?");
+
+        buttonGroup23.add(jrb_respuesta_impacto_funcional_si);
+        jrb_respuesta_impacto_funcional_si.setSelected(true);
+        jrb_respuesta_impacto_funcional_si.setText("Si");
+
+        buttonGroup23.add(jRadioButton27);
+        jRadioButton27.setText("No");
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel6Layout.createSequentialGroup()
+                            .addComponent(jLabel24)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jrb_respuesta_problrmas_auditivos_si)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jRadioButton17))
+                        .addGroup(jPanel6Layout.createSequentialGroup()
+                            .addComponent(jLabel25)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jrb_respuesta_deprimido_si)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jRadioButton19))
+                        .addGroup(jPanel6Layout.createSequentialGroup()
+                            .addComponent(jLabel33)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jrb_respuesta_impacto_funcional_si)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jRadioButton27))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel32)
+                                .addComponent(jLabel31))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel6Layout.createSequentialGroup()
+                                    .addComponent(jrb_respuesta_ansioso_si)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(jRadioButton25))
+                                .addGroup(jPanel6Layout.createSequentialGroup()
+                                    .addComponent(jrb_respuesta_impacto_caracter_si)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(jRadioButton26)))))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addGap(180, 180, 180)
+                        .addComponent(jcb_entrevista_ano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jcb_entrevista_mes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jcb_entrevista_dia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addGap(252, 252, 252)
+                        .addComponent(jcb_Escolaridad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(242, Short.MAX_VALUE))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(jcb_Escolaridad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jcb_entrevista_ano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jcb_entrevista_mes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jcb_entrevista_dia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jrb_respuesta_problrmas_auditivos_si)
+                    .addComponent(jRadioButton17))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jrb_respuesta_deprimido_si)
+                    .addComponent(jRadioButton19))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jrb_respuesta_ansioso_si)
+                    .addComponent(jRadioButton25))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jrb_respuesta_impacto_caracter_si)
+                    .addComponent(jRadioButton26))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jrb_respuesta_impacto_funcional_si)
+                    .addComponent(jRadioButton27))
+                .addGap(349, 349, 349))
+        );
+
+        jTabbedPane2.addTab("Entrevista", jPanel6);
 
         jRadioButton6.setText("No");
 
@@ -248,7 +470,7 @@ public class dlg_Minimental extends javax.swing.JDialog {
                                     .addComponent(jrb_respuesta_avenida_si)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(jRadioButton14))))))
-                .addContainerGap(139, Short.MAX_VALUE))
+                .addContainerGap(343, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -315,73 +537,341 @@ public class dlg_Minimental extends javax.swing.JDialog {
 
         jTabbedPane2.addTab("Orientacion", jPanel3);
 
+        jLabel4.setText("¿Cuantas palabras repite correctamente?");
+
+        jcb_PalabrasRepetidas.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0", "1", "2", "3" }));
+
+        jLabel12.setText("¿Cual es la clasificacion en atencion?");
+
+        jcb_ClasificacionAtencion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0", "1", "2", "3", "4", "5" }));
+
+        jLabel17.setText("¿Cuantas palabras recordo?");
+
+        jcb_PalabrasRecordadas.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0", "1", "2", "3" }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 596, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel17))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jcb_PalabrasRecordadas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jcb_ClasificacionAtencion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jcb_PalabrasRepetidas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(543, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 518, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jcb_PalabrasRepetidas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(jcb_ClasificacionAtencion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(jcb_PalabrasRecordadas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(310, Short.MAX_VALUE))
         );
 
-        jTabbedPane2.addTab("Fijacion", jPanel1);
+        jTabbedPane2.addTab("Memoria", jPanel1);
 
-        jcb_Escolaridad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "menos de 6 años", "entre 6 y 12 años", "mas de 12 años" }));
+        jLabel18.setText("¿Repite correctamente la frase?");
 
-        jcb_entrevista_ano.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020" }));
+        buttonGroup9.add(jrb_RepiteFrase_si);
+        jrb_RepiteFrase_si.setSelected(true);
+        jrb_RepiteFrase_si.setText("Si");
 
-        jcb_entrevista_mes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
+        buttonGroup9.add(jRadioButton2);
+        jRadioButton2.setText("No");
 
-        jcb_entrevista_dia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        jLabel19.setText("¿Cumple la orden dada por escrito correctamente?");
+
+        buttonGroup10.add(jrb_OrdenCorrecta_si);
+        jrb_OrdenCorrecta_si.setSelected(true);
+        jrb_OrdenCorrecta_si.setText("Si");
+
+        buttonGroup10.add(jRadioButton5);
+        jRadioButton5.setText("No");
+
+        jLabel20.setText("¿Escribe correctamente la frase?");
+
+        buttonGroup11.add(jrb_EscribeFrase_si);
+        jrb_EscribeFrase_si.setSelected(true);
+        jrb_EscribeFrase_si.setText("Si");
+
+        buttonGroup11.add(jRadioButton9);
+        jRadioButton9.setText("No");
+
+        jLabel21.setText("¿Cuantos pasos de la accion indicada realiza correctamente?");
+
+        buttonGroup12.add(jrb_AccionCorecta_si);
+        jrb_AccionCorecta_si.setSelected(true);
+        jrb_AccionCorecta_si.setText("Si");
+
+        buttonGroup12.add(jRadioButton13);
+        jRadioButton13.setText("No");
+
+        jLabel22.setText("¿Cuantos objetos pudo nombrar?");
+
+        jcb_ObjetosNombrados.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0", "1", "2" }));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel22)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel21)
+                                        .addComponent(jLabel18))
+                                    .addGap(4, 4, 4))
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addComponent(jLabel19)
+                                    .addGap(46, 46, 46)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel20)
+                                .addGap(137, 137, 137)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jrb_OrdenCorrecta_si)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jRadioButton5))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jrb_RepiteFrase_si)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jRadioButton2))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jrb_AccionCorecta_si)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jRadioButton13))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jcb_ObjetosNombrados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jrb_EscribeFrase_si))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jRadioButton9)))))
+                .addContainerGap(423, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(jrb_RepiteFrase_si)
+                    .addComponent(jRadioButton2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21)
+                    .addComponent(jrb_AccionCorecta_si)
+                    .addComponent(jRadioButton13))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(jrb_OrdenCorrecta_si)
+                    .addComponent(jRadioButton5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(jrb_EscribeFrase_si)
+                    .addComponent(jRadioButton9))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel22)
+                    .addComponent(jcb_ObjetosNombrados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(272, Short.MAX_VALUE))
+        );
+
+        jTabbedPane2.addTab("Lenguaje", jPanel2);
+
+        jLabel23.setText("¿Copia correctamente el dibujo?");
+
+        buttonGroup13.add(jrb_Dibujo_si);
+        jrb_Dibujo_si.setSelected(true);
+        jrb_Dibujo_si.setText("Si");
+
+        buttonGroup13.add(jRadioButton16);
+        jRadioButton16.setText("No");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel23)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jrb_Dibujo_si)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButton16)
+                .addContainerGap(559, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel23)
+                    .addComponent(jrb_Dibujo_si)
+                    .addComponent(jRadioButton16))
+                .addContainerGap(363, Short.MAX_VALUE))
+        );
+
+        jTabbedPane2.addTab("Dibujo", jPanel4);
+
+        buttonGroup16.add(jRadioButton20);
+        jRadioButton20.setText("No");
+
+        buttonGroup16.add(jrb_OlvidaHechosRecientes_si);
+        jrb_OlvidaHechosRecientes_si.setSelected(true);
+        jrb_OlvidaHechosRecientes_si.setText("Si");
+
+        jLabel26.setText("¿Olvida hechos recientes?");
+
+        jLabel27.setText("¿El paciente indica que los olvidos van en aumento?");
+
+        buttonGroup17.add(jrb_OlvidosProgresivo_si);
+        jrb_OlvidosProgresivo_si.setSelected(true);
+        jrb_OlvidosProgresivo_si.setText("Si");
+
+        buttonGroup17.add(jRadioButton21);
+        jRadioButton21.setText("No");
+
+        jLabel28.setText("¿El paciente se queja de los olvidos?");
+
+        buttonGroup18.add(jrb_QuejaPaciente_si);
+        jrb_QuejaPaciente_si.setSelected(true);
+        jrb_QuejaPaciente_si.setText("Si");
+
+        buttonGroup18.add(jRadioButton22);
+        jRadioButton22.setText("No");
+
+        jLabel29.setText("¿Los familiares se quejan de los olvidos del paciente?");
+
+        buttonGroup19.add(jrb_QuejaFamiliares_si);
+        jrb_QuejaFamiliares_si.setSelected(true);
+        jrb_QuejaFamiliares_si.setText("Si");
+
+        buttonGroup19.add(jRadioButton23);
+        jRadioButton23.setText("No");
+
+        jLabel30.setText("¿El paciente minimiza los olvidos?");
+
+        buttonGroup20.add(jrb_MinimizaOlvidos_si);
+        jrb_MinimizaOlvidos_si.setSelected(true);
+        jrb_MinimizaOlvidos_si.setText("Si");
+
+        buttonGroup20.add(jRadioButton24);
+        jRadioButton24.setText("No");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel26)
+                            .addComponent(jLabel27)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                .addComponent(jLabel28)
+                                .addGap(171, 171, 171)))
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel5Layout.createSequentialGroup()
+                                    .addComponent(jrb_QuejaPaciente_si)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(jRadioButton22))
+                                .addGroup(jPanel5Layout.createSequentialGroup()
+                                    .addComponent(jrb_OlvidosProgresivo_si)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(jRadioButton21)))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jrb_OlvidaHechosRecientes_si)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jRadioButton20))))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel29)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jrb_QuejaFamiliares_si)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jRadioButton23))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel30)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jrb_MinimizaOlvidos_si)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jRadioButton24)))
+                .addContainerGap(372, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jrb_OlvidaHechosRecientes_si)
+                    .addComponent(jRadioButton20))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jrb_OlvidosProgresivo_si)
+                    .addComponent(jRadioButton21))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jrb_QuejaPaciente_si)
+                    .addComponent(jRadioButton22))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jrb_QuejaFamiliares_si)
+                    .addComponent(jRadioButton23))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jrb_MinimizaOlvidos_si)
+                    .addComponent(jRadioButton24))
+                .addGap(263, 263, 263))
+        );
+
+        jTabbedPane2.addTab("Olvido", jPanel5);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jcb_Escolaridad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jcb_entrevista_ano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jcb_entrevista_mes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jcb_entrevista_dia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 601, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                        .addComponent(jButton1)))
-                .addContainerGap())
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jcb_Escolaridad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jcb_entrevista_ano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jcb_entrevista_mes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jcb_entrevista_dia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton1))
-                    .addComponent(jTabbedPane2))
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1)
                 .addContainerGap())
         );
 
@@ -461,39 +951,96 @@ public class dlg_Minimental extends javax.swing.JDialog {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup10;
+    private javax.swing.ButtonGroup buttonGroup11;
+    private javax.swing.ButtonGroup buttonGroup12;
+    private javax.swing.ButtonGroup buttonGroup13;
+    private javax.swing.ButtonGroup buttonGroup14;
+    private javax.swing.ButtonGroup buttonGroup15;
+    private javax.swing.ButtonGroup buttonGroup16;
+    private javax.swing.ButtonGroup buttonGroup17;
+    private javax.swing.ButtonGroup buttonGroup18;
+    private javax.swing.ButtonGroup buttonGroup19;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup buttonGroup20;
+    private javax.swing.ButtonGroup buttonGroup21;
+    private javax.swing.ButtonGroup buttonGroup22;
+    private javax.swing.ButtonGroup buttonGroup23;
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.ButtonGroup buttonGroup4;
     private javax.swing.ButtonGroup buttonGroup5;
     private javax.swing.ButtonGroup buttonGroup6;
     private javax.swing.ButtonGroup buttonGroup7;
     private javax.swing.ButtonGroup buttonGroup8;
+    private javax.swing.ButtonGroup buttonGroup9;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JRadioButton jRadioButton10;
     private javax.swing.JRadioButton jRadioButton12;
+    private javax.swing.JRadioButton jRadioButton13;
     private javax.swing.JRadioButton jRadioButton14;
+    private javax.swing.JRadioButton jRadioButton16;
+    private javax.swing.JRadioButton jRadioButton17;
     private javax.swing.JRadioButton jRadioButton18;
+    private javax.swing.JRadioButton jRadioButton19;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton20;
+    private javax.swing.JRadioButton jRadioButton21;
+    private javax.swing.JRadioButton jRadioButton22;
+    private javax.swing.JRadioButton jRadioButton23;
+    private javax.swing.JRadioButton jRadioButton24;
+    private javax.swing.JRadioButton jRadioButton25;
+    private javax.swing.JRadioButton jRadioButton26;
+    private javax.swing.JRadioButton jRadioButton27;
     private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JRadioButton jRadioButton7;
+    private javax.swing.JRadioButton jRadioButton9;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JComboBox jcb_ClasificacionAtencion;
     private javax.swing.JComboBox jcb_Escolaridad;
+    private javax.swing.JComboBox jcb_ObjetosNombrados;
+    private javax.swing.JComboBox jcb_PalabrasRecordadas;
+    private javax.swing.JComboBox jcb_PalabrasRepetidas;
     private javax.swing.JComboBox jcb_entrevista_ano;
     private javax.swing.JComboBox jcb_entrevista_dia;
     private javax.swing.JComboBox jcb_entrevista_mes;
@@ -503,12 +1050,27 @@ public class dlg_Minimental extends javax.swing.JDialog {
     private javax.swing.JComboBox jcb_respuestas_ano;
     private javax.swing.JComboBox jcb_respuestas_dia;
     private javax.swing.JComboBox jcb_respuestas_mes;
+    private javax.swing.JRadioButton jrb_AccionCorecta_si;
+    private javax.swing.JRadioButton jrb_Dibujo_si;
+    private javax.swing.JRadioButton jrb_EscribeFrase_si;
+    private javax.swing.JRadioButton jrb_MinimizaOlvidos_si;
+    private javax.swing.JRadioButton jrb_OlvidaHechosRecientes_si;
+    private javax.swing.JRadioButton jrb_OlvidosProgresivo_si;
+    private javax.swing.JRadioButton jrb_OrdenCorrecta_si;
+    private javax.swing.JRadioButton jrb_QuejaFamiliares_si;
+    private javax.swing.JRadioButton jrb_QuejaPaciente_si;
+    private javax.swing.JRadioButton jrb_RepiteFrase_si;
+    private javax.swing.JRadioButton jrb_respuesta_ansioso_si;
     private javax.swing.JRadioButton jrb_respuesta_avenida_si;
     private javax.swing.JRadioButton jrb_respuesta_calle_si;
     private javax.swing.JRadioButton jrb_respuesta_ciudad_si;
+    private javax.swing.JRadioButton jrb_respuesta_deprimido_si;
     private javax.swing.JRadioButton jrb_respuesta_entrepiso_si;
+    private javax.swing.JRadioButton jrb_respuesta_impacto_caracter_si;
+    private javax.swing.JRadioButton jrb_respuesta_impacto_funcional_si;
     private javax.swing.JRadioButton jrb_respuesta_pais_si;
     private javax.swing.JComboBox jrb_respuesta_piso_consultorio;
+    private javax.swing.JRadioButton jrb_respuesta_problrmas_auditivos_si;
     private javax.swing.JRadioButton jrb_respuesta_traidotercero_si;
     private javax.swing.JRadioButton jrb_respuestas_lugar_si;
     // End of variables declaration//GEN-END:variables
