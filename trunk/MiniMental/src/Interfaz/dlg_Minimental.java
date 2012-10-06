@@ -77,6 +77,7 @@ public class dlg_Minimental extends javax.swing.JDialog {
         jLabel3 = new javax.swing.JLabel();
         jcb_respuesta_piso = new javax.swing.JComboBox();
         jrb_respuesta_piso_consultorio = new javax.swing.JComboBox();
+        jPanel1 = new javax.swing.JPanel();
         jcb_Escolaridad = new javax.swing.JComboBox();
         jcb_entrevista_ano = new javax.swing.JComboBox();
         jcb_entrevista_mes = new javax.swing.JComboBox();
@@ -314,6 +315,19 @@ public class dlg_Minimental extends javax.swing.JDialog {
 
         jTabbedPane2.addTab("Orientacion", jPanel3);
 
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 596, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 518, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Fijacion", jPanel1);
+
         jcb_Escolaridad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "menos de 6 años", "entre 6 y 12 años", "mas de 12 años" }));
 
         jcb_entrevista_ano.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020" }));
@@ -469,6 +483,7 @@ public class dlg_Minimental extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JRadioButton jRadioButton10;
     private javax.swing.JRadioButton jRadioButton12;
