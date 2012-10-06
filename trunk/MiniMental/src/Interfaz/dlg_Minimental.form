@@ -124,7 +124,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jrb_respuesta_problrmas_auditivos_si" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jrb_respuesta_problemas_auditivos_si" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jRadioButton17" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -177,7 +177,7 @@
                               <Component id="jcb_Escolaridad" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="242" max="32767" attributes="0"/>
+                      <EmptySpace pref="302" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -199,7 +199,7 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel24" alignment="3" max="32767" attributes="0"/>
-                          <Component id="jrb_respuesta_problrmas_auditivos_si" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jrb_respuesta_problemas_auditivos_si" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jRadioButton17" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -336,7 +336,7 @@
                 <Property name="text" type="java.lang.String" value="&#xbf;El paciente tiene problemas auditivos?"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jrb_respuesta_problrmas_auditivos_si">
+            <Component class="javax.swing.JRadioButton" name="jrb_respuesta_problemas_auditivos_si">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="buttonGroup14"/>
@@ -526,7 +526,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="343" max="32767" attributes="0"/>
+                      <EmptySpace pref="403" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -982,7 +982,7 @@
                           <Component id="jcb_ClasificacionAtencion" min="-2" max="-2" attributes="0"/>
                           <Component id="jcb_PalabrasRepetidas" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="543" max="32767" attributes="0"/>
+                      <EmptySpace pref="603" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1101,6 +1101,7 @@
                                       <EmptySpace min="-2" pref="137" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
+                              <EmptySpace pref="60" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Component id="jrb_OrdenCorrecta_si" min="-2" max="-2" attributes="0"/>
@@ -1112,11 +1113,6 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="jrb_AccionCorecta_si" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jRadioButton13" min="-2" max="-2" attributes="0"/>
-                                  </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="1" attributes="0">
                                           <Component id="jcb_ObjetosNombrados" min="-2" max="-2" attributes="0"/>
@@ -1125,6 +1121,7 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="jRadioButton9" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                                  <Component id="jcb_clasificacionaccion" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -1144,8 +1141,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel21" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jrb_AccionCorecta_si" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton13" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jcb_clasificacionaccion" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -1164,7 +1160,7 @@
                           <Component id="jLabel22" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jcb_ObjetosNombrados" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="272" max="32767" attributes="0"/>
+                      <EmptySpace pref="271" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1241,23 +1237,6 @@
                 <Property name="text" type="java.lang.String" value="&#xbf;Cuantos pasos de la accion indicada realiza correctamente?"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jrb_AccionCorecta_si">
-              <Properties>
-                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="buttonGroup12"/>
-                </Property>
-                <Property name="selected" type="boolean" value="true"/>
-                <Property name="text" type="java.lang.String" value="Si"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton13">
-              <Properties>
-                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="buttonGroup12"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="No"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabel22">
               <Properties>
                 <Property name="text" type="java.lang.String" value="&#xbf;Cuantos objetos pudo nombrar?"/>
@@ -1270,6 +1249,18 @@
                     <StringItem index="0" value="0"/>
                     <StringItem index="1" value="1"/>
                     <StringItem index="2" value="2"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="jcb_clasificacionaccion">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="4">
+                    <StringItem index="0" value="0"/>
+                    <StringItem index="1" value="1"/>
+                    <StringItem index="2" value="2"/>
+                    <StringItem index="3" value="3"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -1295,7 +1286,7 @@
                       <Component id="jrb_Dibujo_si" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jRadioButton16" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="559" max="32767" attributes="0"/>
+                      <EmptySpace pref="619" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1363,17 +1354,15 @@
                                   </Group>
                               </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="jrb_QuejaPaciente_si" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="jRadioButton22" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Component id="jrb_OlvidosProgresivo_si" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="jRadioButton21" min="-2" max="-2" attributes="0"/>
-                                      </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="jrb_QuejaPaciente_si" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton22" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="jrb_OlvidosProgresivo_si" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="jRadioButton21" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <Component id="jrb_OlvidaHechosRecientes_si" min="-2" max="-2" attributes="0"/>
@@ -1397,7 +1386,7 @@
                               <Component id="jRadioButton24" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="372" max="32767" attributes="0"/>
+                      <EmptySpace pref="432" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

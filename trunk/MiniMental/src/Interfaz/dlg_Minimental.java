@@ -64,7 +64,7 @@ public class dlg_Minimental extends javax.swing.JDialog {
         jcb_entrevista_mes = new javax.swing.JComboBox();
         jcb_entrevista_dia = new javax.swing.JComboBox();
         jLabel24 = new javax.swing.JLabel();
-        jrb_respuesta_problrmas_auditivos_si = new javax.swing.JRadioButton();
+        jrb_respuesta_problemas_auditivos_si = new javax.swing.JRadioButton();
         jRadioButton17 = new javax.swing.JRadioButton();
         jLabel25 = new javax.swing.JLabel();
         jRadioButton19 = new javax.swing.JRadioButton();
@@ -130,10 +130,9 @@ public class dlg_Minimental extends javax.swing.JDialog {
         jrb_EscribeFrase_si = new javax.swing.JRadioButton();
         jRadioButton9 = new javax.swing.JRadioButton();
         jLabel21 = new javax.swing.JLabel();
-        jrb_AccionCorecta_si = new javax.swing.JRadioButton();
-        jRadioButton13 = new javax.swing.JRadioButton();
         jLabel22 = new javax.swing.JLabel();
         jcb_ObjetosNombrados = new javax.swing.JComboBox();
+        jcb_clasificacionaccion = new javax.swing.JComboBox();
         jPanel4 = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
         jrb_Dibujo_si = new javax.swing.JRadioButton();
@@ -178,9 +177,9 @@ public class dlg_Minimental extends javax.swing.JDialog {
 
         jLabel24.setText("¿El paciente tiene problemas auditivos?");
 
-        buttonGroup14.add(jrb_respuesta_problrmas_auditivos_si);
-        jrb_respuesta_problrmas_auditivos_si.setSelected(true);
-        jrb_respuesta_problrmas_auditivos_si.setText("Si");
+        buttonGroup14.add(jrb_respuesta_problemas_auditivos_si);
+        jrb_respuesta_problemas_auditivos_si.setSelected(true);
+        jrb_respuesta_problemas_auditivos_si.setText("Si");
 
         buttonGroup14.add(jRadioButton17);
         jRadioButton17.setText("No");
@@ -232,7 +231,7 @@ public class dlg_Minimental extends javax.swing.JDialog {
                         .addGroup(jPanel6Layout.createSequentialGroup()
                             .addComponent(jLabel24)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jrb_respuesta_problrmas_auditivos_si)
+                            .addComponent(jrb_respuesta_problemas_auditivos_si)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(jRadioButton17))
                         .addGroup(jPanel6Layout.createSequentialGroup()
@@ -273,7 +272,7 @@ public class dlg_Minimental extends javax.swing.JDialog {
                         .addComponent(jLabel6)
                         .addGap(252, 252, 252)
                         .addComponent(jcb_Escolaridad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(242, Short.MAX_VALUE))
+                .addContainerGap(302, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -291,7 +290,7 @@ public class dlg_Minimental extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jrb_respuesta_problrmas_auditivos_si)
+                    .addComponent(jrb_respuesta_problemas_auditivos_si)
                     .addComponent(jRadioButton17))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -470,7 +469,7 @@ public class dlg_Minimental extends javax.swing.JDialog {
                                     .addComponent(jrb_respuesta_avenida_si)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(jRadioButton14))))))
-                .addContainerGap(343, Short.MAX_VALUE))
+                .addContainerGap(403, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -564,7 +563,7 @@ public class dlg_Minimental extends javax.swing.JDialog {
                     .addComponent(jcb_PalabrasRecordadas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jcb_ClasificacionAtencion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jcb_PalabrasRepetidas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(543, Short.MAX_VALUE))
+                .addContainerGap(603, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -615,16 +614,11 @@ public class dlg_Minimental extends javax.swing.JDialog {
 
         jLabel21.setText("¿Cuantos pasos de la accion indicada realiza correctamente?");
 
-        buttonGroup12.add(jrb_AccionCorecta_si);
-        jrb_AccionCorecta_si.setSelected(true);
-        jrb_AccionCorecta_si.setText("Si");
-
-        buttonGroup12.add(jRadioButton13);
-        jRadioButton13.setText("No");
-
         jLabel22.setText("¿Cuantos objetos pudo nombrar?");
 
         jcb_ObjetosNombrados.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0", "1", "2" }));
+
+        jcb_clasificacionaccion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0", "1", "2", "3" }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -648,6 +642,7 @@ public class dlg_Minimental extends javax.swing.JDialog {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel20)
                                 .addGap(137, 137, 137)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jrb_OrdenCorrecta_si)
@@ -658,15 +653,12 @@ public class dlg_Minimental extends javax.swing.JDialog {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jRadioButton2))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jrb_AccionCorecta_si)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRadioButton13))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jcb_ObjetosNombrados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jrb_EscribeFrase_si))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRadioButton9)))))
+                                .addComponent(jRadioButton9))
+                            .addComponent(jcb_clasificacionaccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(423, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -680,8 +672,7 @@ public class dlg_Minimental extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel21)
-                    .addComponent(jrb_AccionCorecta_si)
-                    .addComponent(jRadioButton13))
+                    .addComponent(jcb_clasificacionaccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
@@ -696,7 +687,7 @@ public class dlg_Minimental extends javax.swing.JDialog {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel22)
                     .addComponent(jcb_ObjetosNombrados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(272, Short.MAX_VALUE))
+                .addContainerGap(271, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Lenguaje", jPanel2);
@@ -721,7 +712,7 @@ public class dlg_Minimental extends javax.swing.JDialog {
                 .addComponent(jrb_Dibujo_si)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jRadioButton16)
-                .addContainerGap(559, Short.MAX_VALUE))
+                .addContainerGap(619, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -796,15 +787,14 @@ public class dlg_Minimental extends javax.swing.JDialog {
                                 .addComponent(jLabel28)
                                 .addGap(171, 171, 171)))
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel5Layout.createSequentialGroup()
-                                    .addComponent(jrb_QuejaPaciente_si)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jRadioButton22))
-                                .addGroup(jPanel5Layout.createSequentialGroup()
-                                    .addComponent(jrb_OlvidosProgresivo_si)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jRadioButton21)))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jrb_QuejaPaciente_si)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jRadioButton22))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jrb_OlvidosProgresivo_si)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jRadioButton21))
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addComponent(jrb_OlvidaHechosRecientes_si)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -821,7 +811,7 @@ public class dlg_Minimental extends javax.swing.JDialog {
                         .addComponent(jrb_MinimizaOlvidos_si)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jRadioButton24)))
-                .addContainerGap(372, Short.MAX_VALUE))
+                .addContainerGap(432, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -888,6 +878,12 @@ public class dlg_Minimental extends javax.swing.JDialog {
         cEntrevista Entrevista = new cEntrevista();
         Entrevista.setEscolaridad(jcb_Escolaridad.getSelectedIndex());
         Entrevista.setFechaEntrevista(Integer.parseInt(jcb_entrevista_dia.getSelectedItem().toString()), jcb_entrevista_mes.getSelectedIndex(), Integer.parseInt(jcb_entrevista_ano.getSelectedItem().toString()));
+        Entrevista.setPacienteConProblemasAuditivo(jrb_respuesta_problemas_auditivos_si.isSelected());
+        Entrevista.setPacienteDeprimido(jrb_respuesta_deprimido_si.isSelected());
+        Entrevista.setPacienteAnsioso(jrb_respuesta_ansioso_si.isSelected());
+        Entrevista.setHayImpactoEnCaracter(jrb_respuesta_impacto_caracter_si.isSelected());
+        Entrevista.setHayImpactoFuncional(jrb_respuesta_impacto_funcional_si.isSelected());
+        
         Entrevista.setDiaDeSemana(jcb_respuesta_diasemana.getSelectedIndex());
         Entrevista.setFecha(Integer.parseInt(jcb_respuestas_dia.getSelectedItem().toString()), jcb_respuestas_mes.getSelectedIndex(), Integer.parseInt(jcb_respuestas_ano.getSelectedItem().toString()));
         Entrevista.setEstacion(jcb_respuesta_estacion.getSelectedIndex());
@@ -900,6 +896,25 @@ public class dlg_Minimental extends javax.swing.JDialog {
         Entrevista.setConsultorioEnEntrepiso(jrb_respuesta_entrepiso_si.isSelected());
         Entrevista.setPiso(jcb_respuesta_piso.getSelectedIndex());
         Entrevista.setPisoDelConsultorio(jrb_respuesta_piso_consultorio.getSelectedIndex());
+        
+        Entrevista.setPalabrasRepetidas(jcb_PalabrasRepetidas.getSelectedIndex());
+        Entrevista.setClasificacionAtencion(jcb_ClasificacionAtencion.getSelectedIndex());
+        Entrevista.setPalabrasRecordadas(jcb_PalabrasRecordadas.getSelectedIndex());
+        
+        Entrevista.setRepiteFraseCorrectamente(jrb_RepiteFrase_si.isSelected());
+        Entrevista.setClasificacionAccion(jcb_clasificacionaccion.getSelectedIndex());
+        Entrevista.setCumpleOrdenCorrectamente(jrb_OrdenCorrecta_si.isSelected());
+        Entrevista.setEscribeCorrectamenteFrase(jrb_EscribeFrase_si.isSelected());
+        Entrevista.setCosasNombradas(jcb_ObjetosNombrados.getSelectedIndex());
+        
+        Entrevista.setCopiaCorrectamenteDibujo(jrb_Dibujo_si.isSelected());
+        
+        Entrevista.setOlvidaHechosRecientes(jrb_OlvidaHechosRecientes_si.isSelected());
+        Entrevista.setOlvidoProgresa(jrb_OlvidosProgresivo_si.isSelected());
+        Entrevista.setQuejaOlvidoPaciente(jrb_QuejaPaciente_si.isSelected());
+        Entrevista.setQuejaOlvidoFamiliar(jrb_QuejaFamiliares_si.isSelected());
+        
+        Entrevista.setPacienteMinimizaOlvidos(jrb_MinimizaOlvidos_si.isSelected());
        
 
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -1015,7 +1030,6 @@ public class dlg_Minimental extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JRadioButton jRadioButton10;
     private javax.swing.JRadioButton jRadioButton12;
-    private javax.swing.JRadioButton jRadioButton13;
     private javax.swing.JRadioButton jRadioButton14;
     private javax.swing.JRadioButton jRadioButton16;
     private javax.swing.JRadioButton jRadioButton17;
@@ -1041,6 +1055,7 @@ public class dlg_Minimental extends javax.swing.JDialog {
     private javax.swing.JComboBox jcb_ObjetosNombrados;
     private javax.swing.JComboBox jcb_PalabrasRecordadas;
     private javax.swing.JComboBox jcb_PalabrasRepetidas;
+    private javax.swing.JComboBox jcb_clasificacionaccion;
     private javax.swing.JComboBox jcb_entrevista_ano;
     private javax.swing.JComboBox jcb_entrevista_dia;
     private javax.swing.JComboBox jcb_entrevista_mes;
@@ -1050,7 +1065,6 @@ public class dlg_Minimental extends javax.swing.JDialog {
     private javax.swing.JComboBox jcb_respuestas_ano;
     private javax.swing.JComboBox jcb_respuestas_dia;
     private javax.swing.JComboBox jcb_respuestas_mes;
-    private javax.swing.JRadioButton jrb_AccionCorecta_si;
     private javax.swing.JRadioButton jrb_Dibujo_si;
     private javax.swing.JRadioButton jrb_EscribeFrase_si;
     private javax.swing.JRadioButton jrb_MinimizaOlvidos_si;
@@ -1070,7 +1084,7 @@ public class dlg_Minimental extends javax.swing.JDialog {
     private javax.swing.JRadioButton jrb_respuesta_impacto_funcional_si;
     private javax.swing.JRadioButton jrb_respuesta_pais_si;
     private javax.swing.JComboBox jrb_respuesta_piso_consultorio;
-    private javax.swing.JRadioButton jrb_respuesta_problrmas_auditivos_si;
+    private javax.swing.JRadioButton jrb_respuesta_problemas_auditivos_si;
     private javax.swing.JRadioButton jrb_respuesta_traidotercero_si;
     private javax.swing.JRadioButton jrb_respuestas_lugar_si;
     // End of variables declaration//GEN-END:variables
