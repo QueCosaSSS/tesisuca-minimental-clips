@@ -476,6 +476,11 @@ public class cEntrevista {
         return Fecha.get(Calendar.YEAR) == FechaEntrevista.get(Calendar.YEAR);
     }
     
+    public Boolean ContestaAnoAnterior()
+    {
+        return Fecha.get(Calendar.YEAR) == (FechaEntrevista.get(Calendar.YEAR)-1);
+    }
+    
     public Boolean ContestaPisoCorrecto()
     {
         return this.getPiso() == this.PisoDelConsultorio;
