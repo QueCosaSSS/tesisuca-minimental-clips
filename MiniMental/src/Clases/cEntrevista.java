@@ -49,9 +49,7 @@ public class cEntrevista {
     private Boolean QuejaOlvidoFamiliar;
     private Boolean PacienteMinimizaOlvidos;
     private Boolean HayImpactoFuncional;
-    private Boolean HayImpactoEnCaracter;
-    
-    
+    private Boolean HayImpactoEnCaracter;    
 
     public int getDiaDeSemana() {
         return DiaDeSemana;
