@@ -12,8 +12,8 @@ import java.util.GregorianCalendar;
  * @author santiago
  */
 public class cEntrevista {
+    // <editor-fold defaultstate="collapsed" desc="Constructores">
 
-// <editor-fold defaultstate="collapsed" desc="Constructores">
     public cEntrevista() {
         this.FechaEntrevista = new GregorianCalendar();
     }
@@ -28,13 +28,22 @@ public class cEntrevista {
         this.FechaEntrevista = t;
     }
 // </editor-fold>
-    
-// <editor-fold defaultstate="collapsed" desc="Atributos">
+    // <editor-fold defaultstate="collapsed" desc="Atributos">
     private int Escolaridad;
     private Calendar FechaEntrevista;
-    // </editor-fold> 
+    private Boolean PacienteConProblemasAuditivo;
+    private Boolean PacienteDeprimido;
+    private Boolean OlvidaHechosRecientes;
+    private Boolean OlvidoProgresa;
+    private Boolean QuejaOlvidoPaciente;
+    private Boolean QuejaOlvidoFamiliar;
+    private Boolean PacienteMinimizaOlvidos;
+    private Boolean HayImpactoFuncional;
+    private Boolean HayImpactoEnCaracter;
+    private Boolean PacienteAnsioso;
+    // </editor-fold>
+    // <editor-fold defaultstate="collapsed" desc="GetSet">
 
-// <editor-fold defaultstate="collapsed" desc="GetSet">
     public void setFechaEntrevista(int d, int m, int a) {
         GregorianCalendar t = new GregorianCalendar();
         t.clear();
@@ -57,9 +66,89 @@ public class cEntrevista {
     public int getEscolaridad() {
         return Escolaridad;
     }
-    // </editor-fold>
 
-// <editor-fold defaultstate="collapsed" desc="Metodos">  
+    public Boolean getPacienteConProblemasAuditivo() {
+        return PacienteConProblemasAuditivo;
+    }
+
+    public void setPacienteConProblemasAuditivo(Boolean PacienteConProblemasAuditivo) {
+        this.PacienteConProblemasAuditivo = PacienteConProblemasAuditivo;
+    }
+
+    public Boolean getPacienteDeprimido() {
+        return PacienteDeprimido;
+    }
+
+    public void setPacienteDeprimido(Boolean PacienteDeprimido) {
+        this.PacienteDeprimido = PacienteDeprimido;
+    }
+
+    public Boolean getPacienteAnsioso() {
+        return PacienteAnsioso;
+    }
+
+    public void setPacienteAnsioso(Boolean PacienteAnsioso) {
+        this.PacienteAnsioso = PacienteAnsioso;
+    }
+
+    public Boolean getOlvidaHechosRecientes() {
+        return OlvidaHechosRecientes;
+    }
+
+    public void setOlvidaHechosRecientes(Boolean OlvidaHechosRecientes) {
+        this.OlvidaHechosRecientes = OlvidaHechosRecientes;
+    }
+
+    public Boolean getOlvidoProgresa() {
+        return OlvidoProgresa;
+    }
+
+    public void setOlvidoProgresa(Boolean OlvidoProgresa) {
+        this.OlvidoProgresa = OlvidoProgresa;
+    }
+
+    public Boolean getQuejaOlvidoPaciente() {
+        return QuejaOlvidoPaciente;
+    }
+
+    public void setQuejaOlvidoPaciente(Boolean QuejaOlvidoPaciente) {
+        this.QuejaOlvidoPaciente = QuejaOlvidoPaciente;
+    }
+
+    public Boolean getQuejaOlvidoFamiliar() {
+        return QuejaOlvidoFamiliar;
+    }
+
+    public void setQuejaOlvidoFamiliar(Boolean QuejaOlvidoFamiliar) {
+        this.QuejaOlvidoFamiliar = QuejaOlvidoFamiliar;
+    }
+
+    public Boolean getPacienteMinimizaOlvidos() {
+        return PacienteMinimizaOlvidos;
+    }
+
+    public void setPacienteMinimizaOlvidos(Boolean PacienteMinimizaOlvidos) {
+        this.PacienteMinimizaOlvidos = PacienteMinimizaOlvidos;
+    }
+
+    public Boolean getHayImpactoFuncional() {
+        return HayImpactoFuncional;
+    }
+
+    public void setHayImpactoFuncional(Boolean HayImpactoFuncional) {
+        this.HayImpactoFuncional = HayImpactoFuncional;
+    }
+
+    public Boolean getHayImpactoEnCaracter() {
+        return HayImpactoEnCaracter;
+    }
+
+    public void setHayImpactoEnCaracter(Boolean HayImpactoEnCaracter) {
+        this.HayImpactoEnCaracter = HayImpactoEnCaracter;
+    }
+    // </editor-fold>
+    // <editor-fold defaultstate="collapsed" desc="Metodos">  
+
     public Boolean EsUltimoDiaMes() {
         return (SameDay(FechaEntrevista, UltimoDiaMes(FechaEntrevista.get(Calendar.MONTH))));
     }
@@ -287,8 +376,7 @@ public class cEntrevista {
         return cEstacion.Verano;
     }
 // </editor-fold>
-    
-// <editor-fold defaultstate="collapsed" desc="Orientacion">
+    // <editor-fold defaultstate="collapsed" desc="Orientacion">
 // <editor-fold defaultstate="collapsed" desc="OrientacionTemporal">
     private int DiaDeSemana;
     private Calendar Fecha;
@@ -488,8 +576,11 @@ public class cEntrevista {
     // </editor-fold>
 // </editor-fold>
 // </editor-fold>
-    
-// <editor-fold defaultstate="collapsed" desc="Resto Entrevista MOVER">    
+    // <editor-fold defaultstate="collapsed" desc="Memoria">    
+    // <editor-fold defaultstate="collapsed" desc="Fijacion">    
+    private int PalabrasRepetidas;
+    // <editor-fold defaultstate="collapsed" desc="Fijacion_GetSet">    
+
     public int getPalabrasRepetidas() {
         return PalabrasRepetidas;
     }
@@ -497,22 +588,11 @@ public class cEntrevista {
     public void setPalabrasRepetidas(int PalabrasRepetidas) {
         this.PalabrasRepetidas = PalabrasRepetidas;
     }
-
-    public Boolean getPacienteConProblemasAuditivo() {
-        return PacienteConProblemasAuditivo;
-    }
-
-    public void setPacienteConProblemasAuditivo(Boolean PacienteConProblemasAuditivo) {
-        this.PacienteConProblemasAuditivo = PacienteConProblemasAuditivo;
-    }
-
-    public Boolean getPacienteDeprimido() {
-        return PacienteDeprimido;
-    }
-
-    public void setPacienteDeprimido(Boolean PacienteDeprimido) {
-        this.PacienteDeprimido = PacienteDeprimido;
-    }
+// </editor-fold>
+// </editor-fold>
+    // <editor-fold defaultstate="collapsed" desc="Atencion"> 
+    private int ClasificacionAtencion;
+    // <editor-fold defaultstate="collapsed" desc="Atencion_GetSet">   
 
     public int getClasificacionAtencion() {
         return ClasificacionAtencion;
@@ -521,6 +601,11 @@ public class cEntrevista {
     public void setClasificacionAtencion(int ClasificacionAtencion) {
         this.ClasificacionAtencion = ClasificacionAtencion;
     }
+    // </editor-fold>
+    // </editor-fold>
+    // <editor-fold defaultstate="collapsed" desc="Recuerdo">
+    private int PalabrasRecordadas;
+    // <editor-fold defaultstate="collapsed" desc="Recuerdo_GetSet">
 
     public int getPalabrasRecordadas() {
         return PalabrasRecordadas;
@@ -529,6 +614,16 @@ public class cEntrevista {
     public void setPalabrasRecordadas(int PalabrasRecordadas) {
         this.PalabrasRecordadas = PalabrasRecordadas;
     }
+// </editor-fold>
+// </editor-fold>
+    // </editor-fold>
+    // <editor-fold defaultstate="collapsed" desc="Lenguaje">
+    private Boolean RepitaFraseCorrectamente;
+    private Boolean CumpleOrdenCorrectamente;
+    private Boolean EscribeCorrectamenteFrase;
+    private int ClasificacionAccion;
+    private int CosasNombradas;
+    // <editor-fold defaultstate="collapsed" desc="Lenguaje_GetSet">
 
     public Boolean getRepitaFraseCorrectamente() {
         return RepitaFraseCorrectamente;
@@ -544,14 +639,6 @@ public class cEntrevista {
 
     public void setCumpleOrdenCorrectamente(Boolean CumpleOrdenCorrectamente) {
         this.CumpleOrdenCorrectamente = CumpleOrdenCorrectamente;
-    }
-
-    public Boolean getPacienteAnsioso() {
-        return PacienteAnsioso;
-    }
-
-    public void setPacienteAnsioso(Boolean PacienteAnsioso) {
-        this.PacienteAnsioso = PacienteAnsioso;
     }
 
     public Boolean getEscribeCorrectamenteFrase() {
@@ -577,6 +664,11 @@ public class cEntrevista {
     public void setCosasNombradas(int CosasNombradas) {
         this.CosasNombradas = CosasNombradas;
     }
+// </editor-fold>    
+// </editor-fold>    
+    // <editor-fold defaultstate="collapsed" desc="Dibujo">    
+    private Boolean CopiaCorrectamenteDibujo;
+    // <editor-fold defaultstate="collapsed" desc="Dibujo_GetSet">    
 
     public Boolean getCopiaCorrectamenteDibujo() {
         return CopiaCorrectamenteDibujo;
@@ -585,80 +677,6 @@ public class cEntrevista {
     public void setCopiaCorrectamenteDibujo(Boolean CopiaCorrectamenteDibujo) {
         this.CopiaCorrectamenteDibujo = CopiaCorrectamenteDibujo;
     }
-
-    public Boolean getOlvidaHechosRecientes() {
-        return OlvidaHechosRecientes;
-    }
-
-    public void setOlvidaHechosRecientes(Boolean OlvidaHechosRecientes) {
-        this.OlvidaHechosRecientes = OlvidaHechosRecientes;
-    }
-
-    public Boolean getOlvidoProgresa() {
-        return OlvidoProgresa;
-    }
-
-    public void setOlvidoProgresa(Boolean OlvidoProgresa) {
-        this.OlvidoProgresa = OlvidoProgresa;
-    }
-
-    public Boolean getQuejaOlvidoPaciente() {
-        return QuejaOlvidoPaciente;
-    }
-
-    public void setQuejaOlvidoPaciente(Boolean QuejaOlvidoPaciente) {
-        this.QuejaOlvidoPaciente = QuejaOlvidoPaciente;
-    }
-
-    public Boolean getQuejaOlvidoFamiliar() {
-        return QuejaOlvidoFamiliar;
-    }
-
-    public void setQuejaOlvidoFamiliar(Boolean QuejaOlvidoFamiliar) {
-        this.QuejaOlvidoFamiliar = QuejaOlvidoFamiliar;
-    }
-
-    public Boolean getPacienteMinimizaOlvidos() {
-        return PacienteMinimizaOlvidos;
-    }
-
-    public void setPacienteMinimizaOlvidos(Boolean PacienteMinimizaOlvidos) {
-        this.PacienteMinimizaOlvidos = PacienteMinimizaOlvidos;
-    }
-
-    public Boolean getHayImpactoFuncional() {
-        return HayImpactoFuncional;
-    }
-
-    public void setHayImpactoFuncional(Boolean HayImpactoFuncional) {
-        this.HayImpactoFuncional = HayImpactoFuncional;
-    }
-
-    public Boolean getHayImpactoEnCaracter() {
-        return HayImpactoEnCaracter;
-    }
-
-    public void setHayImpactoEnCaracter(Boolean HayImpactoEnCaracter) {
-        this.HayImpactoEnCaracter = HayImpactoEnCaracter;
-    }
-    private int PalabrasRepetidas;
-    private Boolean PacienteConProblemasAuditivo;
-    private Boolean PacienteDeprimido;
-    private int ClasificacionAtencion;
-    private int PalabrasRecordadas;
-    private Boolean RepitaFraseCorrectamente;
-    private Boolean CumpleOrdenCorrectamente;
-    private Boolean PacienteAnsioso;
-    private Boolean EscribeCorrectamenteFrase;
-    private int ClasificacionAccion;
-    private int CosasNombradas;
-    private Boolean CopiaCorrectamenteDibujo;
-    private Boolean OlvidaHechosRecientes;
-    private Boolean OlvidoProgresa;
-    private Boolean QuejaOlvidoPaciente;
-    private Boolean QuejaOlvidoFamiliar;
-    private Boolean PacienteMinimizaOlvidos;
-    private Boolean HayImpactoFuncional;
-    private Boolean HayImpactoEnCaracter;
-// </editor-fold>
+    // </editor-fold>
+    // </editor-fold>
 }
