@@ -13,112 +13,9 @@ import java.util.GregorianCalendar;
  */
 public class cEntrevista {
 
+// <editor-fold defaultstate="collapsed" desc="Constructores">
     public cEntrevista() {
         this.FechaEntrevista = new GregorianCalendar();
-    }
-    
-    private Boolean TraidoPorTercero;
-    private Boolean ConsultorioEnAvenida;
-    private Boolean ConsultorioEnEntrepiso;
-    private int Escolaridad;
-    private int PisoDelConsultorio;
-    private Calendar FechaEntrevista;
-    private int DiaDeSemana;
-    private Calendar Fecha;
-    private int Estacion;
-    private Boolean Lugar;
-    private Boolean Calle;
-    private int Piso;
-    private Boolean Ciudad;
-    private Boolean Pais;
-    private int PalabrasRepetidas;
-    private Boolean PacienteConProblemasAuditivo;
-    private Boolean PacienteDeprimido;
-    private int ClasificacionAtencion;
-    private int PalabrasRecordadas;
-    private Boolean RepitaFraseCorrectamente;
-    private Boolean CumpleOrdenCorrectamente;
-    private Boolean PacienteAnsioso;
-    private Boolean EscribeCorrectamenteFrase;
-    private int ClasificacionAccion;
-    private int CosasNombradas;
-    private Boolean CopiaCorrectamenteDibujo;
-    private Boolean OlvidaHechosRecientes;
-    private Boolean OlvidoProgresa;
-    private Boolean QuejaOlvidoPaciente;
-    private Boolean QuejaOlvidoFamiliar;
-    private Boolean PacienteMinimizaOlvidos;
-    private Boolean HayImpactoFuncional;
-    private Boolean HayImpactoEnCaracter;    
-
-    public int getDiaDeSemana() {
-        return DiaDeSemana;
-    }
-
-    public Calendar getFecha() {
-        return Fecha;
-    }
-
-    public int getEstacion() {
-        return Estacion;
-    }
-
-    public Boolean getLugar() {
-        return Lugar;
-    }
-
-    public Boolean getCalle() {
-        return Calle;
-    }
-
-    public int getPiso() {
-        return Piso;
-    }
-
-    public Boolean getCiudad() {
-        return Ciudad;
-    }
-
-    public Boolean getPais() {
-        return Pais;
-    }
-
-    public void setDiaDeSemana(int DiaDeSemana) {
-        this.DiaDeSemana = DiaDeSemana;
-    }
-
-    public void setFecha(int d, int m, int a) {
-        GregorianCalendar t = new GregorianCalendar();
-        t.clear();
-        t.set(Calendar.YEAR, a);
-        t.set(Calendar.MONTH, m);
-        t.set(Calendar.YEAR, a);
-
-        this.Fecha = t;
-    }
-
-    public void setEstacion(int Estacion) {
-        this.Estacion = Estacion;
-    }
-
-    public void setLugar(Boolean Lugar) {
-        this.Lugar = Lugar;
-    }
-
-    public void setCalle(Boolean Calle) {
-        this.Calle = Calle;
-    }
-
-    public void setPiso(int Piso) {
-        this.Piso = Piso;
-    }
-
-    public void setCiudad(Boolean Ciudad) {
-        this.Ciudad = Ciudad;
-    }
-
-    public void setPais(Boolean Pais) {
-        this.Pais = Pais;
     }
 
     public cEntrevista(int d, int m, int a) {
@@ -130,7 +27,14 @@ public class cEntrevista {
 
         this.FechaEntrevista = t;
     }
+// </editor-fold>
+    
+// <editor-fold defaultstate="collapsed" desc="Atributos">
+    private int Escolaridad;
+    private Calendar FechaEntrevista;
+    // </editor-fold> 
 
+// <editor-fold defaultstate="collapsed" desc="GetSet">
     public void setFechaEntrevista(int d, int m, int a) {
         GregorianCalendar t = new GregorianCalendar();
         t.clear();
@@ -153,7 +57,9 @@ public class cEntrevista {
     public int getEscolaridad() {
         return Escolaridad;
     }
+    // </editor-fold>
 
+// <editor-fold defaultstate="collapsed" desc="Metodos">  
     public Boolean EsUltimoDiaMes() {
         return (SameDay(FechaEntrevista, UltimoDiaMes(FechaEntrevista.get(Calendar.MONTH))));
     }
@@ -333,30 +239,6 @@ public class cEntrevista {
         return EsUnaSemanDespuesDeInvierno() || EsUnaSemanDespuesDeOtono() || EsUnaSemanDespuesDePrimavera() || EsUnaSemanDespuesDeVerano();
     }
 
-    public void setTraidoPorTercero(Boolean TraidoPorTercero) {
-        this.TraidoPorTercero = TraidoPorTercero;
-    }
-
-    public void setConsultorioEnAvenida(Boolean ConsultorioEnAvenida) {
-        this.ConsultorioEnAvenida = ConsultorioEnAvenida;
-    }
-
-    public void setConsultorioEnEntrepiso(Boolean ConsultorioEnEntrepiso) {
-        this.ConsultorioEnEntrepiso = ConsultorioEnEntrepiso;
-    }
-
-    public Boolean getTraidoPorTercero() {
-        return TraidoPorTercero;
-    }
-
-    public Boolean getConsultorioEnAvenida() {
-        return ConsultorioEnAvenida;
-    }
-
-    public Boolean getConsultorioEnEntrepiso() {
-        return ConsultorioEnEntrepiso;
-    }
-
     private int EstacionEntrevista() {
         GregorianCalendar t_d = new GregorianCalendar();
         t_d.clear();
@@ -404,6 +286,78 @@ public class cEntrevista {
 
         return cEstacion.Verano;
     }
+// </editor-fold>
+    
+// <editor-fold defaultstate="collapsed" desc="Orientacion">
+// <editor-fold defaultstate="collapsed" desc="OrientacionTemporal">
+    private int DiaDeSemana;
+    private Calendar Fecha;
+    private int Estacion;
+// <editor-fold defaultstate="collapsed" desc="OrientacionTemporal_GetSet">
+
+    public int getDiaDeSemana() {
+        return DiaDeSemana;
+    }
+
+    public Calendar getFecha() {
+        return Fecha;
+    }
+
+    public int getEstacion() {
+        return Estacion;
+    }
+
+    public void setDiaDeSemana(int DiaDeSemana) {
+        this.DiaDeSemana = DiaDeSemana;
+    }
+
+    public void setFecha(int d, int m, int a) {
+        GregorianCalendar t = new GregorianCalendar();
+        t.clear();
+        t.set(Calendar.YEAR, a);
+        t.set(Calendar.MONTH, m);
+        t.set(Calendar.YEAR, a);
+
+        this.Fecha = t;
+    }
+
+    public void setEstacion(int Estacion) {
+        this.Estacion = Estacion;
+    }
+// </editor-fold>    
+
+// <editor-fold defaultstate="collapsed" desc="OrientacionTemporal_Propiedades">
+    public Boolean ContestaMesSiguiente() {
+        if ((this.FechaEntrevista.get(Calendar.MONTH) == 11) && (this.getFecha().get(Calendar.MONTH) == 0)) {
+            return true;
+        } else {
+            if (this.FechaEntrevista.get(Calendar.MONTH) == (this.getFecha().get(Calendar.MONTH) - 1)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    public Boolean ContestaMesAnterior() {
+        if ((this.FechaEntrevista.get(Calendar.MONTH) == 0) && (this.getFecha().get(Calendar.MONTH) == 11)) {
+            return true;
+        } else {
+            if (this.FechaEntrevista.get(Calendar.MONTH) == (this.getFecha().get(Calendar.MONTH) + 1)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    public Boolean ContestaAnoCorrecto() {
+        return Fecha.get(Calendar.YEAR) == FechaEntrevista.get(Calendar.YEAR);
+    }
+
+    public Boolean ContestaAnoAnterior() {
+        return Fecha.get(Calendar.YEAR) == (FechaEntrevista.get(Calendar.YEAR) - 1);
+    }
 
     public Boolean ContestaEstacionSiguiente() {
         if ((this.EstacionEntrevista() == cEstacion.Primavera) && (this.getEstacion() == cEstacion.Verano)) {
@@ -436,6 +390,83 @@ public class cEntrevista {
         }
         return false;
     }
+// </editor-fold>    
+// </editor-fold>
+// <editor-fold defaultstate="collapsed" desc="OrientacionEspacial">
+    private Boolean TraidoPorTercero;
+    private Boolean ConsultorioEnAvenida;
+    private Boolean ConsultorioEnEntrepiso;
+    private int PisoDelConsultorio;
+    private Boolean Lugar;
+    private Boolean Calle;
+    private int Piso;
+    private Boolean Ciudad;
+    private Boolean Pais;
+
+    // <editor-fold defaultstate="collapsed" desc="OrientacionEspacial_GetSet">
+    public Boolean getLugar() {
+        return Lugar;
+    }
+
+    public Boolean getCalle() {
+        return Calle;
+    }
+
+    public int getPiso() {
+        return Piso;
+    }
+
+    public Boolean getCiudad() {
+        return Ciudad;
+    }
+
+    public Boolean getPais() {
+        return Pais;
+    }
+
+    public void setLugar(Boolean Lugar) {
+        this.Lugar = Lugar;
+    }
+
+    public void setCalle(Boolean Calle) {
+        this.Calle = Calle;
+    }
+
+    public void setPiso(int Piso) {
+        this.Piso = Piso;
+    }
+
+    public void setCiudad(Boolean Ciudad) {
+        this.Ciudad = Ciudad;
+    }
+
+    public void setPais(Boolean Pais) {
+        this.Pais = Pais;
+    }
+
+    public void setTraidoPorTercero(Boolean TraidoPorTercero) {
+        this.TraidoPorTercero = TraidoPorTercero;
+    }
+
+    public void setConsultorioEnAvenida(Boolean ConsultorioEnAvenida) {
+        this.ConsultorioEnAvenida = ConsultorioEnAvenida;
+    }
+
+    public void setConsultorioEnEntrepiso(Boolean ConsultorioEnEntrepiso) {
+        this.ConsultorioEnEntrepiso = ConsultorioEnEntrepiso;
+    }
+
+    public Boolean getTraidoPorTercero() {
+        return TraidoPorTercero;
+    }
+
+    public Boolean getConsultorioEnAvenida() {
+        return ConsultorioEnAvenida;
+    }
+
+    public Boolean getConsultorioEnEntrepiso() {
+        return ConsultorioEnEntrepiso;
+    }
 
     public int getPisoDelConsultorio() {
         return PisoDelConsultorio;
@@ -445,50 +476,20 @@ public class cEntrevista {
         this.PisoDelConsultorio = PisoDelConsultorio;
     }
 
-    public Boolean ContestaMesSiguiente() {
-        if ((this.FechaEntrevista.get(Calendar.MONTH) == 11) && (this.getFecha().get(Calendar.MONTH) == 0)) {
-            return true;
-        } else {
-            if (this.FechaEntrevista.get(Calendar.MONTH) == (this.getFecha().get(Calendar.MONTH) - 1)) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-    }
-
-    public Boolean ContestaMesAnterior() {
-        if ((this.FechaEntrevista.get(Calendar.MONTH) == 0) && (this.getFecha().get(Calendar.MONTH) == 11)) {
-            return true;
-        } else {
-            if (this.FechaEntrevista.get(Calendar.MONTH) == (this.getFecha().get(Calendar.MONTH) + 1)) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-    }
-    
-    public Boolean ContestaAnoCorrecto()
-    {
-        return Fecha.get(Calendar.YEAR) == FechaEntrevista.get(Calendar.YEAR);
-    }
-    
-    public Boolean ContestaAnoAnterior()
-    {
-        return Fecha.get(Calendar.YEAR) == (FechaEntrevista.get(Calendar.YEAR)-1);
-    }
-    
-    public Boolean ContestaPisoCorrecto()
-    {
+    public Boolean ContestaPisoCorrecto() {
         return this.getPiso() == this.PisoDelConsultorio;
     }
-    
-    public int DiferenciaEntrePisoContestadoReal()
-    {
+
+    // </editor-fold>
+// <editor-fold defaultstate="collapsed" desc="OrientacionEspacial_Propiedades">
+    public int DiferenciaEntrePisoContestadoReal() {
         return Math.abs(this.getPiso() - this.PisoDelConsultorio);
     }
-
+    // </editor-fold>
+// </editor-fold>
+// </editor-fold>
+    
+// <editor-fold defaultstate="collapsed" desc="Resto Entrevista MOVER">    
     public int getPalabrasRepetidas() {
         return PalabrasRepetidas;
     }
@@ -640,5 +641,24 @@ public class cEntrevista {
     public void setHayImpactoEnCaracter(Boolean HayImpactoEnCaracter) {
         this.HayImpactoEnCaracter = HayImpactoEnCaracter;
     }
-            
+    private int PalabrasRepetidas;
+    private Boolean PacienteConProblemasAuditivo;
+    private Boolean PacienteDeprimido;
+    private int ClasificacionAtencion;
+    private int PalabrasRecordadas;
+    private Boolean RepitaFraseCorrectamente;
+    private Boolean CumpleOrdenCorrectamente;
+    private Boolean PacienteAnsioso;
+    private Boolean EscribeCorrectamenteFrase;
+    private int ClasificacionAccion;
+    private int CosasNombradas;
+    private Boolean CopiaCorrectamenteDibujo;
+    private Boolean OlvidaHechosRecientes;
+    private Boolean OlvidoProgresa;
+    private Boolean QuejaOlvidoPaciente;
+    private Boolean QuejaOlvidoFamiliar;
+    private Boolean PacienteMinimizaOlvidos;
+    private Boolean HayImpactoFuncional;
+    private Boolean HayImpactoEnCaracter;
+// </editor-fold>
 }
