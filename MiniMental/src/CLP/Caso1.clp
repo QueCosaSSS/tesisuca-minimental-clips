@@ -20,7 +20,7 @@
 
     (slot OrientacionTemporal_Ano (type STRING) (allowed-strings "SI" "NO") )
     (slot EsPrimerQuincenaAno (type STRING) (allowed-strings "SI" "NO"))    
-
+    (slot ContestaAnoAnterior (type STRING) (allowed-strings "SI" "NO"))    
 )
 
 (deftemplate OrientacionTemporal
@@ -30,7 +30,7 @@
     (slot cAno (type NUMBER) )
 )
 
-(deftemplate OrientacionTemporal
+(deftemplate Orientacion
     (slot cOrientacionTemporal (type NUMBER))
 )
 
@@ -55,13 +55,13 @@
 (defrule REGLA-CLIPS-OT-N5-Fecha-1
 (Entrevista (OrientacionTemporal_Fecha "NO"))
 =>
-(assert (MiniMental_Calculado (cOrientacionTemporal_Fecha -0.5))) (printout t "REGLA-CLIPS-OT-N5-Fecha-1" crlf)
+(assert (OrientacionTemporal (cFecha -0.5))) (printout t "REGLA-CLIPS-OT-N5-Fecha-1" crlf)
 )
 
 (defrule REGLA-CLIPS-OT-N5-Fecha-2 
 (Entrevista (OrientacionTemporal_Fecha "SI")) 
 =>
-(assert (MiniMental_Calculado (cOrientacionTemporal_Fecha 1.0))) (printout t "REGLA-CLIPS-OT-N5-Fecha-2" crlf)
+(assert (OrientacionTemporal (cFecha 1.0))) (printout t "REGLA-CLIPS-OT-N5-Fecha-2" crlf)
 )
 
 (defrule Regla-CLIPS-OT-N5-Estacion-1
@@ -73,7 +73,7 @@
  (Entrevista (EsUnaSemanaDespuesCambioEstacion "NO"))
  (Entrevista (ContestaEstacionAnterior "NO"))
 =>
- (assert (MiniMental_Calculado (cOrientacionTemporal_Estacion "NO"))) (printout t "Regla-CLIPS-OT-N5-Estacion-1 " crlf)
+ (assert (OrientacionTemporal (cEstacion "NO"))) (printout t "Regla-CLIPS-OT-N5-Estacion-1 " crlf)
 )
  
 (defrule Regla-CLIPS-OT-N5-Estacion-2
@@ -85,7 +85,7 @@
  (Entrevista (EsUnaSemanaDespuesCambioEstacion "NO"))
  (Entrevista (ContestaEstacionAnterior "NO"))
  =>
- (assert (MiniMental_Calculado (cOrientacionTemporal_Estacion "SI"))) (printout t "Regla-CLIPS-OT-N5-Estacion-2 " crlf)
+ (assert (OrientacionTemporal (cEstacion "SI"))) (printout t "Regla-CLIPS-OT-N5-Estacion-2 " crlf)
 )
  
 (defrule Regla-CLIPS-OT-N5-Estacion-3
@@ -97,7 +97,7 @@
  (Entrevista (EsUnaSemanaDespuesCambioEstacion "NO"))
  (Entrevista (ContestaEstacionAnterior "NO"))
  =>
- (assert (MiniMental_Calculado (cOrientacionTemporal_Estacion "SI"))) (printout t "Regla-CLIPS-OT-N5-Estacion-3 " crlf)
+ (assert (OrientacionTemporal (cEstacion "SI"))) (printout t "Regla-CLIPS-OT-N5-Estacion-3 " crlf)
  ) 
 
 (defrule Regla-CLIPS-OT-N5-Estacion-5
@@ -109,7 +109,7 @@
  (Entrevista (EsUnaSemanaDespuesCambioEstacion "NO"))
  (Entrevista (ContestaEstacionAnterior "NO")) 
  => 
- (assert (MiniMental_Calculado (cOrientacionTemporal_Estacion "SI"))) (printout t "Regla-CLIPS-OT-N5-Estacion-5 " crlf) 
+ (assert (OrientacionTemporal (cEstacion "SI"))) (printout t "Regla-CLIPS-OT-N5-Estacion-5 " crlf) 
  ) 
  
 
@@ -121,7 +121,7 @@
  (Entrevista (ContestaEstacionSiguiente "SI"))
  (Entrevista (EsUnaSemanaDespuesCambioEstacion "NO"))
  (Entrevista (ContestaEstacionAnterior "NO" )) 
- => (assert (MiniMental_Calculado (cOrientacionTemporal_Estacion "SI"))) (printout t "Regla-CLIPS-OT-N5-Estacion-7 " crlf) 
+ => (assert (OrientacionTemporal (cEstacion "SI"))) (printout t "Regla-CLIPS-OT-N5-Estacion-7 " crlf) 
  )
  
 (defrule Regla-CLIPS-OT-N5-Estacion-9 
@@ -133,7 +133,7 @@
  (Entrevista (EsUnaSemanaDespuesCambioEstacion "SI"))
  (Entrevista (ContestaEstacionAnterior "SI"))
  =>
- (assert (MiniMental_Calculado (cOrientacionTemporal_Estacion "SI"))) (printout t "Regla-CLIPS-OT-N5-Estacion-9 " crlf)
+ (assert (OrientacionTemporal (cEstacion "SI"))) (printout t "Regla-CLIPS-OT-N5-Estacion-9 " crlf)
  ) 
  
 (defrule Regla-CLIPS-OT-N5-Estacion-11 
@@ -145,7 +145,7 @@
  (Entrevista (EsUnaSemanaDespuesCambioEstacion "SI"))
  (Entrevista (ContestaEstacionAnterior "SI")) 
  =>
- (assert (MiniMental_Calculado (cOrientacionTemporal_Estacion "SI"))) (printout t "Regla-CLIPS-OT-N5-Estacion-11 " crlf)
+ (assert (OrientacionTemporal (cEstacion "SI"))) (printout t "Regla-CLIPS-OT-N5-Estacion-11 " crlf)
  )
 
 (defrule REGLA-CLIPS-OT-N5-MES-1
@@ -155,7 +155,7 @@
  (Entrevista (EsPrimerOSegundoDiaMes "NO"))
  (Entrevista (ContestaMesSiguiente "NO")) 
  =>
- (assert (MiniMental_Calculado (cOrientacionTemporal_Mes -1))) (printout t "REGLA-CLIPS-OT-N5-MES-1" crlf)
+ (assert (OrientacionTemporal (cMes -1))) (printout t "REGLA-CLIPS-OT-N5-MES-1" crlf)
 )
 
  
@@ -166,7 +166,7 @@
  (Entrevista (EsPrimerOSegundoDiaMes "NO"))
  (Entrevista (ContestaMesSiguiente "NO")) 
  =>
- (assert (MiniMental_Calculado (cOrientacionTemporal_Mes 1))) (printout t "REGLA-CLIPS-OT-N5-MES-2" crlf)
+ (assert (OrientacionTemporal (cMes 1))) (printout t "REGLA-CLIPS-OT-N5-MES-2" crlf)
 )
 
 (defrule REGLA-CLIPS-OT-N5-MES-3
@@ -176,7 +176,7 @@
  (Entrevista (EsPrimerOSegundoDiaMes "NO"))
  (Entrevista (ContestaMesSiguiente "NO")) 
  =>
- (assert (MiniMental_Calculado (cOrientacionTemporal_Mes 1))) (printout t "REGLA-CLIPS-OT-N5-MES-3" crlf)
+ (assert (OrientacionTemporal (cMes 1.0))) (printout t "REGLA-CLIPS-OT-N5-MES-3" crlf)
 )
 
 (defrule REGLA-CLIPS-OT-N5-MES-5
@@ -186,5 +186,29 @@
  (Entrevista (EsPrimerOSegundoDiaMes "SI"))
  (Entrevista (ContestaMesSiguiente "SI")) 
  =>
- (assert (MiniMental_Calculado (cOrientacionTemporal_Mes 1))) (printout t "REGLA-CLIPS-OT-N5-MES-5" crlf)
+ (assert (OrientacionTemporal (cMes 1.0))) (printout t "REGLA-CLIPS-OT-N5-MES-5" crlf)
 )
+
+(defrule REGLA-CLIPS-OT-N5-ANO-1
+(Entrevista (OrientacionTemporal_Ano "NO"))
+(Entrevista (EsPrimerQuincenaAno "NO"))
+(Entrevista (ContestaAnoAnterior "NO")) 
+=>
+(assert (OrientacionTemporal (cAno -2.5))) (printout t "REGLA-CLIPS-OT-N5-ANO-1" crlf)
+)
+ 
+(defrule REGLA-CLIPS-OT-N5-ANO-2
+(Entrevista ( OrientacionTemporal_Ano "SI" ))
+(Entrevista ( EsPrimerQuincenaAno "NO"))
+(Entrevista ( ContestaAnoAnterior "NO" )) 
+=>
+(assert (OrientacionTemporal (cAno 1.0))) (printout t "REGLA-CLIPS-OT-N5-ANO-2" crlf)
+)
+
+(defrule REGLA-CLIPS-OT-N5-ANO-3
+(Entrevista ( OrientacionTemporal_Ano "NO" ))
+(Entrevista ( EsPrimerQuincenaAno "SI"))
+(Entrevista ( ContestaAnoAnterior "SI" )) 
+=>
+(assert (OrientacionTemporal (cAno 1.0))) (printout t "REGLA-CLIPS-OT-N5-ANO-3" crlf)
+) 
