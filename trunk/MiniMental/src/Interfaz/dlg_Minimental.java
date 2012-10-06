@@ -391,7 +391,7 @@ public class dlg_Minimental extends javax.swing.JDialog {
         Entrevista.setPais(jrb_respuesta_pais_si.isSelected());
         Entrevista.setLugar(jrb_respuestas_lugar_si.isSelected());
         Entrevista.setCalle(jrb_respuesta_calle_si.isSelected());
-        Entrevista.setTraidoTercero(jrb_respuesta_traidotercero_si.isSelected());
+        Entrevista.setTraidoPorTercero(jrb_respuesta_traidotercero_si.isSelected());
         Entrevista.setConsultorioEnAvenida(jrb_respuesta_avenida_si.isSelected());
         Entrevista.setConsultorioEnEntrepiso(jrb_respuesta_entrepiso_si.isSelected());
         Entrevista.setPiso(jcb_respuesta_piso.getSelectedIndex());

@@ -21,6 +21,17 @@
     (slot OrientacionTemporal_Ano (type STRING) (allowed-strings "SI" "NO") )
     (slot EsPrimerQuincenaAno (type STRING) (allowed-strings "SI" "NO"))    
     (slot ContestaAnoAnterior (type STRING) (allowed-strings "SI" "NO"))    
+
+    (slot OrientacionEspacial_Lugar (type STRING) (allowed-strings "SI" "NO"))    
+    (slot OrientacionEspacial_Ciudad (type STRING) (allowed-strings "SI" "NO"))
+    (slot OrientacionEspacial_Pais (type STRING) (allowed-strings "SI" "NO"))    
+    (slot OrientacionEspacial_Piso (type STRING) (allowed-strings "SI" "NO"))    
+    (slot ConsultorioEnEntrepiso (type STRING) (allowed-strings "SI" "NO"))    
+    (slot DiferenciaEntrePisoContestadoReal (type NUMBER))
+    (slot OrientacionEspacial_Calle (type STRING) (allowed-strings "SI" "NO"))  
+    (slot ConsultorioEnAvenida (type STRING) (allowed-strings "SI" "NO"))  
+    (slot TraidoPorTercero (type STRING) (allowed-strings "SI" "NO"))  
+
 )
 
 (deftemplate OrientacionTemporal
@@ -30,8 +41,17 @@
     (slot cAno (type NUMBER) )
 )
 
+(deftemplate OrientacionEspacial
+    (slot cLugar (type NUMBER))    
+    (slot cCiudad (type NUMBER)) 
+    (slot cPais (type NUMBER)) 
+    (slot cPiso (type NUMBER)) 
+    (slot cCalle (type NUMBER) )
+)
+
 (deftemplate Orientacion
     (slot cOrientacionTemporal (type NUMBER))
+    (slot cOrientacionEspacial (type NUMBER))
 )
 
 (deftemplate MiniMental_Calculado

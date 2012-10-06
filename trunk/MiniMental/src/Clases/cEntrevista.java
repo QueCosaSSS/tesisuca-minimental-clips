@@ -17,7 +17,7 @@ public class cEntrevista {
         this.FechaEntrevista = new GregorianCalendar();
     }
     
-    private Boolean TraidoTercero;
+    private Boolean TraidoPorTercero;
     private Boolean ConsultorioEnAvenida;
     private Boolean ConsultorioEnEntrepiso;
     private int Escolaridad;
@@ -335,8 +335,8 @@ public class cEntrevista {
         return EsUnaSemanDespuesDeInvierno() || EsUnaSemanDespuesDeOtono() || EsUnaSemanDespuesDePrimavera() || EsUnaSemanDespuesDeVerano();
     }
 
-    public void setTraidoTercero(Boolean TraidoTercero) {
-        this.TraidoTercero = TraidoTercero;
+    public void setTraidoPorTercero(Boolean TraidoPorTercero) {
+        this.TraidoPorTercero = TraidoPorTercero;
     }
 
     public void setConsultorioEnAvenida(Boolean ConsultorioEnAvenida) {
@@ -347,8 +347,8 @@ public class cEntrevista {
         this.ConsultorioEnEntrepiso = ConsultorioEnEntrepiso;
     }
 
-    public Boolean getTraidoTercero() {
-        return TraidoTercero;
+    public Boolean getTraidoPorTercero() {
+        return TraidoPorTercero;
     }
 
     public Boolean getConsultorioEnAvenida() {
