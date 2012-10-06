@@ -618,19 +618,19 @@ public class cEntrevista {
 // </editor-fold>
     // </editor-fold>
     // <editor-fold defaultstate="collapsed" desc="Lenguaje">
-    private Boolean RepitaFraseCorrectamente;
+    private Boolean RepiteFraseCorrectamente;
     private Boolean CumpleOrdenCorrectamente;
     private Boolean EscribeCorrectamenteFrase;
     private int ClasificacionAccion;
     private int CosasNombradas;
     // <editor-fold defaultstate="collapsed" desc="Lenguaje_GetSet">
 
-    public Boolean getRepitaFraseCorrectamente() {
-        return RepitaFraseCorrectamente;
+    public Boolean getRepiteFraseCorrectamente() {
+        return RepiteFraseCorrectamente;
     }
 
-    public void setRepitaFraseCorrectamente(Boolean RepitaFraseCorrectamente) {
-        this.RepitaFraseCorrectamente = RepitaFraseCorrectamente;
+    public void setRepiteFraseCorrectamente(Boolean RepiteFraseCorrectamente) {
+        this.RepiteFraseCorrectamente = RepiteFraseCorrectamente;
     }
 
     public Boolean getCumpleOrdenCorrectamente() {
