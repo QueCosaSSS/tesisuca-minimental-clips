@@ -23,17 +23,19 @@
 
 )
 
-(deftemplate MiniMental_Calculado
+(deftemplate OrientacionTemporal
+    (slot cFecha (type NUMBER))    
+    (slot cEstacion (type STRING) (allowed-strings "SI" "NO"))
+    (slot cMes (type NUMBER) )    
+    (slot cAno (type NUMBER) )
+)
 
-    (slot cOrientacionTemporal_Fecha (type NUMBER))    
-    (slot cOrientacionTemporal_Estacion (type STRING) (allowed-strings "SI" "NO"))
-    (slot cOrientacionTemporal_Mes (type NUMBER) )
-
+(deftemplate OrientacionTemporal
     (slot cOrientacionTemporal (type NUMBER))
-    
-    
-    (slot cOrientacionTemporal_Ano (type NUMBER) )
-    
+)
+
+(deftemplate MiniMental_Calculado
+    (slot cOrientacion (type NUMBER))
 )
 
 (
