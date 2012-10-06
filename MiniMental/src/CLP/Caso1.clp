@@ -265,3 +265,43 @@
 (defrule REGLA-CLIPS-OT-N4-30(Entrevista ( OrientacionTemporal_DiaSemana "SI" )) (OrientacionTemporal (cFecha -0.5 )) (OrientacionTemporal ( cMes 1 )) (OrientacionTemporal (cAno 1 )) (OrientacionTemporal (cEstacion "SI" )) => (assert (Orientacion (cOrientacionTemporal 3.5))) (printout t "REGLA-CLIPS-OT-N4-30" crlf))
 (defrule REGLA-CLIPS-OT-N4-31(Entrevista ( OrientacionTemporal_DiaSemana "NO" )) (OrientacionTemporal (cFecha 1 )) (OrientacionTemporal ( cMes 1 )) (OrientacionTemporal (cAno 1 )) (OrientacionTemporal (cEstacion "SI" )) => (assert (Orientacion (cOrientacionTemporal 4))) (printout t "REGLA-CLIPS-OT-N4-31" crlf))
 (defrule REGLA-CLIPS-OT-N4-32(Entrevista ( OrientacionTemporal_DiaSemana "SI" )) (OrientacionTemporal (cFecha 1 )) (OrientacionTemporal ( cMes 1 )) (OrientacionTemporal (cAno 1 )) (OrientacionTemporal (cEstacion "SI" )) => (assert (Orientacion (cOrientacionTemporal 5))) (printout t "REGLA-CLIPS-OT-N4-32" crlf))
+
+(defrule REGLA-CLIPS-OE-N5-Pais-1
+(Entrevista (OrientacionEspacial_Pais "NO"))
+=>
+(assert (OrientacionEspacial (cPais -2.5))) (printout t "REGLA-CLIPS-OE-N5-Pais-1" crlf)
+)
+
+(defrule REGLA-CLIPS-OE-N5-Pais-2 
+(Entrevista (OrientacionEspacial_Pais "SI")) 
+=>
+(assert (OrientacionEspacial (cPais 1.0))) (printout t "REGLA-CLIPS-OE-N5-Pais-2 " crlf)
+)
+
+(defrule REGLA-CLIPS-OE-N5-Ciudad-1
+(Entrevista (OrientacionEspacial_Ciudad "NO"))
+=>
+(assert (OrientacionEspacial (cCiudad -2.5))) (printout t "REGLA-CLIPS-OE-N5-Ciudad-1" crlf)
+)
+
+(defrule REGLA-CLIPS-OE-N5-Ciudad-2 
+(Entrevista (OrientacionEspacial_Ciudad "SI")) 
+=>
+(assert (OrientacionEspacial (cCiudad 1.0))) (printout t "REGLA-CLIPS-OE-N5-Ciudad-2 " crlf)
+)
+
+(defrule REGLA-CLIPS-OE-N5-Lugar-1
+(Entrevista (OrientacionEspacial_Lugar "NO"))
+=>
+(assert (OrientacionEspacial (cLugar -1.0))) (printout t "REGLA-CLIPS-OE-N5-Lugar-1" crlf)
+)
+(defrule REGLA-CLIPS-OE-N5-Lugar-2 
+(Entrevista (OrientacionEspacial_Lugar "SI")) 
+=>
+(assert (OrientacionEspacial (cLugar 1.0))) (printout t "REGLA-CLIPS-OE-N5-Lugar-2 " crlf)
+)
+
+(defrule REGLA-OE-N5-PISO-1(Entrevista (OrientacionEspacial_Piso "NO" )) (Entrevista (ConsultorioEnEntrepiso "NO" )) (Entrevista (DiferenciaEntrePisoContestadoReal ?r))(test (< ?r 2)) => (assert (OrientacionEspacial (cPiso -0.5))) (printout t "REGLA-OE-N5-PISO-1" crlf))
+(defrule REGLA-OE-N5-PISO-2(Entrevista (OrientacionEspacial_Piso "SI" )) (Entrevista (ConsultorioEnEntrepiso "NO" )) (Entrevista (DiferenciaEntrePisoContestadoReal ?r))(test (< ?r 2)) => (assert (OrientacionEspacial (cPiso 1.0))) (printout t "REGLA-OE-N5-PISO-2" crlf))
+(defrule REGLA-OE-N5-PISO-3(Entrevista (OrientacionEspacial_Piso "NO" )) (Entrevista (ConsultorioEnEntrepiso "SI" )) (Entrevista (DiferenciaEntrePisoContestadoReal ?r))(test (< ?r 2)) => (assert (OrientacionEspacial (cPiso 0.0))) (printout t "REGLA-OE-N5-PISO-3" crlf))
+(defrule REGLA-OE-N5-PISO-5/7(Entrevista (OrientacionEspacial_Piso "NO" ))(Entrevista (DiferenciaEntrePisoContestadoReal ?r))(test (< ?r 2)) => (assert (OrientacionEspacial (cPiso 1.0))) (printout t "REGLA-OE-N5-PISO-5/7" crlf))
