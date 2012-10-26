@@ -56,6 +56,11 @@
     (slot cCalle (type NUMBER) )
 )
 
+(deftemplate Orientacion
+    (slot cOrientacionTemporal (type NUMBER))
+    (slot cOrientacionEspacial (type NUMBER))
+)
+
 (deftemplate MemoriaFijacion
     (slot cPalabrasRepetidas (type NUMBER))
 )
@@ -74,9 +79,23 @@
     (slot cMemoriaRecuerdo (type NUMBER))
 )
 
-(deftemplate Orientacion
-    (slot cOrientacionTemporal (type NUMBER))
-    (slot cOrientacionEspacial (type NUMBER))
+(deftemplate LenguajePonderado
+    (slot cClasificacionPonderado (type NUMBER))
+)
+(deftemplate LenguajeAccion
+)
+(deftemplate LenguajeEscrita
+)
+(deftemplate LenguajeOrden
+)   
+(deftemplate LenguajeFrase
+)
+(deftemplate Lenguaje
+    (slot cLenguajePonderado (type NUMBER))
+    (slot cLenguajeAccion    (type NUMBER))
+    (slot cLenguajeEscrita   (type STRING) (allowed-strings "SI" "NO"))
+    (slot cLenguajeOrden     (type STRING) (allowed-strings "SI" "NO"))
+    (slot cLenguajeFrase     (type STRING) (allowed-strings "SI" "NO"))
 )
 
 (deftemplate MiniMental_Calculado
