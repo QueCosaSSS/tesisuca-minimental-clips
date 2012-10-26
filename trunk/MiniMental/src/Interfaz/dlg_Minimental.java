@@ -4,8 +4,10 @@
  */
 package Interfaz;
 
+import CLIPS_Manager.CLP_Manager;
 import Clases.cEscolaridad;
 import Clases.cEntrevista;
+import java.util.Enumeration;
 import java.util.HashSet;
 
 /**
@@ -342,9 +344,9 @@ public class dlg_Minimental extends javax.swing.JDialog {
 
         jcb_respuestas_dia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
 
-        jcb_respuesta_diasemana.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado" }));
+        jcb_respuesta_diasemana.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo" }));
 
-        jLabel1.setText("Contesta correctamente qué día de la semana es hoy:");
+        jLabel1.setText("Día de la semana contestado:");
 
         jLabel2.setText("Fecha contestada en la entrevista:");
 
@@ -469,7 +471,7 @@ public class dlg_Minimental extends javax.swing.JDialog {
                                     .addComponent(jrb_respuesta_avenida_si)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(jRadioButton14))))))
-                .addContainerGap(403, Short.MAX_VALUE))
+                .addContainerGap(429, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -884,7 +886,7 @@ public class dlg_Minimental extends javax.swing.JDialog {
         Entrevista.setHayImpactoEnCaracter(jrb_respuesta_impacto_caracter_si.isSelected());
         Entrevista.setHayImpactoFuncional(jrb_respuesta_impacto_funcional_si.isSelected());
         
-        Entrevista.setDiaDeSemana(jcb_respuesta_diasemana.getSelectedIndex());
+        Entrevista.setDiaDeSemana(jcb_respuesta_diasemana.getSelectedIndex()+1);
         Entrevista.setFecha(Integer.parseInt(jcb_respuestas_dia.getSelectedItem().toString()), jcb_respuestas_mes.getSelectedIndex(), Integer.parseInt(jcb_respuestas_ano.getSelectedItem().toString()));
         Entrevista.setEstacion(jcb_respuesta_estacion.getSelectedIndex());
         Entrevista.setCiudad(jrb_respuesta_ciudad_si.isSelected());
@@ -915,6 +917,12 @@ public class dlg_Minimental extends javax.swing.JDialog {
         Entrevista.setQuejaOlvidoFamiliar(jrb_QuejaFamiliares_si.isSelected());
         
         Entrevista.setPacienteMinimizaOlvidos(jrb_MinimizaOlvidos_si.isSelected());
+        
+        CLP_Manager clp_manager = new CLP_Manager();
+        clp_manager.ProcesarEntrevista(Entrevista);
+        
+        
+        
        
 
     }//GEN-LAST:event_jButton1ActionPerformed

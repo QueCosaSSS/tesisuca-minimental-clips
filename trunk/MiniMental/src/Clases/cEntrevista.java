@@ -63,7 +63,7 @@ public class cEntrevista {
         this.Escolaridad = Escolaridad;
     }
 
-    public int getEscolaridad() {
+    public Integer getEscolaridad() {
         return Escolaridad;
     }
 
@@ -478,6 +478,22 @@ public class cEntrevista {
         }
         return false;
     }
+
+    public Boolean ContestaFechaCorrecta() {
+        return SameDay(Fecha, FechaEntrevista);
+    }
+
+    public Boolean ContestaEstacionCorrecta() {
+        return Estacion == EstacionEntrevista();
+    }
+
+    public Boolean ContestaMesCorrecto() {
+        return Fecha.get(Calendar.MONTH) == FechaEntrevista.get(Calendar.MONTH);
+    }
+    
+    public Boolean ContestaDiaSemanaCorrecto(){
+        return FechaEntrevista.get(Calendar.DAY_OF_WEEK) == DiaDeSemana;
+    }
 // </editor-fold>    
 // </editor-fold>
 // <editor-fold defaultstate="collapsed" desc="OrientacionEspacial">
@@ -500,7 +516,7 @@ public class cEntrevista {
         return Calle;
     }
 
-    public int getPiso() {
+    public Integer getPiso() {
         return Piso;
     }
 
@@ -570,7 +586,7 @@ public class cEntrevista {
 
     // </editor-fold>
 // <editor-fold defaultstate="collapsed" desc="OrientacionEspacial_Propiedades">
-    public int DiferenciaEntrePisoContestadoReal() {
+    public Integer DiferenciaEntrePisoContestadoReal() {
         return Math.abs(this.getPiso() - this.PisoDelConsultorio);
     }
     // </editor-fold>
@@ -581,7 +597,7 @@ public class cEntrevista {
     private int PalabrasRepetidas;
     // <editor-fold defaultstate="collapsed" desc="Fijacion_GetSet">    
 
-    public int getPalabrasRepetidas() {
+    public Integer getPalabrasRepetidas() {
         return PalabrasRepetidas;
     }
 
@@ -594,7 +610,7 @@ public class cEntrevista {
     private int ClasificacionAtencion;
     // <editor-fold defaultstate="collapsed" desc="Atencion_GetSet">   
 
-    public int getClasificacionAtencion() {
+    public Integer getClasificacionAtencion() {
         return ClasificacionAtencion;
     }
 
@@ -607,7 +623,7 @@ public class cEntrevista {
     private int PalabrasRecordadas;
     // <editor-fold defaultstate="collapsed" desc="Recuerdo_GetSet">
 
-    public int getPalabrasRecordadas() {
+    public Integer getPalabrasRecordadas() {
         return PalabrasRecordadas;
     }
 
