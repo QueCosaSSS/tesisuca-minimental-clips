@@ -21,7 +21,7 @@ public class CLP_Manager {
         try {
             this.clips = new Environment();
 
-            this.clips.load(".\\src\\CLP\\Caso1.clp");
+            this.clips.load(".\\src\\CLP\\Caso2.clp");
 
             this.clips.reset();
 
