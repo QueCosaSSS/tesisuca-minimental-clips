@@ -117,6 +117,17 @@ public class CLP_Manager {
         this.AddFacts("Entrevista", "PacienteDeprimido", Entrevista.getPacienteDeprimido().toString());                          
         this.AddFacts("Entrevista", "MemoriaAtencion_ClasificacionAtencion", Entrevista.getClasificacionAtencion().toString());                                  
         this.AddFacts("Entrevista", "MemoriaRecuerdo_PalabrasRecordadas", Entrevista.getPalabrasRecordadas().toString());                                  
+        this.AddFacts("Entrevista", "Lenguaje_RepiteFraseCorrectamente", Entrevista.getRepiteFraseCorrectamente().toString());
+        this.AddFacts("Entrevista", "Lenguaje_ClasificacionAccion", Entrevista.getClasificacionAccion().toString());
+        this.AddFacts("Entrevista", "Lenguaje_CumpleOrdenCorrectamente", Entrevista.getCumpleOrdenCorrectamente().toString());
+        this.AddFacts("Entrevista", "Lenguaje_EscribeCorrectamenteFrase", Entrevista.getEscribeCorrectamenteFrase().toString());
+        this.AddFacts("Entrevista", "Lenguaje_CosasNombradas", Entrevista.getCosasNombradas().toString());        
+        this.AddFacts("Entrevista", "Dibujo_CopiaCorrectamenteDibujo", Entrevista.getCopiaCorrectamenteDibujo().toString());        
+        this.AddFacts("Entrevista", "Olvido_OlvidaHechosRecientes", Entrevista.getOlvidaHechosRecientes().toString());        
+        this.AddFacts("Entrevista", "Olvido_OlvidoProgresa", Entrevista.getOlvidoProgresa().toString());        
+        this.AddFacts("Entrevista", "Olvido_QuejaOlvidoPaciente", Entrevista.getQuejaOlvidoPaciente().toString());                
+        this.AddFacts("Entrevista", "Olvido_QuejaOlvidoFamiliar", Entrevista.getQuejaOlvidoFamiliar().toString());                
+        this.AddFacts("Entrevista", "Olvido_PacienteMinimizaOlvidos", Entrevista.getPacienteMinimizaOlvidos().toString());                        
         
         return "";
     }

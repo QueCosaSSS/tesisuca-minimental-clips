@@ -32,13 +32,27 @@
     (slot ConsultorioEnAvenida (type STRING) (allowed-strings "SI" "NO"))  
     (slot TraidoPorTercero (type STRING) (allowed-strings "SI" "NO"))  
 
-    (slot MemoriaFijacion_PalabrasRepetidas (type NUMBER) (allowed-strings "0" "1" "2" "3"))  
+    (slot MemoriaFijacion_PalabrasRepetidas (type NUMBER))  
     (slot PacienteConProblemasAuditivos (type STRING) (allowed-strings "SI" "NO"))  
     (slot PacienteDeprimido (type STRING) (allowed-strings "SI" "NO"))  
 
-    (slot MemoriaAtencion_ClasificacionAtencion (type NUMBER) (allowed-strings "0" "1" "2" "3" "4" "5"))
+    (slot MemoriaAtencion_ClasificacionAtencion (type NUMBER))
+    (slot MemoriaRecuerdo_PalabrasRecordadas (type NUMBER))
 
-    (slot MemoriaRecuerdo_PalabrasRecordadas (type NUMBER) (allowed-strings "0" "1" "2" "3"))
+    (slot Lenguaje_RepiteFraseCorrectamente (type STRING) (allowed-strings "SI" "NO"))  
+    (slot Lenguaje_ClasificacionAccion (type NUMBER))
+    (slot Lenguaje_CumpleOrdenCorrectamente (type STRING) (allowed-strings "SI" "NO"))  
+    (slot Lenguaje_EscribeCorrectamenteFrase (type STRING) (allowed-strings "SI" "NO"))  
+    (slot Lenguaje_CosasNombradas (type NUMBER))
+
+    (slot Dibujo_CopiaCorrectamenteDibujo (type STRING) (allowed-strings "SI" "NO"))  
+
+    (slot Olvido_OlvidaHechosRecientes (type STRING) (allowed-strings "SI" "NO"))  
+    (slot Olvido_OlvidoProgresa (type STRING) (allowed-strings "SI" "NO"))  
+    (slot Olvido_QuejaOlvidoPaciente (type STRING) (allowed-strings "SI" "NO"))  
+    (slot Olvido_QuejaOlvidoFamiliar (type STRING) (allowed-strings "SI" "NO"))  
+    (slot Olvido_PacienteMinimizaOlvidos (type STRING) (allowed-strings "SI" "NO"))  
+
 )
 
 (deftemplate OrientacionTemporal
@@ -355,12 +369,10 @@
 (defrule REGLA-OE-N5-CALLE-3(Entrevista (OrientacionEspacial_Calle "NO" )) (Entrevista (TraidoPorTercero "SI" )) (Entrevista (ConsultorioEnAvenida "NO" )) => (assert (OrientacionEspacial (cCalle 1.0))) (printout t "REGLA-OE-N5-CALLE-3" crlf))
 (defrule REGLA-OE-N5-CALLE-5/7(Entrevista (OrientacionEspacial_Calle "NO" )) (Entrevista (ConsultorioEnAvenida "SI" )) => (assert (OrientacionEspacial (cCalle 1.0))) (printout t "REGLA-OE-N5-CALLE-5/7" crlf))
 
-//-SUMA- NO Regla-OE-N4//
-
-(defrule REGLA-OT-N5-FECHA-1 (Entrevista (MemoriaFijacion_PalabrasRepetidas 0 )) => (assert (MemoriaFijacion (cPalabrasRepite -5.0))) (printout t "REGLA-OT-N5-FECHA-1" crlf))
-(defrule REGLA-OT-N5-FECHA-2 (Entrevista (MemoriaFijacion_PalabrasRepetidas 1 )) => (assert (MemoriaFijacion (cPalabrasRepite -2.0))) (printout t "REGLA-OT-N5-FECHA-2" crlf))
-(defrule REGLA-OT-N5-FECHA-3 (Entrevista (MemoriaFijacion_PalabrasRepetidas 2 )) => (assert (MemoriaFijacion (cPalabrasRepite -0.5))) (printout t "REGLA-OT-N5-FECHA-3" crlf))
-(defrule REGLA-OT-N5-FECHA-4 (Entrevista (MemoriaFijacion_PalabrasRepetidas 3 )) => (assert (MemoriaFijacion (cPalabrasRepite 3.0))) (printout t "REGLA-OT-N5-FECHA-4" crlf))
+(defrule REGLA-OT-N5-FECHA-1 (Entrevista (MemoriaFijacion_PalabrasRepetidas 0 )) => (assert (MemoriaFijacion (cPalabrasRepetidas -5.0))) (printout t "REGLA-OT-N5-FECHA-1" crlf))
+(defrule REGLA-OT-N5-FECHA-2 (Entrevista (MemoriaFijacion_PalabrasRepetidas 1 )) => (assert (MemoriaFijacion (cPalabrasRepetidas -2.0))) (printout t "REGLA-OT-N5-FECHA-2" crlf))
+(defrule REGLA-OT-N5-FECHA-3 (Entrevista (MemoriaFijacion_PalabrasRepetidas 2 )) => (assert (MemoriaFijacion (cPalabrasRepetidas -0.5))) (printout t "REGLA-OT-N5-FECHA-3" crlf))
+(defrule REGLA-OT-N5-FECHA-4 (Entrevista (MemoriaFijacion_PalabrasRepetidas 3 )) => (assert (MemoriaFijacion (cPalabrasRepetidas 3.0))) (printout t "REGLA-OT-N5-FECHA-4" crlf))
 
 (defrule REGLA-MF-N4-1 (MemoriaFijacion (cPalabrasRepetidas -5 )) (Entrevista (PacienteConProblemasAuditivos "NO" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  -5.0))) (printout t "REGLA-MF-N4-1" crlf))
 (defrule REGLA-MF-N4-2 (MemoriaFijacion (cPalabrasRepetidas -2 )) (Entrevista (PacienteConProblemasAuditivos "NO" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  -2.0))) (printout t "REGLA-MF-N4-2" crlf))
