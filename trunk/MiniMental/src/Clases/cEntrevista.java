@@ -637,7 +637,7 @@ public class cEntrevista {
     private Boolean RepiteFraseCorrectamente;
     private Boolean CumpleOrdenCorrectamente;
     private Boolean EscribeCorrectamenteFrase;
-    private int ClasificacionAccion;
+    private Integer ClasificacionAccion;
     private int CosasNombradas;
     // <editor-fold defaultstate="collapsed" desc="Lenguaje_GetSet">
 
@@ -665,7 +665,7 @@ public class cEntrevista {
         this.EscribeCorrectamenteFrase = EscribeCorrectamenteFrase;
     }
 
-    public int getClasificacionAccion() {
+    public Integer getClasificacionAccion() {
         return ClasificacionAccion;
     }
 
@@ -673,7 +673,7 @@ public class cEntrevista {
         this.ClasificacionAccion = ClasificacionAccion;
     }
 
-    public int getCosasNombradas() {
+    public Integer getCosasNombradas() {
         return CosasNombradas;
     }
 
