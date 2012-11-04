@@ -426,8 +426,3 @@
 (defrule REGLA-MR-N4-4 (MemoriaRecuerdo (cPalabrasRecordadas 3 )) (Entrevista (PacienteConProblemasAuditivos "NO" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  3.0))) (printout t "REGLA-MR-N4-4" crlf))
 (defrule REGLA-MR-N4-5/8 (Entrevista (PacienteConProblemasAuditivos "SI" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  3.0))) (printout t "REGLA-MR-N4-5-8" crlf))
 (defrule REGLA-MR-N4-9/16 (Entrevista (PacienteDeprimido "SI" )) => (assert (Memoria (cMemoriaFijacion  3.0))) (printout t "REGLA-MR-N4-9-16" crlf))
-
-(defrule REGLA-L-N4-ACCIONPONDERADA-0 (Entrevista (MemoriaRecuerdo_PalabrasRecordadas -1,5 )) => (assert (MemoriaRecuerdo (cPalabrasRecordadas -1,5))) (printout t "REGLA-L-N4-ACCIONPONDERADA-0" crlf))
-(defrule REGLA-L-N4-ACCIONPONDERADA-1 (Entrevista (MemoriaRecuerdo_PalabrasRecordadas 0 )) => (assert (MemoriaRecuerdo (cPalabrasRecordadas 0,0))) (printout t "REGLA-L-N4-ACCIONPONDERADA-1" crlf))
-(defrule REGLA-L-N4-ACCIONPONDERADA-2 (Entrevista (MemoriaRecuerdo_PalabrasRecordadas 1,5 )) => (assert (MemoriaRecuerdo (cPalabrasRecordadas 1,5))) (printout t "REGLA-L-N4-ACCIONPONDERADA-2" crlf))
-(defrule REGLA-L-N4-ACCIONPONDERADA-3 (Entrevista (MemoriaRecuerdo_PalabrasRecordadas 3 )) => (assert (MemoriaRecuerdo (cPalabrasRecordadas 3,0))) (printout t "REGLA-L-N4-ACCIONPONDERADA-3" crlf))
