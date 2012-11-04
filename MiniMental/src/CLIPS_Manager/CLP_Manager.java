@@ -118,6 +118,7 @@ public class CLP_Manager {
         this.AddFacts("Entrevista", "PacienteDeprimido", Entrevista.getPacienteDeprimido().toString());
         this.AddFacts("Entrevista", "MemoriaAtencion_ClasificacionAtencion", Entrevista.getClasificacionAtencion().toString());
         this.AddFacts("Entrevista", "MemoriaRecuerdo_PalabrasRecordadas", Entrevista.getPalabrasRecordadas().toString());
+        this.AddFacts("Entrevista", "PacienteAnsioso", Entrevista.getPacienteAnsioso().toString());
         this.AddFacts("Entrevista", "Lenguaje_RepiteFraseCorrectamente", Entrevista.getRepiteFraseCorrectamente().toString());
         this.AddFacts("Entrevista", "Lenguaje_ClasificacionAccion", Entrevista.getClasificacionAccion().toString());
         this.AddFacts("Entrevista", "Lenguaje_CumpleOrdenCorrectamente", Entrevista.getCumpleOrdenCorrectamente().toString());
