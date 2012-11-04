@@ -39,6 +39,7 @@
     (slot MemoriaAtencion_ClasificacionAtencion (type NUMBER))
     (slot MemoriaRecuerdo_PalabrasRecordadas (type NUMBER))
 
+    (slot PacienteAnsioso (type STRING) (allowed-strings "SI" "NO"))
     (slot Lenguaje_RepiteFraseCorrectamente (type STRING) (allowed-strings "SI" "NO"))  
     (slot Lenguaje_ClasificacionAccion (type NUMBER))
     (slot Lenguaje_CumpleOrdenCorrectamente (type STRING) (allowed-strings "SI" "NO"))  
@@ -52,7 +53,8 @@
     (slot Olvido_QuejaOlvidoPaciente (type STRING) (allowed-strings "SI" "NO"))  
     (slot Olvido_QuejaOlvidoFamiliar (type STRING) (allowed-strings "SI" "NO"))  
     (slot Olvido_PacienteMinimizaOlvidos (type STRING) (allowed-strings "SI" "NO"))  
-
+    (slot Olvido_ImpactoFuncional (type STRING) (allowed-strings "SI" "NO"))  
+    (slot Olvido_ImpactoCaracter (type STRING) (allowed-strings "SI" "NO"))  
 )
 
 (deftemplate OrientacionTemporal
@@ -93,19 +95,22 @@
     (slot cMemoriaRecuerdo (type NUMBER))
 )
 
-(deftemplate LenguajePonderado
-    (slot cClasificacionPonderado (type NUMBER))
+(deftemplate LenguajeAccionPonderado
+    (slot cAccionPonderado (type NUMBER))
 )
 (deftemplate LenguajeAccion
+    (slot cAccion (type NUMBER))
 )
 (deftemplate LenguajeEscrita
+    (slot cEscrita (type STRING) (allowed-strings "SI" "NO"))
 )
 (deftemplate LenguajeOrden
+    (slot cOrden (type STRING) (allowed-strings "SI" "NO"))
 )   
 (deftemplate LenguajeFrase
+    (slot cFrase (type STRING) (allowed-strings "SI" "NO"))
 )
 (deftemplate Lenguaje
-    (slot cLenguajePonderado (type NUMBER))
     (slot cLenguajeAccion    (type NUMBER))
     (slot cLenguajeEscrita   (type STRING) (allowed-strings "SI" "NO"))
     (slot cLenguajeOrden     (type STRING) (allowed-strings "SI" "NO"))
@@ -114,7 +119,20 @@
 
 (deftemplate MiniMental_Calculado
     (slot cOrientacion (type NUMBER))
+    (slot cMemoria (type NUMBER))
+    (slot cLenguaje (type NUMBER))
+    (slot cDibujo (type NUMBER))
+    (slot cEntrevista (type NUMBER))
 )
+
+(deftemplate Diagnostico
+    (slot cMiniMental_Calculado (type NUMBER))
+    (slot cOlvido (type STRING) (allowed-strings "R" "N"))
+    (slot cQueja (type STRING) (allowed-strings "R" "N"))
+    (slot cFuncional (type STRING) (allowed-strings "R" "N"))
+    (slot cCaracter (type STRING) (allowed-strings "R" "N"))
+)
+
 
 (
  deffacts Caso-1
@@ -369,10 +387,10 @@
 (defrule REGLA-OE-N5-CALLE-3 (Entrevista (OrientacionEspacial_Calle "NO" )) (Entrevista (TraidoPorTercero "SI" )) (Entrevista (ConsultorioEnAvenida "SI" )) => (assert (OrientacionEspacial (cCalle 1.0))) (printout t "REGLA-OE-N5-CALLE-3" crlf))
 (defrule REGLA-OE-N5-CALLE-5/7 (Entrevista (OrientacionEspacial_Calle "NO" )) (Entrevista (ConsultorioEnAvenida "NO" )) => (assert (OrientacionEspacial (cCalle 1.0))) (printout t "REGLA-OE-N5-CALLE-5/7" crlf))
 
-(defrule REGLA-MF-N5-PALABRA-1 (Entrevista (MemoriaFijacion_PalabrasRepetidas 0 )) => (assert (MemoriaFijacion (cPalabrasRepetidas -5.0))) (printout t "REGLA-OT-N5-FECHA-1" crlf))
-(defrule REGLA-MF-N5-PALABRA-2 (Entrevista (MemoriaFijacion_PalabrasRepetidas 1 )) => (assert (MemoriaFijacion (cPalabrasRepetidas -2.0))) (printout t "REGLA-OT-N5-FECHA-2" crlf))
-(defrule REGLA-MF-N5-PALABRA-3 (Entrevista (MemoriaFijacion_PalabrasRepetidas 2 )) => (assert (MemoriaFijacion (cPalabrasRepetidas -0.5))) (printout t "REGLA-OT-N5-FECHA-3" crlf))
-(defrule REGLA-MF-N5-PALABRA-4 (Entrevista (MemoriaFijacion_PalabrasRepetidas 3 )) => (assert (MemoriaFijacion (cPalabrasRepetidas 3.0))) (printout t "REGLA-OT-N5-FECHA-4" crlf))
+(defrule REGLA-MF-N5-PALABRA-1 (Entrevista (MemoriaFijacion_PalabrasRepetidas 0 )) => (assert (MemoriaFijacion (cPalabrasRepetidas -5.0))) (printout t "REGLA-MF-N5-PALABRA-1" crlf))
+(defrule REGLA-MF-N5-PALABRA-2 (Entrevista (MemoriaFijacion_PalabrasRepetidas 1 )) => (assert (MemoriaFijacion (cPalabrasRepetidas -2.0))) (printout t "REGLA-MF-N5-PALABRA-2" crlf))
+(defrule REGLA-MF-N5-PALABRA-3 (Entrevista (MemoriaFijacion_PalabrasRepetidas 2 )) => (assert (MemoriaFijacion (cPalabrasRepetidas -0.5))) (printout t "REGLA-MF-N5-PALABRA-3" crlf))
+(defrule REGLA-MF-N5-PALABRA-4 (Entrevista (MemoriaFijacion_PalabrasRepetidas 3 )) => (assert (MemoriaFijacion (cPalabrasRepetidas 3.0))) (printout t "REGLA-MF-N5-PALABRA-4" crlf))
 
 (defrule REGLA-MF-N4-1 (MemoriaFijacion (cPalabrasRepetidas -5 )) (Entrevista (PacienteConProblemasAuditivos "NO" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  -5.0))) (printout t "REGLA-MF-N4-1" crlf))
 (defrule REGLA-MF-N4-2 (MemoriaFijacion (cPalabrasRepetidas -2 )) (Entrevista (PacienteConProblemasAuditivos "NO" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  -2.0))) (printout t "REGLA-MF-N4-2" crlf))
@@ -381,12 +399,12 @@
 (defrule REGLA-MF-N4-5/8 (Entrevista (PacienteConProblemasAuditivos "SI" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  3.0))) (printout t "REGLA-MF-N4-5-8" crlf))
 (defrule REGLA-MF-N4-9/16 (Entrevista (PacienteDeprimido "SI" )) => (assert (Memoria (cMemoriaFijacion  3.0))) (printout t "REGLA-MF-N4-9 - 16" crlf))
 
-(defrule REGLA-MA-N5-ATENCION-1 (Entrevista (MemoriaAtencion_ClasificacionAtencion 0 )) => (assert (MemoriaAtencion (cClasificacionAtencion -1.25))) (printout t "REGLA-OT-N5-FECHA-1" crlf))
-(defrule REGLA-MA-N5-ATENCION-2 (Entrevista (MemoriaAtencion_ClasificacionAtencion 1 )) => (assert (MemoriaAtencion (cClasificacionAtencion 0.00))) (printout t "REGLA-OT-N5-FECHA-2" crlf))
-(defrule REGLA-MA-N5-ATENCION-3 (Entrevista (MemoriaAtencion_ClasificacionAtencion 2 )) => (assert (MemoriaAtencion (cClasificacionAtencion 1.25))) (printout t "REGLA-OT-N5-FECHA-3" crlf))
-(defrule REGLA-MA-N5-ATENCION-4 (Entrevista (MemoriaAtencion_ClasificacionAtencion 3 )) => (assert (MemoriaAtencion (cClasificacionAtencion 2.50))) (printout t "REGLA-OT-N5-FECHA-4" crlf))
-(defrule REGLA-MA-N5-ATENCION-5 (Entrevista (MemoriaAtencion_ClasificacionAtencion 4 )) => (assert (MemoriaAtencion (cClasificacionAtencion 3.75))) (printout t "REGLA-OT-N5-FECHA-5" crlf))
-(defrule REGLA-MA-N5-ATENCION-6 (Entrevista (MemoriaAtencion_ClasificacionAtencion 5 )) => (assert (MemoriaAtencion (cClasificacionAtencion 5.00))) (printout t "REGLA-OT-N5-FECHA-6" crlf))
+(defrule REGLA-MA-N5-ATENCION-1 (Entrevista (MemoriaAtencion_ClasificacionAtencion 0 )) => (assert (MemoriaAtencion (cClasificacionAtencion -1.25))) (printout t "REGLA-MA-N5-ATENCION-1" crlf))
+(defrule REGLA-MA-N5-ATENCION-2 (Entrevista (MemoriaAtencion_ClasificacionAtencion 1 )) => (assert (MemoriaAtencion (cClasificacionAtencion 0.00))) (printout t "REGLA-MA-N5-ATENCION-2" crlf))
+(defrule REGLA-MA-N5-ATENCION-3 (Entrevista (MemoriaAtencion_ClasificacionAtencion 2 )) => (assert (MemoriaAtencion (cClasificacionAtencion 1.25))) (printout t "REGLA-MA-N5-ATENCION-3" crlf))
+(defrule REGLA-MA-N5-ATENCION-4 (Entrevista (MemoriaAtencion_ClasificacionAtencion 3 )) => (assert (MemoriaAtencion (cClasificacionAtencion 2.50))) (printout t "REGLA-MA-N5-ATENCION-4" crlf))
+(defrule REGLA-MA-N5-ATENCION-5 (Entrevista (MemoriaAtencion_ClasificacionAtencion 4 )) => (assert (MemoriaAtencion (cClasificacionAtencion 3.75))) (printout t "REGLA-MA-N5-ATENCION-5" crlf))
+(defrule REGLA-MA-N5-ATENCION-6 (Entrevista (MemoriaAtencion_ClasificacionAtencion 5 )) => (assert (MemoriaAtencion (cClasificacionAtencion 5.00))) (printout t "REGLA-MA-N5-ATENCION-6" crlf))
 
 (defrule REGLA-MA-N4-1/6 (Entrevista (PacienteConProblemasAuditivos "NO" )) (Entrevista (PacienteDeprimido "SI" )) => (assert (Memoria (cMemoriaFijacion  5.0))) (printout t "REGLA-MA-N4-1-6" crlf))
 (defrule REGLA-MA-N4-7/12 (Entrevista (PacienteConProblemasAuditivos "SI" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  5.0))) (printout t "REGLA-MA-N4-7-12" crlf))
@@ -397,10 +415,10 @@
 (defrule REGLA-MA-N4-17 (MemoriaAtencion (cClasificacionAtencion 3.75 )) (Entrevista (PacienteConProblemasAuditivos "NO" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  3.8))) (printout t "REGLA-MA-N4-17" crlf))
 (defrule REGLA-MA-N4-18 (MemoriaAtencion (cClasificacionAtencion 5 )) (Entrevista (PacienteConProblemasAuditivos "NO" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  5.0))) (printout t "REGLA-MA-N4-18" crlf))
 
-(defrule REGLA-MR-N5-RECUERDO-1 (Entrevista (MemoriaRecuerdo_PalabrasRecordadas 0 )) => (assert (MemoriaRecuerdo (cPalabrasRecordadas -5.0))) (printout t "REGLA-OT-N5-FECHA-1" crlf))
-(defrule REGLA-MR-N5-RECUERDO-2 (Entrevista (MemoriaRecuerdo_PalabrasRecordadas 1 )) => (assert (MemoriaRecuerdo (cPalabrasRecordadas -2.0))) (printout t "REGLA-OT-N5-FECHA-2" crlf))
-(defrule REGLA-MR-N5-RECUERDO-3 (Entrevista (MemoriaRecuerdo_PalabrasRecordadas 2 )) => (assert (MemoriaRecuerdo (cPalabrasRecordadas -0.5))) (printout t "REGLA-OT-N5-FECHA-3" crlf))
-(defrule REGLA-MR-N5-RECUERDO-4 (Entrevista (MemoriaRecuerdo_PalabrasRecordadas 4 )) => (assert (MemoriaRecuerdo (cPalabrasRecordadas 3.0))) (printout t "REGLA-OT-N5-FECHA-4" crlf))
+(defrule REGLA-MR-N5-RECUERDO-1 (Entrevista (MemoriaRecuerdo_PalabrasRecordadas 0 )) => (assert (MemoriaRecuerdo (cPalabrasRecordadas -5.0))) (printout t "REGLA-MR-N5-RECUERDO-1" crlf))
+(defrule REGLA-MR-N5-RECUERDO-2 (Entrevista (MemoriaRecuerdo_PalabrasRecordadas 1 )) => (assert (MemoriaRecuerdo (cPalabrasRecordadas -2.0))) (printout t "REGLA-MR-N5-RECUERDO-2" crlf))
+(defrule REGLA-MR-N5-RECUERDO-3 (Entrevista (MemoriaRecuerdo_PalabrasRecordadas 2 )) => (assert (MemoriaRecuerdo (cPalabrasRecordadas -0.5))) (printout t "REGLA-MR-N5-RECUERDO-3" crlf))
+(defrule REGLA-MR-N5-RECUERDO-4 (Entrevista (MemoriaRecuerdo_PalabrasRecordadas 4 )) => (assert (MemoriaRecuerdo (cPalabrasRecordadas 3.0))) (printout t "REGLA-MR-N5-RECUERDO-4" crlf))
 
 (defrule REGLA-MR-N4-1 (MemoriaRecuerdo (cPalabrasRecordadas -5 )) (Entrevista (PacienteConProblemasAuditivos "NO" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  -5.0))) (printout t "REGLA-MR-N4-1" crlf))
 (defrule REGLA-MR-N4-2 (MemoriaRecuerdo (cPalabrasRecordadas -2 )) (Entrevista (PacienteConProblemasAuditivos "NO" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  -2.0))) (printout t "REGLA-MR-N4-2" crlf))
@@ -408,3 +426,8 @@
 (defrule REGLA-MR-N4-4 (MemoriaRecuerdo (cPalabrasRecordadas 3 )) (Entrevista (PacienteConProblemasAuditivos "NO" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  3.0))) (printout t "REGLA-MR-N4-4" crlf))
 (defrule REGLA-MR-N4-5/8 (Entrevista (PacienteConProblemasAuditivos "SI" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  3.0))) (printout t "REGLA-MR-N4-5-8" crlf))
 (defrule REGLA-MR-N4-9/16 (Entrevista (PacienteDeprimido "SI" )) => (assert (Memoria (cMemoriaFijacion  3.0))) (printout t "REGLA-MR-N4-9-16" crlf))
+
+(defrule REGLA-L-N4-ACCIONPONDERADA-0 (Entrevista (MemoriaRecuerdo_PalabrasRecordadas -1,5 )) => (assert (MemoriaRecuerdo (cPalabrasRecordadas -1,5))) (printout t "REGLA-L-N4-ACCIONPONDERADA-0" crlf))
+(defrule REGLA-L-N4-ACCIONPONDERADA-1 (Entrevista (MemoriaRecuerdo_PalabrasRecordadas 0 )) => (assert (MemoriaRecuerdo (cPalabrasRecordadas 0,0))) (printout t "REGLA-L-N4-ACCIONPONDERADA-1" crlf))
+(defrule REGLA-L-N4-ACCIONPONDERADA-2 (Entrevista (MemoriaRecuerdo_PalabrasRecordadas 1,5 )) => (assert (MemoriaRecuerdo (cPalabrasRecordadas 1,5))) (printout t "REGLA-L-N4-ACCIONPONDERADA-2" crlf))
+(defrule REGLA-L-N4-ACCIONPONDERADA-3 (Entrevista (MemoriaRecuerdo_PalabrasRecordadas 3 )) => (assert (MemoriaRecuerdo (cPalabrasRecordadas 3,0))) (printout t "REGLA-L-N4-ACCIONPONDERADA-3" crlf))
