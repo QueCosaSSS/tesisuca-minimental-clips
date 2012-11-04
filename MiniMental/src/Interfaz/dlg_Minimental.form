@@ -786,7 +786,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel11">
               <Properties>
-                <Property name="text" type="java.lang.String" value="El consultorio no se encuentra en una avenida:"/>
+                <Property name="text" type="java.lang.String" value="El consultorio se encuentra en una avenida:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel13">

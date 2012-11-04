@@ -362,7 +362,7 @@ public class dlg_Minimental extends javax.swing.JDialog {
 
         jLabel10.setText("Fue traído por algún tercero:");
 
-        jLabel11.setText("El consultorio no se encuentra en una avenida:");
+        jLabel11.setText("El consultorio se encuentra en una avenida:");
 
         jLabel13.setText("El consultorio se encuentra en un entrepiso:");
 
