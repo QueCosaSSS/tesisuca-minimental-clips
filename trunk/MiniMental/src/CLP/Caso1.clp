@@ -364,10 +364,10 @@
 (defrule REGLA-OE-N5-PISO-3 (Entrevista (OrientacionEspacial_Piso "NO" )) (Entrevista (ConsultorioEnEntrepiso "SI" )) (Entrevista (DiferenciaEntrePisoContestadoReal ?r))(test (< ?r 2)) => (assert (OrientacionEspacial (cPiso 0.0))) (printout t "REGLA-OE-N5-PISO-3" crlf))
 (defrule REGLA-OE-N5-PISO-5/7 (Entrevista (OrientacionEspacial_Piso "NO" ))(Entrevista (DiferenciaEntrePisoContestadoReal ?r))(test (< ?r 2)) => (assert (OrientacionEspacial (cPiso 1.0))) (printout t "REGLA-OE-N5-PISO-5/7" crlf))
 
-(defrule REGLA-OE-N5-CALLE-1 (Entrevista (OrientacionEspacial_Calle "NO" )) (Entrevista (TraidoPorTercero "NO" )) (Entrevista (ConsultorioEnAvenida "NO" )) => (assert (OrientacionEspacial (cCalle -0.5))) (printout t "REGLA-OE-N5-CALLE-1" crlf))
-(defrule REGLA-OE-N5-CALLE-2 (Entrevista (OrientacionEspacial_Calle "SI" )) (Entrevista (TraidoPorTercero "NO" )) (Entrevista (ConsultorioEnAvenida "NO" )) => (assert (OrientacionEspacial (cCalle 1.0))) (printout t "REGLA-OE-N5-CALLE-2" crlf))
-(defrule REGLA-OE-N5-CALLE-3 (Entrevista (OrientacionEspacial_Calle "NO" )) (Entrevista (TraidoPorTercero "SI" )) (Entrevista (ConsultorioEnAvenida "NO" )) => (assert (OrientacionEspacial (cCalle 1.0))) (printout t "REGLA-OE-N5-CALLE-3" crlf))
-(defrule REGLA-OE-N5-CALLE-5/7 (Entrevista (OrientacionEspacial_Calle "NO" )) (Entrevista (ConsultorioEnAvenida "SI" )) => (assert (OrientacionEspacial (cCalle 1.0))) (printout t "REGLA-OE-N5-CALLE-5/7" crlf))
+(defrule REGLA-OE-N5-CALLE-1 (Entrevista (OrientacionEspacial_Calle "NO" )) (Entrevista (TraidoPorTercero "NO" )) (Entrevista (ConsultorioEnAvenida "SI" )) => (assert (OrientacionEspacial (cCalle -0.5))) (printout t "REGLA-OE-N5-CALLE-1" crlf))
+(defrule REGLA-OE-N5-CALLE-2 (Entrevista (OrientacionEspacial_Calle "SI" )) (Entrevista (TraidoPorTercero "NO" )) (Entrevista (ConsultorioEnAvenida "SI" )) => (assert (OrientacionEspacial (cCalle 1.0))) (printout t "REGLA-OE-N5-CALLE-2" crlf))
+(defrule REGLA-OE-N5-CALLE-3 (Entrevista (OrientacionEspacial_Calle "NO" )) (Entrevista (TraidoPorTercero "SI" )) (Entrevista (ConsultorioEnAvenida "SI" )) => (assert (OrientacionEspacial (cCalle 1.0))) (printout t "REGLA-OE-N5-CALLE-3" crlf))
+(defrule REGLA-OE-N5-CALLE-5/7 (Entrevista (OrientacionEspacial_Calle "NO" )) (Entrevista (ConsultorioEnAvenida "NO" )) => (assert (OrientacionEspacial (cCalle 1.0))) (printout t "REGLA-OE-N5-CALLE-5/7" crlf))
 
 (defrule REGLA-MF-N5-PALABRA-1 (Entrevista (MemoriaFijacion_PalabrasRepetidas 0 )) => (assert (MemoriaFijacion (cPalabrasRepetidas -5.0))) (printout t "REGLA-OT-N5-FECHA-1" crlf))
 (defrule REGLA-MF-N5-PALABRA-2 (Entrevista (MemoriaFijacion_PalabrasRepetidas 1 )) => (assert (MemoriaFijacion (cPalabrasRepetidas -2.0))) (printout t "REGLA-OT-N5-FECHA-2" crlf))
