@@ -6,27 +6,54 @@ package Clases;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 
 /**
  *
  * @author santiago
  */
+@Entity
 public class cEntrevista {
+    
+        private Integer idEntrevista;
+
+    /**
+     * Get the value of idEntrevista
+     *
+     * @return the value of idEntrevista
+     */
+    @Id
+    public Integer getIdEntrevista() {
+        return idEntrevista;
+    }
+
+    /**
+     * Set the value of idEntrevista
+     *
+     * @param idEntrevista new value of idEntrevista
+     */
+    public void setIdEntrevista(Integer idEntrevista) {
+        this.idEntrevista = idEntrevista;
+    }
+
+    
     // <editor-fold defaultstate="collapsed" desc="Constructores">
 
-    public cEntrevista() {
-        this.FechaEntrevista = new GregorianCalendar();
-    }
-
-    public cEntrevista(int d, int m, int a) {
-        GregorianCalendar t = new GregorianCalendar();
-        t.clear();
-        t.set(Calendar.YEAR, a);
-        t.set(Calendar.MONTH, m);
-        t.set(Calendar.YEAR, a);
-
-        this.FechaEntrevista = t;
-    }
+//    public cEntrevista() {
+//        this.FechaEntrevista = new GregorianCalendar();
+//    }
+//
+//    public cEntrevista(int d, int m, int a) {
+//        GregorianCalendar t = new GregorianCalendar();
+//        t.clear();
+//        t.set(Calendar.YEAR, a);
+//        t.set(Calendar.MONTH, m);
+//        t.set(Calendar.YEAR, a);
+//
+//        this.FechaEntrevista = t;
+//    }
 // </editor-fold>
     // <editor-fold defaultstate="collapsed" desc="Atributos">
     private int Escolaridad;

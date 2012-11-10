@@ -130,7 +130,9 @@ public class CLP_Manager {
         this.AddFacts("Entrevista", "Olvido_QuejaOlvidoPaciente", Entrevista.getQuejaOlvidoPaciente().toString());
         this.AddFacts("Entrevista", "Olvido_QuejaOlvidoFamiliar", Entrevista.getQuejaOlvidoFamiliar().toString());
         this.AddFacts("Entrevista", "Olvido_PacienteMinimizaOlvidos", Entrevista.getPacienteMinimizaOlvidos().toString());
-
+        this.AddFacts("Entrevista", "Olvido_ImpactoFuncional", Entrevista.getHayImpactoFuncional().toString());
+        this.AddFacts("Entrevista", "Olvido_ImpactoCaracter", Entrevista.getHayImpactoEnCaracter().toString());
+        
         return Run();
     }
 }
