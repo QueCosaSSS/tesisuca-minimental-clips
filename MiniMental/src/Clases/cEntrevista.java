@@ -6,8 +6,16 @@ package Clases;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.TableGenerator;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 
 /**
@@ -15,6 +23,7 @@ import javax.persistence.Id;
  * @author santiago
  */
 @Entity
+@Table(name="Entrevistas")
 public class cEntrevista {
     
         private Integer idEntrevista;
@@ -25,19 +34,12 @@ public class cEntrevista {
      * @return the value of idEntrevista
      */
     @Id
+    @TableGenerator(name="IDS", table="IDS", pkColumnName="idkey", pkColumnValue="idvalue", allocationSize=1)
+    @GeneratedValue(strategy= GenerationType.TABLE, generator="IDS")
+    @Column(name="Id")
     public Integer getIdEntrevista() {
         return idEntrevista;
     }
-
-    /**
-     * Set the value of idEntrevista
-     *
-     * @param idEntrevista new value of idEntrevista
-     */
-    public void setIdEntrevista(Integer idEntrevista) {
-        this.idEntrevista = idEntrevista;
-    }
-
     
     // <editor-fold defaultstate="collapsed" desc="Constructores">
 
@@ -80,7 +82,7 @@ public class cEntrevista {
 
         this.FechaEntrevista = t;
     }
-
+    @Temporal(TemporalType.DATE)
     public Calendar getFechaEntrevista() {
 
         return this.FechaEntrevista;
@@ -413,7 +415,7 @@ public class cEntrevista {
     public int getDiaDeSemana() {
         return DiaDeSemana;
     }
-
+    @Temporal(TemporalType.DATE)
     public Calendar getFecha() {
         return Fecha;
     }
