@@ -142,7 +142,10 @@ public class MiniMental extends javax.swing.JFrame {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         AnnotationConfiguration config = new AnnotationConfiguration();
+        
         config.addAnnotatedClass(cEntrevista.class);
+        config.addAnnotatedClass(cMiniMental.class);              
+        
         config.configure();
         new SchemaExport(config).create(true, true);              
     }//GEN-LAST:event_jMenuItem2ActionPerformed

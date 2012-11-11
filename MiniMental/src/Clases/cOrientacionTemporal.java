@@ -4,11 +4,15 @@
  */
 package Clases;
 
+import java.io.Serializable;
+import javax.persistence.Embeddable;
+
 /**
  *
  * @author santiago
  */
-public class cOrientacionTemporal {
+@Embeddable
+public class cOrientacionTemporal implements Serializable{
     
     private Float Fecha;
     private Boolean Estacion;
