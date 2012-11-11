@@ -6,27 +6,29 @@ package Clases;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
-
 /**
  *
  * @author santiago
  */
 @Entity
-@Table(name="Entrevistas")
+@Table(name = "Entrevistas")
 public class cEntrevista {
-    
-        private Integer idEntrevista;
+
+    private Integer idEntrevista;
 
     /**
      * Get the value of idEntrevista
@@ -34,15 +36,13 @@ public class cEntrevista {
      * @return the value of idEntrevista
      */
     @Id
-    @TableGenerator(name="IDS", table="IDS", pkColumnName="idkey", pkColumnValue="idvalue", allocationSize=1)
-    @GeneratedValue(strategy= GenerationType.TABLE, generator="IDS")
-    @Column(name="Id")
+    @TableGenerator(name = "IDS", table = "IDS", pkColumnName = "idkey", pkColumnValue = "idvalue", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "IDS")
+    @Column(name = "Id")
     public Integer getIdEntrevista() {
         return idEntrevista;
     }
-    
     // <editor-fold defaultstate="collapsed" desc="Constructores">
-
 //    public cEntrevista() {
 //        this.FechaEntrevista = new GregorianCalendar();
 //    }
@@ -82,6 +82,7 @@ public class cEntrevista {
 
         this.FechaEntrevista = t;
     }
+
     @Temporal(TemporalType.DATE)
     public Calendar getFechaEntrevista() {
 
@@ -415,6 +416,7 @@ public class cEntrevista {
     public int getDiaDeSemana() {
         return DiaDeSemana;
     }
+
     @Temporal(TemporalType.DATE)
     public Calendar getFecha() {
         return Fecha;
@@ -519,8 +521,8 @@ public class cEntrevista {
     public Boolean ContestaMesCorrecto() {
         return Fecha.get(Calendar.MONTH) == FechaEntrevista.get(Calendar.MONTH);
     }
-    
-    public Boolean ContestaDiaSemanaCorrecto(){
+
+    public Boolean ContestaDiaSemanaCorrecto() {
         return FechaEntrevista.get(Calendar.DAY_OF_WEEK) == DiaDeSemana;
     }
 // </editor-fold>    
@@ -724,4 +726,26 @@ public class cEntrevista {
     }
     // </editor-fold>
     // </editor-fold>
+    
+    
+    private cMiniMental Minimental;
+
+    /**
+     * Get the value of Minimental
+     *
+     * @return the value of Minimental
+     */
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    public cMiniMental getMinimental() {
+        return Minimental;
+    }
+
+    /**
+     * Set the value of Minimental
+     *
+     * @param Minimental new value of Minimental
+     */
+    public void setMinimental(cMiniMental Minimental) {
+        this.Minimental = Minimental;
+    }
 }

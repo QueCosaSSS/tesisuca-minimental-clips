@@ -4,13 +4,17 @@
  */
 package Clases;
 
+import java.io.Serializable;
 import java.util.logging.Logger;
+import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
 
 /**
  *
  * @author santiago
  */
-public class cOrientacion {
+@Embeddable
+public class cOrientacion implements Serializable{
 
     public cOrientacion() {
     }
@@ -18,6 +22,7 @@ public class cOrientacion {
     private cOrientacionTemporal OrientacionTemporal;
     private cOrientacionEspacial OrientacionEspacial;
 
+    @Embedded
     public cOrientacionTemporal getOrientacionTemporal() {
         return OrientacionTemporal;
     }
@@ -26,10 +31,10 @@ public class cOrientacion {
         this.OrientacionTemporal = OrientacionTemporal;
     }
 
+    @Embedded
     public cOrientacionEspacial getOrientacionEspacial() {
         return OrientacionEspacial;
     }
-
     public void setOrientacionEspacial(cOrientacionEspacial OrientacionEspacial) {
         this.OrientacionEspacial = OrientacionEspacial;
     }

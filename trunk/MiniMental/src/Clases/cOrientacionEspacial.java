@@ -4,11 +4,15 @@
  */
 package Clases;
 
+import java.io.Serializable;
+import javax.persistence.Embeddable;
+
 /**
  *
  * @author santiago
  */
-public class cOrientacionEspacial {
+@Embeddable
+public class cOrientacionEspacial implements Serializable{
 
     private Float Lugar;
     private Float Ciudad;
