@@ -5,6 +5,7 @@
 package Interfaz;
 
 import CLIPS_Manager.CLP_Manager;
+import Clases.cDiagnostico;
 import Clases.cEntrevista;
 import Clases.cMiniMental;
 import java.util.Calendar;
@@ -144,7 +145,7 @@ public class MiniMental extends javax.swing.JFrame {
         AnnotationConfiguration config = new AnnotationConfiguration();
         
         config.addAnnotatedClass(cEntrevista.class);
-        config.addAnnotatedClass(cMiniMental.class);              
+        config.addAnnotatedClass(cDiagnostico.class);              
         
         config.configure();
         new SchemaExport(config).create(true, true);              

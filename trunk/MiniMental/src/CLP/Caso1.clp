@@ -112,7 +112,7 @@
 )
 (deftemplate Lenguaje
     (slot cLenguajeAccion    (type NUMBER))
-    (slot cLenguajeEscrita   (type STRING) (allowed-strings "SI" "NO"))
+    (slot cLenguajeEscritura   (type STRING) (allowed-strings "SI" "NO"))
     (slot cLenguajeOrden     (type STRING) (allowed-strings "SI" "NO"))
     (slot cLenguajeFrase     (type STRING) (allowed-strings "SI" "NO"))
 )
@@ -122,7 +122,6 @@
     (slot cMemoria (type NUMBER))
     (slot cLenguaje (type NUMBER))
     (slot cDibujo (type NUMBER))
-    (slot cEntrevista (type NUMBER))
 )
 
 (deftemplate Diagnostico
@@ -131,8 +130,8 @@
     (slot cQueja (type STRING) (allowed-strings "R" "N"))
     (slot cFuncional (type STRING) (allowed-strings "R" "N"))
     (slot cCaracter (type STRING) (allowed-strings "R" "N"))
+    (slot Resultado (type STRING) (allowed-strings "OlvidoBenigno" "DemenciaLeve" "DemenciaModerada" "DemenciaSevera"))
 )
-
 
 (
  deffacts Caso-1

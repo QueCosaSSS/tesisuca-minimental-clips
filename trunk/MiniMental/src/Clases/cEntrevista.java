@@ -4,10 +4,12 @@
  */
 package Clases;
 
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -18,15 +20,13 @@ import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Transient;
-
 /**
  *
  * @author santiago
  */
 @Entity
 @Table(name = "Entrevistas")
-public class cEntrevista {
+public class cEntrevista implements Serializable{
 
     private Integer idEntrevista;
 
@@ -727,25 +727,28 @@ public class cEntrevista {
     // </editor-fold>
     // </editor-fold>
     
+        private cDiagnostico Diagnostico;
+
+    /**
+     * Get the value of Diagnostico
+     *
+     * @return the value of Diagnostico
+     */
+    @OneToOne(cascade= CascadeType.ALL, fetch= FetchType.EAGER  )
+    public cDiagnostico getDiagnostico() {
+        return Diagnostico;
+    }
+
+    /**
+     * Set the value of Diagnostico
+     *
+     * @param Diagnostico new value of Diagnostico
+     */
+    public void setDiagnostico(cDiagnostico Diagnostico) {
+        this.Diagnostico = Diagnostico;
+    }
+
     
-    private cMiniMental Minimental;
-
-    /**
-     * Get the value of Minimental
-     *
-     * @return the value of Minimental
-     */
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    public cMiniMental getMinimental() {
-        return Minimental;
-    }
-
-    /**
-     * Set the value of Minimental
-     *
-     * @param Minimental new value of Minimental
-     */
-    public void setMinimental(cMiniMental Minimental) {
-        this.Minimental = Minimental;
-    }
+    
+    
 }
