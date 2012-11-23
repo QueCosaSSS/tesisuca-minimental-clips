@@ -4,50 +4,80 @@
  */
 package Clases;
 
-import javax.persistence.Column;
+import java.io.Serializable;
+import javax.persistence.Embeddable;
 import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.TableGenerator;
 
 /**
  *
  * @author santiago
  */
-@Entity
-@Table(name = "Minimentals")
-public class cMiniMental {
+@Embeddable
+public class cMiniMental implements Serializable{
 
-    private int idMinimental;
-
-    /**
-     * Get the value of idMinimental
-     *
-     * @return the value of idMinimental
-     */
-    @Id
-    @TableGenerator(name = "IDS", table = "IDS", pkColumnName = "idkey", pkColumnValue = "idvalue", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.TABLE, generator = "IDS")
-    @Column(name = "Id")
-    public int getIdMinimental() {
-        return idMinimental;
-    }
-
-    /**
-     * Set the value of idMinimental
-     *
-     * @param idMinimental new value of idMinimental
-     */
-    public void setIdMinimental(int idMinimental) {
-        this.idMinimental = idMinimental;
-    }
-
-    public cMiniMental() {
-    }
     private cOrientacion Orientacion;
+    private cMemoria Memoria;
+    private cLenguaje Lenguaje;
+    private Boolean Dibujo;
+
+    /**
+     * Get the value of Dibujo
+     *
+     * @return the value of Dibujo
+     */
+    public Boolean getDibujo() {
+        return Dibujo;
+    }
+
+    /**
+     * Set the value of Dibujo
+     *
+     * @param Dibujo new value of Dibujo
+     */
+    public void setDibujo(Boolean Dibujo) {
+        this.Dibujo = Dibujo;
+    }
+
+
+    /**
+     * Get the value of Lenguaje
+     *
+     * @return the value of Lenguaje
+     */
+    @Embedded    
+    public cLenguaje getLenguaje() {
+        return Lenguaje;
+    }
+
+    /**
+     * Set the value of Lenguaje
+     *
+     * @param Lenguaje new value of Lenguaje
+     */
+    public void setLenguaje(cLenguaje Lenguaje) {
+        this.Lenguaje = Lenguaje;
+    }
+
+
+    /**
+     * Get the value of Memoria
+     *
+     * @return the value of Memoria
+     */
+    @Embedded
+    public cMemoria getMemoria() {
+        return Memoria;
+    }
+
+    /**
+     * Set the value of Memoria
+     *
+     * @param Memoria new value of Memoria
+     */
+    public void setMemoria(cMemoria Memoria) {
+        this.Memoria = Memoria;
+    }
+
 
     /**
      *
@@ -61,4 +91,6 @@ public class cMiniMental {
     public void setOrientacion(cOrientacion Orientacion) {
         this.Orientacion = Orientacion;
     }
+    
+    
 }
