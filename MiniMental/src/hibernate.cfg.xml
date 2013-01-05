@@ -5,8 +5,8 @@
     <property name="hibernate.dialect">org.hibernate.dialect.DerbyDialect</property>
     <property name="hibernate.connection.driver_class">org.apache.derby.jdbc.ClientDriver</property>
     <property name="hibernate.connection.url">jdbc:derby://localhost:1527/Minimental</property>
-    <property name="hibernate.connection.username">santiago</property>
-    <property name="hibernate.connection.password">santiago</property>
+    <property name="hibernate.connection.username">rfc_user_minimental</property>
+    <property name="hibernate.connection.password">minimental</property>
     <property name="hibernate.show_sql">true</property>
     <property name="hibernate.query.factory_class">org.hibernate.hql.classic.ClassicQueryTranslatorFactory</property>
     <property name="current_session_context_class">thread</property>
