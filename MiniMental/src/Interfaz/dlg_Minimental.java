@@ -7,6 +7,7 @@ package Interfaz;
 import CLIPS_Manager.CLP_Manager;
 import Clases.cEscolaridad;
 import Clases.cEntrevista;
+import DB_Manager.SessionFactoryUtil;
 import java.util.Enumeration;
 import java.util.HashSet;
 
@@ -918,10 +919,10 @@ public class dlg_Minimental extends javax.swing.JDialog {
         
         Entrevista.setPacienteMinimizaOlvidos(jrb_MinimizaOlvidos_si.isSelected());
         
+        SessionFactoryUtil.getInstance().getCurrentSession().save(Entrevista);
+        
         CLP_Manager clp_manager = new CLP_Manager();
-        clp_manager.ProcesarEntrevista(Entrevista);
-        
-        
+        clp_manager.ProcesarEntrevista(Entrevista);    
         
        
 
