@@ -1,7 +1,7 @@
-Sat Jan 05 18:06:44 ART 2013 : Apache Derby Network Server - 10.8.2.2 - (1181258) se ha iniciado y está listo para aceptar conexiones en el puerto 1527
+Thu Jan 17 20:25:39 ART 2013 : Apache Derby Network Server - 10.8.2.2 - (1181258) se ha iniciado y está listo para aceptar conexiones en el puerto 1527
 ----------------------------------------------------------------
-Sat Jan 05 18:06:44 ART 2013:
- Arrancando Derby versión The Apache Software Foundation - Apache Derby - 10.8.2.2 - (1181258): instancia a816c00e-013c-0c89-83f2-ffffc8bc3c11 
+Thu Jan 17 20:25:41 ART 2013:
+ Arrancando Derby versión The Apache Software Foundation - Apache Derby - 10.8.2.2 - (1181258): instancia a816c00e-013c-4ad5-02bd-ffffc8bc3c11 
 en el directorio de base de datos C:\Users\santiago\Documents\NetBeansProjects\MiniMental\db\Minimental  con el cargador de clases sun.misc.Launcher$AppClassLoader@15601ea
 
 java.vendor=Oracle Corporation
@@ -9,19 +9,3 @@ java.runtime.version=1.7.0_07-b11
 user.dir=C:\Program Files\Java\jdk1.7.0_07\db
 derby.system.home=C:\Users\santiago\Documents\NetBeansProjects\MiniMental\db
 Cargador de clases de base de datos iniciado - derby.database.classpath=''
-----------------------------------------------------------------
-Sat Jan 05 18:06:54 ART 2013:
-Cerrando la instancia a816c00e-013c-0c89-83f2-ffffc8bc3c11 en el directorio de base de datos C:\Users\santiago\Documents\NetBeansProjects\MiniMental\db\Minimental con cargador de clases sun.misc.Launcher$AppClassLoader@15601ea
-Sat Jan 05 18:06:54 ART 2013 Thread[DRDAConnThread_3,5,main] (DATABASE = Minimental), (DRDAID = {2}), Conclusión de la base de datos 'Minimental'.
-----------------------------------------------------------------
-Sat Jan 05 19:16:00 ART 2013:
- Arrancando Derby versión The Apache Software Foundation - Apache Derby - 10.8.2.2 - (1181258): instancia 6c44409f-013c-0c89-83f2-ffffc8bc3c11 
-en el directorio de base de datos C:\Users\santiago\Documents\NetBeansProjects\MiniMental\db\Minimental  con el cargador de clases sun.misc.Launcher$AppClassLoader@15601ea
-
-java.vendor=Oracle Corporation
-java.runtime.version=1.7.0_07-b11
-user.dir=C:\Program Files\Java\jdk1.7.0_07\db
-derby.system.home=C:\Users\santiago\Documents\NetBeansProjects\MiniMental\db
-Cargador de clases de base de datos iniciado - derby.database.classpath=''
-----------------------------------------------------------------
-Sat Jan 05 19:35:40 ART 2013: cerrando motor de Derby

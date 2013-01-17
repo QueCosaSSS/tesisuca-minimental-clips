@@ -342,6 +342,9 @@ public class MiniMental extends javax.swing.JFrame {
         // TODO add your handling code here:
         CardLayout cl = (CardLayout)(jPanel2.getLayout());
         cl.show(jPanel2, "PanelEntrevista");
+        dlg_Minimental d = new dlg_Minimental(this, rootPaneCheckingEnabled);
+        d.setVisible(true);
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
