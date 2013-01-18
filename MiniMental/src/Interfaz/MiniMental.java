@@ -8,6 +8,7 @@ import CLIPS_Manager.CLP_Manager;
 import Clases.cDiagnostico;
 import Clases.cEntrevista;
 import Clases.cMiniMental;
+import DB_Manager.SessionFactoryUtil;
 import java.awt.BorderLayout;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -16,6 +17,7 @@ import java.util.Set;
 import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.tool.hbm2ddl.SchemaExport;
 import java.awt.CardLayout;
+import java.util.List;
 
 /**
  *
@@ -157,12 +159,14 @@ public class MiniMental extends javax.swing.JFrame {
         jTextField3.setText("jTextField3");
 
         jButton2.setText("Buscar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
                 {null, null, null, null}
             },
             new String [] {
@@ -322,7 +326,11 @@ public class MiniMental extends javax.swing.JFrame {
         config.addAnnotatedClass(cDiagnostico.class);              
         
         config.configure();
-        new SchemaExport(config).create(true, true);              
+        new SchemaExport(config).create(true, true);        
+        
+        
+        cEntrevista e = new cEntrevista();
+        
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -339,6 +347,11 @@ public class MiniMental extends javax.swing.JFrame {
         CardLayout cl = (CardLayout)(jPanel2.getLayout());
         cl.show(jPanel2, "PanelGestion");        
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        List l = SessionFactoryUtil.Listar(cEntrevista.class);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * 

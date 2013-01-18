@@ -11,6 +11,6 @@
     <property name="hibernate.query.factory_class">org.hibernate.hql.classic.ClassicQueryTranslatorFactory</property>
     <property name="current_session_context_class">thread</property>
     <property name="hibernate.default_schema">Minimental</property>
-    <property name="hibernate.hbm2ddl.auto">create-drop</property>
+   
   </session-factory>
 </hibernate-configuration>

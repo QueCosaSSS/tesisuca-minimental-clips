@@ -8,18 +8,26 @@ import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.SessionFactory;
 import org.hibernate.Session;
 import java.util.logging.*;
-
+import sun.security.acl.OwnerImpl;
+import Clases.*;
+import java.util.List;
 
 public class SessionFactoryUtil {
 
-    private static org.hibernate.SessionFactory sessionFactory;       
+    private static org.hibernate.SessionFactory sessionFactory;
+
     static {
         try {
-            
-            
+
+
             // Create the SessionFactory from standard (hibernate.cfg.xml) 
             // config file.
-            sessionFactory = new AnnotationConfiguration().configure().buildSessionFactory();
+            AnnotationConfiguration config = new AnnotationConfiguration();
+
+            config.addAnnotatedClass(cDiagnostico.class);
+            config.addAnnotatedClass(cEntrevista.class);
+
+            sessionFactory = config.configure().buildSessionFactory();
         } catch (Throwable ex) {
             // Log the exception. 
             System.err.println("Initial SessionFactory creation failed." + ex);
@@ -63,5 +71,20 @@ public class SessionFactoryUtil {
             sessionFactory.close();
         }
         sessionFactory = null;
+    }
+
+    public static void Save(Object o) {
+        Session ss = SessionFactoryUtil.getInstance().getCurrentSession();
+        ss.beginTransaction();
+        ss.save(o);
+        ss.getTransaction().commit();
+    }
+    
+    public static List Listar(Class s){
+        Session ss = SessionFactoryUtil.getInstance().getCurrentSession();
+        ss.beginTransaction();
+        List lista = ss.createCriteria(s).list();
+        ss.getTransaction().commit();
+        return lista;
     }
 }

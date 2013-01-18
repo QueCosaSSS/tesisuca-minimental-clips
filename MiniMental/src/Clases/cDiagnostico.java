@@ -25,6 +25,10 @@ public class cDiagnostico implements Serializable{
     
     private Integer idDiagnostico;
 
+    public void setIdDiagnostico(Integer idDiagnostico) {
+        this.idDiagnostico = idDiagnostico;
+    }
+
     @Id
     @TableGenerator(name = "IDS", table = "IDS", pkColumnName = "idkey", pkColumnValue = "idvalue", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.TABLE, generator = "IDS")

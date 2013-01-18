@@ -20,6 +20,7 @@ import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
 /**
  *
  * @author santiago
@@ -29,6 +30,22 @@ import javax.persistence.TemporalType;
 public class cEntrevista implements Serializable{
 
     private Integer idEntrevista;
+
+    public void setIdEntrevista(Integer idEntrevista) {
+        this.idEntrevista = idEntrevista;
+    }
+
+    public void setFechaEntrevista(Calendar FechaEntrevista) {
+        this.FechaEntrevista = FechaEntrevista;
+    }
+
+    public void setFecha(Calendar Fecha) {
+        this.Fecha = Fecha;
+    }
+
+    public void setClasificacionAccion(Integer ClasificacionAccion) {
+        this.ClasificacionAccion = ClasificacionAccion;
+    }
 
     /**
      * Get the value of idEntrevista
