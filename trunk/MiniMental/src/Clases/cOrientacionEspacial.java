@@ -40,7 +40,7 @@ public class cOrientacionEspacial implements Serializable{
         return Pais;
     }
 
-    public void setcPais(Float Pais) {
+    public void setPais(Float Pais) {
         this.Pais = Pais;
     }
 
@@ -48,7 +48,7 @@ public class cOrientacionEspacial implements Serializable{
         return Piso;
     }
 
-    public void setcPiso(Float Piso) {
+    public void setPiso(Float Piso) {
         this.Piso = Piso;
     }
 
