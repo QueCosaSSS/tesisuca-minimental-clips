@@ -111,7 +111,13 @@ public class cEntrevista implements Serializable{
     }
 
     public Integer getEscolaridad() {
-        return Escolaridad;
+        int esco = Escolaridad;
+        switch (Escolaridad) {
+            case 0 : esco = 5; break;
+            case 1 : esco = 11; break;
+            case 2 : esco = 13; break;        
+        }
+        return esco;
     }
 
     public Boolean getPacienteConProblemasAuditivo() {
