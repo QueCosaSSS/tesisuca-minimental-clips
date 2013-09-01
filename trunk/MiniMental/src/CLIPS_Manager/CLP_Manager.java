@@ -5,7 +5,9 @@
 package CLIPS_Manager;
 
 import CLIPSJNI.*;
-import Clases.cEntrevista;
+import Clases.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  *
@@ -29,8 +31,9 @@ public class CLP_Manager {
         }
     }
 
-    private void Run() {
-        String salida = "";
+    private cDiagnostico Run() {
+
+        cDiagnostico salida = new cDiagnostico();
 
         try {
 //            this.clips.reset();
@@ -39,43 +42,35 @@ public class CLP_Manager {
             this.clips.eval("(save-facts C:\\Users\\santiago\\Desktop\\hechos1.txt)");
 
             this.clips.run();
-            
+
             //Obtengo valores evaluados:
-            
-            String evalStr = "(find-all-facts ((?f OrientacionTemporal)) TRUE)";
-
-            PrimitiveValue evaluado = this.clips.eval(evalStr);
-
-            for (int i = 0; i < evaluado.size(); i++) {
-                salida = evaluado.get(i).getFactSlot("cFecha").toString();
-
-            }
-
+            this.FillDiagnostico(salida);
 
         } catch (Exception ex) {
             System.out.println(ex);
         }
+        return salida;
 
     }
 
     private void AddFacts(String objeto, String slots) {
-            this.clips.assertString("(" + objeto + " " + slots + " )");
+        this.clips.assertString("(" + objeto + " " + slots + " )");
     }
-    
-    private String AddSlot(String campo, String valor) {
-       
-            String slot = " (" + campo + " \"" + valor + "\")";
 
-            if (this.isInteger(valor)) {
-                slot = " (" + campo + " " + valor + ")";
-            } else {
-                if (this.isBoolean(valor)) {
-                    slot = " (" + campo + " \"" + (Boolean.parseBoolean(valor) ? "SI" : "NO") + "\")";
-                }
+    private String AddSlot(String campo, String valor) {
+
+        String slot = " (" + campo + " \"" + valor + "\")";
+
+        if (this.isInteger(valor)) {
+            slot = " (" + campo + " " + valor + ")";
+        } else {
+            if (this.isBoolean(valor)) {
+                slot = " (" + campo + " \"" + (Boolean.parseBoolean(valor) ? "SI" : "NO") + "\")";
             }
-        
-            return slot;
         }
+
+        return slot;
+    }
 
     public boolean isInteger(String input) {
         try {
@@ -94,7 +89,7 @@ public class CLP_Manager {
 
     public void ProcesarEntrevista(cEntrevista Entrevista) {
         String tmp_fact = "";
-        
+
         tmp_fact += this.AddSlot("Escolaridad", Entrevista.getEscolaridad().toString());
         tmp_fact += this.AddSlot("OrientacionTemporal_Fecha", Entrevista.ContestaFechaCorrecta().toString());
         tmp_fact += this.AddSlot("OrientacionTemporal_Estacion", Entrevista.ContestaEstacionCorrecta().toString());
@@ -139,9 +134,201 @@ public class CLP_Manager {
         tmp_fact += this.AddSlot("Olvido_PacienteMinimizaOlvidos", Entrevista.getPacienteMinimizaOlvidos().toString());
         tmp_fact += this.AddSlot("Olvido_ImpactoFuncional", Entrevista.getHayImpactoFuncional().toString());
         tmp_fact += this.AddSlot("Olvido_ImpactoCaracter", Entrevista.getHayImpactoEnCaracter().toString());
-        
-        this.AddFacts("Entrevista",tmp_fact);
-        
+
+        this.AddFacts("Entrevista", tmp_fact);
+
         Run();
+    }
+
+    private void FillDiagnostico(cDiagnostico diagnostico) {
+        try {
+            String evalStr = "(find-all-facts ((?f Diagnostico)) TRUE)";
+
+            PrimitiveValue evaluado = this.clips.eval(evalStr);
+
+            for (int i = 0; i < evaluado.size(); i++) {
+
+                diagnostico.setOlvido(GetenumRN(evaluado.get(i).getFactSlot("cOlvido").toString()));
+                diagnostico.setQueja(GetenumRN(evaluado.get(i).getFactSlot("cQueja").toString()));
+                diagnostico.setFuncional(GetenumRN(evaluado.get(i).getFactSlot("cFuncional").toString()));
+                diagnostico.setCaracter(GetenumRN(evaluado.get(i).getFactSlot("cCaracter").toString()));
+                diagnostico.setResultado(evaluado.get(i).getFactSlot("cQueja").toString());
+
+                cMiniMental minimental = new cMiniMental();
+
+                minimental.setCalculado(evaluado.get(i).getFactSlot("cMiniMental_Calculado").floatValue());
+
+                FillMinimental(minimental);
+
+                diagnostico.setMinimental(minimental);
+            }
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+    }
+
+    private void FillMinimental(cMiniMental minimental) {
+        try {
+            String evalStr = "(find-all-facts ((?f MiniMental_Calculado)) TRUE)";
+
+            PrimitiveValue evaluado = this.clips.eval(evalStr);
+
+            for (int i = 0; i < evaluado.size(); i++) {
+
+                minimental.setDibujo(evaluado.get(i).getFactSlot("cDibujo").floatValue());
+
+                cOrientacion orientacion = new cOrientacion();
+
+                orientacion.setCalculado(evaluado.get(i).getFactSlot("cOrientacion").floatValue());
+
+                FillOrientacion(orientacion);
+
+                minimental.setOrientacion(orientacion);
+
+                cMemoria memoria = new cMemoria();
+
+                memoria.setCalculado(evaluado.get(i).getFactSlot("cMemoria").floatValue());
+
+                FillMemoria(memoria);
+
+                minimental.setMemoria(memoria);
+
+                cLenguaje lenguaje = new cLenguaje();
+
+                lenguaje.setCalculado(evaluado.get(i).getFactSlot("cLenguaje").floatValue());
+
+                FillLenguaje(lenguaje);
+
+                minimental.setLenguaje(lenguaje);
+
+            }
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+
+    }
+
+    private void FillOrientacion(cOrientacion orientacion) {
+        try {
+            String evalStr = "(find-all-facts ((?f Orientacion)) TRUE)";
+
+            PrimitiveValue evaluado = this.clips.eval(evalStr);
+
+            for (int i = 0; i < evaluado.size(); i++) {
+
+                cOrientacionTemporal orientacionTemporal = new cOrientacionTemporal();
+
+                orientacionTemporal.setCalculado(evaluado.get(i).getFactSlot("cOrientacionTemporal").floatValue());
+
+                FillOrientacionTemporal(orientacionTemporal);
+
+                orientacion.setOrientacionTemporal(orientacionTemporal);
+
+                cOrientacionEspacial orientacionEspacial = new cOrientacionEspacial();
+
+                orientacionEspacial.setCalculado(evaluado.get(i).getFactSlot("cOrientacionEspacial").floatValue());
+
+                FillOrientacionEspacial(orientacionEspacial);
+
+                orientacion.setOrientacionEspacial(orientacionEspacial);
+
+            }
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+    }
+
+    private void FillMemoria(cMemoria memoria) {
+        try {
+            String evalStr = "(find-all-facts ((?f Memoria)) TRUE)";
+
+            PrimitiveValue evaluado = this.clips.eval(evalStr);
+
+            for (int i = 0; i < evaluado.size(); i++) {
+
+                memoria.setAtencion(evaluado.get(i).getFactSlot("cMemoriaAtencion").floatValue());
+                memoria.setFijacion(evaluado.get(i).getFactSlot("cMemoriaFijacion").floatValue());
+                memoria.setRecuerdo(evaluado.get(i).getFactSlot("cMemoriaRecuerdo").floatValue());
+
+            }
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+    }
+
+    private void FillLenguaje(cLenguaje lenguaje) {
+        try {
+            String evalStr = "(find-all-facts ((?f Lenguaje)) TRUE)";
+
+            PrimitiveValue evaluado = this.clips.eval(evalStr);
+
+            for (int i = 0; i < evaluado.size(); i++) {
+
+                lenguaje.setAccion(evaluado.get(i).getFactSlot("cLenguajeAccion").floatValue());
+                lenguaje.setEscritura(toBool(evaluado.get(i).getFactSlot("cLenguajeEscritura").stringValue()));
+                lenguaje.setFrase(toBool(evaluado.get(i).getFactSlot("cLenguajeFrase").stringValue()));
+                lenguaje.setOrden(toBool(evaluado.get(i).getFactSlot("cLenguajeOrden").stringValue()));
+
+            }
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+    }
+
+    private void FillOrientacionTemporal(cOrientacionTemporal orientacionTemporal) {
+        try {
+            String evalStr = "(find-all-facts ((?f OrientacionTemporal)) TRUE)";
+
+            PrimitiveValue evaluado = this.clips.eval(evalStr);
+
+            for (int i = 0; i < evaluado.size(); i++) {
+
+                orientacionTemporal.setFecha(evaluado.get(i).getFactSlot("cFecha").floatValue());
+                orientacionTemporal.setEstacion(toBool(evaluado.get(i).getFactSlot("cEstacion").stringValue()));
+                orientacionTemporal.setMes(evaluado.get(i).getFactSlot("cMes").floatValue());
+                orientacionTemporal.setAno(evaluado.get(i).getFactSlot("cAno").floatValue());
+
+            }
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+    }
+
+    private void FillOrientacionEspacial(cOrientacionEspacial orientacionEspacial) {
+        try {
+            String evalStr = "(find-all-facts ((?f OrientacionEspacial)) TRUE)";
+
+            PrimitiveValue evaluado = this.clips.eval(evalStr);
+
+            for (int i = 0; i < evaluado.size(); i++) {
+
+                orientacionEspacial.setLugar(evaluado.get(i).getFactSlot("cLugar").floatValue());
+                orientacionEspacial.setCiudad(evaluado.get(i).getFactSlot("cCiudad").floatValue());
+                orientacionEspacial.setPais(evaluado.get(i).getFactSlot("cPais").floatValue());
+                orientacionEspacial.setPiso(evaluado.get(i).getFactSlot("cPiso").floatValue());
+                orientacionEspacial.setCalle(evaluado.get(i).getFactSlot("cCalle").floatValue());
+
+            }
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+    }
+
+    private enumRN GetenumRN(String rn) {
+        enumRN e = enumRN.N;
+        switch (rn) {
+            case "R":
+                e = enumRN.R;
+                break;
+            case "N":
+                e = enumRN.N;
+                break;
+
+        }
+        return e;
+    }
+
+    private Boolean toBool(String texto) {
+        return texto.toUpperCase() == "SI" ? true : false;
     }
 }

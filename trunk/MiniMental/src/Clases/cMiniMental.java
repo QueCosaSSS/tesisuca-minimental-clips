@@ -18,14 +18,15 @@ public class cMiniMental implements Serializable{
     private cOrientacion Orientacion;
     private cMemoria Memoria;
     private cLenguaje Lenguaje;
-    private Boolean Dibujo;
+    private Float Dibujo;
+    private Float Calculado;
 
     /**
      * Get the value of Dibujo
      *
      * @return the value of Dibujo
      */
-    public Boolean getDibujo() {
+    public Float getDibujo() {
         return Dibujo;
     }
 
@@ -34,7 +35,7 @@ public class cMiniMental implements Serializable{
      *
      * @param Dibujo new value of Dibujo
      */
-    public void setDibujo(Boolean Dibujo) {
+    public void setDibujo(Float Dibujo) {
         this.Dibujo = Dibujo;
     }
 
@@ -90,6 +91,14 @@ public class cMiniMental implements Serializable{
 
     public void setOrientacion(cOrientacion Orientacion) {
         this.Orientacion = Orientacion;
+    }
+
+    public Float getCalculado() {
+        return Calculado;
+    }
+
+    public void setCalculado(Float Calculado) {
+        this.Calculado = Calculado;
     }
     
     

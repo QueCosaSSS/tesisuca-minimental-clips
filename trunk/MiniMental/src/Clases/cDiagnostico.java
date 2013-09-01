@@ -37,14 +37,14 @@ public class cDiagnostico implements Serializable{
         return idDiagnostico;
     }
     
-    private Boolean Olvido;
+    private enumRN Olvido;
 
     /**
      * Get the value of Olvido
      *
      * @return the value of Olvido
      */
-    public Boolean getOlvido() {
+    public enumRN getOlvido() {
         return Olvido;
     }
 
@@ -53,18 +53,18 @@ public class cDiagnostico implements Serializable{
      *
      * @param Olvido new value of Olvido
      */
-    public void setOlvido(Boolean Olvido) {
+    public void setOlvido(enumRN Olvido) {
         this.Olvido = Olvido;
     }
 
-    private Boolean Queja;
+    private enumRN Queja;
 
     /**
      * Get the value of Queja
      *
      * @return the value of Queja
      */
-    public Boolean getQueja() {
+    public enumRN getQueja() {
         return Queja;
     }
 
@@ -73,18 +73,18 @@ public class cDiagnostico implements Serializable{
      *
      * @param Queja new value of Queja
      */
-    public void setQueja(Boolean Queja) {
+    public void setQueja(enumRN Queja) {
         this.Queja = Queja;
     }
 
-        private Boolean Funcional;
+        private enumRN Funcional;
 
     /**
      * Get the value of Funcional
      *
      * @return the value of Funcional
      */
-    public Boolean getFuncional() {
+    public enumRN getFuncional() {
         return Funcional;
     }
 
@@ -93,17 +93,17 @@ public class cDiagnostico implements Serializable{
      *
      * @param Funcional new value of Funcional
      */
-    public void setFuncional(Boolean Funcional) {
+    public void setFuncional(enumRN Funcional) {
         this.Funcional = Funcional;
     }
-    private Boolean Caracter;
+    private enumRN Caracter;
 
     /**
      * Get the value of Caracter
      *
      * @return the value of Caracter
      */
-    public Boolean getCaracter() {
+    public enumRN getCaracter() {
         return Caracter;
     }
 
@@ -112,7 +112,7 @@ public class cDiagnostico implements Serializable{
      *
      * @param Caracter new value of Caracter
      */
-    public void setCaracter(Boolean Caracter) {
+    public void setCaracter(enumRN Caracter) {
         this.Caracter = Caracter;
     }
 

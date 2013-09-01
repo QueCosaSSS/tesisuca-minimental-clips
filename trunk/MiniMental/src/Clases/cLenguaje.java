@@ -18,6 +18,7 @@ public class cLenguaje implements Serializable{
     private Boolean Escritura;
     private Boolean Orden;
     private Boolean Frase;
+    private Float Calculado;
 
     /**
      * Get the value of Frase
@@ -92,6 +93,14 @@ public class cLenguaje implements Serializable{
      */
     public void setAccion(float Accion) {
         this.Accion = Accion;
+    }
+
+    public Float getCalculado() {
+        return Calculado;
+    }
+
+    public void setCalculado(Float Calculado) {
+        this.Calculado = Calculado;
     }
 
     
