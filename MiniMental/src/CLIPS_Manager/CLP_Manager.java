@@ -156,7 +156,7 @@ public class CLP_Manager {
 
                 cMiniMental minimental = new cMiniMental();
 
-                minimental.setCalculado(evaluado.get(i).getFactSlot("cMiniMental_Calculado").floatValue());
+                minimental.setMinimentalCalculado(evaluado.get(i).getFactSlot("cMiniMental_Calculado").floatValue());
 
                 FillMinimental(minimental);
 
@@ -179,7 +179,7 @@ public class CLP_Manager {
 
                 cOrientacion orientacion = new cOrientacion();
 
-                orientacion.setCalculado(evaluado.get(i).getFactSlot("cOrientacion").floatValue());
+                orientacion.setOrientacionCalculado(evaluado.get(i).getFactSlot("cOrientacion").floatValue());
 
                 FillOrientacion(orientacion);
 
@@ -187,7 +187,7 @@ public class CLP_Manager {
 
                 cMemoria memoria = new cMemoria();
 
-                memoria.setCalculado(evaluado.get(i).getFactSlot("cMemoria").floatValue());
+                memoria.setMemoriaCalculado(evaluado.get(i).getFactSlot("cMemoria").floatValue());
 
                 FillMemoria(memoria);
 
@@ -195,7 +195,7 @@ public class CLP_Manager {
 
                 cLenguaje lenguaje = new cLenguaje();
 
-                lenguaje.setCalculado(evaluado.get(i).getFactSlot("cLenguaje").floatValue());
+                lenguaje.setLenguajeCalculado(evaluado.get(i).getFactSlot("cLenguaje").floatValue());
 
                 FillLenguaje(lenguaje);
 
@@ -218,7 +218,7 @@ public class CLP_Manager {
 
                 cOrientacionTemporal orientacionTemporal = new cOrientacionTemporal();
 
-                orientacionTemporal.setCalculado(evaluado.get(i).getFactSlot("cOrientacionTemporal").floatValue());
+                orientacionTemporal.setOrientacionTemporalCalculado(evaluado.get(i).getFactSlot("cOrientacionTemporal").floatValue());
 
                 FillOrientacionTemporal(orientacionTemporal);
 
@@ -226,7 +226,7 @@ public class CLP_Manager {
 
                 cOrientacionEspacial orientacionEspacial = new cOrientacionEspacial();
 
-                orientacionEspacial.setCalculado(evaluado.get(i).getFactSlot("cOrientacionEspacial").floatValue());
+                orientacionEspacial.setOrientacionEspacialCalculado(evaluado.get(i).getFactSlot("cOrientacionEspacial").floatValue());
 
                 FillOrientacionEspacial(orientacionEspacial);
 

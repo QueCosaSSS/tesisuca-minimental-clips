@@ -19,7 +19,7 @@ public class cMiniMental implements Serializable{
     private cMemoria Memoria;
     private cLenguaje Lenguaje;
     private Float Dibujo;
-    private Float Calculado;
+    private Float MinimentalCalculado;
 
     /**
      * Get the value of Dibujo
@@ -93,12 +93,12 @@ public class cMiniMental implements Serializable{
         this.Orientacion = Orientacion;
     }
 
-    public Float getCalculado() {
-        return Calculado;
+    public Float getMinimentalCalculado() {
+        return MinimentalCalculado;
     }
 
-    public void setCalculado(Float Calculado) {
-        this.Calculado = Calculado;
+    public void setMinimentalCalculado(Float Calculado) {
+        this.MinimentalCalculado = Calculado;
     }
     
     
