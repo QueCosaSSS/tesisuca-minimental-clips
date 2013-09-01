@@ -18,6 +18,7 @@ public class cOrientacionTemporal implements Serializable{
     private Boolean Estacion;
     private Float Mes;
     private Float Ano;
+    private Float Calculado;
 
     public Float getFecha() {
         return Fecha;
@@ -49,6 +50,14 @@ public class cOrientacionTemporal implements Serializable{
 
     public void setAno(Float Ano) {
         this.Ano = Ano;
+    }
+
+    public Float getCalculado() {
+        return Calculado;
+    }
+
+    public void setCalculado(Float Calculado) {
+        this.Calculado = Calculado;
     }
     
 }

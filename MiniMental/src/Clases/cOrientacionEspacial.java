@@ -19,6 +19,7 @@ public class cOrientacionEspacial implements Serializable{
     private Float Pais;
     private Float Piso;
     private Float Calle;
+    private Float Calculado;
 
     public Float getLugar() {
         return Lugar;
@@ -58,5 +59,13 @@ public class cOrientacionEspacial implements Serializable{
 
     public void setCalle(Float Calle) {
         this.Calle = Calle;
+    }
+
+    public Float getCalculado() {
+        return Calculado;
+    }
+
+    public void setCalculado(Float Calculado) {
+        this.Calculado = Calculado;
     }
 }

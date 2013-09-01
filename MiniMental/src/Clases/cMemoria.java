@@ -15,6 +15,7 @@ public class cMemoria implements Serializable{
     private float Fijacion;
     private float Atencion;
     private float Recuerdo;
+    private float Calculado;
 
     /**
      * Get the value of Recuerdo
@@ -70,6 +71,14 @@ public class cMemoria implements Serializable{
      */
     public void setFijacion(float cFijacion) {
         this.Fijacion = cFijacion;
+    }
+
+    public float getCalculado() {
+        return Calculado;
+    }
+
+    public void setCalculado(float Calculado) {
+        this.Calculado = Calculado;
     }
 
 }
