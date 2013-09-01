@@ -20,7 +20,7 @@ public class cOrientacion implements Serializable{
     
     private cOrientacionTemporal OrientacionTemporal;
     private cOrientacionEspacial OrientacionEspacial;
-    private Float Calculado;
+    private Float OrientacionCalculado;
 
     @Embedded
     public cOrientacionTemporal getOrientacionTemporal() {
@@ -39,12 +39,12 @@ public class cOrientacion implements Serializable{
         this.OrientacionEspacial = OrientacionEspacial;
     }
 
-    public Float getCalculado() {
-        return Calculado;
+    public Float getOrientacionCalculado() {
+        return OrientacionCalculado;
     }
 
-    public void setCalculado(Float Calculado) {
-        this.Calculado = Calculado;
+    public void setOrientacionCalculado(Float Calculado) {
+        this.OrientacionCalculado = Calculado;
     }
     
 }
