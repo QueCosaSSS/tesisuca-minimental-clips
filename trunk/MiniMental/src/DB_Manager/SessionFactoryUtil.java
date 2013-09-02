@@ -26,6 +26,7 @@ public class SessionFactoryUtil {
 
             config.addAnnotatedClass(cDiagnostico.class);
             config.addAnnotatedClass(cEntrevista.class);
+            config.addAnnotatedClass(cPaciente.class);
 
             sessionFactory = config.configure().buildSessionFactory();
         } catch (Throwable ex) {
@@ -81,7 +82,7 @@ public class SessionFactoryUtil {
     }
     
     public static List Listar(Class s){
-        Session ss = SessionFactoryUtil.getInstance().getCurrentSession();
+       Session ss = SessionFactoryUtil.getInstance().getCurrentSession();
         ss.beginTransaction();
         List lista = ss.createCriteria(s).list();
         ss.getTransaction().commit();

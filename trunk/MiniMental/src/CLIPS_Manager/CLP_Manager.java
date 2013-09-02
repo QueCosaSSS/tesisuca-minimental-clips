@@ -314,14 +314,14 @@ public class CLP_Manager {
         }
     }
 
-    private enumRN GetenumRN(String rn) {
-        enumRN e = enumRN.N;
+    private eNR GetenumRN(String rn) {
+        eNR e = eNR.N;
         switch (rn) {
             case "R":
-                e = enumRN.R;
+                e = eNR.R;
                 break;
             case "N":
-                e = enumRN.N;
+                e = eNR.N;
                 break;
 
         }

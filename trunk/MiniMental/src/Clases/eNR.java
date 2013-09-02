@@ -4,11 +4,12 @@
  */
 package Clases;
 
+
 /**
  *
  * @author santiago
  */
-public enum enumRN {
+public enum eNR {
     R, N
-    
 }
+

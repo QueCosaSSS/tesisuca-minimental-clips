@@ -1,7 +1,7 @@
-Sun Sep 01 10:18:14 ART 2013 : Apache Derby Network Server - 10.8.2.2 - (1181258) se ha iniciado y está listo para aceptar conexiones en el puerto 1527
+Sun Sep 01 21:33:19 ART 2013 : Apache Derby Network Server - 10.8.2.2 - (1181258) se ha iniciado y está listo para aceptar conexiones en el puerto 1527
 ----------------------------------------------------------------
-Sun Sep 01 10:18:15 ART 2013:
- Arrancando Derby versión The Apache Software Foundation - Apache Derby - 10.8.2.2 - (1181258): instancia a816c00e-0140-d9ac-7956-ffffc8bc3c11 
+Sun Sep 01 21:33:19 ART 2013:
+ Arrancando Derby versión The Apache Software Foundation - Apache Derby - 10.8.2.2 - (1181258): instancia a816c00e-0140-dc16-89bb-ffffc8bc3c11 
 en el directorio de base de datos C:\Users\santiago\Documents\NetBeansProjects\MiniMental\db\Minimental  con el cargador de clases sun.misc.Launcher$AppClassLoader@15601ea
 
 java.vendor=Oracle Corporation
