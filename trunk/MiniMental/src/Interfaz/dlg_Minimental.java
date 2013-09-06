@@ -7,6 +7,7 @@ package Interfaz;
 import CLIPS_Manager.CLP_Manager;
 import Clases.cEscolaridad;
 import Clases.cEntrevista;
+import Clases.cPaciente;
 import DB_Manager.SessionFactoryUtil;
 import java.util.Enumeration;
 import java.util.HashSet;
@@ -26,6 +27,8 @@ public class dlg_Minimental extends javax.swing.JDialog {
         initComponents();
     }
 
+    private Integer IdPaciente;
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -876,7 +879,7 @@ public class dlg_Minimental extends javax.swing.JDialog {
         // TODO add your handling code here:
 
         //validar datos
-
+        
         cEntrevista Entrevista = new cEntrevista();
         Entrevista.setEscolaridad(jcb_Escolaridad.getSelectedIndex());
         Entrevista.setFechaEntrevista(Integer.parseInt(jcb_entrevista_dia.getSelectedItem().toString()), jcb_entrevista_mes.getSelectedIndex(), Integer.parseInt(jcb_entrevista_ano.getSelectedItem().toString()));
@@ -918,12 +921,21 @@ public class dlg_Minimental extends javax.swing.JDialog {
         
         Entrevista.setPacienteMinimizaOlvidos(jrb_MinimizaOlvidos_si.isSelected());
         
-        SessionFactoryUtil.Save(Entrevista);
+        
         
         CLP_Manager clp_manager = new CLP_Manager();
-        clp_manager.ProcesarEntrevista(Entrevista);    
         
-       
+        clp_manager.ProcesarEntrevista(Entrevista); 
+        
+        SessionFactoryUtil.Save(Entrevista);
+        
+       if(IdPaciente > 0)
+       {
+           cPaciente pct = SessionFactoryUtil.Load(cPaciente.class, IdPaciente);
+           pct.getEntrevistas().add(Entrevista);
+           
+           SessionFactoryUtil.Save(pct);           
+       }
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -1096,4 +1108,12 @@ public class dlg_Minimental extends javax.swing.JDialog {
     private javax.swing.JRadioButton jrb_respuesta_traidotercero_si;
     private javax.swing.JRadioButton jrb_respuestas_lugar_si;
     // End of variables declaration//GEN-END:variables
+
+    public Integer getIdPaciente() {
+        return IdPaciente;
+    }
+
+    public void setIdPaciente(Integer IdPaciente) {
+        this.IdPaciente = IdPaciente;
+    }
 }
