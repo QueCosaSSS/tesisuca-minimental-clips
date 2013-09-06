@@ -80,12 +80,17 @@ public class SessionFactoryUtil {
         ss.save(o);
         ss.getTransaction().commit();
     }
-    
-    public static List Listar(Class s){
-       Session ss = SessionFactoryUtil.getInstance().getCurrentSession();
+
+    public static List Listar(Class s) {
+        Session ss = SessionFactoryUtil.getInstance().getCurrentSession();
         ss.beginTransaction();
         List lista = ss.createCriteria(s).list();
         ss.getTransaction().commit();
         return lista;
+    }
+
+    public static <T> T Load(Class<T> cls, Integer id) {
+        Session ss = SessionFactoryUtil.getInstance().getCurrentSession();
+        return cls.cast(ss.load(cls, id));
     }
 }

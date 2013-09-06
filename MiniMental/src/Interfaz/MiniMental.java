@@ -19,6 +19,8 @@ import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.tool.hbm2ddl.SchemaExport;
 import java.awt.CardLayout;
 import java.awt.Component;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -43,6 +45,40 @@ public class MiniMental extends javax.swing.JFrame {
      */
     public MiniMental() {
         initComponents();
+        jTable1.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+//                throw new UnsupportedOperationException("Not supported yet.");
+                JTable target = (JTable) e.getSource();
+                int row = target.getSelectedRow();
+                int col = target.getSelectedColumn();
+                // do some action if appropriate column
+                if (col == 5) {
+                    NuevaEntrevista(target.getValueAt(row, 6).toString());
+                    
+                }
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+//                throw new UnsupportedOperationException("Not supported yet.");
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+//                throw new UnsupportedOperationException("Not supported yet.");
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+//                throw new UnsupportedOperationException("Not supported yet.");
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+//                throw new UnsupportedOperationException("Not supported yet.");
+            }
+        });
 
     }
 
@@ -109,27 +145,26 @@ public class MiniMental extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 179, Short.MAX_VALUE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(188, 188, 188))))
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(142, 142, 142)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(235, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(251, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addGap(279, 279, 279)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE))
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(152, 152, 152))
         );
 
@@ -163,14 +198,14 @@ public class MiniMental extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Dcumneto", "Tipo", "Apellido", "Nombre", "Fecha Nacimiento", "Entrevista"
+                "Dcumneto", "Tipo", "Apellido", "Nombre", "Fecha Nacimiento", "Entrevista", "IdPaciente"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -183,6 +218,8 @@ public class MiniMental extends javax.swing.JFrame {
         });
         jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);
+        jTable1.getColumnModel().getColumn(6).setResizable(false);
+        jTable1.getColumnModel().getColumn(6).setPreferredWidth(0);
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -322,15 +359,15 @@ public class MiniMental extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(16, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 717, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(460, 460, 460))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 199, Short.MAX_VALUE))
+                .addGap(0, 11, Short.MAX_VALUE))
         );
 
         pack();
@@ -383,7 +420,7 @@ public class MiniMental extends javax.swing.JFrame {
         ListIterator iterator = l.listIterator();
         //put them into jTable
         while (iterator.hasNext()) {
-            Object[] objects = new Object[6];
+            Object[] objects = new Object[7];
             cPaciente paciente_tmp = (cPaciente) iterator.next();
             objects[0] = paciente_tmp.getDocumento();
             objects[1] = paciente_tmp.getTipoDocumento();
@@ -392,10 +429,16 @@ public class MiniMental extends javax.swing.JFrame {
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/YYYY");
             objects[4] = sdf.format(paciente_tmp.getFechaNacimiento().getTime());
             objects[5] = "C:\\Users\\santiago\\Documents\\NetBeansProjects\\MiniMental\\src\\Icons\\new_entrevista.png";
+            objects[6] = paciente_tmp.getIdPaciente().toString();
             
             aModel.addRow(objects);
-            
+
             jTable1.getColumnModel().getColumn(5).setCellRenderer(new ImageRenderer());
+            
+            jTable1.getColumnModel().getColumn(6).setMinWidth(0);
+            jTable1.getColumnModel().getColumn(6).setMaxWidth(0);
+            jTable1.getColumnModel().getColumn(6).setPreferredWidth(0);    
+            
         }
 
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -457,25 +500,30 @@ public class MiniMental extends javax.swing.JFrame {
             }
         });
     }
-
-class ImageRenderer extends DefaultTableCellRenderer
-{
- 
-    @Override
-    public Component getTableCellRendererComponent(JTable table,Object value, boolean isSelected,boolean hasFocus, int row, int column)
+    
+    private void NuevaEntrevista(String IdPaciente)
     {
-        JLabel label = new JLabel();
- 
-        if (value!=null) {
-        label.setHorizontalAlignment(JLabel.CENTER);
-        //value is parameter which filled by byteOfImage
-        label.setIcon(new ImageIcon((String)value));
-        }
- 
-        return label;
+        dlg_Minimental dll = new dlg_Minimental(this, true);
+        dll.setIdPaciente(Integer.parseInt(IdPaciente));
+        dll.setVisible(true);
     }
-}
 
+    class ImageRenderer extends DefaultTableCellRenderer {
+
+        @Override
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+            JLabel label = new JLabel();
+
+            if (value != null) {
+                label.setHorizontalAlignment(JLabel.CENTER);
+                //value is parameter which filled by byteOfImage
+                label.setIcon(new ImageIcon((String) value));
+                label.setToolTipText("Agregar Entrevista");
+            }
+
+            return label;
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -507,4 +555,4 @@ class ImageRenderer extends DefaultTableCellRenderer
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
-    }
+}

@@ -27,14 +27,21 @@ import javax.persistence.TemporalType;
  */
 @Entity
 @Table(name = "Pacientes")
-public class cPaciente {
+public class cPaciente implements Serializable {
+
+    public cPaciente(Integer IdPaciente) {
+        this.IdPaciente = IdPaciente;
+
+    }
     
+    public cPaciente() {
+    }
     private String Documento;
     private eTipoDocumento TipoDocumento;
     private String Apellido;
     private String Nombre;
     private Calendar FechaNacimiento;
-    private Integer IdPaciente;    
+    private Integer IdPaciente;
     private Set<cEntrevista> Entrevistas;
 
     public String getDocumento() {
@@ -77,6 +84,7 @@ public class cPaciente {
     public void setFechaNacimiento(Calendar FechaNacimiento) {
         this.FechaNacimiento = FechaNacimiento;
     }
+
     @Id
     @TableGenerator(name = "IDS", table = "IDS", pkColumnName = "idkey", pkColumnValue = "idvalue", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.TABLE, generator = "IDS")
@@ -89,8 +97,7 @@ public class cPaciente {
         this.IdPaciente = IdPaciente;
     }
 
-    
-    @OneToMany (cascade= CascadeType.ALL, fetch= FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     public Set<cEntrevista> getEntrevistas() {
         return Entrevistas;
     }
@@ -98,9 +105,4 @@ public class cPaciente {
     public void setEntrevistas(Set<cEntrevista> Entrevistas) {
         this.Entrevistas = Entrevistas;
     }
-    
-
-    
-    
-    
 }

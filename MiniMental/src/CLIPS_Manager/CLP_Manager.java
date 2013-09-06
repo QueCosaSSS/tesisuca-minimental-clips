@@ -84,7 +84,7 @@ public class CLP_Manager {
     public Boolean isBoolean(String input) {
         Boolean t = true;
         Boolean f = false;
-        return ((input == t.toString()) || (input == f.toString()));
+        return ((input.equals(t.toString())) || (input.equals(f.toString())));
     }
 
     public void ProcesarEntrevista(cEntrevista Entrevista) {
@@ -137,7 +137,7 @@ public class CLP_Manager {
 
         this.AddFacts("Entrevista", tmp_fact);
 
-        Run();
+        Entrevista.setDiagnostico(Run());
     }
 
     private void FillDiagnostico(cDiagnostico diagnostico) {
@@ -329,6 +329,6 @@ public class CLP_Manager {
     }
 
     private Boolean toBool(String texto) {
-        return texto.toUpperCase() == "SI" ? true : false;
+        return "SI".equals(texto.toUpperCase()) ? true : false;
     }
 }
