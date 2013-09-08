@@ -33,7 +33,7 @@ public class cPaciente implements Serializable {
         this.IdPaciente = IdPaciente;
 
     }
-    
+
     public cPaciente() {
     }
     private String Documento;
@@ -99,6 +99,9 @@ public class cPaciente implements Serializable {
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     public Set<cEntrevista> getEntrevistas() {
+        if (this.Entrevistas == null) {            
+            this.Entrevistas = new HashSet<cEntrevista>();            
+        }
         return Entrevistas;
     }
 
