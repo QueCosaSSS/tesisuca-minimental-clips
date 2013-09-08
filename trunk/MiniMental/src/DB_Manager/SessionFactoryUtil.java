@@ -11,6 +11,7 @@ import java.util.logging.*;
 import sun.security.acl.OwnerImpl;
 import Clases.*;
 import java.util.List;
+import org.hibernate.Criteria;
 
 public class SessionFactoryUtil {
 
@@ -77,20 +78,24 @@ public class SessionFactoryUtil {
     public static void Save(Object o) {
         Session ss = SessionFactoryUtil.getInstance().getCurrentSession();
         ss.beginTransaction();
-        ss.save(o);
+        ss.saveOrUpdate(o);
         ss.getTransaction().commit();
     }
 
     public static List Listar(Class s) {
         Session ss = SessionFactoryUtil.getInstance().getCurrentSession();
         ss.beginTransaction();
-        List lista = ss.createCriteria(s).list();
+        List lista = ss.createCriteria(s).setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
         ss.getTransaction().commit();
         return lista;
     }
 
     public static <T> T Load(Class<T> cls, Integer id) {
         Session ss = SessionFactoryUtil.getInstance().getCurrentSession();
-        return cls.cast(ss.load(cls, id));
+        ss.beginTransaction();
+        Object o = ss.get(cls, id);              
+        ss.getTransaction().commit();
+        return cls.cast(o);
     }
 }
+

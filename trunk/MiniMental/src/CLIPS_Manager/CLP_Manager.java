@@ -152,7 +152,7 @@ public class CLP_Manager {
                 diagnostico.setQueja(GetenumRN(evaluado.get(i).getFactSlot("cQueja").toString()));
                 diagnostico.setFuncional(GetenumRN(evaluado.get(i).getFactSlot("cFuncional").toString()));
                 diagnostico.setCaracter(GetenumRN(evaluado.get(i).getFactSlot("cCaracter").toString()));
-                diagnostico.setResultado(evaluado.get(i).getFactSlot("cQueja").toString());
+                diagnostico.setResultado(evaluado.get(i).getFactSlot("Resultado").toString());
 
                 cMiniMental minimental = new cMiniMental();
 

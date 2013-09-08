@@ -23,6 +23,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Set;
@@ -56,6 +57,10 @@ public class MiniMental extends javax.swing.JFrame {
                 if (col == 5) {
                     NuevaEntrevista(target.getValueAt(row, 6).toString());
                     
+                }
+                else
+                {
+                    CargarEntrevistas(target.getValueAt(row, 6).toString());
                 }
             }
 
@@ -219,20 +224,36 @@ public class MiniMental extends javax.swing.JFrame {
         jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);
         jTable1.getColumnModel().getColumn(6).setResizable(false);
-        jTable1.getColumnModel().getColumn(6).setPreferredWidth(0);
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Fecha", "Valor Minimental", "Diagnostico", "Detalle", "IdEntrevista"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane2.setViewportView(jTable2);
+        jTable2.getColumnModel().getColumn(0).setResizable(false);
+        jTable2.getColumnModel().getColumn(1).setResizable(false);
+        jTable2.getColumnModel().getColumn(2).setResizable(false);
+        jTable2.getColumnModel().getColumn(3).setResizable(false);
+        jTable2.getColumnModel().getColumn(4).setResizable(false);
 
         jButton4.setText("Crear Paciente");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -416,6 +437,9 @@ public class MiniMental extends javax.swing.JFrame {
         // TODO add your handling code here:
         List l = SessionFactoryUtil.Listar(cPaciente.class);
         DefaultTableModel aModel = (DefaultTableModel) jTable1.getModel();
+        
+        aModel.setRowCount(0);
+        
         //get an Iterator over keys
         ListIterator iterator = l.listIterator();
         //put them into jTable
@@ -428,7 +452,7 @@ public class MiniMental extends javax.swing.JFrame {
             objects[3] = paciente_tmp.getNombre();
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/YYYY");
             objects[4] = sdf.format(paciente_tmp.getFechaNacimiento().getTime());
-            objects[5] = "C:\\Users\\santiago\\Documents\\NetBeansProjects\\MiniMental\\src\\Icons\\new_entrevista.png";
+            objects[5] = ".\\src\\Icons\\new_entrevista.png";
             objects[6] = paciente_tmp.getIdPaciente().toString();
             
             aModel.addRow(objects);
@@ -501,6 +525,43 @@ public class MiniMental extends javax.swing.JFrame {
         });
     }
     
+    private void LlenarTableEntrevistas(Set<cEntrevista> Entrevistas)
+    {
+        DefaultTableModel aModel = (DefaultTableModel) jTable2.getModel();
+        
+        aModel.setRowCount(0);        
+        
+        Iterator<cEntrevista> it = Entrevistas.iterator();
+        //put them into jTable
+        while (it.hasNext()) {
+            Object[] objects = new Object[5];
+            cEntrevista entrevista_tmp = (cEntrevista) it.next();
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/YYYY");            
+            objects[0] = sdf.format(entrevista_tmp.getFechaEntrevista().getTime());            
+            objects[1] = entrevista_tmp.getDiagnostico().getMinimental().getMinimentalCalculado();
+            objects[2] = entrevista_tmp.getDiagnostico().getResultado();
+            objects[3] = ".\\src\\Icons\\new_entrevista.png";
+            objects[4] = entrevista_tmp.getIdEntrevista().toString();
+            
+            aModel.addRow(objects);
+
+            jTable2.getColumnModel().getColumn(3).setCellRenderer(new ImageRenderer());
+            
+            jTable2.getColumnModel().getColumn(4).setMinWidth(0);
+            jTable2.getColumnModel().getColumn(4).setMaxWidth(0);
+            jTable2.getColumnModel().getColumn(4).setPreferredWidth(0);    
+            
+        }
+        
+    }
+    
+    private void CargarEntrevistas(String IdPaciente)
+    {        
+        cPaciente pct = SessionFactoryUtil.Load(cPaciente.class, Integer.parseInt(IdPaciente));
+        LlenarTableEntrevistas(pct.getEntrevistas());
+        
+    }
+        
     private void NuevaEntrevista(String IdPaciente)
     {
         dlg_Minimental dll = new dlg_Minimental(this, true);
