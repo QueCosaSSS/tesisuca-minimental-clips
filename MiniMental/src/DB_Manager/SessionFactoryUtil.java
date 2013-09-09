@@ -11,7 +11,14 @@ import java.util.logging.*;
 import sun.security.acl.OwnerImpl;
 import Clases.*;
 import java.util.List;
+import org.apache.derby.vti.Restriction;
 import org.hibernate.Criteria;
+import org.hibernate.Query;
+import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.Example;
+import org.hibernate.criterion.LogicalExpression;
+import org.hibernate.criterion.MatchMode;
+import org.hibernate.criterion.Restrictions;
 
 public class SessionFactoryUtil {
 
@@ -85,7 +92,33 @@ public class SessionFactoryUtil {
     public static List Listar(Class s) {
         Session ss = SessionFactoryUtil.getInstance().getCurrentSession();
         ss.beginTransaction();
-        List lista = ss.createCriteria(s).setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
+        Criteria cr = ss.createCriteria(s);
+        cr.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
+        List lista = cr.list();
+        ss.getTransaction().commit();
+        return lista;
+    }
+
+    public static List BuscarPacientes(eTipoDocumento TipoDocumento, String Documento, String Apellido, String Nombre) {
+        Session ss = SessionFactoryUtil.getInstance().getCurrentSession();
+        ss.beginTransaction();
+           
+        Criteria cr = ss.createCriteria(cPaciente.class);
+        cr.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
+        
+        if (!Documento.isEmpty()) {
+            cr.add(Restrictions.ilike("documento", Documento, MatchMode.ANYWHERE));
+            cr.add(Restrictions.eq("tipoDocumento", TipoDocumento));
+        }
+
+        if (!Apellido.isEmpty()) {
+            cr.add(Restrictions.ilike("apellido", Apellido, MatchMode.ANYWHERE));
+        }
+
+        if (!Nombre.isEmpty()) {
+            cr.add(Restrictions.ilike("nombre", Nombre, MatchMode.ANYWHERE));
+        }
+        List lista = cr.list();
         ss.getTransaction().commit();
         return lista;
     }
@@ -93,9 +126,8 @@ public class SessionFactoryUtil {
     public static <T> T Load(Class<T> cls, Integer id) {
         Session ss = SessionFactoryUtil.getInstance().getCurrentSession();
         ss.beginTransaction();
-        Object o = ss.get(cls, id);              
+        Object o = ss.get(cls, id);
         ss.getTransaction().commit();
         return cls.cast(o);
     }
 }
-

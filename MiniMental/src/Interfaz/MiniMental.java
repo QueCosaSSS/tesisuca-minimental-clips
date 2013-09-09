@@ -103,13 +103,13 @@ public class MiniMental extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jPanelGestion = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
+        jCB_TipoDocumento = new javax.swing.JComboBox();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jTF_NumeroDocumento = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        jTF_PacienteNombre = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        jTF_PacienteApellido = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -177,19 +177,13 @@ public class MiniMental extends javax.swing.JFrame {
 
         jLabel3.setText("Tipo de documento:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jCB_TipoDocumento.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "DNI", "CEDULA", "LC", "LE", "PASAPORTE" }));
 
         jLabel4.setText("Numero:");
 
-        jTextField1.setText("jTextField1");
-
         jLabel5.setText("Nombre:");
 
-        jTextField2.setText("jTextField2");
-
-        jLabel6.setText("Apelldo:");
-
-        jTextField3.setText("jTextField3");
+        jLabel6.setText("Apellido:");
 
         jButton2.setText("Buscar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -278,19 +272,19 @@ public class MiniMental extends javax.swing.JFrame {
                         .addGroup(jPanelGestionLayout.createSequentialGroup()
                             .addComponent(jLabel3)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jCB_TipoDocumento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
                             .addComponent(jLabel4)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTF_NumeroDocumento, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanelGestionLayout.createSequentialGroup()
                             .addComponent(jLabel5)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
+                            .addComponent(jTF_PacienteNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jLabel6)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTF_PacienteApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton2))))
                 .addContainerGap(250, Short.MAX_VALUE))
@@ -301,15 +295,15 @@ public class MiniMental extends javax.swing.JFrame {
                 .addGap(40, 40, 40)
                 .addGroup(jPanelGestionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCB_TipoDocumento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTF_NumeroDocumento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelGestionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTF_PacienteNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTF_PacienteApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -435,7 +429,9 @@ public class MiniMental extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        List l = SessionFactoryUtil.Listar(cPaciente.class);
+        
+        List l = SessionFactoryUtil.BuscarPacientes(eTipoDocumento.getTipoDocumentoFromIndex(jCB_TipoDocumento.getSelectedIndex()), jTF_NumeroDocumento.getText(), jTF_PacienteApellido.getText(), jTF_PacienteNombre.getText());
+        
         DefaultTableModel aModel = (DefaultTableModel) jTable1.getModel();
         
         aModel.setRowCount(0);
@@ -470,8 +466,8 @@ public class MiniMental extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         cPaciente paciente = new cPaciente();
-        paciente.setApellido("Apellido");
-        paciente.setDocumento("Documento");
+        paciente.setApellido("Lopez");
+        paciente.setDocumento("28078383");
 
         GregorianCalendar t = new GregorianCalendar();
         t.clear();
@@ -481,7 +477,7 @@ public class MiniMental extends javax.swing.JFrame {
 
         paciente.setFechaNacimiento(t);
 
-        paciente.setNombre("Nombre");
+        paciente.setNombre("Alberto");
 
         paciente.setTipoDocumento(eTipoDocumento.DNI);
 
@@ -540,7 +536,7 @@ public class MiniMental extends javax.swing.JFrame {
             objects[0] = sdf.format(entrevista_tmp.getFechaEntrevista().getTime());            
             objects[1] = entrevista_tmp.getDiagnostico().getMinimental().getMinimentalCalculado();
             objects[2] = entrevista_tmp.getDiagnostico().getResultado();
-            objects[3] = ".\\src\\Icons\\new_entrevista.png";
+            objects[3] = ".\\src\\Icons\\entrevista_detalle.png";
             objects[4] = entrevista_tmp.getIdEntrevista().toString();
             
             aModel.addRow(objects);
@@ -590,7 +586,7 @@ public class MiniMental extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox jCB_TipoDocumento;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -609,11 +605,11 @@ public class MiniMental extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelGestion;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextField jTF_NumeroDocumento;
+    private javax.swing.JTextField jTF_PacienteApellido;
+    private javax.swing.JTextField jTF_PacienteNombre;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }
