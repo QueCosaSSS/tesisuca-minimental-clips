@@ -465,24 +465,26 @@ public class MiniMental extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        cPaciente paciente = new cPaciente();
-        paciente.setApellido("Lopez");
-        paciente.setDocumento("28078383");
-
-        GregorianCalendar t = new GregorianCalendar();
-        t.clear();
-        t.set(Calendar.YEAR, 1);
-        t.set(Calendar.MONTH, 4);
-        t.set(Calendar.YEAR, 1980);
-
-        paciente.setFechaNacimiento(t);
-
-        paciente.setNombre("Alberto");
-
-        paciente.setTipoDocumento(eTipoDocumento.DNI);
-
-        SessionFactoryUtil.Save(paciente);
-
+//        cPaciente paciente = new cPaciente();
+//        paciente.setApellido("Lopez");
+//        paciente.setDocumento("28078383");
+//
+//        GregorianCalendar t = new GregorianCalendar();
+//        t.clear();
+//        t.set(Calendar.YEAR, 1);
+//        t.set(Calendar.MONTH, 4);
+//        t.set(Calendar.YEAR, 1980);
+//
+//        paciente.setFechaNacimiento(t);
+//
+//        paciente.setNombre("Alberto");
+//
+//        paciente.setTipoDocumento(eTipoDocumento.DNI);
+//
+//        SessionFactoryUtil.Save(paciente);
+        
+        dlg_Paciente dlg_pct = new dlg_Paciente(this, true);
+        dlg_pct.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
