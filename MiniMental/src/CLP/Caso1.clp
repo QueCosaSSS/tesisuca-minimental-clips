@@ -409,19 +409,19 @@
 (defrule REGLA-MR-N5-RECUERDO-3 (Entrevista (MemoriaRecuerdo_PalabrasRecordadas 2 )) => (assert (MemoriaRecuerdo (cPalabrasRecordadas -0.5))) (printout t "REGLA-MR-N5-RECUERDO-3" crlf))
 (defrule REGLA-MR-N5-RECUERDO-4 (Entrevista (MemoriaRecuerdo_PalabrasRecordadas 4 )) => (assert (MemoriaRecuerdo (cPalabrasRecordadas 3.0))) (printout t "REGLA-MR-N5-RECUERDO-4" crlf))
 
-(defrule REGLA-MR-N4-1 (MemoriaRecuerdo (cPalabrasRecordadas -5 )) (Entrevista (PacienteConProblemasAuditivos "NO" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  -5.0))) (printout t "REGLA-MR-N4-1" crlf))
-(defrule REGLA-MR-N4-2 (MemoriaRecuerdo (cPalabrasRecordadas -2 )) (Entrevista (PacienteConProblemasAuditivos "NO" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  -2.0))) (printout t "REGLA-MR-N4-2" crlf))
-(defrule REGLA-MR-N4-3 (MemoriaRecuerdo (cPalabrasRecordadas -0.5 )) (Entrevista (PacienteConProblemasAuditivos "NO" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  -0.5))) (printout t "REGLA-MR-N4-3" crlf))
-(defrule REGLA-MR-N4-4 (MemoriaRecuerdo (cPalabrasRecordadas 3 )) (Entrevista (PacienteConProblemasAuditivos "NO" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  3.0))) (printout t "REGLA-MR-N4-4" crlf))
+(defrule REGLA-MR-N4-1 (MemoriaRecuerdo (cPalabrasRecordadas -5.00 )) (Entrevista (PacienteConProblemasAuditivos "NO" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  -5.0))) (printout t "REGLA-MR-N4-1" crlf))
+(defrule REGLA-MR-N4-2 (MemoriaRecuerdo (cPalabrasRecordadas -2.00 )) (Entrevista (PacienteConProblemasAuditivos "NO" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  -2.0))) (printout t "REGLA-MR-N4-2" crlf))
+(defrule REGLA-MR-N4-3 (MemoriaRecuerdo (cPalabrasRecordadas -0.50 )) (Entrevista (PacienteConProblemasAuditivos "NO" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  -0.5))) (printout t "REGLA-MR-N4-3" crlf))
+(defrule REGLA-MR-N4-4 (MemoriaRecuerdo (cPalabrasRecordadas 3.00 )) (Entrevista (PacienteConProblemasAuditivos "NO" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  3.0))) (printout t "REGLA-MR-N4-4" crlf))
 (defrule REGLA-MR-N4-5/8 (Entrevista (PacienteConProblemasAuditivos "SI" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  3.0))) (printout t "REGLA-MR-N4-5-8" crlf))
-(defrule REGLA-MR-N4-9/16 (Entrevista (PacienteDeprimido "SI" )) => (assert (Memoria (cMemoriaFijacion  3.0))) (printout t "REGLA-MR-N4-9-16" crlf))
+(defrule REGLA-MR-N4-9/16 (Entrevista (PacienteDeprimido "SI" )) => (assert (Memoria (cMemoriaFijacion  3.00))) (printout t "REGLA-MR-N4-9-16" crlf))
 
 Debo Formatear desde acá:
 
-(defrule 	REGLA-L-N4-ACCIONPONDERADA-0	(Entrevista (Lenguaje_ClasificacionAccion 	0	 )) => (assert (LenguajeAccionPonderado(cAccionPonderado 	-1.5	))) (printout t "	REGLA-L-N4-ACCIONPONDERADA-0" crlf))
-(defrule 	REGLA-L-N4-ACCIONPONDERADA-1	(Entrevista (Lenguaje_ClasificacionAccion 	1	 )) => (assert (LenguajeAccionPonderado(cAccionPonderado 	0.0	))) (printout t "	REGLA-L-N4-ACCIONPONDERADA-1" crlf))
-(defrule 	REGLA-L-N4-ACCIONPONDERADA-2	(Entrevista (Lenguaje_ClasificacionAccion 	2	 )) => (assert (LenguajeAccionPonderado(cAccionPonderado 	1.5	))) (printout t "	REGLA-L-N4-ACCIONPONDERADA-2" crlf))
-(defrule 	REGLA-L-N4-ACCIONPONDERADA-3	(Entrevista (Lenguaje_ClasificacionAccion 	3	 )) => (assert (LenguajeAccionPonderado(cAccionPonderado 	3.0	))) (printout t "	REGLA-L-N4-ACCIONPONDERADA-3" crlf))
+(defrule REGLA-L-N4-ACCIONPONDERADA-0 (Entrevista (Lenguaje_ClasificacionAccion 	0	 )) => (assert (LenguajeAccionPonderado(cAccionPonderado 	-1.5	))) (printout t "	REGLA-L-N4-ACCIONPONDERADA-0" crlf))
+(defrule REGLA-L-N4-ACCIONPONDERADA-1 (Entrevista (Lenguaje_ClasificacionAccion 	1	 )) => (assert (LenguajeAccionPonderado(cAccionPonderado 	0.0	))) (printout t "	REGLA-L-N4-ACCIONPONDERADA-1" crlf))
+(defrule REGLA-L-N4-ACCIONPONDERADA-2 (Entrevista (Lenguaje_ClasificacionAccion 	2	 )) => (assert (LenguajeAccionPonderado(cAccionPonderado 	1.5	))) (printout t "	REGLA-L-N4-ACCIONPONDERADA-2" crlf))
+(defrule REGLA-L-N4-ACCIONPONDERADA-3 (Entrevista (Lenguaje_ClasificacionAccion 	3	 )) => (assert (LenguajeAccionPonderado(cAccionPonderado 	3.0	))) (printout t "	REGLA-L-N4-ACCIONPONDERADA-3" crlf))
 
 (defrule 	REGLA-L-N4-ACCION-1	(LenguajeAccionPonderado (cAccionPonderado 	-1.5	 )) (Entrevista (PacienteAnsioso 	"No"	 )) => (assert (Lenguaje (cLenguajeAccion 	-1.5	))) (printout t "	REGLA-L-N4-ACCION-1" crlf))
 (defrule 	REGLA-L-N4-ACCION-2	(LenguajeAccionPonderado (cAccionPonderado 	0	 )) (Entrevista (PacienteAnsioso 	"No"	 )) => (assert (Lenguaje (cLenguajeAccion 	0.0	))) (printout t "	REGLA-L-N4-ACCION-2" crlf))
