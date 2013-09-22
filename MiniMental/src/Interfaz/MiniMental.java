@@ -5,6 +5,8 @@
 package Interfaz;
 
 import CLIPS_Manager.CLP_Manager;
+import Clases.ConfirmationBox;
+import Clases.InfoBox;
 import Clases.cDiagnostico;
 import Clases.cEntrevista;
 import Clases.cMiniMental;
@@ -54,13 +56,22 @@ public class MiniMental extends javax.swing.JFrame {
                 int row = target.getSelectedRow();
                 int col = target.getSelectedColumn();
                 // do some action if appropriate column
-                if (col == 5) {
-                    NuevaEntrevista(target.getValueAt(row, 6).toString());
-                    
-                }
-                else
-                {
-                    CargarEntrevistas(target.getValueAt(row, 6).toString());
+                switch (col) {
+                    case 5: {
+                        NuevaEntrevista(target.getValueAt(row, 8).toString());
+                        break;
+                    }
+                    case 6: {
+                        EditarPaciente(target.getValueAt(row, 8).toString());
+                        break;
+                    }
+                    case 7: {
+                        BorrarPaciente(target.getValueAt(row, 8).toString());
+                        break;
+                    }
+                    default: {
+                        CargarEntrevistas(target.getValueAt(row, 8).toString());
+                    }
                 }
             }
 
@@ -197,14 +208,14 @@ public class MiniMental extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Dcumneto", "Tipo", "Apellido", "Nombre", "Fecha Nacimiento", "Entrevista", "IdPaciente"
+                "Dcumneto", "Tipo", "Apellido", "Nombre", "Fecha Nacimiento", "Entrevista", "Editar", "Borrar", "IdPaciente"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -217,7 +228,7 @@ public class MiniMental extends javax.swing.JFrame {
         });
         jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);
-        jTable1.getColumnModel().getColumn(6).setResizable(false);
+        jTable1.getColumnModel().getColumn(8).setResizable(false);
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -429,18 +440,18 @@ public class MiniMental extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        
+
         List l = SessionFactoryUtil.BuscarPacientes(eTipoDocumento.getTipoDocumentoFromIndex(jCB_TipoDocumento.getSelectedIndex()), jTF_NumeroDocumento.getText(), jTF_PacienteApellido.getText(), jTF_PacienteNombre.getText());
-        
+
         DefaultTableModel aModel = (DefaultTableModel) jTable1.getModel();
-        
+
         aModel.setRowCount(0);
-        
+
         //get an Iterator over keys
         ListIterator iterator = l.listIterator();
         //put them into jTable
         while (iterator.hasNext()) {
-            Object[] objects = new Object[7];
+            Object[] objects = new Object[9];
             cPaciente paciente_tmp = (cPaciente) iterator.next();
             objects[0] = paciente_tmp.getDocumento();
             objects[1] = paciente_tmp.getTipoDocumento();
@@ -449,16 +460,20 @@ public class MiniMental extends javax.swing.JFrame {
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/YYYY");
             objects[4] = sdf.format(paciente_tmp.getFechaNacimiento().getTime());
             objects[5] = ".\\src\\Icons\\new_entrevista.png";
-            objects[6] = paciente_tmp.getIdPaciente().toString();
-            
+            objects[6] = ".\\src\\Icons\\new_entrevista.png";
+            objects[7] = ".\\src\\Icons\\new_entrevista.png";
+            objects[8] = paciente_tmp.getIdPaciente().toString();
+
             aModel.addRow(objects);
 
             jTable1.getColumnModel().getColumn(5).setCellRenderer(new ImageRenderer());
-            
-            jTable1.getColumnModel().getColumn(6).setMinWidth(0);
-            jTable1.getColumnModel().getColumn(6).setMaxWidth(0);
-            jTable1.getColumnModel().getColumn(6).setPreferredWidth(0);    
-            
+            jTable1.getColumnModel().getColumn(6).setCellRenderer(new ImageRenderer());
+            jTable1.getColumnModel().getColumn(7).setCellRenderer(new ImageRenderer());
+
+            jTable1.getColumnModel().getColumn(8).setMinWidth(0);
+            jTable1.getColumnModel().getColumn(8).setMaxWidth(0);
+            jTable1.getColumnModel().getColumn(8).setPreferredWidth(0);
+
         }
 
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -482,7 +497,7 @@ public class MiniMental extends javax.swing.JFrame {
 //        paciente.setTipoDocumento(eTipoDocumento.DNI);
 //
 //        SessionFactoryUtil.Save(paciente);
-        
+
         dlg_Paciente dlg_pct = new dlg_Paciente(this, true);
         dlg_pct.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -522,49 +537,59 @@ public class MiniMental extends javax.swing.JFrame {
             }
         });
     }
-    
-    private void LlenarTableEntrevistas(Set<cEntrevista> Entrevistas)
-    {
+
+    private void LlenarTableEntrevistas(Set<cEntrevista> Entrevistas) {
         DefaultTableModel aModel = (DefaultTableModel) jTable2.getModel();
-        
-        aModel.setRowCount(0);        
-        
+
+        aModel.setRowCount(0);
+
         Iterator<cEntrevista> it = Entrevistas.iterator();
         //put them into jTable
         while (it.hasNext()) {
             Object[] objects = new Object[5];
             cEntrevista entrevista_tmp = (cEntrevista) it.next();
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/YYYY");            
-            objects[0] = sdf.format(entrevista_tmp.getFechaEntrevista().getTime());            
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/YYYY");
+            objects[0] = sdf.format(entrevista_tmp.getFechaEntrevista().getTime());
             objects[1] = entrevista_tmp.getDiagnostico().getMinimental().getMinimentalCalculado();
             objects[2] = entrevista_tmp.getDiagnostico().getResultado();
             objects[3] = ".\\src\\Icons\\entrevista_detalle.png";
             objects[4] = entrevista_tmp.getIdEntrevista().toString();
-            
+
             aModel.addRow(objects);
 
             jTable2.getColumnModel().getColumn(3).setCellRenderer(new ImageRenderer());
-            
+
             jTable2.getColumnModel().getColumn(4).setMinWidth(0);
             jTable2.getColumnModel().getColumn(4).setMaxWidth(0);
-            jTable2.getColumnModel().getColumn(4).setPreferredWidth(0);    
-            
+            jTable2.getColumnModel().getColumn(4).setPreferredWidth(0);
+
         }
-        
+
     }
-    
-    private void CargarEntrevistas(String IdPaciente)
-    {        
+
+    private void CargarEntrevistas(String IdPaciente) {
         cPaciente pct = SessionFactoryUtil.Load(cPaciente.class, Integer.parseInt(IdPaciente));
         LlenarTableEntrevistas(pct.getEntrevistas());
-        
+
     }
-        
-    private void NuevaEntrevista(String IdPaciente)
-    {
+
+    private void NuevaEntrevista(String IdPaciente) {
         dlg_Minimental dll = new dlg_Minimental(this, true);
         dll.setIdPaciente(Integer.parseInt(IdPaciente));
         dll.setVisible(true);
+    }
+
+    private void EditarPaciente(String IdPaciente) {
+        cPaciente pct = SessionFactoryUtil.Load(cPaciente.class, Integer.parseInt(IdPaciente));
+        dlg_Paciente dlg_pct = new dlg_Paciente(this, rootPaneCheckingEnabled);
+        dlg_pct.setPaciente(pct);
+        dlg_pct.setVisible(true);
+
+    }
+
+    private void BorrarPaciente(String IdPaciente) {
+        if (ConfirmationBox.ConfirmationBox("¿Está seguro que desea eliminar el paciente?", "Atencion")) {
+        }
     }
 
     class ImageRenderer extends DefaultTableCellRenderer {

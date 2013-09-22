@@ -20,6 +20,9 @@ public class dlg_Paciente extends javax.swing.JDialog {
     /**
      * Creates new form dlg_Paciente
      */
+    
+    private cPaciente Paciente;
+    
     public dlg_Paciente(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -316,7 +319,7 @@ public class dlg_Paciente extends javax.swing.JDialog {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
-        InfoBox.infoBox("¿Está seguro que quiere salir sin guardar el pacioente?", "Cancelar");
+        InfoBox.infoBox("¿Está seguro que quiere salir sin guardar el paciente?", "Cancelar");
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -403,4 +406,19 @@ public class dlg_Paciente extends javax.swing.JDialog {
     private javax.swing.JTextField jTF_numerodocumento;
     private javax.swing.JTextField jTF_telefono;
     // End of variables declaration//GEN-END:variables
+
+    public void setPaciente(cPaciente Paciente) {
+        this.Paciente = Paciente;
+        
+        this.jTF_apellido.setText(this.Paciente.getApellido());
+        this.jTF_nombre.setText(this.Paciente.getNombre());
+        this.jCB_TipoDocumento.setSelectedIndex(this.Paciente.getTipoDocumento().getValue());
+        this.jCB_FN_ano.setSelectedItem(this.Paciente.getFechaNacimiento().get(Calendar.YEAR));
+        this.jCB_FN_mes.setSelectedItem(this.Paciente.getFechaNacimiento().get(Calendar.MONTH)+1);
+        this.jCB_FN_dia.setSelectedItem(this.Paciente.getFechaNacimiento().get(Calendar.DAY_OF_MONTH));
+        this.jTF_numerodocumento.setText(this.Paciente.getDocumento());
+        this.jTF_telefono.setText(this.Paciente.getTelefono());
+        this.jTF_direccion.setText(this.Paciente.getDireccion());
+        this.jTF_detalle.setText(this.Paciente.getDetalle());
+    }
 }
