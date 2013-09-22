@@ -43,6 +43,9 @@ public class cPaciente implements Serializable {
     private Calendar FechaNacimiento;
     private Integer IdPaciente;
     private Set<cEntrevista> Entrevistas;
+    private String Telefono;
+    private String Direccion;
+    private String Detalle;
 
     public String getDocumento() {
         return Documento;
@@ -107,5 +110,29 @@ public class cPaciente implements Serializable {
 
     public void setEntrevistas(Set<cEntrevista> Entrevistas) {
         this.Entrevistas = Entrevistas;
+    }
+
+    public String getTelefono() {
+        return Telefono;
+    }
+
+    public void setTelefono(String Telefono) {
+        this.Telefono = Telefono;
+    }
+
+    public String getDireccion() {
+        return Direccion;
+    }
+
+    public void setDireccion(String Direccion) {
+        this.Direccion = Direccion;
+    }
+
+    public String getDetalle() {
+        return Detalle;
+    }
+
+    public void setDetalle(String Detalle) {
+        this.Detalle = Detalle;
     }
 }
