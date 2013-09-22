@@ -12,8 +12,8 @@ import javax.swing.JOptionPane;
 
 public class InfoBox{
 
-public static void infoBox(String infoMessage, String location)
+    public static void infoBox(String infoMessage, String title)
     {
-        JOptionPane.showMessageDialog(null, infoMessage,location, JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, infoMessage,title, JOptionPane.INFORMATION_MESSAGE);
     }
 }
