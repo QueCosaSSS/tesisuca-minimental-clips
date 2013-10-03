@@ -95,7 +95,7 @@ public class MiniMental extends javax.swing.JFrame {
 //                throw new UnsupportedOperationException("Not supported yet.");
             }
         });
-
+        
     }
 
     /**
@@ -443,61 +443,11 @@ public class MiniMental extends javax.swing.JFrame {
 
         List l = SessionFactoryUtil.BuscarPacientes(eTipoDocumento.getTipoDocumentoFromIndex(jCB_TipoDocumento.getSelectedIndex()), jTF_NumeroDocumento.getText(), jTF_PacienteApellido.getText(), jTF_PacienteNombre.getText());
 
-        DefaultTableModel aModel = (DefaultTableModel) jTable1.getModel();
-
-        aModel.setRowCount(0);
-
-        //get an Iterator over keys
-        ListIterator iterator = l.listIterator();
-        //put them into jTable
-        while (iterator.hasNext()) {
-            Object[] objects = new Object[9];
-            cPaciente paciente_tmp = (cPaciente) iterator.next();
-            objects[0] = paciente_tmp.getDocumento();
-            objects[1] = paciente_tmp.getTipoDocumento();
-            objects[2] = paciente_tmp.getApellido();
-            objects[3] = paciente_tmp.getNombre();
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/YYYY");
-            objects[4] = sdf.format(paciente_tmp.getFechaNacimiento().getTime());
-            objects[5] = ".\\src\\Icons\\new_entrevista.png";
-            objects[6] = ".\\src\\Icons\\new_entrevista.png";
-            objects[7] = ".\\src\\Icons\\new_entrevista.png";
-            objects[8] = paciente_tmp.getIdPaciente().toString();
-
-            aModel.addRow(objects);
-
-            jTable1.getColumnModel().getColumn(5).setCellRenderer(new ImageRenderer());
-            jTable1.getColumnModel().getColumn(6).setCellRenderer(new ImageRenderer());
-            jTable1.getColumnModel().getColumn(7).setCellRenderer(new ImageRenderer());
-
-            jTable1.getColumnModel().getColumn(8).setMinWidth(0);
-            jTable1.getColumnModel().getColumn(8).setMaxWidth(0);
-            jTable1.getColumnModel().getColumn(8).setPreferredWidth(0);
-
-        }
-
+        LlenarTablaPacientes(l);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-//        cPaciente paciente = new cPaciente();
-//        paciente.setApellido("Lopez");
-//        paciente.setDocumento("28078383");
-//
-//        GregorianCalendar t = new GregorianCalendar();
-//        t.clear();
-//        t.set(Calendar.YEAR, 1);
-//        t.set(Calendar.MONTH, 4);
-//        t.set(Calendar.YEAR, 1980);
-//
-//        paciente.setFechaNacimiento(t);
-//
-//        paciente.setNombre("Alberto");
-//
-//        paciente.setTipoDocumento(eTipoDocumento.DNI);
-//
-//        SessionFactoryUtil.Save(paciente);
-
         dlg_Paciente dlg_pct = new dlg_Paciente(this, true);
         dlg_pct.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -592,6 +542,42 @@ public class MiniMental extends javax.swing.JFrame {
         }
     }
 
+    private void LlenarTablaPacientes(List l) {
+        
+        DefaultTableModel aModel = (DefaultTableModel) jTable1.getModel();
+
+        aModel.setRowCount(0);
+
+        //get an Iterator over keys
+        ListIterator iterator = l.listIterator();
+        //put them into jTable
+        while (iterator.hasNext()) {
+            Object[] objects = new Object[9];
+            cPaciente paciente_tmp = (cPaciente) iterator.next();
+            objects[0] = paciente_tmp.getDocumento();
+            objects[1] = paciente_tmp.getTipoDocumento();
+            objects[2] = paciente_tmp.getApellido();
+            objects[3] = paciente_tmp.getNombre();
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/YYYY");
+            objects[4] = sdf.format(paciente_tmp.getFechaNacimiento().getTime());
+            objects[5] = ".\\src\\Icons\\new_entrevista.png";
+            objects[6] = ".\\src\\Icons\\new_entrevista.png";
+            objects[7] = ".\\src\\Icons\\new_entrevista.png";
+            objects[8] = paciente_tmp.getIdPaciente().toString();
+
+            aModel.addRow(objects);
+
+            jTable1.getColumnModel().getColumn(5).setCellRenderer(new ImageRenderer());
+            jTable1.getColumnModel().getColumn(6).setCellRenderer(new ImageRenderer());
+            jTable1.getColumnModel().getColumn(7).setCellRenderer(new ImageRenderer());
+
+            jTable1.getColumnModel().getColumn(8).setMinWidth(0);
+            jTable1.getColumnModel().getColumn(8).setMaxWidth(0);
+            jTable1.getColumnModel().getColumn(8).setPreferredWidth(0);
+
+        }
+    }
+
     class ImageRenderer extends DefaultTableCellRenderer {
 
         @Override
@@ -608,6 +594,7 @@ public class MiniMental extends javax.swing.JFrame {
             return label;
         }
     }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

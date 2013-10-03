@@ -20,9 +20,8 @@ public class dlg_Paciente extends javax.swing.JDialog {
     /**
      * Creates new form dlg_Paciente
      */
-    
     private cPaciente Paciente;
-    
+
     public dlg_Paciente(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -31,23 +30,23 @@ public class dlg_Paciente extends javax.swing.JDialog {
 
         jCB_FN_ano.removeAllItems();
         for (int i = (now.get(Calendar.YEAR) - 100); i < now.get(Calendar.YEAR) + 1; i++) {
-            jCB_FN_ano.addItem(String.valueOf(i));
+            jCB_FN_ano.addItem(i);
         }
-        
+
         jCB_FN_ano.setSelectedItem(now.get(Calendar.YEAR));
 
         jCB_FN_mes.removeAllItems();
         for (int i = 1; i <= 12; i++) {
-            jCB_FN_mes.addItem(String.valueOf(i));
-        }  
-        
+            jCB_FN_mes.addItem(i);
+        }
+
         jCB_FN_mes.setSelectedItem(1);
-        
+
         jCB_FN_dia.removeAllItems();
         for (int i = 1; i <= now.getActualMaximum(Calendar.DAY_OF_MONTH); i++) {
-            jCB_FN_dia.addItem(String.valueOf(i));
+            jCB_FN_dia.addItem(i);
         }
-        
+
         jCB_FN_mes.setSelectedItem(1);
     }
 
@@ -246,102 +245,97 @@ public class dlg_Paciente extends javax.swing.JDialog {
 
     private void jCB_FN_anoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCB_FN_anoActionPerformed
         // TODO add your handling code here:
-        
-        
     }//GEN-LAST:event_jCB_FN_anoActionPerformed
 
     private void jCB_FN_mesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCB_FN_mesActionPerformed
         // TODO add your handling code here:
-        
     }//GEN-LAST:event_jCB_FN_mesActionPerformed
 
     private void jCB_FN_anoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jCB_FN_anoItemStateChanged
         // TODO add your handling code here:
-        
-        int ano=1900;
-        if(jCB_FN_ano.getSelectedItem() != null)
-        {
-            ano=Integer.parseInt(jCB_FN_ano.getSelectedItem().toString());
+
+        int ano = 1900;
+        if (jCB_FN_ano.getSelectedItem() != null) {
+            ano = Integer.parseInt(jCB_FN_ano.getSelectedItem().toString());
         }
 
-        int mes=1;
-        if(jCB_FN_mes.getSelectedItem() != null)
-        {
-            mes=Integer.parseInt(jCB_FN_mes.getSelectedItem().toString());
+        int mes = 1;
+        if (jCB_FN_mes.getSelectedItem() != null) {
+            mes = Integer.parseInt(jCB_FN_mes.getSelectedItem().toString());
         }
-        
+
         this.SetMaxDay(ano, mes);
     }//GEN-LAST:event_jCB_FN_anoItemStateChanged
 
     private void jCB_FN_mesItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jCB_FN_mesItemStateChanged
         // TODO add your handling code here:
-        
-        int ano=1900;
-        if(jCB_FN_ano.getSelectedItem() != null)
-        {
-            ano=Integer.parseInt(jCB_FN_ano.getSelectedItem().toString());
+
+        int ano = 1900;
+        if (jCB_FN_ano.getSelectedItem() != null) {
+            ano = Integer.parseInt(jCB_FN_ano.getSelectedItem().toString());
         }
 
-        int mes=1;
-        if(jCB_FN_mes.getSelectedItem() != null)
-        {
-            mes=Integer.parseInt(jCB_FN_mes.getSelectedItem().toString());
+        int mes = 1;
+        if (jCB_FN_mes.getSelectedItem() != null) {
+            mes = Integer.parseInt(jCB_FN_mes.getSelectedItem().toString());
         }
-        
+
         this.SetMaxDay(ano, mes);
     }//GEN-LAST:event_jCB_FN_mesItemStateChanged
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        
-        cPaciente pct = new cPaciente();
-        pct.setApellido(jTF_apellido.getText());
-        pct.setNombre(jTF_apellido.getText());
-        
+
+        if (this.Paciente == null) {
+            this.setPaciente(new cPaciente());
+        }
+
+        this.Paciente.setApellido(jTF_apellido.getText());
+        this.Paciente.setNombre(jTF_apellido.getText());
+
         Calendar cal = Calendar.getInstance();
-        
+
         cal.set(Integer.parseInt(jCB_FN_ano.getSelectedItem().toString()), Integer.parseInt(jCB_FN_mes.getSelectedItem().toString()), Integer.parseInt(jCB_FN_dia.getSelectedItem().toString()));
-        
-        pct.setFechaNacimiento(cal);
-        pct.setTipoDocumento(eTipoDocumento.getTipoDocumentoFromIndex(jCB_TipoDocumento.getSelectedIndex()));
-        pct.setDocumento(jTF_numerodocumento.getText());
-        pct.setTelefono(jTF_telefono.getText());
-        pct.setDireccion(jTF_direccion.getText());
-        pct.setDetalle(jTF_detalle.getText());
-        
-        SessionFactoryUtil.Save(pct); 
-        
+
+        this.Paciente.setFechaNacimiento(cal);
+        this.Paciente.setTipoDocumento(eTipoDocumento.getTipoDocumentoFromIndex(jCB_TipoDocumento.getSelectedIndex()));
+        this.Paciente.setDocumento(jTF_numerodocumento.getText());
+        this.Paciente.setTelefono(jTF_telefono.getText());
+        this.Paciente.setDireccion(jTF_direccion.getText());
+        this.Paciente.setDetalle(jTF_detalle.getText());
+
+        SessionFactoryUtil.Save(this.Paciente);
+
         InfoBox.infoBox("Los datos del paciente se guardaron correctamente", "Datos Guardados");
-        
+
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
+
         InfoBox.infoBox("¿Está seguro que quiere salir sin guardar el paciente?", "Cancelar");
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void SetMaxDay(int ano, int mes)
-    {
+    private void SetMaxDay(int ano, int mes) {
         Calendar now = Calendar.getInstance();
-        now.set(ano, mes-1, 1);
-        
+        now.set(ano, mes - 1, 1);
+
         int index = jCB_FN_dia.getSelectedIndex();
-        
+
         jCB_FN_dia.removeAllItems();
         for (int i = 1; i <= now.getActualMaximum(Calendar.DAY_OF_MONTH); i++) {
-            jCB_FN_dia.addItem(String.valueOf(i));
+            jCB_FN_dia.addItem(i);
         }
-        
-        if(index > jCB_FN_dia.getItemCount())
-        {
+
+        if (index > jCB_FN_dia.getItemCount()) {
             index = 0;
         }
 
         jCB_FN_dia.setSelectedIndex(index);
     }
+
     /**
      * @param args the command line arguments
      */
@@ -409,12 +403,12 @@ public class dlg_Paciente extends javax.swing.JDialog {
 
     public void setPaciente(cPaciente Paciente) {
         this.Paciente = Paciente;
-        
+
         this.jTF_apellido.setText(this.Paciente.getApellido());
         this.jTF_nombre.setText(this.Paciente.getNombre());
         this.jCB_TipoDocumento.setSelectedIndex(this.Paciente.getTipoDocumento().getValue());
         this.jCB_FN_ano.setSelectedItem(this.Paciente.getFechaNacimiento().get(Calendar.YEAR));
-        this.jCB_FN_mes.setSelectedItem(this.Paciente.getFechaNacimiento().get(Calendar.MONTH)+1);
+        this.jCB_FN_mes.setSelectedItem(this.Paciente.getFechaNacimiento().get(Calendar.MONTH) + 1);
         this.jCB_FN_dia.setSelectedItem(this.Paciente.getFechaNacimiento().get(Calendar.DAY_OF_MONTH));
         this.jTF_numerodocumento.setText(this.Paciente.getDocumento());
         this.jTF_telefono.setText(this.Paciente.getTelefono());

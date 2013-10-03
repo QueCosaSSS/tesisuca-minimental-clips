@@ -935,7 +935,8 @@ public class dlg_Minimental extends javax.swing.JDialog {
            pct.getEntrevistas().add(Entrevista);
            
            SessionFactoryUtil.Save(pct);           
-       }
+       } 
+       
 
     }//GEN-LAST:event_jButton1ActionPerformed
 

@@ -22,7 +22,7 @@ public class CLP_Manager {
         try {
             this.clips = new Environment();
 
-            this.clips.load(".\\src\\CLP\\Caso2.clp");
+            this.clips.load(".\\src\\CLP\\Caso3.clp");
 
             this.clips.reset();
 
@@ -142,8 +142,13 @@ public class CLP_Manager {
 
     private void FillDiagnostico(cDiagnostico diagnostico) {
         try {
+            
+//            String evalStr = "((find-all-facts)";
+//
+//            PrimitiveValue evaluado = this.clips.eval(evalStr);
+            
             String evalStr = "(find-all-facts ((?f Diagnostico)) TRUE)";
-
+            
             PrimitiveValue evaluado = this.clips.eval(evalStr);
 
             for (int i = 0; i < evaluado.size(); i++) {
@@ -167,7 +172,7 @@ public class CLP_Manager {
         }
     }
 
-    private void FillMinimental(cMiniMental minimental) {
+        private void FillMinimental(cMiniMental minimental) {
         try {
             String evalStr = "(find-all-facts ((?f MiniMental_Calculado)) TRUE)";
 
