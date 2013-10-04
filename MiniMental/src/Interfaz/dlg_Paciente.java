@@ -287,7 +287,7 @@ public class dlg_Paciente extends javax.swing.JDialog {
         // TODO add your handling code here:
 
         if (this.Paciente == null) {
-            this.setPaciente(new cPaciente());
+            this.Paciente = new cPaciente();
         }
 
         this.Paciente.setApellido(jTF_apellido.getText());
