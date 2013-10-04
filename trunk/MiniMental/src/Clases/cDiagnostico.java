@@ -5,13 +5,19 @@
 package Clases;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 
@@ -24,6 +30,8 @@ import javax.persistence.TableGenerator;
 public class cDiagnostico implements Serializable{
     
     private Integer idDiagnostico;
+    private Set<cDiagmosticoDetalle> Detalle;
+    
 
     public void setIdDiagnostico(Integer idDiagnostico) {
         this.idDiagnostico = idDiagnostico;
@@ -155,5 +163,18 @@ public class cDiagnostico implements Serializable{
     public void setResultado(String Resultado) {
         this.Resultado = Resultado;
     }
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    public Set<cDiagmosticoDetalle> getDetalle() {
+                if (this.Detalle == null) {            
+            this.Detalle = new HashSet<cDiagmosticoDetalle>();            
+        }
+          return Detalle;
+    }
+
+    public void setDetalle(Set<cDiagmosticoDetalle> Detalle) {
+        this.Detalle = Detalle;
+    }
+
 
 }

@@ -6,6 +6,7 @@ package CLIPS_Manager;
 
 import CLIPSJNI.*;
 import Clases.*;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -142,13 +143,13 @@ public class CLP_Manager {
 
     private void FillDiagnostico(cDiagnostico diagnostico) {
         try {
-            
-//            String evalStr = "((find-all-facts)";
+
+            //            String evalStr = "((find-all-facts)";
 //
 //            PrimitiveValue evaluado = this.clips.eval(evalStr);
-            
+
             String evalStr = "(find-all-facts ((?f Diagnostico)) TRUE)";
-            
+
             PrimitiveValue evaluado = this.clips.eval(evalStr);
 
             for (int i = 0; i < evaluado.size(); i++) {
@@ -165,6 +166,8 @@ public class CLP_Manager {
 
                 FillMinimental(minimental);
 
+                FillDetalle(diagnostico);
+
                 diagnostico.setMinimental(minimental);
             }
         } catch (Exception ex) {
@@ -172,7 +175,7 @@ public class CLP_Manager {
         }
     }
 
-        private void FillMinimental(cMiniMental minimental) {
+    private void FillMinimental(cMiniMental minimental) {
         try {
             String evalStr = "(find-all-facts ((?f MiniMental_Calculado)) TRUE)";
 
@@ -335,5 +338,28 @@ public class CLP_Manager {
 
     private Boolean toBool(String texto) {
         return "SI".equals(texto.toUpperCase()) ? true : false;
+    }
+
+    private void FillDetalle(cDiagnostico diagnostico) {
+        try {
+            String evalStr = "(find-all-facts ((?f DiagnosticoDetalle)) TRUE)";
+
+            PrimitiveValue evaluado = this.clips.eval(evalStr);
+
+            Set<cDiagmosticoDetalle> detalles = new HashSet<cDiagmosticoDetalle>();
+            
+            for (int i = 0; i < evaluado.size(); i++) {
+                cDiagmosticoDetalle dd = new cDiagmosticoDetalle();
+                dd.setDetalle(evaluado.get(i).getFactSlot("ResultadoDetalle").stringValue());
+                
+                detalles.add(dd);
+
+            }
+
+            diagnostico.setDetalle(detalles);
+
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
     }
 }
