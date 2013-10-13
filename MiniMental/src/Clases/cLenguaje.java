@@ -14,7 +14,7 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class cLenguaje implements Serializable{
     
-    private float Accion;
+    private Float Accion;
     private Boolean Escritura;
     private Boolean Orden;
     private Boolean Frase;
@@ -82,7 +82,7 @@ public class cLenguaje implements Serializable{
      *
      * @return the value of Accion
      */
-    public float getAccion() {
+    public Float getAccion() {
         return Accion;
     }
 
@@ -91,7 +91,7 @@ public class cLenguaje implements Serializable{
      *
      * @param Accion new value of Accion
      */
-    public void setAccion(float Accion) {
+    public void setAccion(Float Accion) {
         this.Accion = Accion;
     }
 

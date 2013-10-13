@@ -937,6 +937,12 @@ public class dlg_Minimental extends javax.swing.JDialog {
            SessionFactoryUtil.Save(pct);           
        } 
        
+       dlg_DetalleResultado dlg_dr = new dlg_DetalleResultado(null, rootPaneCheckingEnabled);
+       
+       dlg_dr.setEntrevista(Entrevista);
+       
+       dlg_dr.setVisible(true);
+       
 
     }//GEN-LAST:event_jButton1ActionPerformed
 

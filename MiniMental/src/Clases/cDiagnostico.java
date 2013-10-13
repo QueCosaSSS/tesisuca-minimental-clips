@@ -5,12 +5,10 @@
 package Clases;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.Embeddable;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -30,7 +28,7 @@ import javax.persistence.TableGenerator;
 public class cDiagnostico implements Serializable{
     
     private Integer idDiagnostico;
-    private Set<cDiagmosticoDetalle> Detalle;
+    private Set<cDiagnosticoDetalle> Detalles;
     
 
     public void setIdDiagnostico(Integer idDiagnostico) {
@@ -163,17 +161,17 @@ public class cDiagnostico implements Serializable{
     public void setResultado(String Resultado) {
         this.Resultado = Resultado;
     }
-
+        
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    public Set<cDiagmosticoDetalle> getDetalle() {
-                if (this.Detalle == null) {            
-            this.Detalle = new HashSet<cDiagmosticoDetalle>();            
+    public Set<cDiagnosticoDetalle> getDetalles() {
+               if (this.Detalles == null) {            
+            this.Detalles = new HashSet<cDiagnosticoDetalle>();            
         }
-          return Detalle;
+          return Detalles;
     }
 
-    public void setDetalle(Set<cDiagmosticoDetalle> Detalle) {
-        this.Detalle = Detalle;
+    public void setDetalles(Set<cDiagnosticoDetalle> Detalles) {
+        this.Detalles = Detalles;
     }
 
 

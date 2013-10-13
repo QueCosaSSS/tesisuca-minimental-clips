@@ -4,39 +4,43 @@
  */
 package Clases;
 
-import javax.persistence.CascadeType;
+import java.io.Serializable;
 import javax.persistence.Column;
-import javax.persistence.FetchType;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 
 /**
  *
  * @author santiago
  */
-public class cDiagmosticoDetalle {
+@Entity
+@Table(name = "DiagnosticoDetalles")
+public class cDiagnosticoDetalle implements Serializable  {
+
+    public cDiagnosticoDetalle() {
+    }
     
     private String Detalle;
     
-    private Integer IdDiagmosticoDetalle;
+    private Integer IdDiagnosticoDetalle;
 
 
     @Id
     @TableGenerator(name = "IDS", table = "IDS", pkColumnName = "idkey", pkColumnValue = "idvalue", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.TABLE, generator = "IDS")
     @Column(name = "Id")
-    public Integer getIdDiagmosticoDetalle() {
-        return IdDiagmosticoDetalle;
+    public Integer getIdDiagnosticoDetalle() {
+        return IdDiagnosticoDetalle;
     }
 
-    public void setIdDiagmosticoDetalle(Integer IdDiagmosticoDetalle) {
-        this.IdDiagmosticoDetalle = IdDiagmosticoDetalle;
+    public void setIdDiagnosticoDetalle(Integer IdDiagmosticoDetalle) {
+        this.IdDiagnosticoDetalle = IdDiagmosticoDetalle;
     }
-
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    
     public String getDetalle() {
         return Detalle;
     }

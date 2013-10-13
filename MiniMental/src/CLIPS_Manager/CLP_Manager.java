@@ -346,17 +346,17 @@ public class CLP_Manager {
 
             PrimitiveValue evaluado = this.clips.eval(evalStr);
 
-            Set<cDiagmosticoDetalle> detalles = new HashSet<cDiagmosticoDetalle>();
+            Set<cDiagnosticoDetalle> detalles = new HashSet<cDiagnosticoDetalle>();
             
             for (int i = 0; i < evaluado.size(); i++) {
-                cDiagmosticoDetalle dd = new cDiagmosticoDetalle();
+                cDiagnosticoDetalle dd = new cDiagnosticoDetalle();
                 dd.setDetalle(evaluado.get(i).getFactSlot("ResultadoDetalle").stringValue());
                 
                 detalles.add(dd);
 
             }
 
-            diagnostico.setDetalle(detalles);
+            diagnostico.setDetalles(detalles);
 
         } catch (Exception ex) {
             System.out.println(ex);
