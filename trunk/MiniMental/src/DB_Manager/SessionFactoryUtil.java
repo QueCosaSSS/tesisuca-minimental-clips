@@ -4,19 +4,12 @@
  */
 package DB_Manager;
 
-import org.hibernate.cfg.AnnotationConfiguration;
-import org.hibernate.SessionFactory;
-import org.hibernate.Session;
-import java.util.logging.*;
-import sun.security.acl.OwnerImpl;
 import Clases.*;
 import java.util.List;
-import org.apache.derby.vti.Restriction;
 import org.hibernate.Criteria;
-import org.hibernate.Query;
-import org.hibernate.criterion.Criterion;
-import org.hibernate.criterion.Example;
-import org.hibernate.criterion.LogicalExpression;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Restrictions;
 
@@ -32,6 +25,7 @@ public class SessionFactoryUtil {
             // config file.
             AnnotationConfiguration config = new AnnotationConfiguration();
 
+            config.addAnnotatedClass(cDiagnosticoDetalle.class);
             config.addAnnotatedClass(cDiagnostico.class);
             config.addAnnotatedClass(cEntrevista.class);
             config.addAnnotatedClass(cPaciente.class);

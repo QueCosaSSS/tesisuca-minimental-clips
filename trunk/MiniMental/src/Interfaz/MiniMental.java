@@ -4,26 +4,11 @@
  */
 package Interfaz;
 
-import CLIPS_Manager.CLP_Manager;
-import Clases.ConfirmationBox;
-import Clases.InfoBox;
-import Clases.cDiagnostico;
-import Clases.cEntrevista;
-import Clases.cMiniMental;
-import Clases.cPaciente;
-import Clases.eTipoDocumento;
+import Clases.*;
 import DB_Manager.SessionFactoryUtil;
-import java.awt.BorderLayout;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.HashSet;
-import org.hibernate.cfg.AnnotationConfiguration;
-import org.hibernate.tool.hbm2ddl.SchemaExport;
-import java.awt.CardLayout;
 import java.awt.Component;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Iterator;
 import java.util.List;
@@ -34,8 +19,8 @@ import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
-import org.apache.derby.client.am.DateTime;
+import org.hibernate.cfg.AnnotationConfiguration;
+import org.hibernate.tool.hbm2ddl.SchemaExport;
 
 /**
  *
@@ -95,7 +80,43 @@ public class MiniMental extends javax.swing.JFrame {
 //                throw new UnsupportedOperationException("Not supported yet.");
             }
         });
-        
+
+        jTable2.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+//                throw new UnsupportedOperationException("Not supported yet.");
+                JTable target = (JTable) e.getSource();
+                int row = target.getSelectedRow();
+                int col = target.getSelectedColumn();
+                // do some action if appropriate column
+                switch (col) {
+                    case 3: {
+                        MuestraDetalleEntrevista(target.getValueAt(row, 4).toString());
+                        break;
+                    }
+                }
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+//                throw new UnsupportedOperationException("Not supported yet.");
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+//                throw new UnsupportedOperationException("Not supported yet.");
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+//                throw new UnsupportedOperationException("Not supported yet.");
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+//                throw new UnsupportedOperationException("Not supported yet.");
+            }
+        });
     }
 
     /**
@@ -412,9 +433,20 @@ public class MiniMental extends javax.swing.JFrame {
 //        jTextArea1.setText(clp.Run());
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
+    private void MuestraDetalleEntrevista(String IdEntrevista) {
+        dlg_DetalleResultado dlg_dr = new dlg_DetalleResultado(null, rootPaneCheckingEnabled);
+
+        cEntrevista Entrevista = SessionFactoryUtil.Load(cEntrevista.class, Integer.parseInt(IdEntrevista));
+
+        dlg_dr.setEntrevista(Entrevista);
+
+        dlg_dr.setVisible(true);
+    }
+
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         AnnotationConfiguration config = new AnnotationConfiguration();
 
+        config.addAnnotatedClass(cDiagnosticoDetalle.class);
         config.addAnnotatedClass(cEntrevista.class);
         config.addAnnotatedClass(cDiagnostico.class);
         config.addAnnotatedClass(cPaciente.class);
@@ -543,7 +575,7 @@ public class MiniMental extends javax.swing.JFrame {
     }
 
     private void LlenarTablaPacientes(List l) {
-        
+
         DefaultTableModel aModel = (DefaultTableModel) jTable1.getModel();
 
         aModel.setRowCount(0);
@@ -594,7 +626,6 @@ public class MiniMental extends javax.swing.JFrame {
             return label;
         }
     }
-    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

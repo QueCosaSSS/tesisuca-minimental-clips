@@ -12,17 +12,17 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class cMemoria implements Serializable{
     
-    private float Fijacion;
-    private float Atencion;
-    private float Recuerdo;
-    private float MemoriaCalculado;
+    private Float Fijacion;
+    private Float Atencion;
+    private Float Recuerdo;
+    private Float MemoriaCalculado;
 
     /**
      * Get the value of Recuerdo
      *
      * @return the value of Recuerdo
      */
-    public float getRecuerdo() {
+    public Float getRecuerdo() {
         return Recuerdo;
     }
 
@@ -31,7 +31,7 @@ public class cMemoria implements Serializable{
      *
      * @param Recuerdo new value of Recuerdo
      */
-    public void setRecuerdo(float Recuerdo) {
+    public void setRecuerdo(Float Recuerdo) {
         this.Recuerdo = Recuerdo;
     }
 
@@ -41,7 +41,7 @@ public class cMemoria implements Serializable{
      *
      * @return the value of Atencion
      */
-    public float getAtencion() {
+    public Float getAtencion() {
         return Atencion;
     }
 
@@ -50,7 +50,7 @@ public class cMemoria implements Serializable{
      *
      * @param Atencion new value of Atencion
      */
-    public void setAtencion(float Atencion) {
+    public void setAtencion(Float Atencion) {
         this.Atencion = Atencion;
     }
 
@@ -60,7 +60,7 @@ public class cMemoria implements Serializable{
      *
      * @return the value of Fijacion
      */
-    public float getFijacion() {
+    public Float getFijacion() {
         return Fijacion;
     }
 
@@ -69,15 +69,15 @@ public class cMemoria implements Serializable{
      *
      * @param Fijacion new value of Fijacion
      */
-    public void setFijacion(float cFijacion) {
+    public void setFijacion(Float cFijacion) {
         this.Fijacion = cFijacion;
     }
 
-    public float getMemoriaCalculado() {
+    public Float getMemoriaCalculado() {
         return MemoriaCalculado;
     }
 
-    public void setMemoriaCalculado(float Calculado) {
+    public void setMemoriaCalculado(Float Calculado) {
         this.MemoriaCalculado = Calculado;
     }
 
