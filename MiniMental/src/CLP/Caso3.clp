@@ -132,7 +132,7 @@
 (defrule REGLA-CLIPS-OT-N5-Fecha-1
 (Entrevista (OrientacionTemporal_Fecha "NO"))
 =>
-(assert (OrientacionTemporal (cFecha -0.5))) (assert (DiagnosticoDetalle (ResultadoDetalle "REGLA-CLIPS-OT-N5-Fecha-1") ))
+    (assert (OrientacionTemporal (cFecha -0.5))) (assert (DiagnosticoDetalle (ResultadoDetalle "REGLA-CLIPS-OT-N5-Fecha-1") ))
 )
 
 (defrule REGLA-CLIPS-OT-N5-Fecha-2 
