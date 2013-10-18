@@ -943,6 +943,9 @@ public class dlg_Minimental extends javax.swing.JDialog {
        
        dlg_dr.setVisible(true);
        
+       this.setVisible(false);
+       
+       this.dispose();
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
