@@ -152,6 +152,7 @@
     (printout t "REGLA-CLIPS-OT-N5-Fecha-2" crlf)
 )
 
+
 (defrule Regla-CLIPS-OT-N5-Estacion-1
     (Entrevista (OrientacionTemporal_Estacion "NO")) 
     (Entrevista (Escolaridad ?r))
@@ -250,6 +251,7 @@
     (printout t "Regla-CLIPS-OT-N5-Estacion-11 " crlf)
  )
 
+
 (defrule REGLA-CLIPS-OT-N5-MES-1
     (Entrevista (OrientacionTemporal_Mes "NO"))
     (Entrevista (EsUltimoDiaMes "NO"))
@@ -298,6 +300,7 @@
     (printout t "REGLA-CLIPS-OT-N5-MES-5" crlf)
 )
 
+
 (defrule REGLA-CLIPS-OT-N5-ANO-1
     (Entrevista (OrientacionTemporal_Ano "NO"))
     (Entrevista (EsPrimerQuincenaAno "NO"))
@@ -327,6 +330,7 @@
     (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
     (printout t "REGLA-CLIPS-OT-N5-ANO-3" crlf)
 ) 
+
 
 (defrule REGLA-CLIPS-OT-N4-1
     (Entrevista ( OrientacionTemporal_DiaSemana "NO" )) 
@@ -679,6 +683,7 @@
     (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
     (printout t "REGLA-CLIPS-OT-N4-32" crlf))
 
+
 (defrule REGLA-CLIPS-OE-N5-Pais-1
     (Entrevista (OrientacionEspacial_Pais "NO"))
     =>
@@ -694,6 +699,7 @@
     (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
     (printout t "REGLA-CLIPS-OE-N5-Pais-2 " crlf)
 )
+
 
 (defrule REGLA-CLIPS-OE-N5-Ciudad-1
     (Entrevista (OrientacionEspacial_Ciudad "NO"))
@@ -711,6 +717,7 @@
     (printout t "REGLA-CLIPS-OE-N5-Ciudad-2 " crlf)
 )
 
+
 (defrule REGLA-CLIPS-OE-N5-Lugar-1
     (Entrevista (OrientacionEspacial_Lugar "NO"))
     =>
@@ -727,234 +734,2176 @@
     (printout t "REGLA-CLIPS-OE-N5-Lugar-2 " crlf)
 )
 
-(defrule REGLA-OE-N5-PISO-1 (Entrevista (OrientacionEspacial_Piso "NO" )) (Entrevista (ConsultorioEnEntrepiso "NO" )) (Entrevista (DiferenciaEntrePisoContestadoReal ?r))(test (< ?r 2.00)) => (assert (OrientacionEspacial (cPiso -0.50))) (printout t "REGLA-OE-N5-PISO-1" crlf))
-(defrule REGLA-OE-N5-PISO-2 (Entrevista (OrientacionEspacial_Piso "SI" )) (Entrevista (ConsultorioEnEntrepiso "NO" )) (Entrevista (DiferenciaEntrePisoContestadoReal ?r))(test (< ?r 2.00)) => (assert (OrientacionEspacial (cPiso 1.00))) (printout t "REGLA-OE-N5-PISO-2" crlf))
-(defrule REGLA-OE-N5-PISO-3 (Entrevista (OrientacionEspacial_Piso "NO" )) (Entrevista (ConsultorioEnEntrepiso "SI" )) (Entrevista (DiferenciaEntrePisoContestadoReal ?r))(test (< ?r 2.00)) => (assert (OrientacionEspacial (cPiso 0.00))) (printout t "REGLA-OE-N5-PISO-3" crlf))
-(defrule REGLA-OE-N5-PISO-5/7 (Entrevista (OrientacionEspacial_Piso "NO" ))(Entrevista (DiferenciaEntrePisoContestadoReal ?r))(test (< ?r 2)) => (assert (OrientacionEspacial (cPiso 1.00))) (printout t "REGLA-OE-N5-PISO-5/7" crlf))
 
-(defrule REGLA-OE-N5-CALLE-1 (Entrevista (OrientacionEspacial_Calle "NO" )) (Entrevista (TraidoPorTercero "NO" )) (Entrevista (ConsultorioEnAvenida "SI" )) => (assert (OrientacionEspacial (cCalle -0.50))) (printout t "REGLA-OE-N5-CALLE-1" crlf))
-(defrule REGLA-OE-N5-CALLE-2 (Entrevista (OrientacionEspacial_Calle "SI" )) (Entrevista (TraidoPorTercero "NO" )) (Entrevista (ConsultorioEnAvenida "SI" )) => (assert (OrientacionEspacial (cCalle 1.00))) (printout t "REGLA-OE-N5-CALLE-2" crlf))
-(defrule REGLA-OE-N5-CALLE-3 (Entrevista (OrientacionEspacial_Calle "NO" )) (Entrevista (TraidoPorTercero "SI" )) (Entrevista (ConsultorioEnAvenida "SI" )) => (assert (OrientacionEspacial (cCalle 1.00))) (printout t "REGLA-OE-N5-CALLE-3" crlf))
-(defrule REGLA-OE-N5-CALLE-5/7 (Entrevista (OrientacionEspacial_Calle "NO" )) (Entrevista (ConsultorioEnAvenida "NO" )) => (assert (OrientacionEspacial (cCalle 1.00))) (printout t "REGLA-OE-N5-CALLE-5/7" crlf))
+(defrule REGLA-OE-N5-PISO-1 
+    (Entrevista (OrientacionEspacial_Piso "NO" )) 
+    (Entrevista (ConsultorioEnEntrepiso "NO" )) 
+    (Entrevista (DiferenciaEntrePisoContestadoReal ?r))
+    (test (< ?r 2.00))
+    => 
+    (assert (OrientacionEspacial (cPiso -0.50))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t "REGLA-OE-N5-PISO-1" crlf))
 
-(defrule REGLA-MF-N5-PALABRA-1 (Entrevista (MemoriaFijacion_PalabrasRepetidas 0.00 )) => (assert (MemoriaFijacion (cPalabrasRepetidas -5.00))) (printout t "REGLA-MF-N5-PALABRA-1" crlf))
-(defrule REGLA-MF-N5-PALABRA-2 (Entrevista (MemoriaFijacion_PalabrasRepetidas 1.00 )) => (assert (MemoriaFijacion (cPalabrasRepetidas -2.00))) (printout t "REGLA-MF-N5-PALABRA-2" crlf))
-(defrule REGLA-MF-N5-PALABRA-3 (Entrevista (MemoriaFijacion_PalabrasRepetidas 2.00 )) => (assert (MemoriaFijacion (cPalabrasRepetidas -0.50))) (printout t "REGLA-MF-N5-PALABRA-3" crlf))
-(defrule REGLA-MF-N5-PALABRA-4 (Entrevista (MemoriaFijacion_PalabrasRepetidas 3.00 )) => (assert (MemoriaFijacion (cPalabrasRepetidas 3.00))) (printout t "REGLA-MF-N5-PALABRA-4" crlf))
+(defrule REGLA-OE-N5-PISO-2 
+    (Entrevista (OrientacionEspacial_Piso "SI" )) 
+    (Entrevista (ConsultorioEnEntrepiso "NO" )) 
+    (Entrevista (DiferenciaEntrePisoContestadoReal ?r))
+    (test (< ?r 2.00)) 
+    => 
+    (assert (OrientacionEspacial (cPiso 1.00))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t "REGLA-OE-N5-PISO-2" crlf))
 
-(defrule REGLA-MF-N4-1 (MemoriaFijacion (cPalabrasRepetidas -5.00 )) (Entrevista (PacienteConProblemasAuditivos "NO" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  -5.00))) (printout t "REGLA-MF-N4-1" crlf))
-(defrule REGLA-MF-N4-2 (MemoriaFijacion (cPalabrasRepetidas -2.00 )) (Entrevista (PacienteConProblemasAuditivos "NO" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  -2.00))) (printout t "REGLA-MF-N4-2" crlf))
-(defrule REGLA-MF-N4-3 (MemoriaFijacion (cPalabrasRepetidas -0.50 )) (Entrevista (PacienteConProblemasAuditivos "NO" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  -0.50))) (printout t "REGLA-MF-N4-3" crlf))
-(defrule REGLA-MF-N4-4 (MemoriaFijacion (cPalabrasRepetidas 3.00 )) (Entrevista (PacienteConProblemasAuditivos "NO" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  3.00))) (printout t "REGLA-MF-N4-4" crlf))
-(defrule REGLA-MF-N4-9/16 (Entrevista (PacienteDeprimido "SI" )) => (assert (Memoria (cMemoriaFijacion  3.00))) (printout t "REGLA-MF-N4-9 - 16" crlf))
-
-(defrule REGLA-MA-N5-ATENCION-1 (Entrevista (MemoriaAtencion_ClasificacionAtencion 0.00 )) => (assert (MemoriaAtencion (cClasificacionAtencion -1.25))) (printout t "REGLA-MA-N5-ATENCION-1" crlf))
-(defrule REGLA-MA-N5-ATENCION-2 (Entrevista (MemoriaAtencion_ClasificacionAtencion 1.00 )) => (assert (MemoriaAtencion (cClasificacionAtencion 0.00))) (printout t "REGLA-MA-N5-ATENCION-2" crlf))
-(defrule REGLA-MA-N5-ATENCION-3 (Entrevista (MemoriaAtencion_ClasificacionAtencion 2.00 )) => (assert (MemoriaAtencion (cClasificacionAtencion 1.25))) (printout t "REGLA-MA-N5-ATENCION-3" crlf))
-(defrule REGLA-MA-N5-ATENCION-4 (Entrevista (MemoriaAtencion_ClasificacionAtencion 3.00 )) => (assert (MemoriaAtencion (cClasificacionAtencion 2.50))) (printout t "REGLA-MA-N5-ATENCION-4" crlf))
-(defrule REGLA-MA-N5-ATENCION-5 (Entrevista (MemoriaAtencion_ClasificacionAtencion 4.00 )) => (assert (MemoriaAtencion (cClasificacionAtencion 3.75))) (printout t "REGLA-MA-N5-ATENCION-5" crlf))
-(defrule REGLA-MA-N5-ATENCION-6 (Entrevista (MemoriaAtencion_ClasificacionAtencion 5.00 )) => (assert (MemoriaAtencion (cClasificacionAtencion 5.00))) (printout t "REGLA-MA-N5-ATENCION-6" crlf))
-
-(defrule REGLA-MA-N4-1/6 (Entrevista (PacienteConProblemasAuditivos "NO" )) (Entrevista (PacienteDeprimido "SI" )) => (assert (Memoria (cMemoriaFijacion  5.00))) (printout t "REGLA-MA-N4-1-6" crlf))
-(defrule REGLA-MA-N4-7/12 (Entrevista (PacienteConProblemasAuditivos "SI" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  5.00))) (printout t "REGLA-MA-N4-7-12" crlf))
-(defrule REGLA-MA-N4-13 (MemoriaAtencion (cClasificacionAtencion -1.25 )) (Entrevista (PacienteConProblemasAuditivos "NO" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  -1.30))) (printout t "REGLA-MA-N4-13" crlf))
-(defrule REGLA-MA-N4-14 (MemoriaAtencion (cClasificacionAtencion 0.00 )) (Entrevista (PacienteConProblemasAuditivos "NO" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  0.00))) (printout t "REGLA-MA-N4-14" crlf))
-(defrule REGLA-MA-N4-15 (MemoriaAtencion (cClasificacionAtencion 1.25 )) (Entrevista (PacienteConProblemasAuditivos "NO" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  1.30))) (printout t "REGLA-MA-N4-15" crlf))
-(defrule REGLA-MA-N4-16 (MemoriaAtencion (cClasificacionAtencion 2.50 )) (Entrevista (PacienteConProblemasAuditivos "NO" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  2.50))) (printout t "REGLA-MA-N4-16" crlf))
-(defrule REGLA-MA-N4-17 (MemoriaAtencion (cClasificacionAtencion 3.75 )) (Entrevista (PacienteConProblemasAuditivos "NO" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  3.80))) (printout t "REGLA-MA-N4-17" crlf))
-(defrule REGLA-MA-N4-18 (MemoriaAtencion (cClasificacionAtencion 5.00 )) (Entrevista (PacienteConProblemasAuditivos "NO" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  5.00))) (printout t "REGLA-MA-N4-18" crlf))
-
-(defrule REGLA-MR-N5-RECUERDO-1 (Entrevista (MemoriaRecuerdo_PalabrasRecordadas 0.00 )) => (assert (MemoriaRecuerdo (cPalabrasRecordadas -5.00))) (printout t "REGLA-MR-N5-RECUERDO-1" crlf))
-(defrule REGLA-MR-N5-RECUERDO-2 (Entrevista (MemoriaRecuerdo_PalabrasRecordadas 1.00 )) => (assert (MemoriaRecuerdo (cPalabrasRecordadas -2.00))) (printout t "REGLA-MR-N5-RECUERDO-2" crlf))
-(defrule REGLA-MR-N5-RECUERDO-3 (Entrevista (MemoriaRecuerdo_PalabrasRecordadas 2.00 )) => (assert (MemoriaRecuerdo (cPalabrasRecordadas -0.50))) (printout t "REGLA-MR-N5-RECUERDO-3" crlf))
-(defrule REGLA-MR-N5-RECUERDO-4 (Entrevista (MemoriaRecuerdo_PalabrasRecordadas 4.00 )) => (assert (MemoriaRecuerdo (cPalabrasRecordadas 3.00))) (printout t "REGLA-MR-N5-RECUERDO-4" crlf))
-
-(defrule REGLA-MR-N4-1 (MemoriaRecuerdo (cPalabrasRecordadas -5.00 )) (Entrevista (PacienteConProblemasAuditivos "NO" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  -5.00))) (printout t "REGLA-MR-N4-1" crlf))
-(defrule REGLA-MR-N4-2 (MemoriaRecuerdo (cPalabrasRecordadas -2.00 )) (Entrevista (PacienteConProblemasAuditivos "NO" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  -2.00))) (printout t "REGLA-MR-N4-2" crlf))
-(defrule REGLA-MR-N4-3 (MemoriaRecuerdo (cPalabrasRecordadas -0.50 )) (Entrevista (PacienteConProblemasAuditivos "NO" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  -0.50))) (printout t "REGLA-MR-N4-3" crlf))
-(defrule REGLA-MR-N4-4 (MemoriaRecuerdo (cPalabrasRecordadas 3.00 )) (Entrevista (PacienteConProblemasAuditivos "NO" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  3.00))) (printout t "REGLA-MR-N4-4" crlf))
-(defrule REGLA-MR-N4-5/8 (Entrevista (PacienteConProblemasAuditivos "SI" )) (Entrevista (PacienteDeprimido "NO" )) => (assert (Memoria (cMemoriaFijacion  3.00))) (printout t "REGLA-MR-N4-5-8" crlf))
-(defrule REGLA-MR-N4-9/16 (Entrevista (PacienteDeprimido "SI" )) => (assert (Memoria (cMemoriaFijacion  3.00))) (printout t "REGLA-MR-N4-9-16" crlf))
-
-(defrule REGLA-L-N4-ACCIONPONDERADA-0 (Entrevista (Lenguaje_ClasificacionAccion  0.00  )) => (assert (LenguajeAccionPonderado(cAccionPonderado  -1.50 ))) (printout t " REGLA-L-N4-ACCIONPONDERADA-0" crlf))
-(defrule REGLA-L-N4-ACCIONPONDERADA-1 (Entrevista (Lenguaje_ClasificacionAccion  1.00  )) => (assert (LenguajeAccionPonderado(cAccionPonderado  0.00 ))) (printout t " REGLA-L-N4-ACCIONPONDERADA-1" crlf))
-(defrule REGLA-L-N4-ACCIONPONDERADA-2 (Entrevista (Lenguaje_ClasificacionAccion  2.00  )) => (assert (LenguajeAccionPonderado(cAccionPonderado  1.50 ))) (printout t " REGLA-L-N4-ACCIONPONDERADA-2" crlf))
-(defrule REGLA-L-N4-ACCIONPONDERADA-3 (Entrevista (Lenguaje_ClasificacionAccion  3.00  )) => (assert (LenguajeAccionPonderado(cAccionPonderado  3.00 ))) (printout t " REGLA-L-N4-ACCIONPONDERADA-3" crlf))
-
-(defrule  REGLA-L-N4-ACCION-1 (LenguajeAccionPonderado (cAccionPonderado  -1.50  )) (Entrevista (PacienteAnsioso  "NO"  )) => (assert (Lenguaje (cLenguajeAccion  -1.50 ))) (printout t " REGLA-L-N4-ACCION-1" crlf))
-(defrule  REGLA-L-N4-ACCION-2 (LenguajeAccionPonderado (cAccionPonderado  0.00  )) (Entrevista (PacienteAnsioso  "NO"  )) => (assert (Lenguaje (cLenguajeAccion  0.00 ))) (printout t " REGLA-L-N4-ACCION-2" crlf))
-(defrule  REGLA-L-N4-ACCION-3 (LenguajeAccionPonderado (cAccionPonderado  1.50  )) (Entrevista (PacienteAnsioso  "NO"  )) => (assert (Lenguaje (cLenguajeAccion  1.50 ))) (printout t " REGLA-L-N4-ACCION-3" crlf))
-(defrule  REGLA-L-N4-ACCION-4/8 (LenguajeAccionPonderado (cAccionPonderado  3.00  ))  => (assert (Lenguaje (cLenguajeAccion  3.00 ))) (printout t " REGLA-L-N4-ACCION-4/8" crlf))
-(defrule  REGLA-L-N4-ACCION-5 (LenguajeAccionPonderado (cAccionPonderado  -1.50  )) (Entrevista (PacienteAnsioso  "SI"  )) => (assert (Lenguaje (cLenguajeAccion  0.00 ))) (printout t " REGLA-L-N4-ACCION-5" crlf))
-(defrule  REGLA-L-N4-ACCION-6 (LenguajeAccionPonderado (cAccionPonderado  0.00  )) (Entrevista (PacienteAnsioso  "SI"  )) => (assert (Lenguaje (cLenguajeAccion  1.00 ))) (printout t " REGLA-L-N4-ACCION-6" crlf))
-(defrule  REGLA-L-N4-ACCION-7 (LenguajeAccionPonderado (cAccionPonderado  1.50  )) (Entrevista (PacienteAnsioso  "SI"  )) => (assert (Lenguaje (cLenguajeAccion  2.00 ))) (printout t " REGLA-L-N4-ACCION-7" crlf))
-
-(defrule  REGLA-L-N4-ESCRITA-1 (Entrevista (Lenguaje_EscribeCorrectamenteFrase "NO"  )) (Entrevista (Escolaridad ?r)) (test (< ?r 6.00))  => (assert (Lenguaje (cLenguajeEscritura  "NO" ))) (printout t " REGLA-L-N4-ESCRITA-1" crlf))
-(defrule  REGLA-L-N4-ESCRITA-2 (Entrevista (Lenguaje_EscribeCorrectamenteFrase "SI"  )) (Entrevista (Escolaridad ?r)) (test (< ?r 6.00))  => (assert (Lenguaje (cLenguajeEscritura  "SI" ))) (printout t " REGLA-L-N4-ESCRITA-2" crlf))
-(defrule  REGLA-L-N4-ESCRITA-3 (Entrevista (Lenguaje_EscribeCorrectamenteFrase "NO"  )) (Entrevista (Escolaridad ?r)) (test (< ?r 6.00))  => (assert (Lenguaje (cLenguajeEscritura  "SI" ))) (printout t " REGLA-L-N4-ESCRITA-3" crlf))
-
-(defrule  REGLA-L-N4-ORDEN-1  (Entrevista (Lenguaje_CumpleOrdenCorrectamente  "NO"  )) (Entrevista (PacienteConProblemasAuditivos  "NO"  )) (Entrevista (PacienteAnsioso "NO"  )) => (assert (Lenguaje(cLenguajeOrden   "NO" ))) (printout t " REGLA-L-N4-ORDEN-1" crlf))
-(defrule  REGLA-L-N4-ORDEN-2  (Entrevista (Lenguaje_CumpleOrdenCorrectamente  "SI"  )) (Entrevista (PacienteConProblemasAuditivos  "NO"  )) (Entrevista (PacienteAnsioso "NO"  )) => (assert (Lenguaje(cLenguajeOrden   "SI" ))) (printout t " REGLA-L-N4-ORDEN-2" crlf))
-(defrule  REGLA-L-N4-ORDEN-3/4  (Entrevista (PacienteConProblemasAuditivos  "SI"  )) (Entrevista (PacienteAnsioso "NO"  )) => (assert (Lenguaje(cLenguajeOrden   "SI" ))) (printout t " REGLA-L-N4-ORDEN-3/4" crlf))
-(defrule  REGLA-L-N4-ORDEN-5/6  (Entrevista (PacienteConProblemasAuditivos  "NO"  )) (Entrevista (PacienteAnsioso "SI"  )) => (assert (Lenguaje(cLenguajeOrden   "SI" ))) (printout t " REGLA-L-N4-ORDEN-5/6" crlf))
-
-(defrule  REGLA-L-N4-FRASE-1  (Entrevista (Lenguaje_RepiteFraseCorrectamente  "NO"  )) (Entrevista (PacienteConProblemasAuditivos  "NO"  )) => (assert (Lenguaje(cLenguajeFrase   "NO" ))) (printout t " REGLA-L-N4-FRASE-1" crlf))
-(defrule  REGLA-L-N4-FRASE-2  (Entrevista (Lenguaje_RepiteFraseCorrectamente  "SI"  )) (Entrevista (PacienteConProblemasAuditivos  "NO"  )) => (assert (Lenguaje(cLenguajeFrase   "SI" ))) (printout t " REGLA-L-N4-FRASE-2" crlf))
-(defrule  REGLA-L-N4-FRASE-3/4  (Entrevista (PacienteConProblemasAuditivos  "SI"  )) => (assert (Lenguaje(cLenguajeFrase   "SI" ))) (printout t " REGLA-L-N4-FRASE-3/4" crlf))
-
-(defrule  REGLA-L-N3-1  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  -1.50  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  -1.50 ))) (printout t " REGLA-L-N3-1" crlf))
-(defrule  REGLA-L-N3-2  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  -1.50  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  -0.50 ))) (printout t " REGLA-L-N3-2" crlf))
-(defrule  REGLA-L-N3-3  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  -1.50  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  -0.50 ))) (printout t " REGLA-L-N3-3" crlf))
-(defrule  REGLA-L-N3-4  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  -1.50  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  0.50 ))) (printout t " REGLA-L-N3-4" crlf))
-(defrule  REGLA-L-N3-5  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  -1.50  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  -0.50 ))) (printout t " REGLA-L-N3-5" crlf))
-(defrule  REGLA-L-N3-6  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  -1.50  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  0.50 ))) (printout t " REGLA-L-N3-6" crlf))
-(defrule  REGLA-L-N3-7  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  -1.50  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  0.50 ))) (printout t " REGLA-L-N3-7" crlf))
-(defrule  REGLA-L-N3-8  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  -1.50  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  1.50 ))) (printout t " REGLA-L-N3-8" crlf))
-(defrule  REGLA-L-N3-9  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  0.00  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  0.00 ))) (printout t " REGLA-L-N3-9" crlf))
-(defrule  REGLA-L-N3-10  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  0.00  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  1.00 ))) (printout t " REGLA-L-N3-10" crlf))
-(defrule  REGLA-L-N3-11  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  0.00  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  1.00 ))) (printout t " REGLA-L-N3-11" crlf))
-(defrule  REGLA-L-N3-12  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  0.00  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  2.00 ))) (printout t " REGLA-L-N3-12" crlf))
-(defrule  REGLA-L-N3-13  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  0.00  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  1.00 ))) (printout t " REGLA-L-N3-13" crlf))
-(defrule  REGLA-L-N3-14  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  0.00  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  2.00 ))) (printout t " REGLA-L-N3-14" crlf))
-(defrule  REGLA-L-N3-15  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  0.00  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  2.00 ))) (printout t " REGLA-L-N3-15" crlf))
-(defrule  REGLA-L-N3-16  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  0.00  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  3.00 ))) (printout t " REGLA-L-N3-16" crlf))
-(defrule  REGLA-L-N3-17  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  1.50  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  1.50 ))) (printout t " REGLA-L-N3-17" crlf))
-(defrule  REGLA-L-N3-18  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  1.50  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  2.50 ))) (printout t " REGLA-L-N3-18" crlf))
-(defrule  REGLA-L-N3-19  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  1.50  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  2.50 ))) (printout t " REGLA-L-N3-19" crlf))
-(defrule  REGLA-L-N3-20  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  1.50  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  3.50 ))) (printout t " REGLA-L-N3-20" crlf))
-(defrule  REGLA-L-N3-21  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  1.50  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  2.50 ))) (printout t " REGLA-L-N3-21" crlf))
-(defrule  REGLA-L-N3-22  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  1.50  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  3.50 ))) (printout t " REGLA-L-N3-22" crlf))
-(defrule  REGLA-L-N3-23  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  1.50  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  3.50 ))) (printout t " REGLA-L-N3-23" crlf))
-(defrule  REGLA-L-N3-24  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  1.50  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  4.50 ))) (printout t " REGLA-L-N3-24" crlf))
-(defrule  REGLA-L-N3-25  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  3.00  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  3.00 ))) (printout t " REGLA-L-N3-25" crlf))
-(defrule  REGLA-L-N3-26  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  3.00  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  4.00 ))) (printout t " REGLA-L-N3-26" crlf))
-(defrule  REGLA-L-N3-27  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  3.00  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  4.00 ))) (printout t " REGLA-L-N3-27" crlf))
-(defrule  REGLA-L-N3-28  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  3.00  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  5.00 ))) (printout t " REGLA-L-N3-28" crlf))
-(defrule  REGLA-L-N3-29  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  3.00  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  4.00 ))) (printout t " REGLA-L-N3-29" crlf))
-(defrule  REGLA-L-N3-30  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  3.00  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  5.00 ))) (printout t " REGLA-L-N3-30" crlf))
-(defrule  REGLA-L-N3-31  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  3.00  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  5.00 ))) (printout t " REGLA-L-N3-31" crlf))
-(defrule  REGLA-L-N3-32  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  3.00  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  6.00 ))) (printout t " REGLA-L-N3-32" crlf))
-(defrule  REGLA-L-N3-33  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  0.00  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  1.00 ))) (printout t " REGLA-L-N3-33" crlf))
-(defrule  REGLA-L-N3-34  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  0.00  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  1.00 ))) (printout t " REGLA-L-N3-34" crlf))
-(defrule  REGLA-L-N3-35  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  0.00  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  1.00 ))) (printout t " REGLA-L-N3-35" crlf))
-(defrule  REGLA-L-N3-36  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  1.00  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  1.00 ))) (printout t " REGLA-L-N3-36" crlf))
-(defrule  REGLA-L-N3-37  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  1.00  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  2.00 ))) (printout t " REGLA-L-N3-37" crlf))
-(defrule  REGLA-L-N3-38  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  1.00 )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  2.00 ))) (printout t " REGLA-L-N3-38" crlf))
-(defrule  REGLA-L-N3-39  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  1.00  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  3.00 ))) (printout t " REGLA-L-N3-39" crlf))
-(defrule  REGLA-L-N3-40  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  1.00  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  2.00 ))) (printout t " REGLA-L-N3-40" crlf))
-(defrule  REGLA-L-N3-41  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  1.00  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  3.00 ))) (printout t " REGLA-L-N3-41" crlf))
-(defrule  REGLA-L-N3-42  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  1.00  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  3.00 ))) (printout t " REGLA-L-N3-42" crlf))
-(defrule  REGLA-L-N3-43  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  1.00  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  4.00 ))) (printout t " REGLA-L-N3-43" crlf))
-(defrule  REGLA-L-N3-44  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  2.00  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  2.00 ))) (printout t " REGLA-L-N3-44" crlf))
-(defrule  REGLA-L-N3-45  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  2.00  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  3.00 ))) (printout t " REGLA-L-N3-45" crlf))
-(defrule  REGLA-L-N3-46  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  2.00  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  3.00 ))) (printout t " REGLA-L-N3-46" crlf))
-(defrule  REGLA-L-N3-47  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  2.00  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  4.00 ))) (printout t " REGLA-L-N3-47" crlf))
-(defrule  REGLA-L-N3-48  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  2.00  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  3.00 ))) (printout t " REGLA-L-N3-48" crlf))
-(defrule  REGLA-L-N3-49  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  2.00  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  4.00 ))) (printout t " REGLA-L-N3-49" crlf))
-(defrule  REGLA-L-N3-50  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  2.00  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  4.00 ))) (printout t " REGLA-L-N3-50" crlf))
-(defrule  REGLA-L-N3-51  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  2.00  )) (Entrevista (Lenguaje_CosasNombradas  0.00  )) => (assert (MiniMental_Calculado (cLenguaje  5.00 ))) (printout t " REGLA-L-N3-51" crlf))
-(defrule  REGLA-L-N3-52  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  -1.50  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  -0.50 ))) (printout t " REGLA-L-N3-52" crlf))
-(defrule  REGLA-L-N3-53  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  -1.50  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  0.50 ))) (printout t " REGLA-L-N3-53" crlf))
-(defrule  REGLA-L-N3-54  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  -1.50  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  0.50 ))) (printout t " REGLA-L-N3-54" crlf))
-(defrule  REGLA-L-N3-55  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  -1.50  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  1.50 ))) (printout t " REGLA-L-N3-55" crlf))
-(defrule  REGLA-L-N3-56  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  -1.50  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  0.50 ))) (printout t " REGLA-L-N3-56" crlf))
-(defrule  REGLA-L-N3-57  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  -1.50  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  1.50 ))) (printout t " REGLA-L-N3-57" crlf))
-(defrule  REGLA-L-N3-58  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  -1.50  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  1.50 ))) (printout t " REGLA-L-N3-58" crlf))
-(defrule  REGLA-L-N3-59  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  -1.50  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  2.50 ))) (printout t " REGLA-L-N3-59" crlf))
-(defrule  REGLA-L-N3-60  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  0.00  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  1.00 ))) (printout t " REGLA-L-N3-60" crlf))
-(defrule  REGLA-L-N3-61  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  0.00  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  2.00 ))) (printout t " REGLA-L-N3-61" crlf))
-(defrule  REGLA-L-N3-62  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  0.00  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  2.00 ))) (printout t " REGLA-L-N3-62" crlf))
-(defrule  REGLA-L-N3-63  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  0.00  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  3.00 ))) (printout t " REGLA-L-N3-63" crlf))
-(defrule  REGLA-L-N3-64  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  0.00  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  2.00 ))) (printout t " REGLA-L-N3-64" crlf))
-(defrule  REGLA-L-N3-65  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  0.00  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  3.00 ))) (printout t " REGLA-L-N3-65" crlf))
-(defrule  REGLA-L-N3-66  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  0.00  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  3.00 ))) (printout t " REGLA-L-N3-66" crlf))
-(defrule  REGLA-L-N3-67  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  0.00  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  4.00 ))) (printout t " REGLA-L-N3-67" crlf))
-(defrule  REGLA-L-N3-68  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  1.50  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  2.50 ))) (printout t " REGLA-L-N3-68" crlf))
-(defrule  REGLA-L-N3-69  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  1.50  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  3.50 ))) (printout t " REGLA-L-N3-69" crlf))
-(defrule  REGLA-L-N3-70  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  1.50  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  3.50 ))) (printout t " REGLA-L-N3-70" crlf))
-(defrule  REGLA-L-N3-71  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  1.50  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  4.50 ))) (printout t " REGLA-L-N3-71" crlf))
-(defrule  REGLA-L-N3-72  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  1.50  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  3.50 ))) (printout t " REGLA-L-N3-72" crlf))
-(defrule  REGLA-L-N3-73  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  1.50  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  4.50 ))) (printout t " REGLA-L-N3-73" crlf))
-(defrule  REGLA-L-N3-74  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  1.50  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  4.50 ))) (printout t " REGLA-L-N3-74" crlf))
-(defrule  REGLA-L-N3-75  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  1.50  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  5.50 ))) (printout t " REGLA-L-N3-75" crlf))
-(defrule  REGLA-L-N3-76  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  3.00  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  4.00 ))) (printout t " REGLA-L-N3-76" crlf))
-(defrule  REGLA-L-N3-77  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  3.00  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  5.00 ))) (printout t " REGLA-L-N3-77" crlf))
-(defrule  REGLA-L-N3-78  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  3.00  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  5.00 ))) (printout t " REGLA-L-N3-78" crlf))
-(defrule  REGLA-L-N3-79  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  3.00  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  6.00 ))) (printout t " REGLA-L-N3-79" crlf))
-(defrule  REGLA-L-N3-80  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  3.00  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  5.00 ))) (printout t " REGLA-L-N3-80" crlf))
-(defrule  REGLA-L-N3-81  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  3.00  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  6.00 ))) (printout t " REGLA-L-N3-81" crlf))
-(defrule  REGLA-L-N3-82  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  3.00  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  6.00 ))) (printout t " REGLA-L-N3-82" crlf))
-(defrule  REGLA-L-N3-83  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  3.00  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  7.00 ))) (printout t " REGLA-L-N3-83" crlf))
-(defrule  REGLA-L-N3-84  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  0.00  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  4.00 ))) (printout t " REGLA-L-N3-84" crlf))
-(defrule  REGLA-L-N3-85  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  1.00  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  2.00 ))) (printout t " REGLA-L-N3-85" crlf))
-(defrule  REGLA-L-N3-86  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  1.00  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  3.00 ))) (printout t " REGLA-L-N3-86" crlf))
-(defrule  REGLA-L-N3-87  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  1.00  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  3.00 ))) (printout t " REGLA-L-N3-87" crlf))
-(defrule  REGLA-L-N3-88  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  1.00  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  4.00 ))) (printout t " REGLA-L-N3-88" crlf))
-(defrule  REGLA-L-N3-89  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  1.00  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  3.00 ))) (printout t " REGLA-L-N3-89" crlf))
-(defrule  REGLA-L-N3-90  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  1.00  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  4.00 ))) (printout t " REGLA-L-N3-90" crlf))
-(defrule  REGLA-L-N3-91  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  1.00  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  4.00 ))) (printout t " REGLA-L-N3-91" crlf))
-(defrule  REGLA-L-N3-92  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  1.00  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  5.00 ))) (printout t " REGLA-L-N3-92" crlf))
-(defrule  REGLA-L-N3-93  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  2.00  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  3.00 ))) (printout t " REGLA-L-N3-93" crlf))
-(defrule  REGLA-L-N3-94  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  2.00  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  4.00 ))) (printout t " REGLA-L-N3-94" crlf))
-(defrule  REGLA-L-N3-95  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  2.00  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  4.00 ))) (printout t " REGLA-L-N3-95" crlf))
-(defrule  REGLA-L-N3-96  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  2.00  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  5.00 ))) (printout t " REGLA-L-N3-96" crlf))
-(defrule  REGLA-L-N3-97  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  2.00  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  4.00 ))) (printout t " REGLA-L-N3-97" crlf))
-(defrule  REGLA-L-N3-98  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  2.00  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  5.00 ))) (printout t " REGLA-L-N3-98" crlf))
-(defrule  REGLA-L-N3-99  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  2.00  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  5.00 ))) (printout t " REGLA-L-N3-99" crlf))
-(defrule  REGLA-L-N3-100  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  2.00  )) (Entrevista (Lenguaje_CosasNombradas  1.00  )) => (assert (MiniMental_Calculado (cLenguaje  6.00 ))) (printout t " REGLA-L-N3-100" crlf))
-(defrule  REGLA-L-N3-101  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  -1.50  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  0.50 ))) (printout t " REGLA-L-N3-101" crlf))
-(defrule  REGLA-L-N3-102  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  -1.50  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  1.50 ))) (printout t " REGLA-L-N3-102" crlf))
-(defrule  REGLA-L-N3-103  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  -1.50  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  1.50 ))) (printout t " REGLA-L-N3-103" crlf))
-(defrule  REGLA-L-N3-104  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  -1.50  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  2.50 ))) (printout t " REGLA-L-N3-104" crlf))
-(defrule  REGLA-L-N3-105  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  -1.50  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  1.50 ))) (printout t " REGLA-L-N3-105" crlf))
-(defrule  REGLA-L-N3-106  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  -1.50  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  2.50 ))) (printout t " REGLA-L-N3-106" crlf))
-(defrule  REGLA-L-N3-107  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  -1.50  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  2.50 ))) (printout t " REGLA-L-N3-107" crlf))
-(defrule  REGLA-L-N3-108  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  -1.50  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  3.50 ))) (printout t " REGLA-L-N3-108" crlf))
-(defrule  REGLA-L-N3-109  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  0.00  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  2.00 ))) (printout t " REGLA-L-N3-109" crlf))
-(defrule  REGLA-L-N3-110  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  0.00  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  3.00 ))) (printout t " REGLA-L-N3-110" crlf))
-(defrule  REGLA-L-N3-111  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  0.00  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  3.00 ))) (printout t " REGLA-L-N3-111" crlf))
-(defrule  REGLA-L-N3-112  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  0.00  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  4.00 ))) (printout t " REGLA-L-N3-112" crlf))
-(defrule  REGLA-L-N3-113  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  0.00  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  3.00 ))) (printout t " REGLA-L-N3-113" crlf))
-(defrule  REGLA-L-N3-114  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  0.00  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  4.00 ))) (printout t " REGLA-L-N3-114" crlf))
-(defrule  REGLA-L-N3-115  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  0.00  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  4.00 ))) (printout t " REGLA-L-N3-115" crlf))
-(defrule  REGLA-L-N3-116  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  0.00  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  5.00 ))) (printout t " REGLA-L-N3-116" crlf))
-(defrule  REGLA-L-N3-117  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  1.50  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  3.50 ))) (printout t " REGLA-L-N3-117" crlf))
-(defrule  REGLA-L-N3-118  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  1.50  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  4.50 ))) (printout t " REGLA-L-N3-118" crlf))
-(defrule  REGLA-L-N3-119  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  1.50  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  4.50 ))) (printout t " REGLA-L-N3-119" crlf))
-(defrule  REGLA-L-N3-120  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  1.50  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  5.50 ))) (printout t " REGLA-L-N3-120" crlf))
-(defrule  REGLA-L-N3-121  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  1.50  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  4.50 ))) (printout t " REGLA-L-N3-121" crlf))
-(defrule  REGLA-L-N3-122  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  1.50  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  5.50 ))) (printout t " REGLA-L-N3-122" crlf))
-(defrule  REGLA-L-N3-123  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  1.50  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  5.50 ))) (printout t " REGLA-L-N3-123" crlf))
-(defrule  REGLA-L-N3-124  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  1.50  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  6.50 ))) (printout t " REGLA-L-N3-124" crlf))
-(defrule  REGLA-L-N3-125  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  3.00  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  5.00 ))) (printout t " REGLA-L-N3-125" crlf))
-(defrule  REGLA-L-N3-126  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  3.00  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  6.00 ))) (printout t " REGLA-L-N3-126" crlf))
-(defrule  REGLA-L-N3-127  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  3.00  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  6.00 ))) (printout t " REGLA-L-N3-127" crlf))
-(defrule  REGLA-L-N3-128  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  3.00  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  7.00 ))) (printout t " REGLA-L-N3-128" crlf))
-(defrule  REGLA-L-N3-129  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  3.00  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  6.00 ))) (printout t " REGLA-L-N3-129" crlf))
-(defrule  REGLA-L-N3-130  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  3.00  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  7.00 ))) (printout t " REGLA-L-N3-130" crlf))
-(defrule  REGLA-L-N3-131  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  3.00  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  7.00 ))) (printout t " REGLA-L-N3-131" crlf))
-(defrule  REGLA-L-N3-132  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  3.00  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  8.00 ))) (printout t " REGLA-L-N3-132" crlf))
-(defrule  REGLA-L-N3-133  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  0.00  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  5.00 ))) (printout t " REGLA-L-N3-133" crlf))
-(defrule  REGLA-L-N3-134  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  1.00  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  3.00 ))) (printout t " REGLA-L-N3-134" crlf))
-(defrule  REGLA-L-N3-135  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  1.00  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  4.00 ))) (printout t " REGLA-L-N3-135" crlf))
-(defrule  REGLA-L-N3-136  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  1.00  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  4.00 ))) (printout t " REGLA-L-N3-136" crlf))
-(defrule  REGLA-L-N3-137  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  1.00  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  5.00 ))) (printout t " REGLA-L-N3-137" crlf))
-(defrule  REGLA-L-N3-138  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  1.00  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  4.00 ))) (printout t " REGLA-L-N3-138" crlf))
-(defrule  REGLA-L-N3-139  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  1.00  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  5.00 ))) (printout t " REGLA-L-N3-139" crlf))
-(defrule  REGLA-L-N3-140  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  1.00  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  5.00 ))) (printout t " REGLA-L-N3-140" crlf))
-(defrule  REGLA-L-N3-141  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  1.00  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  6.00 ))) (printout t " REGLA-L-N3-141" crlf))
-(defrule  REGLA-L-N3-142  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  2.00  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  4.00 ))) (printout t " REGLA-L-N3-142" crlf))
-(defrule  REGLA-L-N3-143  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  2.00  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  5.00 ))) (printout t " REGLA-L-N3-143" crlf))
-(defrule  REGLA-L-N3-144  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  2.00  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  5.00 ))) (printout t " REGLA-L-N3-144" crlf))
-(defrule  REGLA-L-N3-145  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "NO"  )) (Lenguaje (cLenguajeAccion  2.00  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  6.00 ))) (printout t " REGLA-L-N3-145" crlf))
-(defrule  REGLA-L-N3-146  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  2.00  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  5.00 ))) (printout t " REGLA-L-N3-146" crlf))
-(defrule  REGLA-L-N3-147  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "NO"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  2.00  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  6.00 ))) (printout t " REGLA-L-N3-147" crlf))
-(defrule  REGLA-L-N3-148  (Lenguaje (cLenguajeFrase  "NO"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  2.00  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  6.00 ))) (printout t " REGLA-L-N3-148" crlf))
-(defrule  REGLA-L-N3-149  (Lenguaje (cLenguajeFrase  "SI"  )) (Lenguaje (cLenguajeOrden  "SI"  )) (Lenguaje (cLenguajeEscritura  "SI"  )) (Lenguaje (cLenguajeAccion  2.00  )) (Entrevista (Lenguaje_CosasNombradas  2.00  )) => (assert (MiniMental_Calculado (cLenguaje  7.00 ))) (printout t " REGLA-L-N3-149" crlf))
+(defrule REGLA-OE-N5-PISO-3 
+    (Entrevista (OrientacionEspacial_Piso "NO" )) 
+    (Entrevista (ConsultorioEnEntrepiso "SI" )) 
+    (Entrevista (DiferenciaEntrePisoContestadoReal ?r))
+    (test (< ?r 2.00)) 
+    => 
+    (assert (OrientacionEspacial (cPiso 0.00))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t "REGLA-OE-N5-PISO-3" crlf))
+    
+(defrule REGLA-OE-N5-PISO-5/7 
+    (Entrevista (OrientacionEspacial_Piso "NO" ))
+    (Entrevista (DiferenciaEntrePisoContestadoReal ?r))
+    (test (< ?r 2)) 
+    => 
+    (assert (OrientacionEspacial (cPiso 1.00))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t "REGLA-OE-N5-PISO-5/7" crlf))
 
 
-(defrule  REGLA-D-N3-1  (Entrevista (Dibujo_CopiaCorrectamenteDibujo  "SI"  )) => (assert (MiniMental_Calculado (cDibujo  1.00 ))) (printout t " REGLA-D-N3-1" crlf))
-(defrule  REGLA-D-N3-2  (Entrevista (Dibujo_CopiaCorrectamenteDibujo  "NO"  )) => (assert (MiniMental_Calculado (cDibujo  0.00 ))) (printout t " REGLA-D-N3-2" crlf))
+(defrule REGLA-OE-N5-CALLE-1 
+    (Entrevista (OrientacionEspacial_Calle "NO" )) 
+    (Entrevista (TraidoPorTercero "NO" )) 
+    (Entrevista (ConsultorioEnAvenida "SI" )) 
+    => 
+    (assert (OrientacionEspacial (cCalle -0.50))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t "REGLA-OE-N5-CALLE-1" crlf))
+
+(defrule REGLA-OE-N5-CALLE-2 
+    (Entrevista (OrientacionEspacial_Calle "SI" )) 
+    (Entrevista (TraidoPorTercero "NO" )) 
+    (Entrevista (ConsultorioEnAvenida "SI" )) 
+    => 
+    (assert (OrientacionEspacial (cCalle 1.00))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t "REGLA-OE-N5-CALLE-2" crlf))
+
+(defrule REGLA-OE-N5-CALLE-3 
+    (Entrevista (OrientacionEspacial_Calle "NO" )) 
+    (Entrevista (TraidoPorTercero "SI" )) 
+    (Entrevista (ConsultorioEnAvenida "SI" ))
+    => 
+    (assert (OrientacionEspacial (cCalle 1.00))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t "REGLA-OE-N5-CALLE-3" crlf))
+
+(defrule REGLA-OE-N5-CALLE-5/7 
+    (Entrevista (OrientacionEspacial_Calle "NO" )) 
+    (Entrevista (ConsultorioEnAvenida "NO" )) 
+    => 
+    (assert (OrientacionEspacial (cCalle 1.00))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t "REGLA-OE-N5-CALLE-5/7" crlf))
+
+
+(defrule REGLA-MF-N5-PALABRA-1 
+    (Entrevista (MemoriaFijacion_PalabrasRepetidas 0.00 )) 
+    => 
+    (assert (MemoriaFijacion (cPalabrasRepetidas -5.00)))
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####"))) 
+    (printout t "REGLA-MF-N5-PALABRA-1" crlf))
+
+(defrule REGLA-MF-N5-PALABRA-2 
+    (Entrevista (MemoriaFijacion_PalabrasRepetidas 1.00 )) 
+    => 
+    (assert (MemoriaFijacion (cPalabrasRepetidas -2.00))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t "REGLA-MF-N5-PALABRA-2" crlf))
+
+(defrule REGLA-MF-N5-PALABRA-3 
+    (Entrevista (MemoriaFijacion_PalabrasRepetidas 2.00 )) 
+    => 
+    (assert (MemoriaFijacion (cPalabrasRepetidas -0.50))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t "REGLA-MF-N5-PALABRA-3" crlf))
+
+(defrule REGLA-MF-N5-PALABRA-4 
+    (Entrevista (MemoriaFijacion_PalabrasRepetidas 3.00 )) 
+    => 
+    (assert (MemoriaFijacion (cPalabrasRepetidas 3.00))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t "REGLA-MF-N5-PALABRA-4" crlf))
+
+
+(defrule REGLA-MF-N4-1 
+    (MemoriaFijacion (cPalabrasRepetidas -5.00 )) 
+    (Entrevista (PacienteConProblemasAuditivos "NO" )) 
+    (Entrevista (PacienteDeprimido "NO" )) 
+    => 
+    (assert (Memoria (cMemoriaFijacion  -5.00))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t "REGLA-MF-N4-1" crlf))
+
+(defrule REGLA-MF-N4-2 
+    (MemoriaFijacion (cPalabrasRepetidas -2.00 )) 
+    (Entrevista (PacienteConProblemasAuditivos "NO" )) 
+    (Entrevista (PacienteDeprimido "NO" )) 
+    => 
+    (assert (Memoria (cMemoriaFijacion  -2.00))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t "REGLA-MF-N4-2" crlf))
+
+(defrule REGLA-MF-N4-3 
+    (MemoriaFijacion (cPalabrasRepetidas -0.50 )) 
+    (Entrevista (PacienteConProblemasAuditivos "NO" )) 
+    (Entrevista (PacienteDeprimido "NO" )) 
+    => 
+    (assert (Memoria (cMemoriaFijacion  -0.50))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t "REGLA-MF-N4-3" crlf))
+
+(defrule REGLA-MF-N4-4 
+    (MemoriaFijacion (cPalabrasRepetidas 3.00 )) 
+    (Entrevista (PacienteConProblemasAuditivos "NO" )) 
+    (Entrevista (PacienteDeprimido "NO" )) 
+    => 
+    (assert (Memoria (cMemoriaFijacion  3.00))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t "REGLA-MF-N4-4" crlf))
+
+(defrule REGLA-MF-N4-9/16 
+    (Entrevista (PacienteDeprimido "SI" )) 
+    => 
+    (assert (Memoria (cMemoriaFijacion  3.00))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t "REGLA-MF-N4-9 - 16" crlf))
+
+
+(defrule REGLA-MA-N5-ATENCION-1 
+    (Entrevista (MemoriaAtencion_ClasificacionAtencion 0.00 )) 
+    => 
+    (assert (MemoriaAtencion (cClasificacionAtencion -1.25))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t "REGLA-MA-N5-ATENCION-1" crlf))
+
+(defrule REGLA-MA-N5-ATENCION-2 
+    (Entrevista (MemoriaAtencion_ClasificacionAtencion 1.00 )) 
+    => 
+    (assert (MemoriaAtencion (cClasificacionAtencion 0.00)))
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####"))) 
+    (printout t "REGLA-MA-N5-ATENCION-2" crlf))
+
+(defrule REGLA-MA-N5-ATENCION-3 
+    (Entrevista (MemoriaAtencion_ClasificacionAtencion 2.00 )) 
+    => 
+    (assert (MemoriaAtencion (cClasificacionAtencion 1.25)))
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####"))) 
+    (printout t "REGLA-MA-N5-ATENCION-3" crlf))
+
+(defrule REGLA-MA-N5-ATENCION-4 
+    (Entrevista (MemoriaAtencion_ClasificacionAtencion 3.00 )) 
+    => 
+    (assert (MemoriaAtencion (cClasificacionAtencion 2.50)))
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####"))) 
+    (printout t "REGLA-MA-N5-ATENCION-4" crlf))
+
+(defrule REGLA-MA-N5-ATENCION-5 
+    (Entrevista (MemoriaAtencion_ClasificacionAtencion 4.00 )) 
+    => 
+    (assert (MemoriaAtencion (cClasificacionAtencion 3.75)))
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####"))) 
+    (printout t "REGLA-MA-N5-ATENCION-5" crlf))
+
+(defrule REGLA-MA-N5-ATENCION-6 
+    (Entrevista (MemoriaAtencion_ClasificacionAtencion 5.00 )) 
+    => 
+    (assert (MemoriaAtencion (cClasificacionAtencion 5.00)))
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####"))) 
+    (printout t "REGLA-MA-N5-ATENCION-6" crlf))
+
+
+(defrule REGLA-MA-N4-1/6 
+    (Entrevista (PacienteConProblemasAuditivos "NO" )) 
+    (Entrevista (PacienteDeprimido "SI" )) 
+    => 
+    (assert (Memoria (cMemoriaFijacion  5.00))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t "REGLA-MA-N4-1-6" crlf))
+
+(defrule REGLA-MA-N4-7/12 
+    (Entrevista (PacienteConProblemasAuditivos "SI" )) 
+    (Entrevista (PacienteDeprimido "NO" )) 
+    => 
+    (assert (Memoria (cMemoriaFijacion  5.00))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t "REGLA-MA-N4-7-12" crlf))
+
+(defrule REGLA-MA-N4-13 
+    (MemoriaAtencion (cClasificacionAtencion -1.25 )) 
+    (Entrevista (PacienteConProblemasAuditivos "NO" )) 
+    (Entrevista (PacienteDeprimido "NO" )) 
+    => 
+    (assert (Memoria (cMemoriaFijacion  -1.30))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t "REGLA-MA-N4-13" crlf))
+
+(defrule REGLA-MA-N4-14 
+    (MemoriaAtencion (cClasificacionAtencion 0.00 )) 
+    (Entrevista (PacienteConProblemasAuditivos "NO" )) 
+    (Entrevista (PacienteDeprimido "NO" )) 
+    => 
+    (assert (Memoria (cMemoriaFijacion  0.00))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t "REGLA-MA-N4-14" crlf))
+
+(defrule REGLA-MA-N4-15 
+    (MemoriaAtencion (cClasificacionAtencion 1.25 )) 
+    (Entrevista (PacienteConProblemasAuditivos "NO" )) 
+    (Entrevista (PacienteDeprimido "NO" )) 
+    => 
+    (assert (Memoria (cMemoriaFijacion  1.30))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t "REGLA-MA-N4-15" crlf))
+
+(defrule REGLA-MA-N4-16 
+    (MemoriaAtencion (cClasificacionAtencion 2.50 )) 
+    (Entrevista (PacienteConProblemasAuditivos "NO" )) 
+    (Entrevista (PacienteDeprimido "NO" )) 
+    => 
+    (assert (Memoria (cMemoriaFijacion  2.50))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t "REGLA-MA-N4-16" crlf))
+
+(defrule REGLA-MA-N4-17 
+    (MemoriaAtencion (cClasificacionAtencion 3.75 )) 
+    (Entrevista (PacienteConProblemasAuditivos "NO" )) 
+    (Entrevista (PacienteDeprimido "NO" )) 
+    => 
+    (assert (Memoria (cMemoriaFijacion  3.80))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t "REGLA-MA-N4-17" crlf))
+
+(defrule REGLA-MA-N4-18 
+    (MemoriaAtencion (cClasificacionAtencion 5.00 )) 
+    (Entrevista (PacienteConProblemasAuditivos "NO" )) 
+    (Entrevista (PacienteDeprimido "NO" )) 
+    => 
+    (assert (Memoria (cMemoriaFijacion  5.00))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t "REGLA-MA-N4-18" crlf))
+
+
+(defrule REGLA-MR-N5-RECUERDO-1 
+    (Entrevista (MemoriaRecuerdo_PalabrasRecordadas 0.00 )) 
+    => 
+    (assert (MemoriaRecuerdo (cPalabrasRecordadas -5.00))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t "REGLA-MR-N5-RECUERDO-1" crlf))
+
+(defrule REGLA-MR-N5-RECUERDO-2 
+    (Entrevista (MemoriaRecuerdo_PalabrasRecordadas 1.00 )) 
+    => 
+    (assert (MemoriaRecuerdo (cPalabrasRecordadas -2.00))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t "REGLA-MR-N5-RECUERDO-2" crlf))
+
+(defrule REGLA-MR-N5-RECUERDO-3 
+    (Entrevista (MemoriaRecuerdo_PalabrasRecordadas 2.00 )) 
+    => 
+    (assert (MemoriaRecuerdo (cPalabrasRecordadas -0.50))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t "REGLA-MR-N5-RECUERDO-3" crlf))
+
+(defrule REGLA-MR-N5-RECUERDO-4 
+    (Entrevista (MemoriaRecuerdo_PalabrasRecordadas 4.00 )) 
+    => 
+    (assert (MemoriaRecuerdo (cPalabrasRecordadas 3.00))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t "REGLA-MR-N5-RECUERDO-4" crlf))
+
+
+(defrule REGLA-MR-N4-1 
+    (MemoriaRecuerdo (cPalabrasRecordadas -5.00 )) 
+    (Entrevista (PacienteConProblemasAuditivos "NO" )) 
+    (Entrevista (PacienteDeprimido "NO" )) 
+    => 
+    (assert (Memoria (cMemoriaFijacion  -5.00))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t "REGLA-MR-N4-1" crlf))
+
+(defrule REGLA-MR-N4-2 
+    (MemoriaRecuerdo (cPalabrasRecordadas -2.00 )) 
+    (Entrevista (PacienteConProblemasAuditivos "NO" )) 
+    (Entrevista (PacienteDeprimido "NO" )) 
+    => 
+    (assert (Memoria (cMemoriaFijacion  -2.00))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t "REGLA-MR-N4-2" crlf))
+
+(defrule REGLA-MR-N4-3 
+    (MemoriaRecuerdo (cPalabrasRecordadas -0.50 )) 
+    (Entrevista (PacienteConProblemasAuditivos "NO" )) 
+    (Entrevista (PacienteDeprimido "NO" )) 
+    => 
+    (assert (Memoria (cMemoriaFijacion  -0.50))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t "REGLA-MR-N4-3" crlf))
+
+(defrule REGLA-MR-N4-4 
+    (MemoriaRecuerdo (cPalabrasRecordadas 3.00 )) 
+    (Entrevista (PacienteConProblemasAuditivos "NO" )) 
+    (Entrevista (PacienteDeprimido "NO" )) 
+    => 
+    (assert (Memoria (cMemoriaFijacion  3.00))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t "REGLA-MR-N4-4" crlf))
+
+(defrule REGLA-MR-N4-5/8 
+    (Entrevista (PacienteConProblemasAuditivos "SI" )) 
+    (Entrevista (PacienteDeprimido "NO" )) 
+    => 
+    (assert (Memoria (cMemoriaFijacion  3.00))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t "REGLA-MR-N4-5-8" crlf))
+
+(defrule REGLA-MR-N4-9/16 
+    (Entrevista (PacienteDeprimido "SI" )) 
+    => 
+    (assert (Memoria (cMemoriaFijacion  3.00))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t "REGLA-MR-N4-9-16" crlf))
+    
+
+(defrule REGLA-L-N4-ACCIONPONDERADA-0 
+    (Entrevista (Lenguaje_ClasificacionAccion  0.00  )) 
+    => 
+    (assert (LenguajeAccionPonderado(cAccionPonderado  -1.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N4-ACCIONPONDERADA-0" crlf))
+
+(defrule REGLA-L-N4-ACCIONPONDERADA-1 
+    (Entrevista (Lenguaje_ClasificacionAccion  1.00  )) 
+    => 
+    (assert (LenguajeAccionPonderado(cAccionPonderado  0.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N4-ACCIONPONDERADA-1" crlf))
+
+(defrule REGLA-L-N4-ACCIONPONDERADA-2 
+    (Entrevista (Lenguaje_ClasificacionAccion  2.00  )) 
+    => 
+    (assert (LenguajeAccionPonderado(cAccionPonderado  1.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N4-ACCIONPONDERADA-2" crlf))
+
+(defrule REGLA-L-N4-ACCIONPONDERADA-3 
+    (Entrevista (Lenguaje_ClasificacionAccion  3.00  )) 
+    => 
+    (assert (LenguajeAccionPonderado(cAccionPonderado  3.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N4-ACCIONPONDERADA-3" crlf))
+
+
+(defrule  REGLA-L-N4-ACCION-1 
+    (LenguajeAccionPonderado (cAccionPonderado  -1.50  )) 
+    (Entrevista (PacienteAnsioso  "NO"  )) 
+    => 
+    (assert (Lenguaje (cLenguajeAccion  -1.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N4-ACCION-1" crlf))
+
+(defrule  REGLA-L-N4-ACCION-2 
+    (LenguajeAccionPonderado (cAccionPonderado  0.00  )) 
+    (Entrevista (PacienteAnsioso  "NO"  )) 
+    => 
+    (assert (Lenguaje (cLenguajeAccion  0.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N4-ACCION-2" crlf))
+
+(defrule  REGLA-L-N4-ACCION-3 
+    (LenguajeAccionPonderado (cAccionPonderado  1.50  )) 
+    (Entrevista (PacienteAnsioso  "NO"  ))
+    => 
+    (assert (Lenguaje (cLenguajeAccion  1.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N4-ACCION-3" crlf))
+
+(defrule  REGLA-L-N4-ACCION-4/8 
+    (LenguajeAccionPonderado (cAccionPonderado  3.00  ))  
+    => 
+    (assert (Lenguaje (cLenguajeAccion  3.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N4-ACCION-4/8" crlf))
+
+(defrule  REGLA-L-N4-ACCION-5 
+    (LenguajeAccionPonderado (cAccionPonderado  -1.50  )) 
+    (Entrevista (PacienteAnsioso  "SI"  ))
+    => 
+    (assert (Lenguaje (cLenguajeAccion  0.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N4-ACCION-5" crlf))
+
+(defrule  REGLA-L-N4-ACCION-6 
+    (LenguajeAccionPonderado (cAccionPonderado  0.00  )) 
+    (Entrevista (PacienteAnsioso  "SI"  )) 
+    => 
+    (assert (Lenguaje (cLenguajeAccion  1.00 )))
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####"))) 
+    (printout t " REGLA-L-N4-ACCION-6" crlf))
+
+(defrule  REGLA-L-N4-ACCION-7 
+    (LenguajeAccionPonderado (cAccionPonderado  1.50  )) 
+    (Entrevista (PacienteAnsioso  "SI"  )) 
+    => 
+    (assert (Lenguaje (cLenguajeAccion  2.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N4-ACCION-7" crlf))
+
+
+(defrule  REGLA-L-N4-ESCRITA-1 
+    (Entrevista (Lenguaje_EscribeCorrectamenteFrase "NO"  )) 
+    (Entrevista (Escolaridad ?r)) 
+    (test (< ?r 6.00))  
+    => 
+    (assert (Lenguaje (cLenguajeEscritura  "NO" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N4-ESCRITA-1" crlf))
+
+(defrule  REGLA-L-N4-ESCRITA-2 
+    (Entrevista (Lenguaje_EscribeCorrectamenteFrase "SI"  )) 
+    (Entrevista (Escolaridad ?r)) 
+    (test (< ?r 6.00))  
+    => 
+    (assert (Lenguaje (cLenguajeEscritura  "SI" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N4-ESCRITA-2" crlf))
+
+(defrule  REGLA-L-N4-ESCRITA-3 
+    (Entrevista (Lenguaje_EscribeCorrectamenteFrase "NO"  )) 
+    (Entrevista (Escolaridad ?r)) 
+    (test (< ?r 6.00))  
+    => 
+    (assert (Lenguaje (cLenguajeEscritura  "SI" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N4-ESCRITA-3" crlf))
+
+
+(defrule  REGLA-L-N4-ORDEN-1  
+    (Entrevista (Lenguaje_CumpleOrdenCorrectamente  "NO"  )) 
+    (Entrevista (PacienteConProblemasAuditivos  "NO"  )) 
+    (Entrevista (PacienteAnsioso "NO"  )) 
+    => 
+    (assert (Lenguaje(cLenguajeOrden   "NO" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N4-ORDEN-1" crlf))
+
+(defrule  REGLA-L-N4-ORDEN-2  
+    (Entrevista (Lenguaje_CumpleOrdenCorrectamente  "SI"  )) 
+    (Entrevista (PacienteConProblemasAuditivos  "NO"  )) 
+    (Entrevista (PacienteAnsioso "NO"  )) 
+    => 
+    (assert (Lenguaje(cLenguajeOrden   "SI" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N4-ORDEN-2" crlf))
+
+(defrule  REGLA-L-N4-ORDEN-3/4  
+    (Entrevista (PacienteConProblemasAuditivos  "SI"  )) 
+    (Entrevista (PacienteAnsioso "NO"  )) 
+    => 
+    (assert (Lenguaje(cLenguajeOrden   "SI" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N4-ORDEN-3/4" crlf))
+
+(defrule  REGLA-L-N4-ORDEN-5/6  
+    (Entrevista (PacienteConProblemasAuditivos  "NO"  )) 
+    (Entrevista (PacienteAnsioso "SI"  )) 
+    => 
+    (assert (Lenguaje(cLenguajeOrden   "SI" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N4-ORDEN-5/6" crlf))
+
+
+(defrule  REGLA-L-N4-FRASE-1  
+    (Entrevista (Lenguaje_RepiteFraseCorrectamente  "NO"  )) 
+    (Entrevista (PacienteConProblemasAuditivos  "NO"  )) 
+    => 
+    (assert (Lenguaje(cLenguajeFrase   "NO" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N4-FRASE-1" crlf))
+
+(defrule  REGLA-L-N4-FRASE-2  
+    (Entrevista (Lenguaje_RepiteFraseCorrectamente  "SI"  )) 
+    (Entrevista (PacienteConProblemasAuditivos  "NO"  ))
+    => 
+    (assert (Lenguaje(cLenguajeFrase   "SI" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N4-FRASE-2" crlf))
+
+(defrule  REGLA-L-N4-FRASE-3/4  
+    (Entrevista (PacienteConProblemasAuditivos  "SI"  )) 
+    => 
+    (assert (Lenguaje(cLenguajeFrase   "SI" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N4-FRASE-3/4" crlf))
+
+
+(defrule  REGLA-L-N3-1  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  -1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  -1.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-1" crlf))
+
+(defrule  REGLA-L-N3-2  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  -1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  -0.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-2" crlf))
+
+(defrule  REGLA-L-N3-3  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  -1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  -0.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-3" crlf))
+    
+(defrule  REGLA-L-N3-4  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  -1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  0.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-4" crlf))
+
+(defrule  REGLA-L-N3-5  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  -1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  ))
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  -0.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-5" crlf))
+
+(defrule  REGLA-L-N3-6 
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  -1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  0.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-6" crlf))
+
+(defrule  REGLA-L-N3-7  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  -1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  0.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-7" crlf))
+    
+(defrule  REGLA-L-N3-8  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  -1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  1.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-8" crlf))
+    
+(defrule  REGLA-L-N3-9  
+    (Lenguaje (cLenguajeFrase  "NO"  ))
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  0.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  0.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-9" crlf))
+    
+(defrule  REGLA-L-N3-10  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  0.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  1.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-10" crlf))
+
+(defrule  REGLA-L-N3-11  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  0.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  1.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-11" crlf))
+    
+(defrule  REGLA-L-N3-12  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  0.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  2.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-12" crlf))
+    
+(defrule  REGLA-L-N3-13 
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  0.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  1.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-13" crlf))
+
+(defrule  REGLA-L-N3-14  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  0.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  2.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-14" crlf))
+
+(defrule  REGLA-L-N3-15  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  ))
+    (Lenguaje (cLenguajeAccion  0.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  2.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-15" crlf))
+
+(defrule  REGLA-L-N3-16  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  0.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
+    (printout t " REGLA-L-N3-16" crlf))
+    
+(defrule  REGLA-L-N3-17  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  1.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-17" crlf))
+    
+(defrule  REGLA-L-N3-18  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  2.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-18" crlf))
+
+(defrule  REGLA-L-N3-19  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  2.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-19" crlf))
+    
+(defrule  REGLA-L-N3-20  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  ))
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  3.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-20" crlf))
+
+(defrule  REGLA-L-N3-21  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  2.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-21" crlf))
+
+(defrule  REGLA-L-N3-22  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  3.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-22" crlf))
+
+(defrule  REGLA-L-N3-23  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  1.50  ))
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  3.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-23" crlf))
+    
+(defrule  REGLA-L-N3-24 
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  4.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-24" crlf))
+
+(defrule  REGLA-L-N3-25  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  3.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-25" crlf))
+    
+(defrule  REGLA-L-N3-26  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  ))
+    (Lenguaje (cLenguajeAccion  3.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-26" crlf))
+    
+(defrule  REGLA-L-N3-27  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  3.00  ))
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-27" crlf))
+
+(defrule  REGLA-L-N3-28  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  3.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-28" crlf))
+    
+(defrule  REGLA-L-N3-29  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  3.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-29" crlf))
+    
+(defrule  REGLA-L-N3-30  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  3.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  ))
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-30" crlf))
+
+(defrule  REGLA-L-N3-31 
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  3.00  ))
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-31" crlf))
+
+(defrule  REGLA-L-N3-32  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  3.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  ))
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  6.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-32" crlf))
+
+(defrule  REGLA-L-N3-33  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  0.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  1.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-33" crlf))
+
+(defrule  REGLA-L-N3-34  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  0.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  1.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-34" crlf))
+
+(defrule  REGLA-L-N3-35  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  0.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  1.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-35" crlf))
+
+(defrule  REGLA-L-N3-36  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  1.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  1.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-36" crlf))
+    
+(defrule  REGLA-L-N3-37  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  1.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  2.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-37" crlf))
+
+(defrule  REGLA-L-N3-38  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  1.00 )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  2.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-38" crlf))
+    
+(defrule  REGLA-L-N3-39  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  ))
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  1.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-39" crlf))
+
+(defrule  REGLA-L-N3-40  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  1.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  2.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-40" crlf))
+    
+(defrule  REGLA-L-N3-41  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  1.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  ))
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-41" crlf))
+    
+(defrule  REGLA-L-N3-42  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  1.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-42" crlf))
+    
+(defrule  REGLA-L-N3-43  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  1.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-43" crlf))
+
+(defrule  REGLA-L-N3-44  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  2.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  2.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-44" crlf))
+    
+(defrule  REGLA-L-N3-45  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  2.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-45" crlf))
+    
+(defrule  REGLA-L-N3-46  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  2.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-46" crlf))
+    
+(defrule  REGLA-L-N3-47  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  2.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-47" crlf))
+    
+(defrule  REGLA-L-N3-48  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  2.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-48" crlf))
+    
+(defrule  REGLA-L-N3-49  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  2.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-49" crlf))
+    
+(defrule  REGLA-L-N3-50  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  2.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-50" crlf))
+
+(defrule  REGLA-L-N3-51  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  2.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-51" crlf))
+    
+(defrule  REGLA-L-N3-52  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  -1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  -0.50 )))
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-52" crlf))
+    
+(defrule  REGLA-L-N3-53  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  -1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  0.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-53" crlf))
+
+(defrule  REGLA-L-N3-54  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  -1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  0.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-54" crlf))
+
+(defrule  REGLA-L-N3-55  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  -1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  1.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-55" crlf))
+
+(defrule  REGLA-L-N3-56  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  -1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  0.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-56" crlf))
+    
+(defrule  REGLA-L-N3-57  
+    (Lenguaje (cLenguajeFrase  "SI"  ))
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  -1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  1.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-57" crlf))
+    
+(defrule  REGLA-L-N3-58  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  -1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  1.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-58" crlf))
+    
+(defrule  REGLA-L-N3-59  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  -1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  2.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-59" crlf))
+
+(defrule  REGLA-L-N3-60  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  0.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  1.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-60" crlf))
+    
+(defrule  REGLA-L-N3-61  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  0.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  2.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-61" crlf))
+
+(defrule  REGLA-L-N3-62  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  0.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  2.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-62" crlf))
+
+(defrule  REGLA-L-N3-63  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  0.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-63" crlf))
+    
+(defrule  REGLA-L-N3-64  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  0.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  2.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-64" crlf))
+    
+(defrule  REGLA-L-N3-65  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  0.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    =>  
+    (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-65" crlf))
+
+(defrule  REGLA-L-N3-66  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  0.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  ))
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-66" crlf))
+
+(defrule  REGLA-L-N3-67  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  0.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-67" crlf))
+    
+(defrule  REGLA-L-N3-68  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  ))
+    (Lenguaje (cLenguajeAccion  1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  2.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-68" crlf))
+
+(defrule  REGLA-L-N3-69  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  3.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-69" crlf))
+    
+(defrule  REGLA-L-N3-70  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  3.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-70" crlf))
+
+(defrule  REGLA-L-N3-71  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  4.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-71" crlf))
+    
+(defrule  REGLA-L-N3-72  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  3.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-72" crlf))
+    
+(defrule  REGLA-L-N3-73  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  4.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-73" crlf))
+    
+(defrule  REGLA-L-N3-74 
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  4.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-74" crlf))
+
+(defrule  REGLA-L-N3-75  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  5.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-75" crlf))
+
+(defrule  REGLA-L-N3-76  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  3.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-76" crlf))
+
+(defrule  REGLA-L-N3-77  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  3.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-77" crlf))
+
+(defrule  REGLA-L-N3-78  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  3.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  ))
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-78" crlf))
+
+(defrule  REGLA-L-N3-79  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  3.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  6.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-79" crlf))
+    
+(defrule  REGLA-L-N3-80  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  3.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-80" crlf))
+
+(defrule  REGLA-L-N3-81  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  ))
+    (Lenguaje (cLenguajeAccion  3.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  6.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-81" crlf))
+
+(defrule  REGLA-L-N3-82  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  3.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  6.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-82" crlf))
+
+(defrule  REGLA-L-N3-83  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  3.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  ))
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  7.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-83" crlf))
+
+(defrule  REGLA-L-N3-84  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  0.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-84" crlf))
+    
+(defrule  REGLA-L-N3-85  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  1.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  ))
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  2.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-85" crlf))
+
+(defrule  REGLA-L-N3-86  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  1.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-86" crlf))
+    
+(defrule  REGLA-L-N3-87  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  1.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-87" crlf))
+    
+(defrule  REGLA-L-N3-88  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  1.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-88" crlf))
+    
+(defrule  REGLA-L-N3-89  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  ))
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  1.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-89" crlf))
+
+(defrule  REGLA-L-N3-90  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  1.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-90" crlf))
+    
+(defrule  REGLA-L-N3-91  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  1.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-91" crlf))
+
+(defrule  REGLA-L-N3-92  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  1.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-92" crlf))
+
+(defrule  REGLA-L-N3-93  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  ))
+    (Lenguaje (cLenguajeAccion  2.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-93" crlf))
+
+(defrule  REGLA-L-N3-94  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  2.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-94" crlf))
+
+(defrule  REGLA-L-N3-95  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  2.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-95" crlf))
+
+(defrule  REGLA-L-N3-96  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  2.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-96" crlf))
+
+(defrule  REGLA-L-N3-97  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  2.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-97" crlf))
+    
+(defrule  REGLA-L-N3-98  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  2.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  ))
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-98" crlf))
+
+(defrule  REGLA-L-N3-99  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  2.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-99" crlf))
+    
+(defrule  REGLA-L-N3-100  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  2.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  6.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-100" crlf))
+
+(defrule  REGLA-L-N3-101  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  -1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  0.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-101" crlf))
+
+(defrule  REGLA-L-N3-102  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  -1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  ))
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  1.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-102" crlf))
+
+(defrule  REGLA-L-N3-103  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  -1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  1.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-103" crlf))
+
+(defrule  REGLA-L-N3-104  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  -1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  2.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-104" crlf))
+
+(defrule  REGLA-L-N3-105  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  -1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  1.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-105" crlf))
+    
+(defrule  REGLA-L-N3-106  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  -1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  2.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-106" crlf))
+    
+(defrule  REGLA-L-N3-107  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  -1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  2.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-107" crlf))
+
+(defrule  REGLA-L-N3-108  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  -1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  3.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-108" crlf))
+
+(defrule  REGLA-L-N3-109  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  0.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  2.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-109" crlf))
+    
+(defrule  REGLA-L-N3-110  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  0.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-110" crlf))
+
+(defrule  REGLA-L-N3-111  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  0.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-111" crlf))
+    
+(defrule  REGLA-L-N3-112  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  0.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-112" crlf))
+    
+(defrule  REGLA-L-N3-113  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  0.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  ))
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-113" crlf))
+    
+(defrule  REGLA-L-N3-114  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  0.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-114" crlf))
+    
+(defrule  REGLA-L-N3-115  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  0.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-115" crlf))
+
+(defrule  REGLA-L-N3-116  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  0.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  ))
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-116" crlf))
+
+(defrule  REGLA-L-N3-117  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  3.50 )))
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-117" crlf))
+    
+(defrule  REGLA-L-N3-118  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  ))
+    (Lenguaje (cLenguajeAccion  1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  4.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-118" crlf))
+
+(defrule  REGLA-L-N3-119  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  4.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-119" crlf))
+    
+(defrule  REGLA-L-N3-120  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  5.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-120" crlf))
+    
+(defrule  REGLA-L-N3-121  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  ))
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  4.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-121" crlf))
+
+(defrule  REGLA-L-N3-122  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  5.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-122" crlf))
+
+(defrule  REGLA-L-N3-123  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  5.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-123" crlf))
+    
+(defrule  REGLA-L-N3-124  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  1.50  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  ))
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  6.50 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-124" crlf))
+
+(defrule  REGLA-L-N3-125  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  3.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-125" crlf))
+
+(defrule  REGLA-L-N3-126  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  3.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  ))
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  6.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-126" crlf))
+
+(defrule  REGLA-L-N3-127  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  3.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  6.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-127" crlf))
+
+(defrule  REGLA-L-N3-128  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  3.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  7.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-128" crlf))
+
+(defrule  REGLA-L-N3-129  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  3.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  6.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-129" crlf))
+    
+(defrule  REGLA-L-N3-130  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  3.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  7.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-130" crlf))
+
+(defrule  REGLA-L-N3-131  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  3.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  7.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-131" crlf))
+
+(defrule  REGLA-L-N3-132  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  3.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  8.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-132" crlf))
+
+(defrule  REGLA-L-N3-133 
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  0.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-133" crlf))
+
+(defrule  REGLA-L-N3-134  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  1.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-134" crlf))
+
+(defrule  REGLA-L-N3-135  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  1.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-135" crlf))
+
+(defrule  REGLA-L-N3-136  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  1.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-136" crlf))
+
+(defrule  REGLA-L-N3-137  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  1.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-137" crlf))
+    
+(defrule  REGLA-L-N3-138  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  1.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-138" crlf))
+    
+(defrule  REGLA-L-N3-139  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  1.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-139" crlf))
+
+(defrule  REGLA-L-N3-140  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  1.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-140" crlf))
+    
+(defrule  REGLA-L-N3-141  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  1.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  6.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-141" crlf))
+
+(defrule  REGLA-L-N3-142  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  2.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  ))
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-142" crlf))
+
+(defrule  REGLA-L-N3-143  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  2.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-143" crlf))
+
+(defrule  REGLA-L-N3-144  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  2.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-144" crlf))
+
+(defrule  REGLA-L-N3-145  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "NO"  )) 
+    (Lenguaje (cLenguajeAccion  2.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  6.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-145" crlf))
+
+(defrule  REGLA-L-N3-146  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  2.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-146" crlf))
+    
+(defrule  REGLA-L-N3-147  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "NO"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  2.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  6.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-147" crlf))
+
+(defrule  REGLA-L-N3-148  
+    (Lenguaje (cLenguajeFrase  "NO"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  ))
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  2.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  ))
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  6.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-148" crlf))
+
+(defrule  REGLA-L-N3-149  
+    (Lenguaje (cLenguajeFrase  "SI"  )) 
+    (Lenguaje (cLenguajeOrden  "SI"  )) 
+    (Lenguaje (cLenguajeEscritura  "SI"  )) 
+    (Lenguaje (cLenguajeAccion  2.00  )) 
+    (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
+    => 
+    (assert (MiniMental_Calculado (cLenguaje  7.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-L-N3-149" crlf))
+
+
+(defrule  REGLA-D-N3-1  
+    (Entrevista (Dibujo_CopiaCorrectamenteDibujo  "SI"  )) 
+    => 
+    (assert (MiniMental_Calculado (cDibujo  1.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-D-N3-1" crlf))
+
+(defrule  REGLA-D-N3-2  
+    (Entrevista (Dibujo_CopiaCorrectamenteDibujo  "NO"  )) 
+    => 
+    (assert (MiniMental_Calculado (cDibujo  0.00 ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-D-N3-2" crlf))
+
 
 (defrule  REGLA-E-N1-CARACTER-1  (Entrevista (Olvido_ImpactoCaracter  "SI"  )) => (assert (Diagnostico (cCaracter  "R" ))) (printout t " REGLA-E-N1-CARACTER-1" crlf))
 (defrule  REGLA-E-N1-CARACTER-2  (Entrevista (Olvido_ImpactoCaracter  "NO"  )) => (assert (Diagnostico (cCaracter  "N" ))) (printout t " REGLA-E-N1-CARACTER-2" crlf))
