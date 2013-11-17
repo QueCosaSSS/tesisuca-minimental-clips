@@ -140,7 +140,7 @@
     (Entrevista (OrientacionTemporal_Fecha "NO"))
     =>
     (assert (OrientacionTemporal (cFecha -0.50))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado para fecha -0.50. Se castiga (se resta) el valor, porque es grave que el paciente no sepa la fecha.")))
     (printout t "REGLA-CLIPS-OT-N5-Fecha-1" crlf)
 )
 
@@ -148,7 +148,7 @@
     (Entrevista (OrientacionTemporal_Fecha "SI")) 
 =>
     (assert (OrientacionTemporal (cFecha 1.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor normal del minimental: 1. Respuesta correcta.")))
     (printout t "REGLA-CLIPS-OT-N5-Fecha-2" crlf)
 )
 
@@ -163,7 +163,7 @@
     (Entrevista (ContestaEstacionAnterior "NO"))
     =>
     (assert (OrientacionTemporal (cEstacion "NO"))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (assert (DiagnosticoDetalle (ResultadoDetalle "No se considera correcta la pregunta.")))
     (printout t "Regla-CLIPS-OT-N5-Estacion-1 " crlf)
 )
  
@@ -177,7 +177,7 @@
     (Entrevista (ContestaEstacionAnterior "NO"))
     =>
     (assert (OrientacionTemporal (cEstacion "SI"))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (assert (DiagnosticoDetalle (ResultadoDetalle "La respuesta es correcta.")))
     (printout t "Regla-CLIPS-OT-N5-Estacion-2 " crlf)
 )
  
@@ -191,7 +191,7 @@
     (Entrevista (ContestaEstacionAnterior "NO"))
     =>
     (assert (OrientacionTemporal (cEstacion "SI"))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (assert (DiagnosticoDetalle (ResultadoDetalle "Se considera correcta la pregunta. A pesar que se respondió mal la pregunta, el paciente no tiene el nivel escolar para conocer la respuesta.")))
     (printout t "Regla-CLIPS-OT-N5-Estacion-3 " crlf)
  ) 
 
@@ -205,7 +205,7 @@
     (Entrevista (ContestaEstacionAnterior "NO")) 
     => 
     (assert (OrientacionTemporal (cEstacion "SI"))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (assert (DiagnosticoDetalle (ResultadoDetalle "Se considera correcta la pregunta. Se perdona el error, porque el paciente respondió la siguiente estación una semana antes.")))
     (printout t "Regla-CLIPS-OT-N5-Estacion-5 " crlf) 
  ) 
  
@@ -219,7 +219,7 @@
     (Entrevista (ContestaEstacionAnterior "NO" )) 
     => 
     (assert (OrientacionTemporal (cEstacion "SI"))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (assert (DiagnosticoDetalle (ResultadoDetalle "Se considera correcta la pregunta. Se perdona el error, porque el paciente respondió la siguiente estación una semana antes. Además se tiene en cuenta que el nivel escolar lo exime del error.")))
     (printout t "Regla-CLIPS-OT-N5-Estacion-7 " crlf) 
  )
  
@@ -233,7 +233,7 @@
     (Entrevista (ContestaEstacionAnterior "SI"))
     =>
     (assert (OrientacionTemporal (cEstacion "SI"))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (assert (DiagnosticoDetalle (ResultadoDetalle "Se considera correcta la pregunta. Se perdona el error, porque el paciente respondió la estación anterior una semana después.")))
     (printout t "Regla-CLIPS-OT-N5-Estacion-9 " crlf)
  ) 
  
@@ -247,7 +247,7 @@
     (Entrevista (ContestaEstacionAnterior "SI")) 
     =>
     (assert (OrientacionTemporal (cEstacion "SI"))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (assert (DiagnosticoDetalle (ResultadoDetalle "Se considera correcta la pregunta. Se perdona el error, porque el paciente respondió la estación anterior una semana después. Además se tiene en cuenta que el nivel escolar lo exime del error.")))
     (printout t "Regla-CLIPS-OT-N5-Estacion-11 " crlf)
  )
 
@@ -257,10 +257,10 @@
     (Entrevista (EsUltimoDiaMes "NO"))
     (Entrevista (ContestaMesSiguiente "NO"))
     (Entrevista (EsPrimerOSegundoDiaMes "NO"))
-    (Entrevista (ContestaMesSiguiente "NO")) 
+    (Entrevista (ContestaMesAnterior "NO")) 
     =>
     (assert (OrientacionTemporal (cMes -1.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (assert (DiagnosticoDetalle (ResultadoDetalle "No se considerar correcta la pregunta. El valor ponderado para es de -1.00. Se castiga (se resta) el valor, porque es grave que el paciente no sepa en qué mes esta.")))
     (printout t "REGLA-CLIPS-OT-N5-MES-1" crlf)
 )
  
@@ -269,10 +269,10 @@
     (Entrevista (EsUltimoDiaMes "NO"))
     (Entrevista (ContestaMesSiguiente "NO"))
     (Entrevista (EsPrimerOSegundoDiaMes "NO"))
-    (Entrevista (ContestaMesSiguiente "NO")) 
+    (Entrevista (ContestaMesAnterior "NO")) 
     =>
     (assert (OrientacionTemporal (cMes 1.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (assert (DiagnosticoDetalle (ResultadoDetalle "La respuesta es correcta.")))
     (printout t "REGLA-CLIPS-OT-N5-MES-2" crlf)
 )
 
@@ -281,10 +281,10 @@
     (Entrevista (EsUltimoDiaMes "SI"))
     (Entrevista (ContestaMesSiguiente "SI"))
     (Entrevista (EsPrimerOSegundoDiaMes "NO"))
-    (Entrevista (ContestaMesSiguiente "NO")) 
+    (Entrevista (ContestaMesAnterior "NO")) 
      =>
     (assert (OrientacionTemporal (cMes 1.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (assert (DiagnosticoDetalle (ResultadoDetalle "Se considera correcta la pregunta. Se perdona el error, porque el paciente respondió el siguiente mes estando en el último día del mes.")))
     (printout t "REGLA-CLIPS-OT-N5-MES-3" crlf)
 )
 
@@ -293,10 +293,10 @@
     (Entrevista (EsUltimoDiaMes "NO"))
     (Entrevista (ContestaMesSiguiente "NO"))
     (Entrevista (EsPrimerOSegundoDiaMes "SI"))
-    (Entrevista (ContestaMesSiguiente "SI")) 
+    (Entrevista (ContestaMesAnterior "SI")) 
     =>
     (assert (OrientacionTemporal (cMes 1.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (assert (DiagnosticoDetalle (ResultadoDetalle "Se considera correcta la pregunta. Se perdona el error, porque el paciente respondió el mes anterior estando en los primeros días del mes.")))
     (printout t "REGLA-CLIPS-OT-N5-MES-5" crlf)
 )
 
@@ -2905,83 +2905,696 @@
     (printout t " REGLA-D-N3-2" crlf))
 
 
-(defrule  REGLA-E-N1-CARACTER-1  (Entrevista (Olvido_ImpactoCaracter  "SI"  )) => (assert (Diagnostico (cCaracter  "R" ))) (printout t " REGLA-E-N1-CARACTER-1" crlf))
-(defrule  REGLA-E-N1-CARACTER-2  (Entrevista (Olvido_ImpactoCaracter  "NO"  )) => (assert (Diagnostico (cCaracter  "N" ))) (printout t " REGLA-E-N1-CARACTER-2" crlf))
+(defrule  REGLA-E-N1-CARACTER-1  
+    (Entrevista (Olvido_ImpactoCaracter  "SI"  )) 
+    => 
+    (assert (Diagnostico (cCaracter  "R" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-E-N1-CARACTER-1" crlf))
 
-(defrule  REGLA-E-N1-FUNCIONAL-1  (Entrevista (Olvido_ImpactoFuncional  "SI"  )) => (assert (Diagnostico (cFuncional  "R" ))) (printout t " REGLA-E-N1-FUNCIONAL-1" crlf))
-(defrule  REGLA-E-N1-FUNCIONAL-2  (Entrevista (Olvido_ImpactoFuncional  "NO"  )) => (assert (Diagnostico (cFuncional  "N" ))) (printout t " REGLA-E-N1-FUNCIONAL-2" crlf))
+(defrule  REGLA-E-N1-CARACTER-2  
+    (Entrevista (Olvido_ImpactoCaracter  "NO"  )) 
+    => 
+    (assert (Diagnostico (cCaracter  "N" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-E-N1-CARACTER-2" crlf))
 
-(defrule  REGLA-E-N1-QUEJA-2/5/6  (Entrevista (Olvido_OlvidaHechosRecientes  "SI"  )) (Entrevista (Olvido_QuejaOlvidoFamiliar  "SI"  ))  => (assert (Diagnostico (cQueja  "R" ))) (printout t " REGLA-E-N1-QUEJA-2/5/6" crlf))
-(defrule  REGLA-E-N1-QUEJA-7/8  (Entrevista (Olvido_OlvidaHechosRecientes  "SI"  )) (Entrevista (Olvido_QuejaOlvidoFamiliar  "NO"  )) (Entrevista (Olvido_PacienteMinimizaOlvidos  "NO"  )) => (assert (Diagnostico (cQueja  "N" ))) (printout t " REGLA-E-N1-QUEJA-7/8" crlf))
 
-(defrule  REGLA-E-N1-OLVIDO-1  (Entrevista (Olvido_OlvidaHechosRecientes  "SI"  )) (Entrevista (Olvido_OlvidoProgresa  "SI"  )) => (assert (Diagnostico (cOlvido  "R" ))) (printout t " REGLA-E-N1-OLVIDO-1" crlf))
-(defrule  REGLA-E-N1-OLVIDO-2  (Entrevista (Olvido_OlvidaHechosRecientes  "SI"  )) (Entrevista (Olvido_OlvidoProgresa  "NO"  )) => (assert (Diagnostico (cOlvido  "N" ))) (printout t " REGLA-E-N1-OLVIDO-2" crlf))
+(defrule  REGLA-E-N1-FUNCIONAL-1  
+    (Entrevista (Olvido_ImpactoFuncional  "SI"  )) 
+    => 
+    (assert (Diagnostico (cFuncional  "R" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-E-N1-FUNCIONAL-1" crlf))
 
-(defrule  Regla-DIAGNOSTICO-N1-1/65/17/81  (Diagnostico (cMiniMental_Calculado  27.00  )) (Entrevista (Escolaridad  12.00)) (Diagnostico (cOlvido  "R"))  (Diagnostico (cFuncional  "R" ))  => (assert (Diagnostico (Resultado  "DemenciaLeve" ))) (printout t " Regla-DIAGNOSTICO-N1-1/65/17/81" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-2/10/34/42  (Diagnostico (cMiniMental_Calculado  20.00  )) (Entrevista (Escolaridad  12.00)) (Diagnostico (cQueja  "R"))   (Diagnostico (cCaracter  "R"  )) => (assert (Diagnostico (Resultado  "DemenciaModerada" ))) (printout t " Regla-DIAGNOSTICO-N1-2/10/34/42" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-3/11/19/27/35/43/51/59/67/75/83/91/99/107/115/123  (Diagnostico (cMiniMental_Calculado  25.00  )) (Entrevista (Escolaridad  12 ))  => (assert (Diagnostico (Resultado  "DemenciaLeve" ))) (printout t " Regla-DIAGNOSTICO-N1-3/11/19/27/35/43/51/59/67/75/83/91/99/107/115/123" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-4/12/20/28/36/44/52/60/68/76/84/92/100/108/116/124  (Diagnostico (cMiniMental_Calculado  18.00  )) (Entrevista (Escolaridad  12 ))  => (assert (Diagnostico (Resultado  "DemenciaModerada" ))) (printout t " Regla-DIAGNOSTICO-N1-4/12/20/28/36/44/52/60/68/76/84/92/100/108/116/124" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-5/69/37/101/21/53/85/117/13/29/45/61/77/93/109/125  (Diagnostico (cMiniMental_Calculado  27.00  )) (Entrevista (Escolaridad  6 ))  => (assert (Diagnostico (Resultado  "OlvidoBenigno" ))) (printout t " Regla-DIAGNOSTICO-N1-5/69/37/101/21/53/85/117/13/29/45/61/77/93/109/125" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-6/14/22/30/38/46/54/62/70/78/86/94/102/110/118/126  (Diagnostico (cMiniMental_Calculado  20.00  )) (Entrevista (Escolaridad  6 ))  => (assert (Diagnostico (Resultado  "DemenciaLeve" ))) (printout t " Regla-DIAGNOSTICO-N1-6/14/22/30/38/46/54/62/70/78/86/94/102/110/118/126" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-7/15/71/79  (Diagnostico (cMiniMental_Calculado  25.00  )) (Entrevista (Escolaridad  6.00 )) (Diagnostico (cQueja  "R" )) (Diagnostico (cFuncional  "R" ))  => (assert (Diagnostico (Resultado  "DemenciaModerada" ))) (printout t " Regla-DIAGNOSTICO-N1-7/15/71/79" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-8/24/72/88  (Diagnostico (cMiniMental_Calculado  18.00  )) (Entrevista (Escolaridad  6.00 )) (Diagnostico (cOlvido  "R" ))  (Diagnostico (cFuncional  "R" ))  => (assert (Diagnostico (Resultado  "DemenciaModerada" ))) (printout t " Regla-DIAGNOSTICO-N1-8/24/72/88" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-9/25  (Diagnostico (cMiniMental_Calculado  27.00  )) (Entrevista (Escolaridad  12.00 )) (Diagnostico (cOlvido  "N" )) (Diagnostico (cFuncional  "R" )) (Diagnostico (cCaracter  "R"  )) => (assert (Diagnostico (Resultado  "DemenciaLeve" ))) (printout t " Regla-DIAGNOSTICO-N1-9/25" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-16/32  (Diagnostico (cMiniMental_Calculado  18.00  )) (Entrevista (Escolaridad  6.00 )) (Diagnostico (cOlvido  "N" )) (Diagnostico (cFuncional  "R" )) (Diagnostico (cCaracter  "R"  )) => (assert (Diagnostico (Resultado  "DemenciaModerada" ))) (printout t " Regla-DIAGNOSTICO-N1-16/32" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-18/26  (Diagnostico (cMiniMental_Calculado  20.00  )) (Entrevista (Escolaridad  12.00 )) (Diagnostico (cQueja  "N" )) (Diagnostico (cFuncional  "R" )) (Diagnostico (cCaracter  "R"  )) => (assert (Diagnostico (Resultado  "DemenciaModerada" ))) (printout t " Regla-DIAGNOSTICO-N1-18/26" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-23/31  (Diagnostico (cMiniMental_Calculado  25.00  )) (Entrevista (Escolaridad  6.00 ))  (Diagnostico (cQueja  "N" )) (Diagnostico (cFuncional  "R" )) (Diagnostico (cCaracter  "R"  )) => (assert (Diagnostico (Resultado  "DemenciaModerada" ))) (printout t " Regla-DIAGNOSTICO-N1-23/31" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-33/49  (Diagnostico (cMiniMental_Calculado  27.00  )) (Entrevista (Escolaridad  12.00 )) (Diagnostico (cOlvido  "R" )) (Diagnostico (cFuncional  "N" )) (Diagnostico (cCaracter  "R"  )) => (assert (Diagnostico (Resultado  "DemenciaLeve" ))) (printout t " Regla-DIAGNOSTICO-N1-33/49" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-39/47  (Diagnostico (cMiniMental_Calculado  25.00  )) (Entrevista (Escolaridad  6.00 )) (Diagnostico (cQueja  "R" )) (Diagnostico (cFuncional  "N" )) (Diagnostico (cCaracter  "R"  )) => (assert (Diagnostico (Resultado  "DemenciaModerada" ))) (printout t " Regla-DIAGNOSTICO-N1-39/47" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-40/56  (Diagnostico (cMiniMental_Calculado  18.00  )) (Entrevista (Escolaridad  6.00))  (Diagnostico (cOlvido  "R" )) (Diagnostico (cFuncional  "N" )) (Diagnostico (cCaracter  "R"  )) => (assert (Diagnostico (Resultado  "DemenciaModerada" ))) (printout t " Regla-DIAGNOSTICO-N1-40/56" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-41  (Diagnostico (cMiniMental_Calculado  27.00  )) (Entrevista (Escolaridad  12.00 )) (Diagnostico (cOlvido  "N" )) (Diagnostico (cQueja  "R"))  (Diagnostico (cFuncional  "N" )) (Diagnostico (cCaracter  "R"  )) => (assert (Diagnostico (Resultado  "DemenciaLeve" ))) (printout t " Regla-DIAGNOSTICO-N1-41" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-48  (Diagnostico (cMiniMental_Calculado  18.00  )) (Entrevista (Escolaridad  6.00 )) (Diagnostico (cOlvido  "N" )) (Diagnostico (cQueja  "R" )) (Diagnostico (cFuncional  "N" )) (Diagnostico (cCaracter  "R"  )) => (assert (Diagnostico (Resultado  "DemenciaModerada" ))) (printout t " Regla-DIAGNOSTICO-N1-48" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-50  (Diagnostico (cMiniMental_Calculado  20.00  )) (Entrevista (Escolaridad  12.00 )) (Diagnostico (cOlvido  "R" )) (Diagnostico (cQueja  "N" )) (Diagnostico (cFuncional  "N" )) (Diagnostico (cCaracter  "R"  )) => (assert (Diagnostico (Resultado  "DemenciaModerada" ))) (printout t " Regla-DIAGNOSTICO-N1-50" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-55  (Diagnostico (cMiniMental_Calculado  25.00  )) (Entrevista (Escolaridad  6.00 ))  (Diagnostico (cOlvido  "R" )) (Diagnostico (cQueja  "N" )) (Diagnostico (cFuncional  "N" )) (Diagnostico (cCaracter  "R"  )) => (assert (Diagnostico (Resultado  "DemenciaModerada" ))) (printout t " Regla-DIAGNOSTICO-N1-55" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-57  (Diagnostico (cMiniMental_Calculado  27.00  )) (Entrevista (Escolaridad  12.00 )) (Diagnostico (cOlvido  "N" )) (Diagnostico (cQueja  "N" )) (Diagnostico (cFuncional  "N" )) (Diagnostico (cCaracter  "R"  )) => (assert (Diagnostico (Resultado  "OlvidoBenigno" ))) (printout t " Regla-DIAGNOSTICO-N1-57" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-58  (Diagnostico (cMiniMental_Calculado  20.00  )) (Entrevista (Escolaridad  12.00 )) (Diagnostico (cOlvido  "N" )) (Diagnostico (cQueja  "N"))  (Diagnostico (cFuncional  "N" )) (Diagnostico (cCaracter  "R"  )) => (assert (Diagnostico (Resultado  "DemenciaLeve" ))) (printout t " Regla-DIAGNOSTICO-N1-58" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-63  (Diagnostico (cMiniMental_Calculado  25.00  )) (Entrevista (Escolaridad  6.00 )) (Diagnostico (cOlvido  "N" )) (Diagnostico (cQueja  "N" )) (Diagnostico (cFuncional  "N" )) (Diagnostico (cCaracter  "R"  )) => (assert (Diagnostico (Resultado  "DemenciaLeve" ))) (printout t " Regla-DIAGNOSTICO-N1-63" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-64  (Diagnostico (cMiniMental_Calculado  18.00  )) (Entrevista (Escolaridad  6.00 )) (Diagnostico (cOlvido  "N" )) (Diagnostico (cQueja  "N" )) (Diagnostico (cFuncional  "N" )) (Diagnostico (cCaracter  "R"  )) => (assert (Diagnostico (Resultado  "DemenciaLeve" ))) (printout t " Regla-DIAGNOSTICO-N1-64" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-66/74  (Diagnostico (cMiniMental_Calculado  20.00  )) (Entrevista (Escolaridad  12.00 )) (Diagnostico (cQueja  "R" )) (Diagnostico (cFuncional  "R" )) (Diagnostico (cCaracter  "N"  )) => (assert (Diagnostico (Resultado  "DemenciaModerada" ))) (printout t " Regla-DIAGNOSTICO-N1-66/74" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-73  (Diagnostico (cMiniMental_Calculado  27.00  )) (Entrevista (Escolaridad  12.00 )) (Diagnostico (cOlvido  "N" )) (Diagnostico (cQueja  "R" )) (Diagnostico (cFuncional  "R")) (Diagnostico (cCaracter  "N"  )) => (assert (Diagnostico (Resultado  "DemenciaLeve" ))) (printout t " Regla-DIAGNOSTICO-N1-73" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-80  (Diagnostico (cMiniMental_Calculado  18.00  )) (Entrevista (Escolaridad  6.00 )) (Diagnostico (cOlvido  "N" )) (Diagnostico (cQueja  "R" )) (Diagnostico (cFuncional  "R" )) (Diagnostico (cCaracter  "N"  )) => (assert (Diagnostico (Resultado  "DemenciaModerada" ))) (printout t " Regla-DIAGNOSTICO-N1-80" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-82  (Diagnostico (cMiniMental_Calculado  20.00  )) (Entrevista (Escolaridad  12.00 )) (Diagnostico (cOlvido  "R" )) (Diagnostico (cQueja  "N" )) (Diagnostico (cFuncional  "R" )) (Diagnostico (cCaracter  "N"  )) => (assert (Diagnostico (Resultado  "DemenciaModerada" ))) (printout t " Regla-DIAGNOSTICO-N1-82" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-87  (Diagnostico (cMiniMental_Calculado  25.00  )) (Entrevista (Escolaridad  6.00 )) (Diagnostico (cOlvido  "R" )) (Diagnostico (cQueja  "N" )) (Diagnostico (cFuncional  "R" )) (Diagnostico (cCaracter  "N"  )) => (assert (Diagnostico (Resultado  "DemenciaModerada" ))) (printout t " Regla-DIAGNOSTICO-N1-87" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-89  (Diagnostico (cMiniMental_Calculado  27.00  )) (Entrevista (Escolaridad  12.00 )) (Diagnostico (cOlvido  "N" )) (Diagnostico (cQueja  "N" )) (Diagnostico (cFuncional  "R"))  (Diagnostico (cCaracter  "N"  )) => (assert (Diagnostico (Resultado  "OlvidoBenigno" ))) (printout t " Regla-DIAGNOSTICO-N1-89" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-90  (Diagnostico (cMiniMental_Calculado  20.00  )) (Entrevista (Escolaridad  12.00 )) (Diagnostico (cOlvido  "N" )) (Diagnostico (cQueja  "N" )) (Diagnostico (cFuncional  "R" )) (Diagnostico (cCaracter  "N"  )) => (assert (Diagnostico (Resultado  "DemenciaLeve" ))) (printout t " Regla-DIAGNOSTICO-N1-90" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-95  (Diagnostico (cMiniMental_Calculado  25.00  )) (Entrevista (Escolaridad  6.00 )) (Diagnostico (cOlvido  "N" )) (Diagnostico (cQueja  "N"))  (Diagnostico (cFuncional  "R" )) (Diagnostico (cCaracter  "N"  )) => (assert (Diagnostico (Resultado  "DemenciaLeve" ))) (printout t " Regla-DIAGNOSTICO-N1-95" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-96  (Diagnostico (cMiniMental_Calculado  18.00  )) (Entrevista (Escolaridad  6.00 )) (Diagnostico (cOlvido  "N" )) (Diagnostico (cQueja  "N" )) (Diagnostico (cFuncional  "R" )) (Diagnostico (cCaracter  "N"  )) => (assert (Diagnostico (Resultado  "DemenciaLeve" ))) (printout t " Regla-DIAGNOSTICO-N1-96" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-97/105  (Diagnostico (cMiniMental_Calculado  27.00  )) (Entrevista (Escolaridad  12.00 )) (Diagnostico (cOlvido  "R" )) (Diagnostico (cQueja  "R" )) (Diagnostico (cFuncional  "N" )) (Diagnostico (cCaracter  "N"  )) => (assert (Diagnostico (Resultado  "OlvidoBenigno" ))) (printout t " Regla-DIAGNOSTICO-N1-97/105" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-98/106/114/122  (Diagnostico (cMiniMental_Calculado  20.00  )) (Entrevista (Escolaridad  12.00 )) (Diagnostico (cFuncional  "N" )) (Diagnostico (cCaracter  "N"  )) => (assert (Diagnostico (Resultado  "DemenciaLeve" ))) (printout t " Regla-DIAGNOSTICO-N1-98/106/114/122" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-103/111/119/127  (Diagnostico (cMiniMental_Calculado  25.00  )) (Entrevista (Escolaridad  6.00 )) (Diagnostico (cFuncional  "N" )) (Diagnostico (cCaracter  "N"  )) => (assert (Diagnostico (Resultado  "DemenciaLeve" ))) (printout t " Regla-DIAGNOSTICO-N1-103/111/119/127" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-104/112/120/128  (Diagnostico (cMiniMental_Calculado  18.00  )) (Entrevista (Escolaridad  6.00 )) (Diagnostico (cFuncional  "N" )) (Diagnostico (cCaracter  "N"  )) => (assert (Diagnostico (Resultado  "DemenciaLeve" ))) (printout t " Regla-DIAGNOSTICO-N1-104/112/120/128" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-113/121  (Diagnostico (cMiniMental_Calculado  27.00  )) (Entrevista (Escolaridad  12.00 )) (Diagnostico (cQueja  "N" )) (Diagnostico (cFuncional  "N" )) (Diagnostico (cCaracter  "N"  )) => (assert (Diagnostico (Resultado  "OlvidoBenigno" ))) (printout t " Regla-DIAGNOSTICO-N1-113/121" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-129  (Diagnostico (cMiniMental_Calculado  30.00  ))  => (assert (Diagnostico (Resultado  "OlvidoBenigno" ))) (printout t " Regla-DIAGNOSTICO-N1-129" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-130  (Diagnostico (cMiniMental_Calculado  29.00  ))  => (assert (Diagnostico (Resultado  "OlvidoBenigno" ))) (printout t " Regla-DIAGNOSTICO-N1-130" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-131  (Diagnostico (cMiniMental_Calculado  28.00  ))  => (assert (Diagnostico (Resultado  "OlvidoBenigno" ))) (printout t " Regla-DIAGNOSTICO-N1-131" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-132  (Diagnostico (cMiniMental_Calculado  26.00  )) (Entrevista (Escolaridad  12.00 ))  => (assert (Diagnostico (Resultado  "DemenciaLeve" ))) (printout t " Regla-DIAGNOSTICO-N1-132" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-133  (Diagnostico (cMiniMental_Calculado  26.00  )) (Entrevista (Escolaridad  6.00 ))  => (assert (Diagnostico (Resultado  "OlvidoBenigno" ))) (printout t " Regla-DIAGNOSTICO-N1-133" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-134  (Diagnostico (cMiniMental_Calculado  24.00  ))  => (assert (Diagnostico (Resultado  "DemenciaLeve" ))) (printout t " Regla-DIAGNOSTICO-N1-134" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-135  (Diagnostico (cMiniMental_Calculado  23.00  ))  => (assert (Diagnostico (Resultado  "DemenciaLeve" ))) (printout t " Regla-DIAGNOSTICO-N1-135" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-136  (Diagnostico (cMiniMental_Calculado  22.00  ))   => (assert (Diagnostico (Resultado  "DemenciaLeve" ))) (printout t " Regla-DIAGNOSTICO-N1-136" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-137  (Diagnostico (cMiniMental_Calculado  21.00  ))   => (assert (Diagnostico (Resultado  "DemenciaLeve" ))) (printout t " Regla-DIAGNOSTICO-N1-137" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-138  (Diagnostico (cMiniMental_Calculado  19.00  )) (Entrevista (Escolaridad  12.00 ))  => (assert (Diagnostico (Resultado  "DemenciaModerada" ))) (printout t " Regla-DIAGNOSTICO-N1-138" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-139  (Diagnostico (cMiniMental_Calculado  19.00  )) (Entrevista (Escolaridad  6.00 ))  => (assert (Diagnostico (Resultado  "DemenciaLeve" ))) (printout t " Regla-DIAGNOSTICO-N1-139" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-140  (Diagnostico (cMiniMental_Calculado  17.00  ))  => (assert (Diagnostico (Resultado  "DemenciaModerada" ))) (printout t " Regla-DIAGNOSTICO-N1-140" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-141  (Diagnostico (cMiniMental_Calculado  16.00  ))  => (assert (Diagnostico (Resultado  "DemenciaModerada" ))) (printout t " Regla-DIAGNOSTICO-N1-141" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-142  (Diagnostico (cMiniMental_Calculado  15.00  ))    => (assert (Diagnostico (Resultado  "DemenciaModerada" ))) (printout t " Regla-DIAGNOSTICO-N1-142" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-143  (Diagnostico (cMiniMental_Calculado  14.00  ))    => (assert (Diagnostico (Resultado  "DemenciaModerada" ))) (printout t " Regla-DIAGNOSTICO-N1-143" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-144  (Diagnostico (cMiniMental_Calculado  13.00  ))    => (assert (Diagnostico (Resultado  "DemenciaModerada" ))) (printout t " Regla-DIAGNOSTICO-N1-144" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-145  (Diagnostico (cMiniMental_Calculado  12.00  ))    => (assert (Diagnostico (Resultado  "DemenciaModerada" ))) (printout t " Regla-DIAGNOSTICO-N1-145" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-146  (Diagnostico (cMiniMental_Calculado  11.00  ))    => (assert (Diagnostico (Resultado  "DemenciaModerada" ))) (printout t " Regla-DIAGNOSTICO-N1-146" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-147  (Diagnostico (cMiniMental_Calculado  10.00  ))  => (assert (Diagnostico (Resultado  "DemenciaModerada" ))) (printout t " Regla-DIAGNOSTICO-N1-147" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-148  (Diagnostico (cMiniMental_Calculado  9.00  )) (Entrevista (Escolaridad  12.00 ))  => (assert (Diagnostico (Resultado  "DemenciaSevera" ))) (printout t " Regla-DIAGNOSTICO-N1-148" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-149  (Diagnostico (cMiniMental_Calculado  9.00  )) (Entrevista (Escolaridad  6.00 ))  => (assert (Diagnostico (Resultado  "DemenciaModerada" ))) (printout t " Regla-DIAGNOSTICO-N1-149" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-150  (Diagnostico (cMiniMental_Calculado  8.00  )) (Entrevista (Escolaridad  12.00 ))  => (assert (Diagnostico (Resultado  "DemenciaSevera" ))) (printout t " Regla-DIAGNOSTICO-N1-150" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-151  (Diagnostico (cMiniMental_Calculado  8.00  )) (Entrevista (Escolaridad  6.00 ))  => (assert (Diagnostico (Resultado  "DemenciaModerada" ))) (printout t " Regla-DIAGNOSTICO-N1-151" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-152  (Diagnostico (cMiniMental_Calculado  7.00  ))  => (assert (Diagnostico (Resultado  "DemenciaSevera" ))) (printout t " Regla-DIAGNOSTICO-N1-152" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-153  (Diagnostico (cMiniMental_Calculado  6.00  ))  => (assert (Diagnostico (Resultado  "DemenciaSevera" ))) (printout t " Regla-DIAGNOSTICO-N1-153" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-154  (Diagnostico (cMiniMental_Calculado  5.00  ))  => (assert (Diagnostico (Resultado  "DemenciaSevera" ))) (printout t " Regla-DIAGNOSTICO-N1-154" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-155  (Diagnostico (cMiniMental_Calculado  4.00  ))  => (assert (Diagnostico (Resultado  "DemenciaSevera" ))) (printout t " Regla-DIAGNOSTICO-N1-155" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-156  (Diagnostico (cMiniMental_Calculado  3.00  ))  => (assert (Diagnostico (Resultado  "DemenciaSevera" ))) (printout t " Regla-DIAGNOSTICO-N1-156" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-157  (Diagnostico (cMiniMental_Calculado  2.00  ))  => (assert (Diagnostico (Resultado  "DemenciaSevera" ))) (printout t " Regla-DIAGNOSTICO-N1-157" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-158  (Diagnostico (cMiniMental_Calculado  1.00  ))  => (assert (Diagnostico (Resultado  "DemenciaSevera" ))) (printout t " Regla-DIAGNOSTICO-N1-158" crlf))
-(defrule  Regla-DIAGNOSTICO-N1-159  (Diagnostico (cMiniMental_Calculado  0.00  ))  => (assert (Diagnostico (Resultado  "DemenciaSevera" ))) (printout t " Regla-DIAGNOSTICO-N1-159" crlf))
+(defrule  REGLA-E-N1-FUNCIONAL-2  
+    (Entrevista (Olvido_ImpactoFuncional  "NO"  )) 
+    => 
+    (assert (Diagnostico (cFuncional  "N" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-E-N1-FUNCIONAL-2" crlf))
+
+
+(defrule  REGLA-E-N1-QUEJA-2/5/6  
+    (Entrevista (Olvido_OlvidaHechosRecientes  "SI"  )) 
+    (Entrevista (Olvido_QuejaOlvidoFamiliar  "SI"  ))  
+    => 
+    (assert (Diagnostico (cQueja  "R" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-E-N1-QUEJA-2/5/6" crlf))
+
+(defrule  REGLA-E-N1-QUEJA-7/8  
+    (Entrevista (Olvido_OlvidaHechosRecientes  "SI"  )) 
+    (Entrevista (Olvido_QuejaOlvidoFamiliar  "NO"  )) 
+    (Entrevista (Olvido_PacienteMinimizaOlvidos  "NO"  )) 
+    => 
+    (assert (Diagnostico (cQueja  "N" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-E-N1-QUEJA-7/8" crlf))
+
+
+(defrule  REGLA-E-N1-OLVIDO-1  
+    (Entrevista (Olvido_OlvidaHechosRecientes  "SI"  )) 
+    (Entrevista (Olvido_OlvidoProgresa  "SI"  )) 
+    => 
+    (assert (Diagnostico (cOlvido  "R" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-E-N1-OLVIDO-1" crlf))
+
+(defrule  REGLA-E-N1-OLVIDO-2  
+    (Entrevista (Olvido_OlvidaHechosRecientes  "SI"  )) 
+    (Entrevista (Olvido_OlvidoProgresa  "NO"  )) 
+    => 
+    (assert (Diagnostico (cOlvido  "N" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " REGLA-E-N1-OLVIDO-2" crlf))
+
+
+(defrule  Regla-DIAGNOSTICO-N1-1/65/17/81  
+    (Diagnostico (cMiniMental_Calculado  27.00  )) 
+    (Entrevista (Escolaridad  12.00)) 
+    (Diagnostico (cOlvido  "R"))  
+    (Diagnostico (cFuncional  "R" ))  
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-1/65/17/81" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-2/10/34/42  
+    (Diagnostico (cMiniMental_Calculado  20.00  )) 
+    (Entrevista (Escolaridad  12.00)) 
+    (Diagnostico (cQueja  "R"))   
+    (Diagnostico (cCaracter  "R"  )) 
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-2/10/34/42" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-3/11/19/27/35/43/51/59/67/75/83/91/99/107/115/123  
+    (Diagnostico (cMiniMental_Calculado  25.00  )) 
+    (Entrevista (Escolaridad  12 ))  
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaLeve" )))
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####"))) 
+    (printout t " Regla-DIAGNOSTICO-N1-3/11/19/27/35/43/51/59/67/75/83/91/99/107/115/123" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-4/12/20/28/36/44/52/60/68/76/84/92/100/108/116/124  
+    (Diagnostico (cMiniMental_Calculado  18.00  )) 
+    (Entrevista (Escolaridad  12 ))  
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-4/12/20/28/36/44/52/60/68/76/84/92/100/108/116/124" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-5/69/37/101/21/53/85/117/13/29/45/61/77/93/109/125  
+    (Diagnostico (cMiniMental_Calculado  27.00  )) 
+    (Entrevista (Escolaridad  6 ))  
+    => 
+    (assert (Diagnostico (Resultado  "OlvidoBenigno" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-5/69/37/101/21/53/85/117/13/29/45/61/77/93/109/125" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-6/14/22/30/38/46/54/62/70/78/86/94/102/110/118/126  
+    (Diagnostico (cMiniMental_Calculado  20.00  )) 
+    (Entrevista (Escolaridad  6 ))  
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-6/14/22/30/38/46/54/62/70/78/86/94/102/110/118/126" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-7/15/71/79  
+    (Diagnostico (cMiniMental_Calculado  25.00  )) 
+    (Entrevista (Escolaridad  6.00 )) 
+    (Diagnostico (cQueja  "R" )) 
+    (Diagnostico (cFuncional  "R" ))  
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-7/15/71/79" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-8/24/72/88  
+    (Diagnostico (cMiniMental_Calculado  18.00  )) 
+    (Entrevista (Escolaridad  6.00 )) 
+    (Diagnostico (cOlvido  "R" ))  
+    (Diagnostico (cFuncional  "R" ))  
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-8/24/72/88" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-9/25  
+    (Diagnostico (cMiniMental_Calculado  27.00  )) 
+    (Entrevista (Escolaridad  12.00 )) 
+    (Diagnostico (cOlvido  "N" )) 
+    (Diagnostico (cFuncional  "R" )) 
+    (Diagnostico (cCaracter  "R"  )) 
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-9/25" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-16/32  
+    (Diagnostico (cMiniMental_Calculado  18.00  )) 
+    (Entrevista (Escolaridad  6.00 )) 
+    (Diagnostico (cOlvido  "N" )) 
+    (Diagnostico (cFuncional  "R" )) 
+    (Diagnostico (cCaracter  "R"  )) 
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-16/32" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-18/26  
+    (Diagnostico (cMiniMental_Calculado  20.00  )) 
+    (Entrevista (Escolaridad  12.00 )) 
+    (Diagnostico (cQueja  "N" )) 
+    (Diagnostico (cFuncional  "R" )) 
+    (Diagnostico (cCaracter  "R"  )) 
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-18/26" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-23/31  
+    (Diagnostico (cMiniMental_Calculado  25.00  )) 
+    (Entrevista (Escolaridad  6.00 ))  
+    (Diagnostico (cQueja  "N" )) 
+    (Diagnostico (cFuncional  "R" )) 
+    (Diagnostico (cCaracter  "R"  )) 
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-23/31" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-33/49  
+    (Diagnostico (cMiniMental_Calculado  27.00  )) 
+    (Entrevista (Escolaridad  12.00 )) 
+    (Diagnostico (cOlvido  "R" )) 
+    (Diagnostico (cFuncional  "N" )) 
+    (Diagnostico (cCaracter  "R"  )) 
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-33/49" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-39/47  
+    (Diagnostico (cMiniMental_Calculado  25.00  )) 
+    (Entrevista (Escolaridad  6.00 )) 
+    (Diagnostico (cQueja  "R" )) 
+    (Diagnostico (cFuncional  "N" )) 
+    (Diagnostico (cCaracter  "R"  )) 
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-39/47" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-40/56  
+    (Diagnostico (cMiniMental_Calculado  18.00  )) 
+    (Entrevista (Escolaridad  6.00))  
+    (Diagnostico (cOlvido  "R" )) 
+    (Diagnostico (cFuncional  "N" )) 
+    (Diagnostico (cCaracter  "R"  )) 
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-40/56" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-41  
+    (Diagnostico (cMiniMental_Calculado  27.00  )) 
+    (Entrevista (Escolaridad  12.00 )) 
+    (Diagnostico (cOlvido  "N" )) 
+    (Diagnostico (cQueja  "R"))  
+    (Diagnostico (cFuncional  "N" )) 
+    (Diagnostico (cCaracter  "R"  )) 
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-41" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-48  
+    (Diagnostico (cMiniMental_Calculado  18.00  )) 
+    (Entrevista (Escolaridad  6.00 )) 
+    (Diagnostico (cOlvido  "N" )) 
+    (Diagnostico (cQueja  "R" )) 
+    (Diagnostico (cFuncional  "N" )) 
+    (Diagnostico (cCaracter  "R"  )) 
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-48" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-50  
+    (Diagnostico (cMiniMental_Calculado  20.00  )) 
+    (Entrevista (Escolaridad  12.00 )) 
+    (Diagnostico (cOlvido  "R" )) 
+    (Diagnostico (cQueja  "N" )) 
+    (Diagnostico (cFuncional  "N" )) 
+    (Diagnostico (cCaracter  "R"  )) 
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-50" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-55  
+    (Diagnostico (cMiniMental_Calculado  25.00  )) 
+    (Entrevista (Escolaridad  6.00 ))  
+    (Diagnostico (cOlvido  "R" )) 
+    (Diagnostico (cQueja  "N" )) 
+    (Diagnostico (cFuncional  "N" )) 
+    (Diagnostico (cCaracter  "R"  )) 
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-55" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-57  
+    (Diagnostico (cMiniMental_Calculado  27.00  )) 
+    (Entrevista (Escolaridad  12.00 )) 
+    (Diagnostico (cOlvido  "N" )) 
+    (Diagnostico (cQueja  "N" )) 
+    (Diagnostico (cFuncional  "N" )) 
+    (Diagnostico (cCaracter  "R"  )) 
+    => 
+    (assert (Diagnostico (Resultado  "OlvidoBenigno" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-57" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-58  
+    (Diagnostico (cMiniMental_Calculado  20.00  )) 
+    (Entrevista (Escolaridad  12.00 )) 
+    (Diagnostico (cOlvido  "N" )) 
+    (Diagnostico (cQueja  "N"))  
+    (Diagnostico (cFuncional  "N" )) 
+    (Diagnostico (cCaracter  "R"  )) 
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-58" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-63  
+    (Diagnostico (cMiniMental_Calculado  25.00  )) 
+    (Entrevista (Escolaridad  6.00 )) 
+    (Diagnostico (cOlvido  "N" )) 
+    (Diagnostico (cQueja  "N" )) 
+    (Diagnostico (cFuncional  "N" )) 
+    (Diagnostico (cCaracter  "R"  )) 
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-63" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-64  
+    (Diagnostico (cMiniMental_Calculado  18.00  )) 
+    (Entrevista (Escolaridad  6.00 )) 
+    (Diagnostico (cOlvido  "N" )) 
+    (Diagnostico (cQueja  "N" )) 
+    (Diagnostico (cFuncional  "N" )) 
+    (Diagnostico (cCaracter  "R"  )) 
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-64" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-66/74  
+    (Diagnostico (cMiniMental_Calculado  20.00  )) 
+    (Entrevista (Escolaridad  12.00 )) 
+    (Diagnostico (cQueja  "R" )) 
+    (Diagnostico (cFuncional  "R" )) 
+    (Diagnostico (cCaracter  "N"  )) 
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-66/74" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-73  
+    (Diagnostico (cMiniMental_Calculado  27.00  )) 
+    (Entrevista (Escolaridad  12.00 )) 
+    (Diagnostico (cOlvido  "N" )) 
+    (Diagnostico (cQueja  "R" )) 
+    (Diagnostico (cFuncional  "R")) 
+    (Diagnostico (cCaracter  "N"  )) 
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-73" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-80  
+    (Diagnostico (cMiniMental_Calculado  18.00  )) 
+    (Entrevista (Escolaridad  6.00 )) 
+    (Diagnostico (cOlvido  "N" )) 
+    (Diagnostico (cQueja  "R" )) 
+    (Diagnostico (cFuncional  "R" )) 
+    (Diagnostico (cCaracter  "N"  )) 
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-80" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-82  
+    (Diagnostico (cMiniMental_Calculado  20.00  )) 
+    (Entrevista (Escolaridad  12.00 )) 
+    (Diagnostico (cOlvido  "R" )) 
+    (Diagnostico (cQueja  "N" )) 
+    (Diagnostico (cFuncional  "R" )) 
+    (Diagnostico (cCaracter  "N"  ))
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-82" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-87  
+    (Diagnostico (cMiniMental_Calculado  25.00  )) 
+    (Entrevista (Escolaridad  6.00 )) 
+    (Diagnostico (cOlvido  "R" )) 
+    (Diagnostico (cQueja  "N" )) 
+    (Diagnostico (cFuncional  "R" )) 
+    (Diagnostico (cCaracter  "N"  )) 
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-87" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-89  
+    (Diagnostico (cMiniMental_Calculado  27.00  )) 
+    (Entrevista (Escolaridad  12.00 ))
+    (Diagnostico (cOlvido  "N" )) 
+    (Diagnostico (cQueja  "N" )) 
+    (Diagnostico (cFuncional  "R"))  
+    (Diagnostico (cCaracter  "N"  )) 
+    => 
+    (assert (Diagnostico (Resultado  "OlvidoBenigno" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-89" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-90  
+    (Diagnostico (cMiniMental_Calculado  20.00  )) 
+    (Entrevista (Escolaridad  12.00 )) 
+    (Diagnostico (cOlvido  "N" )) 
+    (Diagnostico (cQueja  "N" )) 
+    (Diagnostico (cFuncional  "R" )) 
+    (Diagnostico (cCaracter  "N"  )) 
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-90" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-95  
+    (Diagnostico (cMiniMental_Calculado  25.00  )) 
+    (Entrevista (Escolaridad  6.00 )) 
+    (Diagnostico (cOlvido  "N" )) 
+    (Diagnostico (cQueja  "N"))  
+    (Diagnostico (cFuncional  "R" )) 
+    (Diagnostico (cCaracter  "N"  )) 
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-95" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-96  
+    (Diagnostico (cMiniMental_Calculado  18.00  )) 
+    (Entrevista (Escolaridad  6.00 )) 
+    (Diagnostico (cOlvido  "N" )) 
+    (Diagnostico (cQueja  "N" )) 
+    (Diagnostico (cFuncional  "R" )) 
+    (Diagnostico (cCaracter  "N"  )) 
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-96" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-97/105  
+    (Diagnostico (cMiniMental_Calculado  27.00  )) 
+    (Entrevista (Escolaridad  12.00 )) 
+    (Diagnostico (cOlvido  "R" )) 
+    (Diagnostico (cQueja  "R" )) 
+    (Diagnostico (cFuncional  "N" )) 
+    (Diagnostico (cCaracter  "N"  )) 
+    => 
+    (assert (Diagnostico (Resultado  "OlvidoBenigno" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-97/105" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-98/106/114/122  
+    (Diagnostico (cMiniMental_Calculado  20.00  )) 
+    (Entrevista (Escolaridad  12.00 )) 
+    (Diagnostico (cFuncional  "N" )) 
+    (Diagnostico (cCaracter  "N"  )) 
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
+    (printout t " Regla-DIAGNOSTICO-N1-98/106/114/122" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-103/111/119/127  
+    (Diagnostico (cMiniMental_Calculado  25.00  )) 
+    (Entrevista (Escolaridad  6.00 )) 
+    (Diagnostico (cFuncional  "N" )) 
+    (Diagnostico (cCaracter  "N"  )) 
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-103/111/119/127" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-104/112/120/128  
+    (Diagnostico (cMiniMental_Calculado  18.00  )) 
+    (Entrevista (Escolaridad  6.00 )) 
+    (Diagnostico (cFuncional  "N" )) 
+    (Diagnostico (cCaracter  "N"  )) 
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-104/112/120/128" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-113/121  
+    (Diagnostico (cMiniMental_Calculado  27.00  )) 
+    (Entrevista (Escolaridad  12.00 )) 
+    (Diagnostico (cQueja  "N" )) 
+    (Diagnostico (cFuncional  "N" )) 
+    (Diagnostico (cCaracter  "N"  )) 
+    => 
+    (assert (Diagnostico (Resultado  "OlvidoBenigno" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-113/121" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-129  
+    (Diagnostico (cMiniMental_Calculado  30.00  ))  
+    => 
+    (assert (Diagnostico (Resultado  "OlvidoBenigno" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-129" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-130  
+    (Diagnostico (cMiniMental_Calculado  29.00  ))  
+    => 
+    (assert (Diagnostico (Resultado  "OlvidoBenigno" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-130" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-131  
+    (Diagnostico (cMiniMental_Calculado  28.00  ))  
+    => 
+    (assert (Diagnostico (Resultado  "OlvidoBenigno" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-131" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-132  
+    (Diagnostico (cMiniMental_Calculado  26.00  )) 
+    (Entrevista (Escolaridad  12.00 ))  
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-132" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-133  
+    (Diagnostico (cMiniMental_Calculado  26.00  )) 
+    (Entrevista (Escolaridad  6.00 ))  
+    => 
+    (assert (Diagnostico (Resultado  "OlvidoBenigno" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-133" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-134  
+    (Diagnostico (cMiniMental_Calculado  24.00  ))  
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-134" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-135  
+    (Diagnostico (cMiniMental_Calculado  23.00  ))  
+    =>  
+    (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-135" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-136  
+    (Diagnostico (cMiniMental_Calculado  22.00  ))   
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-136" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-137  
+    (Diagnostico (cMiniMental_Calculado  21.00  ))   
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-137" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-138  
+    (Diagnostico (cMiniMental_Calculado  19.00  )) 
+    (Entrevista (Escolaridad  12.00 ))  
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-138" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-139  
+    (Diagnostico (cMiniMental_Calculado  19.00  )) 
+    (Entrevista (Escolaridad  6.00 ))  
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-139" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-140  
+    (Diagnostico (cMiniMental_Calculado  17.00  ))  
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-140" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-141  
+    (Diagnostico (cMiniMental_Calculado  16.00  ))  
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-141" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-142  
+    (Diagnostico (cMiniMental_Calculado  15.00  ))    
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-142" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-143  
+    (Diagnostico (cMiniMental_Calculado  14.00  ))    
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-143" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-144  
+    (Diagnostico (cMiniMental_Calculado  13.00  ))    
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-144" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-145  
+    (Diagnostico (cMiniMental_Calculado  12.00  ))    
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-145" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-146  
+    (Diagnostico (cMiniMental_Calculado  11.00  ))    
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-146" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-147  
+    (Diagnostico (cMiniMental_Calculado  10.00  ))  
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-147" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-148  
+    (Diagnostico (cMiniMental_Calculado  9.00  )) 
+    (Entrevista (Escolaridad  12.00 ))  
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaSevera" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-148" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-149  
+    (Diagnostico (cMiniMental_Calculado  9.00  )) 
+    (Entrevista (Escolaridad  6.00 ))  
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-149" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-150  
+    (Diagnostico (cMiniMental_Calculado  8.00  )) 
+    (Entrevista (Escolaridad  12.00 ))  
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaSevera" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-150" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-151  
+    (Diagnostico (cMiniMental_Calculado  8.00  )) 
+    (Entrevista (Escolaridad  6.00 ))  
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-151" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-152  
+    (Diagnostico (cMiniMental_Calculado  7.00  ))  
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaSevera" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-152" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-153  
+    (Diagnostico (cMiniMental_Calculado  6.00  ))  
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaSevera" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-153" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-154  
+    (Diagnostico (cMiniMental_Calculado  5.00  ))  
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaSevera" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-154" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-155  
+    (Diagnostico (cMiniMental_Calculado  4.00  ))  
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaSevera" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-155" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-156  
+    (Diagnostico (cMiniMental_Calculado  3.00  ))  
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaSevera" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-156" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-157  
+    (Diagnostico (cMiniMental_Calculado  2.00  ))  
+    =>
+    (assert (Diagnostico (Resultado  "DemenciaSevera" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-157" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-158  
+    (Diagnostico (cMiniMental_Calculado  1.00  ))  
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaSevera" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-158" crlf))
+
+(defrule  Regla-DIAGNOSTICO-N1-159  
+    (Diagnostico (cMiniMental_Calculado  0.00  ))  
+    => 
+    (assert (Diagnostico (Resultado  "DemenciaSevera" ))) 
+    (assert (DiagnosticoDetalle (ResultadoDetalle "#####")))
+    (printout t " Regla-DIAGNOSTICO-N1-159" crlf))
