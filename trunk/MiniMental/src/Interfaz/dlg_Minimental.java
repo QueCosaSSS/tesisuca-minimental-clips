@@ -5,13 +5,9 @@
 package Interfaz;
 
 import CLIPS_Manager.CLP_Manager;
-import Clases.cEscolaridad;
 import Clases.cEntrevista;
 import Clases.cPaciente;
 import DB_Manager.SessionFactoryUtil;
-import java.util.Enumeration;
-import java.util.HashSet;
-import org.hibernate.Session;
 
 /**
  *
@@ -61,6 +57,7 @@ public class dlg_Minimental extends javax.swing.JDialog {
         buttonGroup21 = new javax.swing.ButtonGroup();
         buttonGroup22 = new javax.swing.ButtonGroup();
         buttonGroup23 = new javax.swing.ButtonGroup();
+        buttonGroup24 = new javax.swing.ButtonGroup();
         jButton1 = new javax.swing.JButton();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel6 = new javax.swing.JPanel();
@@ -324,8 +321,10 @@ public class dlg_Minimental extends javax.swing.JDialog {
 
         jTabbedPane2.addTab("Entrevista", jPanel6);
 
+        buttonGroup24.add(jRadioButton6);
         jRadioButton6.setText("No");
 
+        buttonGroup24.add(jrb_respuesta_pais_si);
         jrb_respuesta_pais_si.setSelected(true);
         jrb_respuesta_pais_si.setText("Si");
 
@@ -857,7 +856,7 @@ public class dlg_Minimental extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 636, Short.MAX_VALUE)
+            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jTabbedPane2)
         );
         layout.setVerticalGroup(
@@ -919,23 +918,23 @@ public class dlg_Minimental extends javax.swing.JDialog {
         Entrevista.setQuejaOlvidoPaciente(jrb_QuejaPaciente_si.isSelected());
         Entrevista.setQuejaOlvidoFamiliar(jrb_QuejaFamiliares_si.isSelected());
         
-        Entrevista.setPacienteMinimizaOlvidos(jrb_MinimizaOlvidos_si.isSelected());
-        
-        
+        Entrevista.setPacienteMinimizaOlvidos(jrb_MinimizaOlvidos_si.isSelected());       
         
         CLP_Manager clp_manager = new CLP_Manager();
         
-        clp_manager.ProcesarEntrevista(Entrevista); 
-        
-        SessionFactoryUtil.Save(Entrevista);
+        clp_manager.ProcesarEntrevista(Entrevista);        
         
        if(IdPaciente > 0)
        {
            cPaciente pct = SessionFactoryUtil.Load(cPaciente.class, IdPaciente);
            pct.getEntrevistas().add(Entrevista);
            
-           SessionFactoryUtil.Save(pct);           
-       } 
+           Entrevista.setPaciente(pct);
+           
+           SessionFactoryUtil.Save(pct);                
+           
+       }        
+       SessionFactoryUtil.Save(Entrevista);
        
        dlg_DetalleResultado dlg_dr = new dlg_DetalleResultado(null, rootPaneCheckingEnabled);
        
@@ -1011,6 +1010,7 @@ public class dlg_Minimental extends javax.swing.JDialog {
     private javax.swing.ButtonGroup buttonGroup21;
     private javax.swing.ButtonGroup buttonGroup22;
     private javax.swing.ButtonGroup buttonGroup23;
+    private javax.swing.ButtonGroup buttonGroup24;
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.ButtonGroup buttonGroup4;
     private javax.swing.ButtonGroup buttonGroup5;

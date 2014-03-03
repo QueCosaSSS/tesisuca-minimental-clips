@@ -89,7 +89,7 @@ public class cPaciente implements Serializable {
     @Id
     @TableGenerator(name = "IDS", table = "IDS", pkColumnName = "idkey", pkColumnValue = "idvalue", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.TABLE, generator = "IDS")
-    @Column(name = "Id")
+    @Column(name = "IdPaciente")
     public Integer getIdPaciente() {
         return IdPaciente;
     }
@@ -98,7 +98,7 @@ public class cPaciente implements Serializable {
         this.IdPaciente = IdPaciente;
     }
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy="idEntrevista", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     public Set<cEntrevista> getEntrevistas() {
         if (this.Entrevistas == null) {            
             this.Entrevistas = new HashSet<cEntrevista>();            
