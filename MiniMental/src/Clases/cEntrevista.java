@@ -9,12 +9,13 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.TableGenerator;
@@ -55,7 +56,7 @@ public class cEntrevista implements Serializable{
     @Id
     @TableGenerator(name = "IDS", table = "IDS", pkColumnName = "idkey", pkColumnValue = "idvalue", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.TABLE, generator = "IDS")
-    @Column(name = "Id")
+    @Column(name = "idEntrevista")
     public Integer getIdEntrevista() {
         return idEntrevista;
     }
@@ -771,7 +772,17 @@ public class cEntrevista implements Serializable{
         this.Diagnostico = Diagnostico;
     }
 
-    
+    @ManyToOne  
+    @JoinColumn(name = "IdPaciente") 
+    private cPaciente Paciente;
+
+    public cPaciente getPaciente() {
+        return Paciente;
+    }
+
+    public void setPaciente(cPaciente Paciente) {
+        this.Paciente = Paciente;
+    }
     
     
 }
