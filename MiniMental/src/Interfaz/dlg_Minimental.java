@@ -5,9 +5,13 @@
 package Interfaz;
 
 import CLIPS_Manager.CLP_Manager;
+import Clases.cEscolaridad;
 import Clases.cEntrevista;
 import Clases.cPaciente;
 import DB_Manager.SessionFactoryUtil;
+import java.util.Enumeration;
+import java.util.HashSet;
+import org.hibernate.Session;
 
 /**
  *
@@ -22,9 +26,8 @@ public class dlg_Minimental extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     }
-
     private Integer IdPaciente;
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -57,7 +60,6 @@ public class dlg_Minimental extends javax.swing.JDialog {
         buttonGroup21 = new javax.swing.ButtonGroup();
         buttonGroup22 = new javax.swing.ButtonGroup();
         buttonGroup23 = new javax.swing.ButtonGroup();
-        buttonGroup24 = new javax.swing.ButtonGroup();
         jButton1 = new javax.swing.JButton();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel6 = new javax.swing.JPanel();
@@ -321,10 +323,8 @@ public class dlg_Minimental extends javax.swing.JDialog {
 
         jTabbedPane2.addTab("Entrevista", jPanel6);
 
-        buttonGroup24.add(jRadioButton6);
         jRadioButton6.setText("No");
 
-        buttonGroup24.add(jrb_respuesta_pais_si);
         jrb_respuesta_pais_si.setSelected(true);
         jrb_respuesta_pais_si.setText("Si");
 
@@ -856,7 +856,7 @@ public class dlg_Minimental extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 636, Short.MAX_VALUE)
             .addComponent(jTabbedPane2)
         );
         layout.setVerticalGroup(
@@ -878,7 +878,7 @@ public class dlg_Minimental extends javax.swing.JDialog {
         // TODO add your handling code here:
 
         //validar datos
-        
+
         cEntrevista Entrevista = new cEntrevista();
         Entrevista.setEscolaridad(jcb_Escolaridad.getSelectedIndex());
         Entrevista.setFechaEntrevista(Integer.parseInt(jcb_entrevista_dia.getSelectedItem().toString()), jcb_entrevista_mes.getSelectedIndex(), Integer.parseInt(jcb_entrevista_ano.getSelectedItem().toString()));
@@ -887,8 +887,8 @@ public class dlg_Minimental extends javax.swing.JDialog {
         Entrevista.setPacienteAnsioso(jrb_respuesta_ansioso_si.isSelected());
         Entrevista.setHayImpactoEnCaracter(jrb_respuesta_impacto_caracter_si.isSelected());
         Entrevista.setHayImpactoFuncional(jrb_respuesta_impacto_funcional_si.isSelected());
-        
-        Entrevista.setDiaDeSemana(jcb_respuesta_diasemana.getSelectedIndex()+1);
+
+        Entrevista.setDiaDeSemana(jcb_respuesta_diasemana.getSelectedIndex() + 1);
         Entrevista.setFecha(Integer.parseInt(jcb_respuestas_dia.getSelectedItem().toString()), jcb_respuestas_mes.getSelectedIndex(), Integer.parseInt(jcb_respuestas_ano.getSelectedItem().toString()));
         Entrevista.setEstacion(jcb_respuesta_estacion.getSelectedIndex());
         Entrevista.setCiudad(jrb_respuesta_ciudad_si.isSelected());
@@ -900,51 +900,55 @@ public class dlg_Minimental extends javax.swing.JDialog {
         Entrevista.setConsultorioEnEntrepiso(jrb_respuesta_entrepiso_si.isSelected());
         Entrevista.setPiso(jcb_respuesta_piso.getSelectedIndex());
         Entrevista.setPisoDelConsultorio(jrb_respuesta_piso_consultorio.getSelectedIndex());
-        
+
         Entrevista.setPalabrasRepetidas(jcb_PalabrasRepetidas.getSelectedIndex());
         Entrevista.setClasificacionAtencion(jcb_ClasificacionAtencion.getSelectedIndex());
         Entrevista.setPalabrasRecordadas(jcb_PalabrasRecordadas.getSelectedIndex());
-        
+
         Entrevista.setRepiteFraseCorrectamente(jrb_RepiteFrase_si.isSelected());
         Entrevista.setClasificacionAccion(jcb_clasificacionaccion.getSelectedIndex());
         Entrevista.setCumpleOrdenCorrectamente(jrb_OrdenCorrecta_si.isSelected());
         Entrevista.setEscribeCorrectamenteFrase(jrb_EscribeFrase_si.isSelected());
         Entrevista.setCosasNombradas(jcb_ObjetosNombrados.getSelectedIndex());
-        
+
         Entrevista.setCopiaCorrectamenteDibujo(jrb_Dibujo_si.isSelected());
-        
+
         Entrevista.setOlvidaHechosRecientes(jrb_OlvidaHechosRecientes_si.isSelected());
         Entrevista.setOlvidoProgresa(jrb_OlvidosProgresivo_si.isSelected());
         Entrevista.setQuejaOlvidoPaciente(jrb_QuejaPaciente_si.isSelected());
         Entrevista.setQuejaOlvidoFamiliar(jrb_QuejaFamiliares_si.isSelected());
-        
-        Entrevista.setPacienteMinimizaOlvidos(jrb_MinimizaOlvidos_si.isSelected());       
-        
+
+        Entrevista.setPacienteMinimizaOlvidos(jrb_MinimizaOlvidos_si.isSelected());
+
+
+
         CLP_Manager clp_manager = new CLP_Manager();
-        
-        clp_manager.ProcesarEntrevista(Entrevista);        
-        
-       if(IdPaciente > 0)
-       {
-           cPaciente pct = SessionFactoryUtil.Load(cPaciente.class, IdPaciente);
-           pct.getEntrevistas().add(Entrevista);
-           
-           Entrevista.setPaciente(pct);
-           
-           SessionFactoryUtil.Save(pct);                
-           
-       }        
-       SessionFactoryUtil.Save(Entrevista);
-       
-       dlg_DetalleResultado dlg_dr = new dlg_DetalleResultado(null, rootPaneCheckingEnabled);
-       
-       dlg_dr.setEntrevista(Entrevista);
-       
-       dlg_dr.setVisible(true);
-       
-       this.setVisible(false);
-       
-       this.dispose();
+
+        clp_manager.ProcesarEntrevista(Entrevista);
+
+        if (IdPaciente > 0) {
+            Entrevista.setIdPaciente(IdPaciente);
+        }
+
+        SessionFactoryUtil.Save(Entrevista);
+
+        if (IdPaciente > 0) {
+            
+            cPaciente pct = SessionFactoryUtil.Load(cPaciente.class, IdPaciente);
+            pct.getEntrevistas().add(Entrevista);
+
+            SessionFactoryUtil.Save(pct);
+        }
+
+        dlg_DetalleResultado dlg_dr = new dlg_DetalleResultado(null, rootPaneCheckingEnabled);
+
+        dlg_dr.setEntrevista(Entrevista);
+
+        dlg_dr.setVisible(true);
+
+        this.setVisible(false);
+
+        this.dispose();
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -1010,7 +1014,6 @@ public class dlg_Minimental extends javax.swing.JDialog {
     private javax.swing.ButtonGroup buttonGroup21;
     private javax.swing.ButtonGroup buttonGroup22;
     private javax.swing.ButtonGroup buttonGroup23;
-    private javax.swing.ButtonGroup buttonGroup24;
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.ButtonGroup buttonGroup4;
     private javax.swing.ButtonGroup buttonGroup5;

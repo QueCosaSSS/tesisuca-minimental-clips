@@ -867,24 +867,23 @@ public class MiniMental extends javax.swing.JFrame {
             objects[0] = sdf.format(entrevista_tmp.getFechaEntrevista().getTime());
             objects[1] = entrevista_tmp.getDiagnostico().getMinimental().getMinimentalCalculado();
             objects[2] = entrevista_tmp.getDiagnostico().getResultado();
-            if(entrevista_tmp.getPaciente() != null)
+            if(entrevista_tmp.getIdPaciente() != 0)
             {                
-                cPaciente pct = entrevista_tmp.getPaciente();               
-                
+                cPaciente pct = SessionFactoryUtil.Load(cPaciente.class, entrevista_tmp.getIdPaciente());
+                                
                 objects[3] = pct.getDocumento();
                 objects[4] = pct.getApellido();
                 objects[5] = pct.getNombre();
                 objects[6] = ".\\src\\Icons\\entrevista_detalle.png";
-                objects[7] = entrevista_tmp.getIdEntrevista().toString();
+                objects[7] = entrevista_tmp.getIdEntrevista().toString();    
+        }
+            aModel.addRow(objects);
+            
+            jTable3.getColumnModel().getColumn(6).setCellRenderer(new ImageRenderer());
 
-                aModel.addRow(objects);
-
-                jTable3.getColumnModel().getColumn(6).setCellRenderer(new ImageRenderer());
-
-                jTable3.getColumnModel().getColumn(7).setMinWidth(0);
-                jTable3.getColumnModel().getColumn(7).setMaxWidth(0);
-                jTable3.getColumnModel().getColumn(7).setPreferredWidth(0);
-            }
+            jTable3.getColumnModel().getColumn(7).setMinWidth(0);
+            jTable3.getColumnModel().getColumn(7).setMaxWidth(0);
+            jTable3.getColumnModel().getColumn(7).setPreferredWidth(0);            
         }
 
     }
