@@ -7,6 +7,7 @@ package DB_Manager;
 import Clases.*;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import org.hibernate.Criteria;
@@ -16,7 +17,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Restrictions;
-import java.util.Set;
 
 public class SessionFactoryUtil {
 
@@ -121,7 +121,7 @@ public class SessionFactoryUtil {
         ss.getTransaction().commit();
         return lista;
     }
-
+/*
     public static List BuscarEntrevistas(String ano, String mes, String dia, String valorminimental, String diagnostico, eTipoDocumento TipoDocumento, String Documento, String Apellido, String Nombre) {
 
         Session ss = SessionFactoryUtil.getInstance().getCurrentSession();
@@ -212,7 +212,7 @@ public class SessionFactoryUtil {
         ss.getTransaction().commit();
         return lista;
     }
-
+*/
     public static <T> T Load(Class<T> cls, Integer id) {
         Session ss = SessionFactoryUtil.getInstance().getCurrentSession();
         ss.beginTransaction();
