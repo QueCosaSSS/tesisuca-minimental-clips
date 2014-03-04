@@ -14,7 +14,6 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -88,6 +87,8 @@ public class cEntrevista implements Serializable{
     private Boolean HayImpactoFuncional;
     private Boolean HayImpactoEnCaracter;
     private Boolean PacienteAnsioso;
+        
+    private Integer idPaciente;
     // </editor-fold>
     // <editor-fold defaultstate="collapsed" desc="GetSet">
 
@@ -772,17 +773,15 @@ public class cEntrevista implements Serializable{
         this.Diagnostico = Diagnostico;
     }
 
-    @ManyToOne  
-    @JoinColumn(name = "IdPaciente") 
-    private cPaciente Paciente;
-
-    public cPaciente getPaciente() {
-        return Paciente;
+    public Integer getIdPaciente() {
+        return idPaciente;
     }
 
-    public void setPaciente(cPaciente Paciente) {
-        this.Paciente = Paciente;
+    public void setIdPaciente(Integer id) {
+        this.idPaciente = id;
     }
+
+    
     
     
 }

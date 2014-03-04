@@ -5,8 +5,9 @@
 package DB_Manager;
 
 import Clases.*;
+import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
@@ -15,6 +16,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Restrictions;
+import java.util.Set;
 
 public class SessionFactoryUtil {
 
@@ -219,24 +221,56 @@ public class SessionFactoryUtil {
         return cls.cast(o);
     }
 
-    public static cPaciente BuscarPaciente_Entrevista(cEntrevista entrevista) {
+    public static List BuscarEntrevistas(String entrevista_ano, String entrevista_mes, String entrevista_dia, String ValorMinimenta, String Diagnostico, eTipoDocumento TipoDocumento, String NumeroDocumento, String PacienteApellido, String PacienteNombre) {
+        List lista = new ArrayList();
 
-        Session ss = SessionFactoryUtil.getInstance().getCurrentSession();
-        ss.beginTransaction();
+        if ((!NumeroDocumento.isEmpty()) || (!PacienteApellido.isEmpty()) || (!PacienteNombre.isEmpty())) {
+            List lista_pct = BuscarPacientes(TipoDocumento, NumeroDocumento, PacienteApellido, PacienteNombre);
 
-        String queryString = "select p from Entrevistas e inner join "
-                + ""
-                + "Pacientes p inner join p.Entrevistas e where e.Id = :id";
+            Iterator<cPaciente> it = lista_pct.iterator();
+            //put them into jTable
+            while (it.hasNext()) {
+                cPaciente paciente_tmp = (cPaciente) it.next();                
+                
+                Iterator<cEntrevista> it2 = paciente_tmp.getEntrevistas().iterator();;
+                while (it2.hasNext()) {
+                    cEntrevista entrevista_tmp = (cEntrevista) it2.next();
+                    
+                    Boolean coincide = true;
+                    
+//                    entrevista_ano,  entrevista_mes,  entrevista_dia,  ValorMinimenta,  Diagnostico
+                    if( (entrevista_ano != " ")|| (entrevista_mes!= " ") || (entrevista_dia!= " "))
+                    {
+                        coincide = !( (entrevista_tmp.getFecha().get(Calendar.YEAR) == Integer.parseInt(entrevista_ano))&&(entrevista_tmp.getFecha().get(Calendar.MONTH) == Integer.parseInt(entrevista_mes))&&(entrevista_tmp.getFecha().get(Calendar.DATE) == Integer.parseInt(entrevista_dia)));
+                    }
+                    if((ValorMinimenta!= " "))
+                    {
+                        coincide = !(entrevista_tmp.getDiagnostico().getMinimental().getMinimentalCalculado() == Float.parseFloat(ValorMinimenta) );
+                    }
+                    if((Diagnostico!= " "))
+                    {
+                        coincide = !(entrevista_tmp.getDiagnostico().getResultado() == Diagnostico);
+                    }
+                    
+                    if(coincide)
+                    {
+                        lista.add(entrevista_tmp);
+                    }
+                }
+                
+            }
+            
+        } else {
+            Session ss = SessionFactoryUtil.getInstance().getCurrentSession();
+            ss.beginTransaction();
 
-        Query query = ss.createQuery(queryString);
-        query.setLong("id", entrevista.getIdEntrevista());
+            Criteria cr = ss.createCriteria(cEntrevista.class);
+            cr.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
 
-        cPaciente paciente;
+            lista = cr.list();
+            ss.getTransaction().commit();
+        }
 
-        paciente = (cPaciente) query.uniqueResult();
-        ss.getTransaction().commit();
-        return paciente;
-
-
+        return lista;
     }
 }
