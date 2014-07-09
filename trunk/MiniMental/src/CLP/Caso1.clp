@@ -2670,10 +2670,6 @@
     (assert (DiagnosticoDetalle (ResultadoDetalle "El paciente se queja del olvido de hechos recientes, pero no son progresivo.")))
     (printout t " REGLA-E-N1-OLVIDO-2" crlf))
 
-********************************************************************************
-********************************************************************************
-********************************************************************************
-
 (defrule  Regla-DIAGNOSTICO-N1-1/65/17/81  
     (Diagnostico (cMiniMental_Calculado  27.00  )) 
     (Entrevista (Escolaridad  12.00)) 
