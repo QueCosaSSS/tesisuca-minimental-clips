@@ -121,14 +121,15 @@ public class SessionFactoryUtil {
         ss.getTransaction().commit();
         return lista;
     }
-/*
-    public static List BuscarEntrevistas(String ano, String mes, String dia, String valorminimental, String diagnostico, eTipoDocumento TipoDocumento, String Documento, String Apellido, String Nombre) {
+
+    public static List BuscarEntrevistas(String ano, String mes, String dia, String valorminimental, String diagnostico) {
+
 
         Session ss = SessionFactoryUtil.getInstance().getCurrentSession();
         ss.beginTransaction();
 
-        String q = "select e.* from Entrevistas e inner join Pacientes p on e.IDPACIENTE = p.ID";
-        String sq = "";
+        Criteria cr = ss.createCriteria(cEntrevista.class);
+        cr.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
 
         if ((ano != " ") && (mes != " ") && (dia != " ")) {
 
@@ -149,70 +150,23 @@ public class SessionFactoryUtil {
             calendar.set(Calendar.YEAR, Integer.parseInt(ano));
             Date toDate = calendar.getTime();
 
-            if (sq.isEmpty()) {
-                sq = " where ";
-            } else {
-                sq = " and ";
-            }
-
-            sq += "FechaEntrevista between " + fromDate + " and " + toDate;
-
+            cr.add(Restrictions.between("fechaentrevista", fromDate, toDate));
         }
 
         if (valorminimental != " ") {
-            if (sq.isEmpty()) {
-                sq = " where ";
-            } else {
-                sq = " and ";
-            }
-            sq += "MinimentalCalculado " + Float.parseFloat(valorminimental);
+            cr.add(Restrictions.eq("minimentalcalculado", Float.parseFloat(valorminimental)));
         }
 
         if (diagnostico != " ") {
-            if (sq.isEmpty()) {
-                sq = " where ";
-            } else {
-                sq = " and ";
-            }
-            sq += "Resultado like '%" + diagnostico + "%'";
+            cr.add(Restrictions.ilike("diagnostico", diagnostico, MatchMode.ANYWHERE));
         }
-
-        if (!Documento.isEmpty()) {
-            if (sq.isEmpty()) {
-                sq = " where ";
-            } else {
-                sq = " and ";
-            }
-            sq += "(documento like '%" + Documento + "%'";
-            sq += " and tipoDocumento=" + TipoDocumento+")";
-        }
-
-        if (!Apellido.isEmpty()) {
-            if (sq.isEmpty()) {
-                sq = " where ";
-            } else {
-                sq = " and ";
-            }
-            sq += "apellido like '%" + Apellido + "%'";
-        }
-
-        if (!Nombre.isEmpty()) {
-            if (sq.isEmpty()) {
-                sq = " where ";
-            } else {
-                sq = " and ";
-            }
-            sq += "nombre like '%" + Nombre + "%'";
-        }
-
-        Query query = ss.createQuery(q+sq);
-
-        List lista = query.list();
-
+        List lista = cr.list();
         ss.getTransaction().commit();
         return lista;
+
+
     }
-*/
+
     public static <T> T Load(Class<T> cls, Integer id) {
         Session ss = SessionFactoryUtil.getInstance().getCurrentSession();
         ss.beginTransaction();
@@ -230,45 +184,35 @@ public class SessionFactoryUtil {
             Iterator<cPaciente> it = lista_pct.iterator();
             //put them into jTable
             while (it.hasNext()) {
-                cPaciente paciente_tmp = (cPaciente) it.next();                
-                
+                cPaciente paciente_tmp = (cPaciente) it.next();
+
                 Iterator<cEntrevista> it2 = paciente_tmp.getEntrevistas().iterator();;
+
                 while (it2.hasNext()) {
                     cEntrevista entrevista_tmp = (cEntrevista) it2.next();
-                    
+
                     Boolean coincide = true;
-                    
+
 //                    entrevista_ano,  entrevista_mes,  entrevista_dia,  ValorMinimenta,  Diagnostico
-                    if( (entrevista_ano != " ")|| (entrevista_mes!= " ") || (entrevista_dia!= " "))
-                    {
-                        coincide = !( (entrevista_tmp.getFecha().get(Calendar.YEAR) == Integer.parseInt(entrevista_ano))&&(entrevista_tmp.getFecha().get(Calendar.MONTH) == Integer.parseInt(entrevista_mes))&&(entrevista_tmp.getFecha().get(Calendar.DATE) == Integer.parseInt(entrevista_dia)));
+                    if ((entrevista_ano != " ") || (entrevista_mes != " ") || (entrevista_dia != " ")) {
+                        coincide = coincide && ((entrevista_tmp.getFecha().get(Calendar.YEAR) == Integer.parseInt(entrevista_ano)) && (entrevista_tmp.getFecha().get(Calendar.MONTH) == Integer.parseInt(entrevista_mes)) && (entrevista_tmp.getFecha().get(Calendar.DATE) == Integer.parseInt(entrevista_dia)));
                     }
-                    if((ValorMinimenta!= " "))
-                    {
-                        coincide = !(entrevista_tmp.getDiagnostico().getMinimental().getMinimentalCalculado() == Float.parseFloat(ValorMinimenta) );
+                    if ((ValorMinimenta != " ")) {
+                        coincide = coincide && (entrevista_tmp.getDiagnostico().getMinimental().getMinimentalCalculado() == Float.parseFloat(ValorMinimenta));
                     }
-                    if((Diagnostico!= " "))
-                    {
-                        coincide = !(entrevista_tmp.getDiagnostico().getResultado() == Diagnostico);
+                    if ((Diagnostico != " ")) {
+                        coincide = coincide && (entrevista_tmp.getDiagnostico().getResultado() == Diagnostico);
                     }
-                    
-                    if(coincide)
-                    {
+
+                    if (coincide) {
                         lista.add(entrevista_tmp);
                     }
                 }
-                
+
             }
-            
+
         } else {
-            Session ss = SessionFactoryUtil.getInstance().getCurrentSession();
-            ss.beginTransaction();
-
-            Criteria cr = ss.createCriteria(cEntrevista.class);
-            cr.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
-
-            lista = cr.list();
-            ss.getTransaction().commit();
+            lista = BuscarEntrevistas(entrevista_ano, entrevista_mes, entrevista_dia, ValorMinimenta, Diagnostico);
         }
 
         return lista;
