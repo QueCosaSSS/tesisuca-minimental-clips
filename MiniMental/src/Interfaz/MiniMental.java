@@ -686,6 +686,9 @@ public class MiniMental extends javax.swing.JFrame {
         config.addAnnotatedClass(cPaciente.class);
 
         config.configure();
+        
+        new SchemaExport(config).drop(true, true);
+        
         new SchemaExport(config).create(true, true);
 
 
