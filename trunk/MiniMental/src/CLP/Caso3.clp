@@ -332,7 +332,9 @@
 (defrule REGLA-CLIPS-OE-N5-Pais-2 
 (Entrevista (OrientacionEspacial_Pais "SI")) 
 =>
-(assert (OrientacionEspacial (cPais 1.0))) (assert (DiagnosticoDetalle (ResultadoDetalle "@ASSERTRULE# REGLA-CLIPS-OE-N5-Pais-2") )) (assert (DiagnosticoDetalle (ResultadoDetalle "REGLA-CLIPS-OE-N5-Pais-2 ") ))
+(assert (OrientacionEspacial (cPais 1.0))) 
+(assert (DiagnosticoDetalle (ResultadoDetalle "@ASSERTRULE# REGLA-CLIPS-OE-N5-Pais-2") )) 
+(assert (DiagnosticoDetalle (ResultadoDetalle "REGLA-CLIPS-OE-N5-Pais-2 ") ))
 )
 
 (defrule REGLA-CLIPS-OE-N5-Ciudad-1
