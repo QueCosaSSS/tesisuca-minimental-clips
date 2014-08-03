@@ -23,7 +23,7 @@ public class CLP_Manager {
         try {
             this.clips = new Environment();
 
-            this.clips.load(".\\src\\CLP\\Caso3.clp");
+            this.clips.load(".\\src\\CLP\\Caso1.clp");
 
             this.clips.reset();
 
@@ -39,8 +39,7 @@ public class CLP_Manager {
         try {
 //            this.clips.reset();
 
-
-            this.clips.eval("(save-facts C:\\Users\\santiago\\Desktop\\hechos1.txt)");
+            this.clips.eval("(save-facts C:\\hechos1.txt)");
 
             this.clips.run();
 
