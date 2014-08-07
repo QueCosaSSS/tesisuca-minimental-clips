@@ -289,7 +289,7 @@ public class dlg_Paciente extends javax.swing.JDialog {
         }
 
         this.Paciente.setApellido(jTF_apellido.getText());
-        this.Paciente.setNombre(jTF_apellido.getText());
+        this.Paciente.setNombre(jTF_nombre.getText());
 
         Calendar cal = Calendar.getInstance();
 

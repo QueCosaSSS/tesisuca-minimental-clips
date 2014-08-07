@@ -315,6 +315,11 @@ public class MiniMental extends javax.swing.JFrame {
             }
         });
         jTable1.getTableHeader().setReorderingAllowed(false);
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
         jTable1.getColumnModel().getColumn(8).setResizable(false);
         jTable1.getColumnModel().getColumn(8).setPreferredWidth(0);
@@ -614,6 +619,11 @@ public class MiniMental extends javax.swing.JFrame {
         jMenu1.add(jMenuItem1);
 
         jMenuItem3.setText("Pacientes");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem3);
 
         jMenuBar1.add(jMenu1);
@@ -665,6 +675,7 @@ public class MiniMental extends javax.swing.JFrame {
 //        CLIPS_Manager.CLP_Manager clp = new CLP_Manager();
 //        clp.AddFacts();
 //        jTextArea1.setText(clp.Run());
+        jTabbedPane1.setSelectedIndex(2);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void MuestraDetalleEntrevista(String IdEntrevista) {
@@ -698,6 +709,7 @@ public class MiniMental extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        NuevaEntrevistaRapida( );
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -728,6 +740,15 @@ public class MiniMental extends javax.swing.JFrame {
         LlenarTablaEntrevistas(l);
 
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:       
+        jTabbedPane1.setSelectedIndex(1);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTable1MouseClicked
 
     /**
      *
@@ -806,6 +827,11 @@ public class MiniMental extends javax.swing.JFrame {
         dll.setVisible(true);
     }
 
+    private void NuevaEntrevistaRapida( ) {
+        dlg_Minimental dll = new dlg_Minimental(this, true);
+        dll.setVisible(true);
+    }
+        
     private void EditarPaciente(String IdPaciente) {
         cPaciente pct = SessionFactoryUtil.Load(cPaciente.class, Integer.parseInt(IdPaciente));
         dlg_Paciente dlg_pct = new dlg_Paciente(this, rootPaneCheckingEnabled);
