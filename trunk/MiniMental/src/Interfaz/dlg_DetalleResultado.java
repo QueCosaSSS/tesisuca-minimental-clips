@@ -45,12 +45,16 @@ public class dlg_DetalleResultado extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
+        jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
+
         jTA_Diagnostico.setColumns(20);
         jTA_Diagnostico.setRows(5);
         jScrollPane1.setViewportView(jTA_Diagnostico);
 
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Copiar");
 
+        jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Imprimir");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,6 +62,7 @@ public class dlg_DetalleResultado extends javax.swing.JDialog {
             }
         });
 
+        jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Cerrar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

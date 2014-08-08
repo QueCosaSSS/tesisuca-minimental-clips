@@ -225,11 +225,18 @@ public class MiniMental extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(400, 400));
         setResizable(false);
 
+        jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Texto lindo donde explica algo del programa");
 
+        jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Entrevista Rapida");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -237,6 +244,7 @@ public class MiniMental extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Gestion");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -274,22 +282,31 @@ public class MiniMental extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Inicio", jPanel1);
 
+        jPanelGestion.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Tipo de documento:");
 
         jCB_TipoDocumento.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "DNI", "CEDULA", "LC", "LE", "PASAPORTE" }));
 
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Numero:");
 
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Nombre:");
 
+        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Apellido:");
 
+        jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Buscar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
+
+        jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -324,6 +341,8 @@ public class MiniMental extends javax.swing.JFrame {
         jTable1.getColumnModel().getColumn(8).setResizable(false);
         jTable1.getColumnModel().getColumn(8).setPreferredWidth(0);
 
+        jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
+
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -355,6 +374,7 @@ public class MiniMental extends javax.swing.JFrame {
         jTable2.getColumnModel().getColumn(4).setResizable(false);
         jTable2.getColumnModel().getColumn(4).setPreferredWidth(0);
 
+        jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Crear Paciente");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -429,6 +449,11 @@ public class MiniMental extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Gestion", jPanelGestion);
 
+        jPanelEntrevista.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Fecha entrevista:");
 
         jcb_entrevista_ano.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020" }));
@@ -437,22 +462,28 @@ public class MiniMental extends javax.swing.JFrame {
 
         jcb_entrevista_dia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
 
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Valor MiniMental:");
 
         jcb_ValorMinimenta.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "30", "29", "28", "27", "26", "25", "24", "23", "22", "21", "20", "19", "18", "17", "16", "15", "14", "13", "12", "11", "10", "09", "08", "07", "06", "05", "04", "03", "02", "01", "00" }));
 
+        jLabel8.setBackground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Diagnostico:");
 
         jcb_Diagnostico.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "Olvido Benigno", "Demencia Leve", "Demencia Moderada", "Demencia Severa" }));
 
+        jLabel9.setBackground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Tipo de documento:");
 
         jCB_TipoDocumento1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "DNI", "CEDULA", "LC", "LE", "PASAPORTE" }));
 
+        jLabel10.setBackground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Numero:");
 
+        jLabel11.setBackground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Apellido:");
 
+        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Nombre:");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -531,12 +562,15 @@ public class MiniMental extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jButton5.setBackground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Buscar");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
+
+        jScrollPane3.setBackground(new java.awt.Color(255, 255, 255));
 
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -572,6 +606,7 @@ public class MiniMental extends javax.swing.JFrame {
         jTable3.getColumnModel().getColumn(7).setResizable(false);
         jTable3.getColumnModel().getColumn(7).setPreferredWidth(0);
 
+        jButton6.setBackground(new java.awt.Color(255, 255, 255));
         jButton6.setText("Nueva Entrevista");
 
         javax.swing.GroupLayout jPanelEntrevistaLayout = new javax.swing.GroupLayout(jPanelEntrevista);
@@ -608,8 +643,12 @@ public class MiniMental extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Entrevista", jPanelEntrevista);
 
+        jMenuBar1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jMenu1.setBackground(new java.awt.Color(255, 255, 255));
         jMenu1.setText("Gestion");
 
+        jMenuItem1.setBackground(new java.awt.Color(255, 255, 255));
         jMenuItem1.setText("Entrevistas");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -618,6 +657,7 @@ public class MiniMental extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem1);
 
+        jMenuItem3.setBackground(new java.awt.Color(255, 255, 255));
         jMenuItem3.setText("Pacientes");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -628,11 +668,14 @@ public class MiniMental extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
+        jMenu2.setBackground(new java.awt.Color(255, 255, 255));
         jMenu2.setText("Edit");
         jMenuBar1.add(jMenu2);
 
+        jMenu3.setBackground(new java.awt.Color(255, 255, 255));
         jMenu3.setText("Config");
 
+        jMenuItem2.setBackground(new java.awt.Color(255, 255, 255));
         jMenuItem2.setText("Recrear DB");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -748,6 +791,9 @@ public class MiniMental extends javax.swing.JFrame {
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
+                JTable target = (JTable) evt.getSource();
+                int row = target.getSelectedRow();
+                CargarEntrevistas(target.getValueAt(row, 8).toString());
     }//GEN-LAST:event_jTable1MouseClicked
 
     /**
@@ -800,7 +846,7 @@ public class MiniMental extends javax.swing.JFrame {
             objects[0] = sdf.format(entrevista_tmp.getFechaEntrevista().getTime());
             objects[1] = entrevista_tmp.getDiagnostico().getMinimental().getMinimentalCalculado();
             objects[2] = entrevista_tmp.getDiagnostico().getResultado();
-            objects[3] = ".\\src\\Icons\\entrevista_detalle.png";
+            objects[3] = ".\\src\\Icons\\Info.gif";
             objects[4] = entrevista_tmp.getIdEntrevista().toString();
 
             aModel.addRow(objects);
@@ -863,9 +909,9 @@ public class MiniMental extends javax.swing.JFrame {
             objects[3] = paciente_tmp.getNombre();
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/YYYY");
             objects[4] = sdf.format(paciente_tmp.getFechaNacimiento().getTime());
-            objects[5] = ".\\src\\Icons\\new_entrevista.png";
-            objects[6] = ".\\src\\Icons\\new_entrevista.png";
-            objects[7] = ".\\src\\Icons\\new_entrevista.png";
+            objects[5] = ".\\src\\Icons\\Add.gif";
+            objects[6] = ".\\src\\Icons\\Edit.gif";
+            objects[7] = ".\\src\\Icons\\Delete.gif";
             objects[8] = paciente_tmp.getIdPaciente().toString();
 
             aModel.addRow(objects);
@@ -903,7 +949,7 @@ public class MiniMental extends javax.swing.JFrame {
                 objects[3] = pct.getDocumento();
                 objects[4] = pct.getApellido();
                 objects[5] = pct.getNombre();
-                objects[6] = ".\\src\\Icons\\entrevista_detalle.png";
+                objects[6] = ".\\src\\Icons\\Info.gif";
                 objects[7] = entrevista_tmp.getIdEntrevista().toString();    
         }
             aModel.addRow(objects);
