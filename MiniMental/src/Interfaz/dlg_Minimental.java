@@ -60,6 +60,7 @@ public class dlg_Minimental extends javax.swing.JDialog {
         buttonGroup21 = new javax.swing.ButtonGroup();
         buttonGroup22 = new javax.swing.ButtonGroup();
         buttonGroup23 = new javax.swing.ButtonGroup();
+        buttonGroup24 = new javax.swing.ButtonGroup();
         jButton1 = new javax.swing.JButton();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel6 = new javax.swing.JPanel();
@@ -162,6 +163,7 @@ public class dlg_Minimental extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Evaluar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -169,10 +171,16 @@ public class dlg_Minimental extends javax.swing.JDialog {
             }
         });
 
+        jTabbedPane2.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Escolaridad del paciente:");
 
         jcb_Escolaridad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "menos de 6 años", "entre 6 y 12 años", "mas de 12 años" }));
 
+        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Fecha en la que se realizo la entrevista:");
 
         jcb_entrevista_ano.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020" }));
@@ -181,48 +189,63 @@ public class dlg_Minimental extends javax.swing.JDialog {
 
         jcb_entrevista_dia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
 
+        jLabel24.setBackground(new java.awt.Color(255, 255, 255));
         jLabel24.setText("¿El paciente tiene problemas auditivos?");
 
+        jrb_respuesta_problemas_auditivos_si.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup14.add(jrb_respuesta_problemas_auditivos_si);
         jrb_respuesta_problemas_auditivos_si.setSelected(true);
         jrb_respuesta_problemas_auditivos_si.setText("Si");
 
+        jRadioButton17.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup14.add(jRadioButton17);
         jRadioButton17.setText("No");
 
+        jLabel25.setBackground(new java.awt.Color(255, 255, 255));
         jLabel25.setText("¿El paciente esta deprimido?");
 
+        jRadioButton19.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup15.add(jRadioButton19);
         jRadioButton19.setText("No");
 
+        jrb_respuesta_deprimido_si.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup15.add(jrb_respuesta_deprimido_si);
         jrb_respuesta_deprimido_si.setSelected(true);
         jrb_respuesta_deprimido_si.setText("Si");
 
+        jLabel31.setBackground(new java.awt.Color(255, 255, 255));
         jLabel31.setText("¿El paciente esta ansioso?");
 
+        jrb_respuesta_ansioso_si.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup21.add(jrb_respuesta_ansioso_si);
         jrb_respuesta_ansioso_si.setSelected(true);
         jrb_respuesta_ansioso_si.setText("Si");
 
+        jRadioButton25.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup21.add(jRadioButton25);
         jRadioButton25.setText("No");
 
+        jLabel32.setBackground(new java.awt.Color(255, 255, 255));
         jLabel32.setText("¿El paciente o el familiar manifiestan un cambio en el caracter?");
 
+        jrb_respuesta_impacto_caracter_si.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup22.add(jrb_respuesta_impacto_caracter_si);
         jrb_respuesta_impacto_caracter_si.setSelected(true);
         jrb_respuesta_impacto_caracter_si.setText("Si");
 
+        jRadioButton26.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup22.add(jRadioButton26);
         jRadioButton26.setText("No");
 
+        jLabel33.setBackground(new java.awt.Color(255, 255, 255));
         jLabel33.setText("¿El paciente o el familiar manifiestan unen como el paciente se desenvuelve?");
 
+        jrb_respuesta_impacto_funcional_si.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup23.add(jrb_respuesta_impacto_funcional_si);
         jrb_respuesta_impacto_funcional_si.setSelected(true);
         jrb_respuesta_impacto_funcional_si.setText("Si");
 
+        jRadioButton27.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup23.add(jRadioButton27);
         jRadioButton27.setText("No");
 
@@ -323,15 +346,22 @@ public class dlg_Minimental extends javax.swing.JDialog {
 
         jTabbedPane2.addTab("Entrevista", jPanel6);
 
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+
+        buttonGroup24.add(jRadioButton6);
         jRadioButton6.setText("No");
 
+        jrb_respuesta_pais_si.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup24.add(jrb_respuesta_pais_si);
         jrb_respuesta_pais_si.setSelected(true);
         jrb_respuesta_pais_si.setText("Si");
 
+        jrb_respuesta_ciudad_si.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup2.add(jrb_respuesta_ciudad_si);
         jrb_respuesta_ciudad_si.setSelected(true);
         jrb_respuesta_ciudad_si.setText("Si");
 
+        jRadioButton4.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup2.add(jRadioButton4);
         jRadioButton4.setText("No");
 
@@ -350,63 +380,85 @@ public class dlg_Minimental extends javax.swing.JDialog {
 
         jcb_respuesta_diasemana.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo" }));
 
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Día de la semana contestado:");
 
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Fecha contestada en la entrevista:");
 
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Estacion contestada en la entrevista:");
 
+        jLabel15.setBackground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("Contesta correctamente en qué ciudad estamos:");
 
+        jLabel16.setBackground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("Contesta correctamente en qué país estamos:");
 
+        jLabel8.setBackground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Contesta correctamente en qué lugar estamos:");
 
+        jLabel9.setBackground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Contesta correctamente en qué calle estamos:");
 
+        jLabel10.setBackground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Fue traído por algún tercero:");
 
+        jLabel11.setBackground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("El consultorio se encuentra en una avenida:");
 
+        jLabel13.setBackground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("El consultorio se encuentra en un entrepiso:");
 
+        jLabel14.setBackground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Piso contestado en la entrevista:");
 
+        jRadioButton7.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(jRadioButton7);
         jRadioButton7.setText("No");
 
+        jrb_respuestas_lugar_si.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(jrb_respuestas_lugar_si);
         jrb_respuestas_lugar_si.setSelected(true);
         jrb_respuestas_lugar_si.setText("Si");
 
+        jrb_respuesta_calle_si.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup4.add(jrb_respuesta_calle_si);
         jrb_respuesta_calle_si.setSelected(true);
         jrb_respuesta_calle_si.setText("Si");
 
+        jRadioButton10.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup4.add(jRadioButton10);
         jRadioButton10.setText("No");
 
+        jrb_respuesta_traidotercero_si.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup5.add(jrb_respuesta_traidotercero_si);
         jrb_respuesta_traidotercero_si.setSelected(true);
         jrb_respuesta_traidotercero_si.setText("Si");
 
+        jRadioButton12.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup5.add(jRadioButton12);
         jRadioButton12.setText("No");
 
+        jrb_respuesta_avenida_si.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup6.add(jrb_respuesta_avenida_si);
         jrb_respuesta_avenida_si.setSelected(true);
         jrb_respuesta_avenida_si.setText("Si");
 
+        jRadioButton14.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup6.add(jRadioButton14);
         jRadioButton14.setText("No");
 
+        jrb_respuesta_entrepiso_si.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup8.add(jrb_respuesta_entrepiso_si);
         jrb_respuesta_entrepiso_si.setSelected(true);
         jrb_respuesta_entrepiso_si.setText("Si");
 
+        jRadioButton18.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup8.add(jRadioButton18);
         jRadioButton18.setText("No");
 
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Piso en el que se encuentra el consultorio:");
 
         jcb_respuesta_piso.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-4", "-3", "-2", "-1", "PB", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20" }));
@@ -542,14 +594,19 @@ public class dlg_Minimental extends javax.swing.JDialog {
 
         jTabbedPane2.addTab("Orientacion", jPanel3);
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("¿Cuantas palabras repite correctamente?");
 
         jcb_PalabrasRepetidas.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0", "1", "2", "3" }));
 
+        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("¿Cual es la clasificacion en atencion?");
 
         jcb_ClasificacionAtencion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0", "1", "2", "3", "4", "5" }));
 
+        jLabel17.setBackground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("¿Cuantas palabras recordo?");
 
         jcb_PalabrasRecordadas.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0", "1", "2", "3" }));
@@ -591,35 +648,48 @@ public class dlg_Minimental extends javax.swing.JDialog {
 
         jTabbedPane2.addTab("Memoria", jPanel1);
 
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel18.setBackground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("¿Repite correctamente la frase?");
 
+        jrb_RepiteFrase_si.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup9.add(jrb_RepiteFrase_si);
         jrb_RepiteFrase_si.setSelected(true);
         jrb_RepiteFrase_si.setText("Si");
 
+        jRadioButton2.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup9.add(jRadioButton2);
         jRadioButton2.setText("No");
 
+        jLabel19.setBackground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("¿Cumple la orden dada por escrito correctamente?");
 
+        jrb_OrdenCorrecta_si.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup10.add(jrb_OrdenCorrecta_si);
         jrb_OrdenCorrecta_si.setSelected(true);
         jrb_OrdenCorrecta_si.setText("Si");
 
+        jRadioButton5.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup10.add(jRadioButton5);
         jRadioButton5.setText("No");
 
+        jLabel20.setBackground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("¿Escribe correctamente la frase?");
 
+        jrb_EscribeFrase_si.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup11.add(jrb_EscribeFrase_si);
         jrb_EscribeFrase_si.setSelected(true);
         jrb_EscribeFrase_si.setText("Si");
 
+        jRadioButton9.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup11.add(jRadioButton9);
         jRadioButton9.setText("No");
 
+        jLabel21.setBackground(new java.awt.Color(255, 255, 255));
         jLabel21.setText("¿Cuantos pasos de la accion indicada realiza correctamente?");
 
+        jLabel22.setBackground(new java.awt.Color(255, 255, 255));
         jLabel22.setText("¿Cuantos objetos pudo nombrar?");
 
         jcb_ObjetosNombrados.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0", "1", "2" }));
@@ -698,12 +768,17 @@ public class dlg_Minimental extends javax.swing.JDialog {
 
         jTabbedPane2.addTab("Lenguaje", jPanel2);
 
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel23.setBackground(new java.awt.Color(255, 255, 255));
         jLabel23.setText("¿Copia correctamente el dibujo?");
 
+        jrb_Dibujo_si.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup13.add(jrb_Dibujo_si);
         jrb_Dibujo_si.setSelected(true);
         jrb_Dibujo_si.setText("Si");
 
+        jRadioButton16.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup13.add(jRadioButton16);
         jRadioButton16.setText("No");
 
@@ -733,48 +808,70 @@ public class dlg_Minimental extends javax.swing.JDialog {
 
         jTabbedPane2.addTab("Dibujo", jPanel4);
 
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+
+        jRadioButton20.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup16.add(jRadioButton20);
         jRadioButton20.setText("No");
 
+        jrb_OlvidaHechosRecientes_si.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup16.add(jrb_OlvidaHechosRecientes_si);
         jrb_OlvidaHechosRecientes_si.setSelected(true);
         jrb_OlvidaHechosRecientes_si.setText("Si");
+        jrb_OlvidaHechosRecientes_si.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jrb_OlvidaHechosRecientes_siActionPerformed(evt);
+            }
+        });
 
+        jLabel26.setBackground(new java.awt.Color(255, 255, 255));
         jLabel26.setText("¿Olvida hechos recientes?");
 
+        jLabel27.setBackground(new java.awt.Color(255, 255, 255));
         jLabel27.setText("¿El paciente indica que los olvidos van en aumento?");
 
+        jrb_OlvidosProgresivo_si.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup17.add(jrb_OlvidosProgresivo_si);
         jrb_OlvidosProgresivo_si.setSelected(true);
         jrb_OlvidosProgresivo_si.setText("Si");
 
+        jRadioButton21.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup17.add(jRadioButton21);
         jRadioButton21.setText("No");
 
+        jLabel28.setBackground(new java.awt.Color(255, 255, 255));
         jLabel28.setText("¿El paciente se queja de los olvidos?");
 
+        jrb_QuejaPaciente_si.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup18.add(jrb_QuejaPaciente_si);
         jrb_QuejaPaciente_si.setSelected(true);
         jrb_QuejaPaciente_si.setText("Si");
 
+        jRadioButton22.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup18.add(jRadioButton22);
         jRadioButton22.setText("No");
 
+        jLabel29.setBackground(new java.awt.Color(255, 255, 255));
         jLabel29.setText("¿Los familiares se quejan de los olvidos del paciente?");
 
+        jrb_QuejaFamiliares_si.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup19.add(jrb_QuejaFamiliares_si);
         jrb_QuejaFamiliares_si.setSelected(true);
         jrb_QuejaFamiliares_si.setText("Si");
 
+        jRadioButton23.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup19.add(jRadioButton23);
         jRadioButton23.setText("No");
 
+        jLabel30.setBackground(new java.awt.Color(255, 255, 255));
         jLabel30.setText("¿El paciente minimiza los olvidos?");
 
+        jrb_MinimizaOlvidos_si.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup20.add(jrb_MinimizaOlvidos_si);
         jrb_MinimizaOlvidos_si.setSelected(true);
         jrb_MinimizaOlvidos_si.setText("Si");
 
+        jRadioButton24.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup20.add(jRadioButton24);
         jRadioButton24.setText("No");
 
@@ -856,7 +953,7 @@ public class dlg_Minimental extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 636, Short.MAX_VALUE)
+            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jTabbedPane2)
         );
         layout.setVerticalGroup(
@@ -956,6 +1053,10 @@ public class dlg_Minimental extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_jcb_respuesta_estacionActionPerformed
 
+    private void jrb_OlvidaHechosRecientes_siActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrb_OlvidaHechosRecientes_siActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jrb_OlvidaHechosRecientes_siActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1014,6 +1115,7 @@ public class dlg_Minimental extends javax.swing.JDialog {
     private javax.swing.ButtonGroup buttonGroup21;
     private javax.swing.ButtonGroup buttonGroup22;
     private javax.swing.ButtonGroup buttonGroup23;
+    private javax.swing.ButtonGroup buttonGroup24;
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.ButtonGroup buttonGroup4;
     private javax.swing.ButtonGroup buttonGroup5;
