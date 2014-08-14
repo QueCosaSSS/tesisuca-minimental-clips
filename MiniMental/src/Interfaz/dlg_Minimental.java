@@ -1023,18 +1023,23 @@ public class dlg_Minimental extends javax.swing.JDialog {
 
         clp_manager.ProcesarEntrevista(Entrevista);
 
-        if (IdPaciente > 0) {
-            Entrevista.setIdPaciente(IdPaciente);
+//        if (IdPaciente > 0) {
+        if (IdPaciente != null) {
+            if (IdPaciente > 0) {
+                Entrevista.setIdPaciente(IdPaciente);
+            }
         }
 
         SessionFactoryUtil.Save(Entrevista);
 
-        if (IdPaciente > 0) {
-            
-            cPaciente pct = SessionFactoryUtil.Load(cPaciente.class, IdPaciente);
-            pct.getEntrevistas().add(Entrevista);
+//        if (IdPaciente > 0) {
+        if (IdPaciente != null) {            
+            if (IdPaciente > 0) {   
+                cPaciente pct = SessionFactoryUtil.Load(cPaciente.class, IdPaciente);
+                pct.getEntrevistas().add(Entrevista);
 
-            SessionFactoryUtil.Save(pct);
+                SessionFactoryUtil.Save(pct);
+            }
         }
 
         dlg_DetalleResultado dlg_dr = new dlg_DetalleResultado(null, rootPaneCheckingEnabled);

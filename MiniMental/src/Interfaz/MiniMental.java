@@ -34,15 +34,15 @@ public class MiniMental extends javax.swing.JFrame {
     public MiniMental() {
         initComponents();
 
-        jTable1.getColumnModel().getColumn(8).setMinWidth(0);
-        jTable1.getColumnModel().getColumn(8).setMaxWidth(0);
-        jTable1.getColumnModel().getColumn(8).setPreferredWidth(0);
+        jTableGestion.getColumnModel().getColumn(9).setMinWidth(0);
+        jTableGestion.getColumnModel().getColumn(9).setMaxWidth(0);
+        jTableGestion.getColumnModel().getColumn(9).setPreferredWidth(0);
 
-        jTable2.getColumnModel().getColumn(4).setMinWidth(0);
-        jTable2.getColumnModel().getColumn(4).setMaxWidth(0);
-        jTable2.getColumnModel().getColumn(4).setPreferredWidth(0);
+        jTableGestionHistorial.getColumnModel().getColumn(4).setMinWidth(0);
+        jTableGestionHistorial.getColumnModel().getColumn(4).setMaxWidth(0);
+        jTableGestionHistorial.getColumnModel().getColumn(4).setPreferredWidth(0);
 
-        jTable1.addMouseListener(new MouseListener() {
+        jTableGestion.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
 //                throw new UnsupportedOperationException("Not supported yet.");
@@ -52,20 +52,24 @@ public class MiniMental extends javax.swing.JFrame {
                 // do some action if appropriate column
                 switch (col) {
                     case 5: {
-                        NuevaEntrevista(target.getValueAt(row, 8).toString());
+                        CargarEntrevistas(target.getValueAt(row, 9).toString());
                         break;
                     }
                     case 6: {
-                        EditarPaciente(target.getValueAt(row, 8).toString());
+                        NuevaEntrevista(target.getValueAt(row, 9).toString());
                         break;
                     }
                     case 7: {
+                        EditarPaciente(target.getValueAt(row, 9).toString());
+                        break;
+                    }
+                    case 8: {
                         BorrarPaciente(target.getValueAt(row, 8).toString());
                         break;
                     }
-                    default: {
-                        CargarEntrevistas(target.getValueAt(row, 8).toString());
-                    }
+//                    default: {
+//                        CargarEntrevistas(target.getValueAt(row, 8).toString());
+//                    }
                 }
             }
 
@@ -90,7 +94,7 @@ public class MiniMental extends javax.swing.JFrame {
             }
         });
 
-        jTable2.addMouseListener(new MouseListener() {
+        jTableGestionHistorial.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
 //                throw new UnsupportedOperationException("Not supported yet.");
@@ -190,9 +194,9 @@ public class MiniMental extends javax.swing.JFrame {
         jTF_PacienteApellido = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTableGestion = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        jTableGestionHistorial = new javax.swing.JTable();
         jButton4 = new javax.swing.JButton();
         jPanelEntrevista = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
@@ -266,7 +270,7 @@ public class MiniMental extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(142, 142, 142)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(235, Short.MAX_VALUE))
+                .addContainerGap(339, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -308,19 +312,19 @@ public class MiniMental extends javax.swing.JFrame {
 
         jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTableGestion.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Dcumneto", "Tipo", "Apellido", "Nombre", "Fecha Nacimiento", "Entrevista", "Editar", "Borrar", "IdPaciente"
+                "Dcumneto", "Tipo", "Apellido", "Nombre", "Fecha Nacimiento", "Historial", "Entrevista", "Editar", "Borrar", "IdPaciente"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -331,19 +335,19 @@ public class MiniMental extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jTableGestion.getTableHeader().setReorderingAllowed(false);
+        jTableGestion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTable1MouseClicked(evt);
+                jTableGestionMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(jTable1);
-        jTable1.getColumnModel().getColumn(8).setResizable(false);
-        jTable1.getColumnModel().getColumn(8).setPreferredWidth(0);
+        jScrollPane1.setViewportView(jTableGestion);
+        jTableGestion.getColumnModel().getColumn(9).setResizable(false);
+        jTableGestion.getColumnModel().getColumn(9).setPreferredWidth(0);
 
         jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        jTableGestionHistorial.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -366,13 +370,13 @@ public class MiniMental extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTable2);
-        jTable2.getColumnModel().getColumn(0).setResizable(false);
-        jTable2.getColumnModel().getColumn(1).setResizable(false);
-        jTable2.getColumnModel().getColumn(2).setResizable(false);
-        jTable2.getColumnModel().getColumn(3).setResizable(false);
-        jTable2.getColumnModel().getColumn(4).setResizable(false);
-        jTable2.getColumnModel().getColumn(4).setPreferredWidth(0);
+        jScrollPane2.setViewportView(jTableGestionHistorial);
+        jTableGestionHistorial.getColumnModel().getColumn(0).setResizable(false);
+        jTableGestionHistorial.getColumnModel().getColumn(1).setResizable(false);
+        jTableGestionHistorial.getColumnModel().getColumn(2).setResizable(false);
+        jTableGestionHistorial.getColumnModel().getColumn(3).setResizable(false);
+        jTableGestionHistorial.getColumnModel().getColumn(4).setResizable(false);
+        jTableGestionHistorial.getColumnModel().getColumn(4).setPreferredWidth(0);
 
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Crear Paciente");
@@ -411,7 +415,7 @@ public class MiniMental extends javax.swing.JFrame {
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jTF_NumeroDocumento, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 205, Short.MAX_VALUE)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelGestionLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -618,7 +622,7 @@ public class MiniMental extends javax.swing.JFrame {
                     .addGroup(jPanelEntrevistaLayout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE))
+                        .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE))
                     .addGroup(jPanelEntrevistaLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane3))
@@ -694,7 +698,7 @@ public class MiniMental extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 717, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 821, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -789,12 +793,12 @@ public class MiniMental extends javax.swing.JFrame {
         jTabbedPane1.setSelectedIndex(1);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
-    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+    private void jTableGestionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableGestionMouseClicked
         // TODO add your handling code here:
-                JTable target = (JTable) evt.getSource();
-                int row = target.getSelectedRow();
-                CargarEntrevistas(target.getValueAt(row, 8).toString());
-    }//GEN-LAST:event_jTable1MouseClicked
+//                JTable target = (JTable) evt.getSource();
+//                int row = target.getSelectedRow();
+//                CargarEntrevistas(target.getValueAt(row, 8).toString());
+    }//GEN-LAST:event_jTableGestionMouseClicked
 
     /**
      *
@@ -833,7 +837,7 @@ public class MiniMental extends javax.swing.JFrame {
     }
 
     private void LlenarTablaEntrevistasPaciente(Set<cEntrevista> Entrevistas) {
-        DefaultTableModel aModel = (DefaultTableModel) jTable2.getModel();
+        DefaultTableModel aModel = (DefaultTableModel) jTableGestionHistorial.getModel();
 
         aModel.setRowCount(0);
 
@@ -851,11 +855,11 @@ public class MiniMental extends javax.swing.JFrame {
 
             aModel.addRow(objects);
 
-            jTable2.getColumnModel().getColumn(3).setCellRenderer(new ImageRenderer());
+            jTableGestionHistorial.getColumnModel().getColumn(3).setCellRenderer(new ImageRenderer());
 
-            jTable2.getColumnModel().getColumn(4).setMinWidth(0);
-            jTable2.getColumnModel().getColumn(4).setMaxWidth(0);
-            jTable2.getColumnModel().getColumn(4).setPreferredWidth(0);
+            jTableGestionHistorial.getColumnModel().getColumn(4).setMinWidth(0);
+            jTableGestionHistorial.getColumnModel().getColumn(4).setMaxWidth(0);
+            jTableGestionHistorial.getColumnModel().getColumn(4).setPreferredWidth(0);
 
         }
 
@@ -893,7 +897,7 @@ public class MiniMental extends javax.swing.JFrame {
 
     private void LlenarTablaPacientes(List l) {
 
-        DefaultTableModel aModel = (DefaultTableModel) jTable1.getModel();
+        DefaultTableModel aModel = (DefaultTableModel) jTableGestion.getModel();
 
         aModel.setRowCount(0);
 
@@ -901,7 +905,7 @@ public class MiniMental extends javax.swing.JFrame {
         ListIterator iterator = l.listIterator();
         //put them into jTable
         while (iterator.hasNext()) {
-            Object[] objects = new Object[9];
+            Object[] objects = new Object[10];
             cPaciente paciente_tmp = (cPaciente) iterator.next();
             objects[0] = paciente_tmp.getDocumento();
             objects[1] = paciente_tmp.getTipoDocumento();
@@ -909,20 +913,22 @@ public class MiniMental extends javax.swing.JFrame {
             objects[3] = paciente_tmp.getNombre();
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/YYYY");
             objects[4] = sdf.format(paciente_tmp.getFechaNacimiento().getTime());
-            objects[5] = ".\\src\\Icons\\Add.gif";
-            objects[6] = ".\\src\\Icons\\Edit.gif";
-            objects[7] = ".\\src\\Icons\\Delete.gif";
-            objects[8] = paciente_tmp.getIdPaciente().toString();
+            objects[5] = ".\\src\\Icons\\propuesta_buscar.png";
+            objects[6] = ".\\src\\Icons\\Add.gif";
+            objects[7] = ".\\src\\Icons\\Edit.gif";
+            objects[8] = ".\\src\\Icons\\Delete.gif";
+            objects[9] = paciente_tmp.getIdPaciente().toString();
 
             aModel.addRow(objects);
 
-            jTable1.getColumnModel().getColumn(5).setCellRenderer(new ImageRenderer());
-            jTable1.getColumnModel().getColumn(6).setCellRenderer(new ImageRenderer());
-            jTable1.getColumnModel().getColumn(7).setCellRenderer(new ImageRenderer());
+            jTableGestion.getColumnModel().getColumn(5).setCellRenderer(new ImageRendererHistorial());
+            jTableGestion.getColumnModel().getColumn(6).setCellRenderer(new ImageRenderer());
+            jTableGestion.getColumnModel().getColumn(7).setCellRenderer(new ImageRenderer());
+            jTableGestion.getColumnModel().getColumn(8).setCellRenderer(new ImageRenderer());
 
-            jTable1.getColumnModel().getColumn(8).setMinWidth(0);
-            jTable1.getColumnModel().getColumn(8).setMaxWidth(0);
-            jTable1.getColumnModel().getColumn(8).setPreferredWidth(0);
+            jTableGestion.getColumnModel().getColumn(9).setMinWidth(0);
+            jTableGestion.getColumnModel().getColumn(9).setMaxWidth(0);
+            jTableGestion.getColumnModel().getColumn(9).setPreferredWidth(0);
 
         }
     }
@@ -969,6 +975,7 @@ public class MiniMental extends javax.swing.JFrame {
         public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
             JLabel label = new JLabel();
 
+            
             if (value != null) {
                 label.setHorizontalAlignment(JLabel.CENTER);
                 //value is parameter which filled by byteOfImage
@@ -979,6 +986,22 @@ public class MiniMental extends javax.swing.JFrame {
             return label;
         }
     }
+    class ImageRendererHistorial extends DefaultTableCellRenderer {
+
+        @Override
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+            JLabel label = new JLabel();
+
+            if (value != null) {
+                label.setHorizontalAlignment(JLabel.CENTER);
+                //value is parameter which filled by byteOfImage
+                label.setIcon(new ImageIcon((String) value));
+                label.setToolTipText("Ver el Historial de Entrevistas");
+            }
+
+            return label;
+        }
+    }    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -1021,9 +1044,9 @@ public class MiniMental extends javax.swing.JFrame {
     private javax.swing.JTextField jTF_PacienteNombre;
     private javax.swing.JTextField jTF_PacienteNombre1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTableGestion;
+    private javax.swing.JTable jTableGestionHistorial;
     private javax.swing.JComboBox jcb_Diagnostico;
     private javax.swing.JComboBox jcb_ValorMinimenta;
     private javax.swing.JComboBox jcb_entrevista_ano;
