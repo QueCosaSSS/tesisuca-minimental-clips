@@ -913,7 +913,7 @@ public class MiniMental extends javax.swing.JFrame {
             objects[3] = paciente_tmp.getNombre();
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/YYYY");
             objects[4] = sdf.format(paciente_tmp.getFechaNacimiento().getTime());
-            objects[5] = ".\\src\\Icons\\propuesta_buscar.png";
+            objects[5] = ".\\src\\Icons\\Lupa_grisLupa_Gris.gif";
             objects[6] = ".\\src\\Icons\\Add.gif";
             objects[7] = ".\\src\\Icons\\Edit.gif";
             objects[8] = ".\\src\\Icons\\Delete.gif";
@@ -922,9 +922,9 @@ public class MiniMental extends javax.swing.JFrame {
             aModel.addRow(objects);
 
             jTableGestion.getColumnModel().getColumn(5).setCellRenderer(new ImageRendererHistorial());
-            jTableGestion.getColumnModel().getColumn(6).setCellRenderer(new ImageRenderer());
-            jTableGestion.getColumnModel().getColumn(7).setCellRenderer(new ImageRenderer());
-            jTableGestion.getColumnModel().getColumn(8).setCellRenderer(new ImageRenderer());
+            jTableGestion.getColumnModel().getColumn(6).setCellRenderer(new ImageRendererEntrevista());
+            jTableGestion.getColumnModel().getColumn(7).setCellRenderer(new ImageRendererEditar());
+            jTableGestion.getColumnModel().getColumn(8).setCellRenderer(new ImageRendererBorrar());
 
             jTableGestion.getColumnModel().getColumn(9).setMinWidth(0);
             jTableGestion.getColumnModel().getColumn(9).setMaxWidth(0);
@@ -980,7 +980,7 @@ public class MiniMental extends javax.swing.JFrame {
                 label.setHorizontalAlignment(JLabel.CENTER);
                 //value is parameter which filled by byteOfImage
                 label.setIcon(new ImageIcon((String) value));
-                label.setToolTipText("Agregar Entrevista");
+                label.setToolTipText("Ver Detalle de la Entrevista");
             }
 
             return label;
@@ -996,12 +996,64 @@ public class MiniMental extends javax.swing.JFrame {
                 label.setHorizontalAlignment(JLabel.CENTER);
                 //value is parameter which filled by byteOfImage
                 label.setIcon(new ImageIcon((String) value));
-                label.setToolTipText("Ver el Historial de Entrevistas");
+                label.setToolTipText("Ver el Historial de la Entrevistas");
             }
 
             return label;
         }
     }    
+    class ImageRendererEntrevista extends DefaultTableCellRenderer {
+
+        @Override
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+            JLabel label = new JLabel();
+
+            
+            if (value != null) {
+                label.setHorizontalAlignment(JLabel.CENTER);
+                //value is parameter which filled by byteOfImage
+                label.setIcon(new ImageIcon((String) value));
+                label.setToolTipText("Agregar Entrevista");
+            }
+
+            return label;
+        }
+    }
+        class ImageRendererEditar extends DefaultTableCellRenderer {
+
+        @Override
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+            JLabel label = new JLabel();
+
+            
+            if (value != null) {
+                label.setHorizontalAlignment(JLabel.CENTER);
+                //value is parameter which filled by byteOfImage
+                label.setIcon(new ImageIcon((String) value));
+                label.setToolTipText("Editar Entrevista");
+            }
+
+            return label;
+        }
+    }
+    class ImageRendererBorrar extends DefaultTableCellRenderer {
+
+        @Override
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+            JLabel label = new JLabel();
+
+            
+            if (value != null) {
+                label.setHorizontalAlignment(JLabel.CENTER);
+                //value is parameter which filled by byteOfImage
+                label.setIcon(new ImageIcon((String) value));
+                label.setToolTipText("Borrar Entrevista");
+            }
+
+            return label;
+        }
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
