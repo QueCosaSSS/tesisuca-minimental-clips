@@ -1012,7 +1012,7 @@ public class dlg_Minimental extends javax.swing.JDialog {
 
         Entrevista.setOlvidaHechosRecientes(jrb_OlvidaHechosRecientes_si.isSelected());
         Entrevista.setOlvidoProgresa(jrb_OlvidosProgresivo_si.isSelected());
-        Entrevista.setQuejaOlvidoPaciente(jrb_QuejaPaciente_si.isSelected());
+//        Entrevista.setQuejaOlvidoPaciente(jrb_QuejaPaciente_si.isSelected());
         Entrevista.setQuejaOlvidoFamiliar(jrb_QuejaFamiliares_si.isSelected());
 
         Entrevista.setPacienteMinimizaOlvidos(jrb_MinimizaOlvidos_si.isSelected());

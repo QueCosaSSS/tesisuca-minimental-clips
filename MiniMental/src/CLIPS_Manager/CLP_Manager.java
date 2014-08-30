@@ -129,7 +129,7 @@ public class CLP_Manager {
         tmp_fact += this.AddSlot("Dibujo_CopiaCorrectamenteDibujo", Entrevista.getCopiaCorrectamenteDibujo().toString());
         tmp_fact += this.AddSlot("Olvido_OlvidaHechosRecientes", Entrevista.getOlvidaHechosRecientes().toString());
         tmp_fact += this.AddSlot("Olvido_OlvidoProgresa", Entrevista.getOlvidoProgresa().toString());
-        tmp_fact += this.AddSlot("Olvido_QuejaOlvidoPaciente", Entrevista.getQuejaOlvidoPaciente().toString());
+//        tmp_fact += this.AddSlot("Olvido_QuejaOlvidoPaciente", Entrevista.getQuejaOlvidoPaciente().toString());
         tmp_fact += this.AddSlot("Olvido_QuejaOlvidoFamiliar", Entrevista.getQuejaOlvidoFamiliar().toString());
         tmp_fact += this.AddSlot("Olvido_PacienteMinimizaOlvidos", Entrevista.getPacienteMinimizaOlvidos().toString());
         tmp_fact += this.AddSlot("Olvido_ImpactoFuncional", Entrevista.getHayImpactoFuncional().toString());
@@ -169,7 +169,7 @@ public class CLP_Manager {
                     diagnostico.setResultado(evaluado.get(i).getFactSlot("Resultado").toString());
                 }
                 if (!evaluado.get(i).getFactSlot("cMiniMental_Calculado").toString().isEmpty()) {
-                    cMiniMental minimental = new cMiniMental();
+                    cMiniMental minimental = new cMiniMental();                    
                     minimental.setMinimentalCalculado(evaluado.get(i).getFactSlot("cMiniMental_Calculado").floatValue());
                     FillMinimental(minimental);
                     FillDetalle(diagnostico);
