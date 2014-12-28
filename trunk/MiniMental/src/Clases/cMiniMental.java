@@ -38,7 +38,9 @@ public class cMiniMental implements Serializable{
     public void setDibujo(Float Dibujo) {
         this.Dibujo = Dibujo;
     }
-
+    public void setDibujo(Integer Dibujo) {
+        this.Dibujo = Dibujo.floatValue();
+    }
 
     /**
      * Get the value of Lenguaje
@@ -99,6 +101,10 @@ public class cMiniMental implements Serializable{
 
     public void setMinimentalCalculado(Float Calculado) {
         this.MinimentalCalculado = Calculado;
+    }
+    
+    public void setMinimentalCalculado(Integer Calculado) {
+        this.MinimentalCalculado = Calculado.floatValue();
     }
     
     

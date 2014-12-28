@@ -95,6 +95,10 @@ public class cLenguaje implements Serializable{
         this.Accion = Accion;
     }
 
+    public void setAccion(Integer Accion) {
+        this.Accion = Accion.floatValue();
+    }
+    
     public Float getLenguajeCalculado() {
         return LenguajeCalculado;
     }
@@ -103,7 +107,9 @@ public class cLenguaje implements Serializable{
         this.LenguajeCalculado = Calculado;
     }
 
-    
+    public void setLenguajeCalculado(Integer Calculado) {
+        this.LenguajeCalculado = Calculado.floatValue();
+    }    
     
     
     

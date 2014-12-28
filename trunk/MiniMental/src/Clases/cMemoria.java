@@ -34,7 +34,9 @@ public class cMemoria implements Serializable{
     public void setRecuerdo(Float Recuerdo) {
         this.Recuerdo = Recuerdo;
     }
-
+    public void setRecuerdo(Integer Recuerdo) {
+        this.Recuerdo = Recuerdo.floatValue();
+    }
 
     /**
      * Get the value of Atencion
@@ -53,7 +55,9 @@ public class cMemoria implements Serializable{
     public void setAtencion(Float Atencion) {
         this.Atencion = Atencion;
     }
-
+    public void setAtencion(Integer Atencion) {
+        this.Atencion = Atencion.floatValue();
+    }
 
     /**
      * Get the value of Fijacion
@@ -72,7 +76,9 @@ public class cMemoria implements Serializable{
     public void setFijacion(Float cFijacion) {
         this.Fijacion = cFijacion;
     }
-
+    public void setFijacion(Integer cFijacion) {
+        this.Fijacion = cFijacion.floatValue();
+    }
     public Float getMemoriaCalculado() {
         return MemoriaCalculado;
     }
@@ -80,5 +86,7 @@ public class cMemoria implements Serializable{
     public void setMemoriaCalculado(Float Calculado) {
         this.MemoriaCalculado = Calculado;
     }
-
+    public void setMemoriaCalculado(Integer Calculado) {
+        this.MemoriaCalculado = Calculado.floatValue();
+    }
 }

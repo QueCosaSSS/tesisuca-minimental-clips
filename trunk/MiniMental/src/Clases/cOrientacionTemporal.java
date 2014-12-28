@@ -27,7 +27,9 @@ public class cOrientacionTemporal implements Serializable{
     public void setFecha(Float Fecha) {
         this.Fecha = Fecha;
     }
-
+    public void setFecha(Integer Fecha) {
+        this.Fecha = Fecha.floatValue();
+    }
     public Boolean getEstacion() {
         return Estacion;
     }
@@ -43,7 +45,9 @@ public class cOrientacionTemporal implements Serializable{
     public void setMes(Float Mes) {
         this.Mes = Mes;
     }
-
+public void setMes(Integer Mes) {
+        this.Mes = Mes.floatValue();
+    }
     public Float getAno() {
         return Ano;
     }
@@ -52,6 +56,10 @@ public class cOrientacionTemporal implements Serializable{
         this.Ano = Ano;
     }
 
+        public void setAno(Integer Ano) {
+        this.Ano = Ano.floatValue();
+    }
+        
     public Float getOrientacionTemporalCalculado() {
         return OrientacionTemporalCalculado;
     }
@@ -59,5 +67,8 @@ public class cOrientacionTemporal implements Serializable{
     public void setOrientacionTemporalCalculado(Float Calculado) {
         this.OrientacionTemporalCalculado = Calculado;
     }
-    
+
+        public void setOrientacionTemporalCalculado(Integer Calculado) {
+        this.OrientacionTemporalCalculado = Calculado.floatValue();
+    }
 }
