@@ -46,5 +46,7 @@ public class cOrientacion implements Serializable{
     public void setOrientacionCalculado(Float Calculado) {
         this.OrientacionCalculado = Calculado;
     }
-    
+    public void setOrientacionCalculado(Integer Calculado) {
+        this.OrientacionCalculado = Calculado.floatValue();
+    }    
 }
