@@ -122,20 +122,6 @@
     (slot Resultado (type STRING) (allowed-strings "OlvidoBenigno" "DemenciaLeve" "DemenciaModerada" "DemenciaSevera"))
 )
 
-(
- deffacts Caso-1
- (Entrevista 
-(OrientacionTemporal_Estacion "NO")
-(Escolaridad 7.00)
-(EsUnaSemanaAntesCambioEstacion "NO")
-(ContestaEstacionSiguiente "NO")
-(EsUnaSemanaDespuesCambioEstacion "NO")
-(ContestaEstacionAnterior "NO")
-
-(OrientacionTemporal_Fecha "NO")
- )
-)
-
 (defrule REGLA-CLIPS-OT-N5-Fecha-1
 (Entrevista (OrientacionTemporal_Fecha "NO"))
 =>
