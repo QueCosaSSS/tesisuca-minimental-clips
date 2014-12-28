@@ -55,14 +55,14 @@
     (slot Olvido_ImpactoFuncional (type STRING) (allowed-strings "SI" "NO"))  
     (slot Olvido_ImpactoCaracter (type STRING) (allowed-strings "SI" "NO"))  
 )
-
+$$$
 (deftemplate OrientacionTemporal
     (slot cFecha (type NUMBER))    
     (slot cEstacion (type STRING) (allowed-strings "SI" "NO"))
     (slot cMes (type NUMBER) )    
     (slot cAno (type NUMBER) )
 )
-
+$$$
 (deftemplate OrientacionEspacial
     (slot cLugar (type NUMBER))    
     (slot cCiudad (type NUMBER)) 
@@ -77,7 +77,7 @@
 )
 
 #######################
-
+$$$
 (deftemplate Orientacion
     (slot cOrientacionTemporal (type NUMBER))
     (slot cOrientacionEspacial (type NUMBER))
@@ -94,7 +94,7 @@
 (deftemplate MemoriaRecuerdo
     (slot cPalabrasRecordadas (type NUMBER))
 )
-
+$$$
 (deftemplate Memoria
     (slot cMemoriaFijacion (type NUMBER))
     (slot cMemoriaAtencion (type NUMBER))
@@ -104,7 +104,7 @@
 (deftemplate LenguajeAccionPonderado
     (slot cAccionPonderado (type NUMBER))
 )
-
+$$$
 (deftemplate Lenguaje
     (slot cLenguajeAccion    (type NUMBER))
     (slot cLenguajeEscritura   (type STRING) (allowed-strings "SI" "NO"))
@@ -112,14 +112,14 @@
     (slot cLenguajeFrase     (type STRING) (allowed-strings "SI" "NO"))
 )
 
-
+$$$
 (deftemplate MiniMental_Calculado
     (slot cOrientacion (type NUMBER))
     (slot cMemoria (type NUMBER))
     (slot cLenguaje (type NUMBER))
     (slot cDibujo (type NUMBER))
 )
-
+$$$
 (deftemplate Diagnostico
     (slot cMiniMental_Calculado (type NUMBER))
     (slot cOlvido (type STRING) (allowed-strings "R" "N"))
