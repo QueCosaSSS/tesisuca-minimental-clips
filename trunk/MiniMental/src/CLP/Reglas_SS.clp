@@ -71,6 +71,13 @@
     (slot cCalle (type NUMBER) )
 )
 
+########################
+(deftemplate OrientacionEspacial_Lugar
+	(slot valor  (type NUMBER))
+)
+
+#######################
+
 (deftemplate Orientacion
     (slot cOrientacionTemporal (type NUMBER))
     (slot cOrientacionEspacial (type NUMBER))
@@ -343,12 +350,13 @@
 (defrule REGLA-CLIPS-OE-N5-Lugar-1
 (Entrevista (OrientacionEspacial_Lugar "NO"))
 =>
-(assert (OrientacionEspacial (cLugar -1.00))) (printout t "REGLA-CLIPS-OE-N5-Lugar-1" crlf)
+(assert (OrientacionEspacial_Lugar (valor -1.00))) (printout t "REGLA-CLIPS-OE-N5-Lugar-1" crlf)
 )
+
 (defrule REGLA-CLIPS-OE-N5-Lugar-2 
 (Entrevista (OrientacionEspacial_Lugar "SI")) 
 =>
-(assert (OrientacionEspacial (cLugar 1.00))) (printout t "REGLA-CLIPS-OE-N5-Lugar-2 " crlf)
+(assert (OrientacionEspacial_Lugar (valor 1.00))) (printout t "REGLA-CLIPS-OE-N5-Lugar-2 " crlf)
 )
 
 (defrule REGLA-OE-N5-PISO-1 (Entrevista (OrientacionEspacial_Piso "NO" )) (Entrevista (ConsultorioEnEntrepiso "NO" )) (Entrevista (DiferenciaEntrePisoContestadoReal ?r))(test (< ?r 2.00)) => (assert (OrientacionEspacial (cPiso -0.50))) (printout t "REGLA-OE-N5-PISO-1" crlf))
