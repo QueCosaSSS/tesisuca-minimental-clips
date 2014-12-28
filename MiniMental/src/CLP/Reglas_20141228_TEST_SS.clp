@@ -1197,7 +1197,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  1.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-36" crlf))
     
 (defrule  REGLA-L-N3-37  
@@ -1208,7 +1207,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  2.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-37" crlf))
 
 (defrule  REGLA-L-N3-38  
@@ -1219,7 +1217,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  2.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-38" crlf))
     
 (defrule  REGLA-L-N3-39  
@@ -1230,7 +1227,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-39" crlf))
 
 (defrule  REGLA-L-N3-40  
@@ -1241,7 +1237,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  2.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-40" crlf))
     
 (defrule  REGLA-L-N3-41  
@@ -1252,7 +1247,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  ))
     => 
     (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-41" crlf))
     
 (defrule  REGLA-L-N3-42  
@@ -1263,7 +1257,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-42" crlf))
     
 (defrule  REGLA-L-N3-43  
@@ -1274,7 +1267,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-43" crlf))
 
 (defrule  REGLA-L-N3-44  
@@ -1285,7 +1277,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  2.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-44" crlf))
     
 (defrule  REGLA-L-N3-45  
@@ -1296,7 +1287,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-45" crlf))
     
 (defrule  REGLA-L-N3-46  
@@ -1307,7 +1297,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-46" crlf))
     
 (defrule  REGLA-L-N3-47  
@@ -1318,7 +1307,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-47" crlf))
     
 (defrule  REGLA-L-N3-48  
@@ -1329,7 +1317,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-48" crlf))
     
 (defrule  REGLA-L-N3-49  
@@ -1340,7 +1327,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-49" crlf))
     
 (defrule  REGLA-L-N3-50  
@@ -1351,7 +1337,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-50" crlf))
 
 (defrule  REGLA-L-N3-51  
@@ -1362,7 +1347,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-51" crlf))
     
 (defrule  REGLA-L-N3-52  
@@ -1373,7 +1357,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  -0.50 )))
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-52" crlf))
     
 (defrule  REGLA-L-N3-53  
@@ -1384,7 +1367,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  0.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-53" crlf))
 
 (defrule  REGLA-L-N3-54  
@@ -1395,7 +1377,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  0.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-54" crlf))
 
 (defrule  REGLA-L-N3-55  
@@ -1406,7 +1387,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  1.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-55" crlf))
 
 (defrule  REGLA-L-N3-56  
@@ -1417,7 +1397,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  0.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-56" crlf))
     
 (defrule  REGLA-L-N3-57  
@@ -1428,7 +1407,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  1.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-57" crlf))
     
 (defrule  REGLA-L-N3-58  
@@ -1439,7 +1417,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  1.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-58" crlf))
     
 (defrule  REGLA-L-N3-59  
@@ -1450,7 +1427,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  2.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-59" crlf))
 
 (defrule  REGLA-L-N3-60  
@@ -1461,7 +1437,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  1.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-60" crlf))
     
 (defrule  REGLA-L-N3-61  
@@ -1472,7 +1447,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  2.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-61" crlf))
 
 (defrule  REGLA-L-N3-62  
@@ -1483,7 +1457,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  2.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-62" crlf))
 
 (defrule  REGLA-L-N3-63  
@@ -1494,7 +1467,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-63" crlf))
     
 (defrule  REGLA-L-N3-64  
@@ -1505,7 +1477,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  2.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-64" crlf))
     
 (defrule  REGLA-L-N3-65  
@@ -1516,7 +1487,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     =>  
     (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-65" crlf))
 
 (defrule  REGLA-L-N3-66  
@@ -1527,7 +1497,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  ))
     => 
     (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-66" crlf))
 
 (defrule  REGLA-L-N3-67  
@@ -1538,7 +1507,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-67" crlf))
     
 (defrule  REGLA-L-N3-68  
@@ -1549,7 +1517,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  2.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-68" crlf))
 
 (defrule  REGLA-L-N3-69  
@@ -1560,7 +1527,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  3.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-69" crlf))
     
 (defrule  REGLA-L-N3-70  
@@ -1571,7 +1537,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  3.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-70" crlf))
 
 (defrule  REGLA-L-N3-71  
@@ -1582,7 +1547,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  4.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-71" crlf))
     
 (defrule  REGLA-L-N3-72  
@@ -1593,7 +1557,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  3.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-72" crlf))
     
 (defrule  REGLA-L-N3-73  
@@ -1604,7 +1567,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  4.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-73" crlf))
     
 (defrule  REGLA-L-N3-74 
@@ -1615,7 +1577,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  4.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-74" crlf))
 
 (defrule  REGLA-L-N3-75  
@@ -1626,7 +1587,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  5.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-75" crlf))
 
 (defrule  REGLA-L-N3-76  
@@ -1637,7 +1597,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-76" crlf))
 
 (defrule  REGLA-L-N3-77  
@@ -1648,7 +1607,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-77" crlf))
 
 (defrule  REGLA-L-N3-78  
@@ -1659,7 +1617,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  ))
     => 
     (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-78" crlf))
 
 (defrule  REGLA-L-N3-79  
@@ -1670,7 +1627,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  6.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-79" crlf))
     
 (defrule  REGLA-L-N3-80  
@@ -1681,7 +1637,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-80" crlf))
 
 (defrule  REGLA-L-N3-81  
@@ -1692,7 +1647,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  6.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-81" crlf))
 
 (defrule  REGLA-L-N3-82  
@@ -1703,7 +1657,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  6.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-82" crlf))
 
 (defrule  REGLA-L-N3-83  
@@ -1714,7 +1667,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  ))
     => 
     (assert (MiniMental_Calculado (cLenguaje  7.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-83" crlf))
 
 (defrule  REGLA-L-N3-84  
@@ -1725,7 +1677,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-84" crlf))
     
 (defrule  REGLA-L-N3-85  
@@ -1736,7 +1687,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  ))
     => 
     (assert (MiniMental_Calculado (cLenguaje  2.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-85" crlf))
 
 (defrule  REGLA-L-N3-86  
@@ -1747,7 +1697,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-86" crlf))
     
 (defrule  REGLA-L-N3-87  
@@ -1758,7 +1707,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-87" crlf))
     
 (defrule  REGLA-L-N3-88  
@@ -1769,7 +1717,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-88" crlf))
     
 (defrule  REGLA-L-N3-89  
@@ -1780,7 +1727,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-89" crlf))
 
 (defrule  REGLA-L-N3-90  
@@ -1791,7 +1737,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-90" crlf))
     
 (defrule  REGLA-L-N3-91  
@@ -1802,7 +1747,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-91" crlf))
 
 (defrule  REGLA-L-N3-92  
@@ -1813,7 +1757,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-92" crlf))
 
 (defrule  REGLA-L-N3-93  
@@ -1824,7 +1767,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-93" crlf))
 
 (defrule  REGLA-L-N3-94  
@@ -1835,7 +1777,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-94" crlf))
 
 (defrule  REGLA-L-N3-95  
@@ -1846,7 +1787,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-95" crlf))
 
 (defrule  REGLA-L-N3-96  
@@ -1857,7 +1797,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-96" crlf))
 
 (defrule  REGLA-L-N3-97  
@@ -1868,7 +1807,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-97" crlf))
     
 (defrule  REGLA-L-N3-98  
@@ -1879,7 +1817,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  ))
     => 
     (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-98" crlf))
 
 (defrule  REGLA-L-N3-99  
@@ -1890,7 +1827,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-99" crlf))
     
 (defrule  REGLA-L-N3-100  
@@ -1901,7 +1837,6 @@
     (Entrevista (Lenguaje_CosasNombradas  1.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  6.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-100" crlf))
 
 (defrule  REGLA-L-N3-101  
@@ -1912,7 +1847,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  0.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-101" crlf))
 
 (defrule  REGLA-L-N3-102  
@@ -1923,7 +1857,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  ))
     => 
     (assert (MiniMental_Calculado (cLenguaje  1.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-102" crlf))
 
 (defrule  REGLA-L-N3-103  
@@ -1934,7 +1867,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  1.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-103" crlf))
 
 (defrule  REGLA-L-N3-104  
@@ -1945,7 +1877,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  2.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-104" crlf))
 
 (defrule  REGLA-L-N3-105  
@@ -1956,7 +1887,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  1.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-105" crlf))
     
 (defrule  REGLA-L-N3-106  
@@ -1967,7 +1897,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  2.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-106" crlf))
     
 (defrule  REGLA-L-N3-107  
@@ -1978,7 +1907,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  2.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-107" crlf))
 
 (defrule  REGLA-L-N3-108  
@@ -1989,7 +1917,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  3.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-108" crlf))
 
 (defrule  REGLA-L-N3-109  
@@ -2000,7 +1927,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  2.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-109" crlf))
     
 (defrule  REGLA-L-N3-110  
@@ -2011,7 +1937,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-110" crlf))
 
 (defrule  REGLA-L-N3-111  
@@ -2022,7 +1947,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-111" crlf))
     
 (defrule  REGLA-L-N3-112  
@@ -2033,7 +1957,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-112" crlf))
     
 (defrule  REGLA-L-N3-113  
@@ -2044,7 +1967,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  ))
     => 
     (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-113" crlf))
     
 (defrule  REGLA-L-N3-114  
@@ -2055,7 +1977,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-114" crlf))
     
 (defrule  REGLA-L-N3-115  
@@ -2066,7 +1987,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-115" crlf))
 
 (defrule  REGLA-L-N3-116  
@@ -2077,7 +1997,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  ))
     => 
     (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-116" crlf))
 
 (defrule  REGLA-L-N3-117  
@@ -2088,7 +2007,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  3.50 )))
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-117" crlf))
     
 (defrule  REGLA-L-N3-118  
@@ -2099,7 +2017,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  4.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-118" crlf))
 
 (defrule  REGLA-L-N3-119  
@@ -2110,7 +2027,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  4.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-119" crlf))
     
 (defrule  REGLA-L-N3-120  
@@ -2121,7 +2037,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  5.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-120" crlf))
     
 (defrule  REGLA-L-N3-121  
@@ -2132,7 +2047,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  ))
     => 
     (assert (MiniMental_Calculado (cLenguaje  4.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-121" crlf))
 
 (defrule  REGLA-L-N3-122  
@@ -2143,7 +2057,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  5.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-122" crlf))
 
 (defrule  REGLA-L-N3-123  
@@ -2154,7 +2067,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  5.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-123" crlf))
     
 (defrule  REGLA-L-N3-124  
@@ -2165,7 +2077,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  ))
     => 
     (assert (MiniMental_Calculado (cLenguaje  6.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-124" crlf))
 
 (defrule  REGLA-L-N3-125  
@@ -2176,7 +2087,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-125" crlf))
 
 (defrule  REGLA-L-N3-126  
@@ -2187,7 +2097,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  ))
     => 
     (assert (MiniMental_Calculado (cLenguaje  6.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-126" crlf))
 
 (defrule  REGLA-L-N3-127  
@@ -2198,7 +2107,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  6.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-127" crlf))
 
 (defrule  REGLA-L-N3-128  
@@ -2209,7 +2117,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  7.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-128" crlf))
 
 (defrule  REGLA-L-N3-129  
@@ -2220,7 +2127,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  6.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-129" crlf))
     
 (defrule  REGLA-L-N3-130  
@@ -2231,7 +2137,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  7.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-130" crlf))
 
 (defrule  REGLA-L-N3-131  
@@ -2242,7 +2147,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  7.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-131" crlf))
 
 (defrule  REGLA-L-N3-132  
@@ -2253,7 +2157,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  8.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-132" crlf))
 
 (defrule  REGLA-L-N3-133 
@@ -2264,7 +2167,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-133" crlf))
 
 (defrule  REGLA-L-N3-134  
@@ -2275,7 +2177,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-134" crlf))
 
 (defrule  REGLA-L-N3-135  
@@ -2286,7 +2187,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-135" crlf))
 
 (defrule  REGLA-L-N3-136  
@@ -2297,7 +2197,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-136" crlf))
 
 (defrule  REGLA-L-N3-137  
@@ -2308,7 +2207,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-137" crlf))
     
 (defrule  REGLA-L-N3-138  
@@ -2319,7 +2217,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-138" crlf))
     
 (defrule  REGLA-L-N3-139  
@@ -2330,7 +2227,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-139" crlf))
 
 (defrule  REGLA-L-N3-140  
@@ -2341,7 +2237,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-140" crlf))
     
 (defrule  REGLA-L-N3-141  
@@ -2352,7 +2247,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  6.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-141" crlf))
 
 (defrule  REGLA-L-N3-142  
@@ -2363,7 +2257,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  ))
     => 
     (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-142" crlf))
 
 (defrule  REGLA-L-N3-143  
@@ -2374,7 +2267,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-143" crlf))
 
 (defrule  REGLA-L-N3-144  
@@ -2385,7 +2277,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-144" crlf))
 
 (defrule  REGLA-L-N3-145  
@@ -2396,7 +2287,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  6.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-145" crlf))
 
 (defrule  REGLA-L-N3-146  
@@ -2407,7 +2297,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-146" crlf))
     
 (defrule  REGLA-L-N3-147  
@@ -2418,7 +2307,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  6.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-147" crlf))
 
 (defrule  REGLA-L-N3-148  
@@ -2429,7 +2317,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  ))
     => 
     (assert (MiniMental_Calculado (cLenguaje  6.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-148" crlf))
 
 (defrule  REGLA-L-N3-149  
@@ -2440,7 +2327,6 @@
     (Entrevista (Lenguaje_CosasNombradas  2.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  7.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-149" crlf))
 
 
@@ -2448,14 +2334,12 @@
     (Entrevista (Dibujo_CopiaCorrectamenteDibujo  "SI"  )) 
     => 
     (assert (MiniMental_Calculado (cDibujo  1.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Copia correctamente el dibujo.")))
     (printout t " REGLA-D-N3-1" crlf))
 
 (defrule  REGLA-D-N3-2  
     (Entrevista (Dibujo_CopiaCorrectamenteDibujo  "NO"  )) 
     => 
     (assert (MiniMental_Calculado (cDibujo  0.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "No copia correctamente el dibujo.")))
     (printout t " REGLA-D-N3-2" crlf))
 
 
@@ -2463,14 +2347,12 @@
     (Entrevista (Olvido_ImpactoCaracter  "SI"  )) 
     => 
     (assert (Diagnostico (cCaracter  "R" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "El paciente presenta un impacto en su carácter, esto genera un impacto negativo.")))
     (printout t " REGLA-E-N1-CARACTER-1" crlf))
 
 (defrule  REGLA-E-N1-CARACTER-2  
     (Entrevista (Olvido_ImpactoCaracter  "NO"  )) 
     => 
     (assert (Diagnostico (cCaracter  "N" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "El paciente no presenta un impacto en su carácter.")))
     (printout t " REGLA-E-N1-CARACTER-2" crlf))
 
 
@@ -2478,14 +2360,12 @@
     (Entrevista (Olvido_ImpactoFuncional  "SI"  )) 
     => 
     (assert (Diagnostico (cFuncional  "R" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "El paciente presenta un impacto funcional, esto genera un impacto negativo.")))
     (printout t " REGLA-E-N1-FUNCIONAL-1" crlf))
 
 (defrule  REGLA-E-N1-FUNCIONAL-2  
     (Entrevista (Olvido_ImpactoFuncional  "NO"  )) 
     => 
     (assert (Diagnostico (cFuncional  "N" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "El paciente no presenta un impacto funcional.")))
     (printout t " REGLA-E-N1-FUNCIONAL-2" crlf))
 
 
@@ -2494,7 +2374,6 @@
     (Entrevista (Olvido_QuejaOlvidoFamiliar  "SI"  ))  
     => 
     (assert (Diagnostico (cQueja  "R" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "El familiar se queja del olvido de hechos recientes por parte del paciente. En este caso no importa si el paciente los minimiza, esto genera un impacto negativo.")))
     (printout t " REGLA-E-N1-QUEJA-2/5/6" crlf))
 
 (defrule  REGLA-E-N1-QUEJA-7/8  
@@ -2503,7 +2382,6 @@
     (Entrevista (Olvido_PacienteMinimizaOlvidos  "NO"  )) 
     => 
     (assert (Diagnostico (cQueja  "N" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "El paciente se queja del olvido de hechos recientes.")))
     (printout t " REGLA-E-N1-QUEJA-7/8" crlf))
 
 
@@ -2512,7 +2390,6 @@
     (Entrevista (Olvido_OlvidoProgresa  "SI"  )) 
     => 
     (assert (Diagnostico (cOlvido  "R" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "El paciente se queja del olvido de hechos recientes, pero el olvido cada vez es más progresivo. Esto genera un impacto negativo.")))
     (printout t " REGLA-E-N1-OLVIDO-1" crlf))
 
 (defrule  REGLA-E-N1-OLVIDO-2  
@@ -2520,7 +2397,6 @@
     (Entrevista (Olvido_OlvidoProgresa  "NO"  )) 
     => 
     (assert (Diagnostico (cOlvido  "N" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "El paciente se queja del olvido de hechos recientes, pero no son progresivo.")))
     (printout t " REGLA-E-N1-OLVIDO-2" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-1/65/17/81  
@@ -2530,7 +2406,6 @@
     (Diagnostico (cFuncional  "R" ))  
     => 
     (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Leve.")))
     (printout t " Regla-DIAGNOSTICO-N1-1/65/17/81" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-2/10/34/42  
@@ -2540,7 +2415,6 @@
     (Diagnostico (cCaracter  "R"  )) 
     => 
     (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Moderada.")))
     (printout t " Regla-DIAGNOSTICO-N1-2/10/34/42" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-3/11/19/27/35/43/51/59/67/75/83/91/99/107/115/123  
@@ -2548,7 +2422,6 @@
     (Entrevista (Escolaridad  12 ))  
     => 
     (assert (Diagnostico (Resultado  "DemenciaLeve" )))
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Leve."))) 
     (printout t " Regla-DIAGNOSTICO-N1-3/11/19/27/35/43/51/59/67/75/83/91/99/107/115/123" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-4/12/20/28/36/44/52/60/68/76/84/92/100/108/116/124  
@@ -2556,7 +2429,6 @@
     (Entrevista (Escolaridad  12 ))  
     => 
     (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Moderada.")))
     (printout t " Regla-DIAGNOSTICO-N1-4/12/20/28/36/44/52/60/68/76/84/92/100/108/116/124" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-5/69/37/101/21/53/85/117/13/29/45/61/77/93/109/125  
@@ -2564,7 +2436,6 @@
     (Entrevista (Escolaridad  6 ))  
     => 
     (assert (Diagnostico (Resultado  "OlvidoBenigno" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a un Olvido Benigno.")))
     (printout t " Regla-DIAGNOSTICO-N1-5/69/37/101/21/53/85/117/13/29/45/61/77/93/109/125" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-6/14/22/30/38/46/54/62/70/78/86/94/102/110/118/126  
@@ -2572,7 +2443,6 @@
     (Entrevista (Escolaridad  6 ))  
     => 
     (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Leve.")))
     (printout t " Regla-DIAGNOSTICO-N1-6/14/22/30/38/46/54/62/70/78/86/94/102/110/118/126" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-7/15/71/79  
@@ -2582,7 +2452,6 @@
     (Diagnostico (cFuncional  "R" ))  
     => 
     (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Moderada.")))
     (printout t " Regla-DIAGNOSTICO-N1-7/15/71/79" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-8/24/72/88  
@@ -2592,7 +2461,6 @@
     (Diagnostico (cFuncional  "R" ))  
     => 
     (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Moderada.")))
     (printout t " Regla-DIAGNOSTICO-N1-8/24/72/88" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-9/25  
@@ -2603,7 +2471,6 @@
     (Diagnostico (cCaracter  "R"  )) 
     => 
     (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Leve.")))
     (printout t " Regla-DIAGNOSTICO-N1-9/25" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-16/32  
@@ -2614,7 +2481,6 @@
     (Diagnostico (cCaracter  "R"  )) 
     => 
     (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Moderada.")))
     (printout t " Regla-DIAGNOSTICO-N1-16/32" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-18/26  
@@ -2625,7 +2491,6 @@
     (Diagnostico (cCaracter  "R"  )) 
     => 
     (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Moderada.")))
     (printout t " Regla-DIAGNOSTICO-N1-18/26" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-23/31  
@@ -2636,7 +2501,6 @@
     (Diagnostico (cCaracter  "R"  )) 
     => 
     (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Moderada.")))
     (printout t " Regla-DIAGNOSTICO-N1-23/31" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-33/49  
@@ -2647,7 +2511,6 @@
     (Diagnostico (cCaracter  "R"  )) 
     => 
     (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Leve.")))
     (printout t " Regla-DIAGNOSTICO-N1-33/49" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-39/47  
@@ -2658,7 +2521,6 @@
     (Diagnostico (cCaracter  "R"  )) 
     => 
     (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Moderada.")))
     (printout t " Regla-DIAGNOSTICO-N1-39/47" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-40/56  
@@ -2669,7 +2531,6 @@
     (Diagnostico (cCaracter  "R"  )) 
     => 
     (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Moderada.")))
     (printout t " Regla-DIAGNOSTICO-N1-40/56" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-41  
@@ -2681,7 +2542,6 @@
     (Diagnostico (cCaracter  "R"  )) 
     => 
     (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Leve.")))
     (printout t " Regla-DIAGNOSTICO-N1-41" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-48  
@@ -2693,7 +2553,6 @@
     (Diagnostico (cCaracter  "R"  )) 
     => 
     (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Moderada.")))
     (printout t " Regla-DIAGNOSTICO-N1-48" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-50  
@@ -2705,7 +2564,6 @@
     (Diagnostico (cCaracter  "R"  )) 
     => 
     (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Moderada.")))
     (printout t " Regla-DIAGNOSTICO-N1-50" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-55  
@@ -2717,7 +2575,6 @@
     (Diagnostico (cCaracter  "R"  )) 
     => 
     (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Moderada.")))
     (printout t " Regla-DIAGNOSTICO-N1-55" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-57  
@@ -2729,7 +2586,6 @@
     (Diagnostico (cCaracter  "R"  )) 
     => 
     (assert (Diagnostico (Resultado  "OlvidoBenigno" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a un Olvido Benigno.")))
     (printout t " Regla-DIAGNOSTICO-N1-57" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-58  
@@ -2741,7 +2597,6 @@
     (Diagnostico (cCaracter  "R"  )) 
     => 
     (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Leve.")))
     (printout t " Regla-DIAGNOSTICO-N1-58" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-63  
@@ -2753,7 +2608,6 @@
     (Diagnostico (cCaracter  "R"  )) 
     => 
     (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Leve.")))
     (printout t " Regla-DIAGNOSTICO-N1-63" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-64  
@@ -2765,7 +2619,6 @@
     (Diagnostico (cCaracter  "R"  )) 
     => 
     (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Leve.")))
     (printout t " Regla-DIAGNOSTICO-N1-64" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-66/74  
@@ -2776,7 +2629,6 @@
     (Diagnostico (cCaracter  "N"  )) 
     => 
     (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Moderada.")))
     (printout t " Regla-DIAGNOSTICO-N1-66/74" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-73  
@@ -2788,7 +2640,6 @@
     (Diagnostico (cCaracter  "N"  )) 
     => 
     (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Leve.")))
     (printout t " Regla-DIAGNOSTICO-N1-73" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-80  
@@ -2800,7 +2651,6 @@
     (Diagnostico (cCaracter  "N"  )) 
     => 
     (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Moderada.")))
     (printout t " Regla-DIAGNOSTICO-N1-80" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-82  
@@ -2812,7 +2662,6 @@
     (Diagnostico (cCaracter  "N"  ))
     => 
     (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Moderada.")))
     (printout t " Regla-DIAGNOSTICO-N1-82" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-87  
@@ -2824,7 +2673,6 @@
     (Diagnostico (cCaracter  "N"  )) 
     => 
     (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Moderada.")))
     (printout t " Regla-DIAGNOSTICO-N1-87" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-89  
@@ -2836,7 +2684,6 @@
     (Diagnostico (cCaracter  "N"  )) 
     => 
     (assert (Diagnostico (Resultado  "OlvidoBenigno" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a un Olvido Benigno.")))
     (printout t " Regla-DIAGNOSTICO-N1-89" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-90  
@@ -2848,7 +2695,6 @@
     (Diagnostico (cCaracter  "N"  )) 
     => 
     (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Leve.")))
     (printout t " Regla-DIAGNOSTICO-N1-90" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-95  
@@ -2860,7 +2706,6 @@
     (Diagnostico (cCaracter  "N"  )) 
     => 
     (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Leve.")))
     (printout t " Regla-DIAGNOSTICO-N1-95" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-96  
@@ -2872,7 +2717,6 @@
     (Diagnostico (cCaracter  "N"  )) 
     => 
     (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Leve.")))
     (printout t " Regla-DIAGNOSTICO-N1-96" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-97/105  
@@ -2884,7 +2728,6 @@
     (Diagnostico (cCaracter  "N"  )) 
     => 
     (assert (Diagnostico (Resultado  "OlvidoBenigno" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a un Olvido Benigno.")))
     (printout t " Regla-DIAGNOSTICO-N1-97/105" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-98/106/114/122  
@@ -2894,7 +2737,6 @@
     (Diagnostico (cCaracter  "N"  )) 
     => 
     (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Leve.")))
     (printout t " Regla-DIAGNOSTICO-N1-98/106/114/122" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-103/111/119/127  
@@ -2904,7 +2746,6 @@
     (Diagnostico (cCaracter  "N"  )) 
     => 
     (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Leve.")))
     (printout t " Regla-DIAGNOSTICO-N1-103/111/119/127" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-104/112/120/128  
@@ -2914,7 +2755,6 @@
     (Diagnostico (cCaracter  "N"  )) 
     => 
     (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Leve.")))
     (printout t " Regla-DIAGNOSTICO-N1-104/112/120/128" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-113/121  
@@ -2925,28 +2765,24 @@
     (Diagnostico (cCaracter  "N"  )) 
     => 
     (assert (Diagnostico (Resultado  "OlvidoBenigno" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a un Olvido Benigno.")))
     (printout t " Regla-DIAGNOSTICO-N1-113/121" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-129  
     (Diagnostico (cMiniMental_Calculado  30.00  ))  
     => 
     (assert (Diagnostico (Resultado  "OlvidoBenigno" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a un Olvido Benigno.")))
     (printout t " Regla-DIAGNOSTICO-N1-129" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-130  
     (Diagnostico (cMiniMental_Calculado  29.00  ))  
     => 
     (assert (Diagnostico (Resultado  "OlvidoBenigno" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a un Olvido Benigno.")))
     (printout t " Regla-DIAGNOSTICO-N1-130" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-131  
     (Diagnostico (cMiniMental_Calculado  28.00  ))  
     => 
     (assert (Diagnostico (Resultado  "OlvidoBenigno" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a un Olvido Benigno.")))
     (printout t " Regla-DIAGNOSTICO-N1-131" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-132  
@@ -2954,7 +2790,6 @@
     (Entrevista (Escolaridad  12.00 ))  
     => 
     (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Leve.")))
     (printout t " Regla-DIAGNOSTICO-N1-132" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-133  
@@ -2962,35 +2797,30 @@
     (Entrevista (Escolaridad  6.00 ))  
     => 
     (assert (Diagnostico (Resultado  "OlvidoBenigno" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a un Olvido Benigno.")))
     (printout t " Regla-DIAGNOSTICO-N1-133" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-134  
     (Diagnostico (cMiniMental_Calculado  24.00  ))  
     => 
     (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Leve.")))
     (printout t " Regla-DIAGNOSTICO-N1-134" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-135  
     (Diagnostico (cMiniMental_Calculado  23.00  ))  
     =>  
     (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Leve.")))
     (printout t " Regla-DIAGNOSTICO-N1-135" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-136  
     (Diagnostico (cMiniMental_Calculado  22.00  ))   
     => 
     (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Leve.")))
     (printout t " Regla-DIAGNOSTICO-N1-136" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-137  
     (Diagnostico (cMiniMental_Calculado  21.00  ))   
     => 
     (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Leve.")))
     (printout t " Regla-DIAGNOSTICO-N1-137" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-138  
@@ -2998,7 +2828,6 @@
     (Entrevista (Escolaridad  12.00 ))  
     => 
     (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Moderada.")))
     (printout t " Regla-DIAGNOSTICO-N1-138" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-139  
@@ -3006,63 +2835,54 @@
     (Entrevista (Escolaridad  6.00 ))  
     => 
     (assert (Diagnostico (Resultado  "DemenciaLeve" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Leve.")))
     (printout t " Regla-DIAGNOSTICO-N1-139" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-140  
     (Diagnostico (cMiniMental_Calculado  17.00  ))  
     => 
     (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Moderada.")))
     (printout t " Regla-DIAGNOSTICO-N1-140" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-141  
     (Diagnostico (cMiniMental_Calculado  16.00  ))  
     => 
     (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Moderada.")))
     (printout t " Regla-DIAGNOSTICO-N1-141" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-142  
     (Diagnostico (cMiniMental_Calculado  15.00  ))    
     => 
     (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Moderada.")))
     (printout t " Regla-DIAGNOSTICO-N1-142" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-143  
     (Diagnostico (cMiniMental_Calculado  14.00  ))    
     => 
     (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Moderada.")))
     (printout t " Regla-DIAGNOSTICO-N1-143" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-144  
     (Diagnostico (cMiniMental_Calculado  13.00  ))    
     => 
     (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Moderada.")))
     (printout t " Regla-DIAGNOSTICO-N1-144" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-145  
     (Diagnostico (cMiniMental_Calculado  12.00  ))    
     => 
     (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Moderada.")))
     (printout t " Regla-DIAGNOSTICO-N1-145" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-146  
     (Diagnostico (cMiniMental_Calculado  11.00  ))    
     => 
     (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Moderada.")))
     (printout t " Regla-DIAGNOSTICO-N1-146" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-147  
     (Diagnostico (cMiniMental_Calculado  10.00  ))  
     => 
     (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Moderada.")))
     (printout t " Regla-DIAGNOSTICO-N1-147" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-148  
@@ -3070,7 +2890,6 @@
     (Entrevista (Escolaridad  12.00 ))  
     => 
     (assert (Diagnostico (Resultado  "DemenciaSevera" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Severa.")))
     (printout t " Regla-DIAGNOSTICO-N1-148" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-149  
@@ -3078,7 +2897,6 @@
     (Entrevista (Escolaridad  6.00 ))  
     => 
     (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Moderada.")))
     (printout t " Regla-DIAGNOSTICO-N1-149" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-150  
@@ -3086,7 +2904,6 @@
     (Entrevista (Escolaridad  12.00 ))  
     => 
     (assert (Diagnostico (Resultado  "DemenciaSevera" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Severa.")))
     (printout t " Regla-DIAGNOSTICO-N1-150" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-151  
@@ -3094,63 +2911,54 @@
     (Entrevista (Escolaridad  6.00 ))  
     => 
     (assert (Diagnostico (Resultado  "DemenciaModerada" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Moderada.")))
     (printout t " Regla-DIAGNOSTICO-N1-151" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-152  
     (Diagnostico (cMiniMental_Calculado  7.00  ))  
     => 
     (assert (Diagnostico (Resultado  "DemenciaSevera" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Severa.")))
     (printout t " Regla-DIAGNOSTICO-N1-152" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-153  
     (Diagnostico (cMiniMental_Calculado  6.00  ))  
     => 
     (assert (Diagnostico (Resultado  "DemenciaSevera" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Severa.")))
     (printout t " Regla-DIAGNOSTICO-N1-153" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-154  
     (Diagnostico (cMiniMental_Calculado  5.00  ))  
     => 
     (assert (Diagnostico (Resultado  "DemenciaSevera" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Severa.")))
     (printout t " Regla-DIAGNOSTICO-N1-154" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-155  
     (Diagnostico (cMiniMental_Calculado  4.00  ))  
     => 
     (assert (Diagnostico (Resultado  "DemenciaSevera" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Severa.")))
     (printout t " Regla-DIAGNOSTICO-N1-155" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-156  
     (Diagnostico (cMiniMental_Calculado  3.00  ))  
     => 
     (assert (Diagnostico (Resultado  "DemenciaSevera" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Severa.")))
     (printout t " Regla-DIAGNOSTICO-N1-156" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-157  
     (Diagnostico (cMiniMental_Calculado  2.00  ))  
     =>
     (assert (Diagnostico (Resultado  "DemenciaSevera" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Severa.")))
     (printout t " Regla-DIAGNOSTICO-N1-157" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-158  
     (Diagnostico (cMiniMental_Calculado  1.00  ))  
     => 
     (assert (Diagnostico (Resultado  "DemenciaSevera" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Severa.")))
     (printout t " Regla-DIAGNOSTICO-N1-158" crlf))
 
 (defrule  Regla-DIAGNOSTICO-N1-159  
     (Diagnostico (cMiniMental_Calculado  0.00  ))  
     => 
     (assert (Diagnostico (Resultado  "DemenciaSevera" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Severa.")))
     (printout t " Regla-DIAGNOSTICO-N1-159" crlf))
 
 (deffacts Caso-13
