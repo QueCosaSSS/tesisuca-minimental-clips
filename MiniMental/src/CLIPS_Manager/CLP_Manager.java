@@ -23,7 +23,7 @@ public class CLP_Manager {
         try {
             this.clips = new Environment();
 
-            this.clips.load(".\\src\\CLP\\Reglas.clp");
+            this.clips.load(".\\src\\CLP\\Reglas_20141228.clp");
 
             this.clips.reset();
 
@@ -188,46 +188,64 @@ public class CLP_Manager {
 
     private void FillMinimental(cMiniMental minimental) {
         try {
-            String evalStr = "(find-all-facts ((?f MiniMental_Calculado)) TRUE)";
+            String evalStr = "(find-all-facts ((?f MiniMental_Calculado_Dibujo)) TRUE)";
 
             PrimitiveValue evaluado = this.clips.eval(evalStr);
 
             for (int i = 0; i < evaluado.size(); i++) {
-                if (!evaluado.get(i).getFactSlot("cDibujo").toString().isEmpty()) {
+                if (!evaluado.get(i).getFactSlot("valor").toString().isEmpty()) {
                     try {
-                        minimental.setDibujo(evaluado.get(i).getFactSlot("cDibujo").floatValue());
+                        minimental.setDibujo(evaluado.get(i).getFactSlot("valor").floatValue());
                     } catch (Exception e) {
-                        minimental.setDibujo(evaluado.get(i).getFactSlot("cDibujo").intValue());
+                        minimental.setDibujo(evaluado.get(i).getFactSlot("valor").intValue());
                     }
                 }
-                if (!evaluado.get(i).getFactSlot("cOrientacion").toString().isEmpty()) {
+            }
+            evalStr = "(find-all-facts ((?f MiniMental_Calculado_Orientacion)) TRUE)";
+
+            evaluado = this.clips.eval(evalStr);
+
+            for (int i = 0; i < evaluado.size(); i++) {
+                if (!evaluado.get(i).getFactSlot("valor").toString().isEmpty()) {
                     cOrientacion orientacion = new cOrientacion();
                     try {
-                        orientacion.setOrientacionCalculado(evaluado.get(i).getFactSlot("cOrientacion").floatValue());
+                        orientacion.setOrientacionCalculado(evaluado.get(i).getFactSlot("valor").floatValue());
                     } catch (Exception e) {
-                        orientacion.setOrientacionCalculado(evaluado.get(i).getFactSlot("cOrientacion").intValue());
+                        orientacion.setOrientacionCalculado(evaluado.get(i).getFactSlot("valor").intValue());
                     }
 
                     FillOrientacion(orientacion);
                     minimental.setOrientacion(orientacion);
                 }
-                if (!evaluado.get(i).getFactSlot("cMemoria").toString().isEmpty()) {
+            }
+            evalStr = "(find-all-facts ((?f MiniMental_Calculado_Memoria)) TRUE)";
+
+            evaluado = this.clips.eval(evalStr);
+
+            for (int i = 0; i < evaluado.size(); i++) {
+                if (!evaluado.get(i).getFactSlot("valor").toString().isEmpty()) {
                     cMemoria memoria = new cMemoria();
                     try {
-                        memoria.setMemoriaCalculado(evaluado.get(i).getFactSlot("cMemoria").floatValue());
+                        memoria.setMemoriaCalculado(evaluado.get(i).getFactSlot("valor").floatValue());
                     } catch (Exception e) {
-                        memoria.setMemoriaCalculado(evaluado.get(i).getFactSlot("cMemoria").intValue());
+                        memoria.setMemoriaCalculado(evaluado.get(i).getFactSlot("valor").intValue());
                     }
 
                     FillMemoria(memoria);
                     minimental.setMemoria(memoria);
                 }
-                if (!evaluado.get(i).getFactSlot("cLenguaje").toString().isEmpty()) {
+            }
+            evalStr = "(find-all-facts ((?f MiniMental_Calculado_Lenguaje)) TRUE)";
+
+            evaluado = this.clips.eval(evalStr);
+
+            for (int i = 0; i < evaluado.size(); i++) {
+                if (!evaluado.get(i).getFactSlot("valor").toString().isEmpty()) {
                     cLenguaje lenguaje = new cLenguaje();
                     try {
-                        lenguaje.setLenguajeCalculado(evaluado.get(i).getFactSlot("cLenguaje").floatValue());
+                        lenguaje.setLenguajeCalculado(evaluado.get(i).getFactSlot("valor").floatValue());
                     } catch (Exception e) {
-                        lenguaje.setLenguajeCalculado(evaluado.get(i).getFactSlot("cLenguaje").intValue());
+                        lenguaje.setLenguajeCalculado(evaluado.get(i).getFactSlot("valor").intValue());
                     }
                     FillLenguaje(lenguaje);
                     minimental.setLenguaje(lenguaje);
@@ -241,30 +259,34 @@ public class CLP_Manager {
 
     private void FillOrientacion(cOrientacion orientacion) {
         try {
-            String evalStr = "(find-all-facts ((?f Orientacion)) TRUE)";
+            String evalStr = "(find-all-facts ((?f Orientacion_Temporal)) TRUE)";
 
             PrimitiveValue evaluado = this.clips.eval(evalStr);
 
-
-
             for (int i = 0; i < evaluado.size(); i++) {
 
-                if (!evaluado.get(i).getFactSlot("cOrientacionTemporal").toString().isEmpty()) {
+                if (!evaluado.get(i).getFactSlot("valor").toString().isEmpty()) {
                     cOrientacionTemporal orientacionTemporal = new cOrientacionTemporal();
                     try {
-                        orientacionTemporal.setOrientacionTemporalCalculado(evaluado.get(i).getFactSlot("cOrientacionTemporal").floatValue());
+                        orientacionTemporal.setOrientacionTemporalCalculado(evaluado.get(i).getFactSlot("valor").floatValue());
                     } catch (Exception e) {
-                        orientacionTemporal.setOrientacionTemporalCalculado(evaluado.get(i).getFactSlot("cOrientacionTemporal").intValue());
+                        orientacionTemporal.setOrientacionTemporalCalculado(evaluado.get(i).getFactSlot("valor").intValue());
                     }
                     FillOrientacionTemporal(orientacionTemporal);
                     orientacion.setOrientacionTemporal(orientacionTemporal);
                 }
-                if (!evaluado.get(i).getFactSlot("cOrientacionEspacial").toString().isEmpty()) {
+            }
+            evalStr = "(find-all-facts ((?f Orientacion_Espacial)) TRUE)";
+
+            evaluado = this.clips.eval(evalStr);
+
+            for (int i = 0; i < evaluado.size(); i++) {
+                if (!evaluado.get(i).getFactSlot("valor").toString().isEmpty()) {
                     cOrientacionEspacial orientacionEspacial = new cOrientacionEspacial();
                     try {
-                        orientacionEspacial.setOrientacionEspacialCalculado(evaluado.get(i).getFactSlot("cOrientacionEspacial").floatValue());
+                        orientacionEspacial.setOrientacionEspacialCalculado(evaluado.get(i).getFactSlot("valor").floatValue());
                     } catch (Exception e) {
-                        orientacionEspacial.setOrientacionEspacialCalculado(evaluado.get(i).getFactSlot("cOrientacionEspacial").intValue());
+                        orientacionEspacial.setOrientacionEspacialCalculado(evaluado.get(i).getFactSlot("valor").intValue());
                     }
                     FillOrientacionEspacial(orientacionEspacial);
                     orientacion.setOrientacionEspacial(orientacionEspacial);
@@ -277,31 +299,43 @@ public class CLP_Manager {
 
     private void FillMemoria(cMemoria memoria) {
         try {
-            String evalStr = "(find-all-facts ((?f Memoria)) TRUE)";
+            String evalStr = "(find-all-facts ((?f Memoria_Atencion)) TRUE)";
 
             PrimitiveValue evaluado = this.clips.eval(evalStr);
 
             for (int i = 0; i < evaluado.size(); i++) {
 
-                if (!evaluado.get(i).getFactSlot("cMemoriaAtencion").toString().isEmpty()) {
+                if (!evaluado.get(i).getFactSlot("valor").toString().isEmpty()) {
                     try {
-                        memoria.setAtencion(evaluado.get(i).getFactSlot("cMemoriaAtencion").floatValue());
+                        memoria.setAtencion(evaluado.get(i).getFactSlot("valor").floatValue());
                     } catch (Exception e) {
-                        memoria.setAtencion(evaluado.get(i).getFactSlot("cMemoriaAtencion").intValue());
+                        memoria.setAtencion(evaluado.get(i).getFactSlot("valor").intValue());
                     }
                 }
-                if (!evaluado.get(i).getFactSlot("cMemoriaFijacion").toString().isEmpty()) {
+            }
+            evalStr = "(find-all-facts ((?f Memoria_Fijacion)) TRUE)";
+
+            evaluado = this.clips.eval(evalStr);
+
+            for (int i = 0; i < evaluado.size(); i++) {
+                if (!evaluado.get(i).getFactSlot("valor").toString().isEmpty()) {
                     try {
-                        memoria.setFijacion(evaluado.get(i).getFactSlot("cMemoriaFijacion").floatValue());
+                        memoria.setFijacion(evaluado.get(i).getFactSlot("valor").floatValue());
                     } catch (Exception e) {
-                        memoria.setFijacion(evaluado.get(i).getFactSlot("cMemoriaFijacion").intValue());
+                        memoria.setFijacion(evaluado.get(i).getFactSlot("valor").intValue());
                     }
                 }
-                if (!evaluado.get(i).getFactSlot("cMemoriaRecuerdo").toString().isEmpty()) {
+            }
+            evalStr = "(find-all-facts ((?f Memoria_Recuerdo)) TRUE)";
+
+            evaluado = this.clips.eval(evalStr);
+
+            for (int i = 0; i < evaluado.size(); i++) {
+                if (!evaluado.get(i).getFactSlot("valor").toString().isEmpty()) {
                     try {
-                        memoria.setRecuerdo(evaluado.get(i).getFactSlot("cMemoriaRecuerdo").floatValue());
+                        memoria.setRecuerdo(evaluado.get(i).getFactSlot("valor").floatValue());
                     } catch (Exception e) {
-                        memoria.setRecuerdo(evaluado.get(i).getFactSlot("cMemoriaRecuerdo").intValue());
+                        memoria.setRecuerdo(evaluado.get(i).getFactSlot("valor").intValue());
                     }
 
                 }
@@ -313,26 +347,47 @@ public class CLP_Manager {
 
     private void FillLenguaje(cLenguaje lenguaje) {
         try {
-            String evalStr = "(find-all-facts ((?f Lenguaje)) TRUE)";
+            String evalStr = "(find-all-facts ((?f Lenguaje_Accion)) TRUE)";
 
             PrimitiveValue evaluado = this.clips.eval(evalStr);
 
             for (int i = 0; i < evaluado.size(); i++) {
-                if (!evaluado.get(i).getFactSlot("cLenguajeAccion").toString().isEmpty()) {
+                if (!evaluado.get(i).getFactSlot("valor").toString().isEmpty()) {
                     try {
-                        lenguaje.setAccion(evaluado.get(i).getFactSlot("cLenguajeAccion").floatValue());
+                        lenguaje.setAccion(evaluado.get(i).getFactSlot("valor").floatValue());
                     } catch (Exception e) {
-                        lenguaje.setAccion(evaluado.get(i).getFactSlot("cLenguajeAccion").intValue());
+                        lenguaje.setAccion(evaluado.get(i).getFactSlot("valor").intValue());
                     }
                 }
-                if (!evaluado.get(i).getFactSlot("cLenguajeEscritura").toString().isEmpty()) {
-                    lenguaje.setEscritura(toBool(evaluado.get(i).getFactSlot("cLenguajeEscritura").stringValue()));
+            }
+            evalStr = "(find-all-facts ((?f Lenguaje_Escritura)) TRUE)";
+
+            evaluado = this.clips.eval(evalStr);
+
+            for (int i = 0; i < evaluado.size(); i++) {
+
+                if (!evaluado.get(i).getFactSlot("valor").toString().isEmpty()) {
+                    lenguaje.setEscritura(toBool(evaluado.get(i).getFactSlot("valor").stringValue()));
                 }
-                if (!evaluado.get(i).getFactSlot("cLenguajeFrase").toString().isEmpty()) {
-                    lenguaje.setFrase(toBool(evaluado.get(i).getFactSlot("cLenguajeFrase").stringValue()));
+            }
+            evalStr = "(find-all-facts ((?f Lenguaje_Frase)) TRUE)";
+
+            evaluado = this.clips.eval(evalStr);
+
+            for (int i = 0; i < evaluado.size(); i++) {
+
+                if (!evaluado.get(i).getFactSlot("valor").toString().isEmpty()) {
+                    lenguaje.setFrase(toBool(evaluado.get(i).getFactSlot("valor").stringValue()));
                 }
-                if (!evaluado.get(i).getFactSlot("cLenguajeOrden").toString().isEmpty()) {
-                    lenguaje.setOrden(toBool(evaluado.get(i).getFactSlot("cLenguajeOrden").stringValue()));
+            }
+            evalStr = "(find-all-facts ((?f Lenguaje_Orden)) TRUE)";
+
+            evaluado = this.clips.eval(evalStr);
+
+            for (int i = 0; i < evaluado.size(); i++) {
+
+                if (!evaluado.get(i).getFactSlot("valor").toString().isEmpty()) {
+                    lenguaje.setOrden(toBool(evaluado.get(i).getFactSlot("valor").stringValue()));
                 }
             }
         } catch (Exception ex) {
@@ -342,36 +397,55 @@ public class CLP_Manager {
 
     private void FillOrientacionTemporal(cOrientacionTemporal orientacionTemporal) {
         try {
-            String evalStr = "(find-all-facts ((?f OrientacionTemporal)) TRUE)";
+            String evalStr = "(find-all-facts ((?f OrientacionTemporal_Fecha)) TRUE)";
 
             PrimitiveValue evaluado = this.clips.eval(evalStr);
 
             for (int i = 0; i < evaluado.size(); i++) {
-                if (!evaluado.get(i).getFactSlot("cFecha").toString().isEmpty()) {
+                if (!evaluado.get(i).getFactSlot("valor").toString().isEmpty()) {
                     try {
-                        orientacionTemporal.setFecha(evaluado.get(i).getFactSlot("cFecha").floatValue());
+                        orientacionTemporal.setFecha(evaluado.get(i).getFactSlot("valor").floatValue());
                     } catch (Exception e) {
-                        orientacionTemporal.setFecha(evaluado.get(i).getFactSlot("cFecha").intValue());
+                        orientacionTemporal.setFecha(evaluado.get(i).getFactSlot("valor").intValue());
                     }
                 }
-                if (!evaluado.get(i).getFactSlot("cEstacion").toString().isEmpty()) {
-                    orientacionTemporal.setEstacion(toBool(evaluado.get(i).getFactSlot("cEstacion").stringValue()));
+            }
+            evalStr = "(find-all-facts ((?f OrientacionTemporal_Estacion)) TRUE)";
+
+            evaluado = this.clips.eval(evalStr);
+
+            for (int i = 0; i < evaluado.size(); i++) {
+                if (!evaluado.get(i).getFactSlot("valor").toString().isEmpty()) {
+                    orientacionTemporal.setEstacion(toBool(evaluado.get(i).getFactSlot("valor").stringValue()));
                 }
-                if (!evaluado.get(i).getFactSlot("cMes").toString().isEmpty()) {
+            }
+            evalStr = "(find-all-facts ((?f OrientacionTemporal_Mes)) TRUE)";
+
+            evaluado = this.clips.eval(evalStr);
+
+            for (int i = 0; i < evaluado.size(); i++) {
+                if (!evaluado.get(i).getFactSlot("valor").toString().isEmpty()) {
                     try {
-                        orientacionTemporal.setMes(evaluado.get(i).getFactSlot("cMes").floatValue());
+                        orientacionTemporal.setMes(evaluado.get(i).getFactSlot("valor").floatValue());
                     } catch (Exception e) {
-                        orientacionTemporal.setMes(evaluado.get(i).getFactSlot("cMes").intValue());
+                        orientacionTemporal.setMes(evaluado.get(i).getFactSlot("valor").intValue());
                     }
                 }
-                if (!evaluado.get(i).getFactSlot("cAno").toString().isEmpty()) {
+            }
+            evalStr = "(find-all-facts ((?f OrientacionTemporal_Ano)) TRUE)";
+
+            evaluado = this.clips.eval(evalStr);
+
+            for (int i = 0; i < evaluado.size(); i++) {
+                if (!evaluado.get(i).getFactSlot("valor").toString().isEmpty()) {
                     try {
-                        orientacionTemporal.setAno(evaluado.get(i).getFactSlot("cAno").floatValue());
+                        orientacionTemporal.setAno(evaluado.get(i).getFactSlot("valor").floatValue());
                     } catch (Exception e) {
                         orientacionTemporal.setAno(evaluado.get(i).getFactSlot("cAno").intValue());
                     }
                 }
             }
+
         } catch (Exception ex) {
             System.out.println(ex);
         }
@@ -391,34 +465,57 @@ public class CLP_Manager {
                     } catch (Exception e) {
                         orientacionEspacial.setLugar(evaluado.get(i).getFactSlot("valor").intValue());
                     }
+                }
+            }
+            evalStr = "(find-all-facts ((?f OrientacionEspacial_Ciudad)) TRUE)";
 
-                }
-                if (!evaluado.get(i).getFactSlot("cCiudad").toString().isEmpty()) {
+            evaluado = this.clips.eval(evalStr);
+
+            for (int i = 0; i < evaluado.size(); i++) {
+                if (!evaluado.get(i).getFactSlot("valor").toString().isEmpty()) {
                     try {
-                        orientacionEspacial.setCiudad(evaluado.get(i).getFactSlot("cCiudad").floatValue());
+                        orientacionEspacial.setCiudad(evaluado.get(i).getFactSlot("valor").floatValue());
                     } catch (Exception e) {
-                        orientacionEspacial.setCiudad(evaluado.get(i).getFactSlot("cCiudad").intValue());
+                        orientacionEspacial.setCiudad(evaluado.get(i).getFactSlot("valor").intValue());
                     }
                 }
-                if (!evaluado.get(i).getFactSlot("cPais").toString().isEmpty()) {
+            }
+            evalStr = "(find-all-facts ((?f OrientacionEspacial_Pais)) TRUE)";
+
+            evaluado = this.clips.eval(evalStr);
+
+            for (int i = 0; i < evaluado.size(); i++) {
+                if (!evaluado.get(i).getFactSlot("valor").toString().isEmpty()) {
                     try {
-                        orientacionEspacial.setPais(evaluado.get(i).getFactSlot("cPais").floatValue());
+                        orientacionEspacial.setPais(evaluado.get(i).getFactSlot("valor").floatValue());
                     } catch (Exception e) {
-                        orientacionEspacial.setPais(evaluado.get(i).getFactSlot("cPais").intValue());
+                        orientacionEspacial.setPais(evaluado.get(i).getFactSlot("valor").intValue());
                     }
                 }
-                if (!evaluado.get(i).getFactSlot("cPiso").toString().isEmpty()) {
+            }
+            evalStr = "(find-all-facts ((?f OrientacionEspacial_Piso)) TRUE)";
+
+            evaluado = this.clips.eval(evalStr);
+
+            for (int i = 0; i < evaluado.size(); i++) {
+                if (!evaluado.get(i).getFactSlot("valor").toString().isEmpty()) {
                     try {
-                        orientacionEspacial.setPiso(evaluado.get(i).getFactSlot("cPiso").floatValue());
+                        orientacionEspacial.setPiso(evaluado.get(i).getFactSlot("valor").floatValue());
                     } catch (Exception e) {
-                        orientacionEspacial.setPiso(evaluado.get(i).getFactSlot("cPiso").intValue());
+                        orientacionEspacial.setPiso(evaluado.get(i).getFactSlot("valor").intValue());
                     }
                 }
-                if (!evaluado.get(i).getFactSlot("cCalle").toString().isEmpty()) {
+            }
+            evalStr = "(find-all-facts ((?f OrientacionEspacial_Calle)) TRUE)";
+
+            evaluado = this.clips.eval(evalStr);
+
+            for (int i = 0; i < evaluado.size(); i++) {
+                if (!evaluado.get(i).getFactSlot("valor").toString().isEmpty()) {
                     try {
-                        orientacionEspacial.setCalle(evaluado.get(i).getFactSlot("cCalle").floatValue());
+                        orientacionEspacial.setCalle(evaluado.get(i).getFactSlot("valor").floatValue());
                     } catch (Exception e) {
-                        orientacionEspacial.setCalle(evaluado.get(i).getFactSlot("cCalle").intValue());
+                        orientacionEspacial.setCalle(evaluado.get(i).getFactSlot("valor").intValue());
                     }
                 }
             }
