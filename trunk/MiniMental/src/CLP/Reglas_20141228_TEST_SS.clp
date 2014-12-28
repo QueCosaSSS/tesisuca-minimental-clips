@@ -1,32 +1,20 @@
-
-;*----------------------------------------------------------------------*
-;* Definición (DefTemplates)                                            *
-;*----------------------------------------------------------------------*
-
-
-(deftemplate Entrevista "Entrevista con el Paciente"
+(deftemplate Entrevista
     (slot Escolaridad (type NUMBER))
-
     (slot OrientacionTemporal_Fecha (type STRING) (allowed-strings "SI" "NO"))
-
     (slot OrientacionTemporal_Estacion     (type STRING) (allowed-strings "SI" "NO"))
     (slot EsUnaSemanaAntesCambioEstacion   (type STRING) (allowed-strings "SI" "NO"))
     (slot EsUnaSemanaDespuesCambioEstacion (type STRING) (allowed-strings "SI" "NO"))
     (slot ContestaEstacionSiguiente        (type STRING) (allowed-strings "SI" "NO"))
     (slot ContestaEstacionAnterior         (type STRING) (allowed-strings "SI" "NO"))
-
     (slot OrientacionTemporal_Mes (type STRING) (allowed-strings "SI" "NO"))
     (slot EsUltimoDiaMes          (type STRING) (allowed-strings "SI" "NO"))
     (slot EsPrimerOSegundoDiaMes  (type STRING) (allowed-strings "SI" "NO"))
     (slot ContestaMesAnterior     (type STRING) (allowed-strings "SI" "NO"))
     (slot ContestaMesSiguiente    (type STRING) (allowed-strings "SI" "NO"))
-
     (slot OrientacionTemporal_DiaSemana (type STRING) (allowed-strings "SI" "NO"))    
-
     (slot OrientacionTemporal_Ano (type STRING) (allowed-strings "SI" "NO"))
     (slot EsPrimerQuincenaAno     (type STRING) (allowed-strings "SI" "NO"))    
     (slot ContestaAnoAnterior     (type STRING) (allowed-strings "SI" "NO"))    
-
     (slot OrientacionEspacial_Lugar         (type STRING) (allowed-strings "SI" "NO"))    
     (slot OrientacionEspacial_Ciudad        (type STRING) (allowed-strings "SI" "NO"))
     (slot OrientacionEspacial_Pais          (type STRING) (allowed-strings "SI" "NO"))    
@@ -36,23 +24,18 @@
     (slot OrientacionEspacial_Calle         (type STRING) (allowed-strings "SI" "NO"))  
     (slot ConsultorioEnAvenida              (type STRING) (allowed-strings "SI" "NO"))  
     (slot TraidoPorTercero                  (type STRING) (allowed-strings "SI" "NO"))  
-
     (slot MemoriaFijacion_PalabrasRepetidas (type NUMBER))  
     (slot PacienteConProblemasAuditivos     (type STRING) (allowed-strings "SI" "NO"))  
     (slot PacienteDeprimido                 (type STRING) (allowed-strings "SI" "NO"))  
-
     (slot MemoriaAtencion_ClasificacionAtencion (type NUMBER))
     (slot MemoriaRecuerdo_PalabrasRecordadas    (type NUMBER))
-
     (slot PacienteAnsioso                    (type STRING) (allowed-strings "SI" "NO"))
     (slot Lenguaje_RepiteFraseCorrectamente  (type STRING) (allowed-strings "SI" "NO"))  
     (slot Lenguaje_ClasificacionAccion       (type NUMBER))
     (slot Lenguaje_CumpleOrdenCorrectamente  (type STRING) (allowed-strings "SI" "NO"))  
     (slot Lenguaje_EscribeCorrectamenteFrase (type STRING) (allowed-strings "SI" "NO"))  
     (slot Lenguaje_CosasNombradas            (type NUMBER))
-
     (slot Dibujo_CopiaCorrectamenteDibujo (type STRING) (allowed-strings "SI" "NO"))  
-
     (slot Olvido_OlvidaHechosRecientes   (type STRING) (allowed-strings "SI" "NO"))  
     (slot Olvido_OlvidoProgresa          (type STRING) (allowed-strings "SI" "NO"))  
     (slot Olvido_QuejaOlvidoFamiliar     (type STRING) (allowed-strings "SI" "NO"))  
@@ -61,14 +44,14 @@
     (slot Olvido_ImpactoCaracter         (type STRING) (allowed-strings "SI" "NO"))  
 )
 
-(deftemplate OrientacionTemporal "Sección Minimental"
+(deftemplate OrientacionTemporal
     (slot cFecha    (type NUMBER))    
     (slot cEstacion (type STRING) (allowed-strings "SI" "NO"))
     (slot cMes      (type NUMBER))    
     (slot cAno      (type NUMBER))
 )
 
-(deftemplate OrientacionEspacial "Sección Minimental"
+(deftemplate OrientacionEspacial
     (slot cLugar  (type NUMBER))    
     (slot cCiudad (type NUMBER)) 
     (slot cPais   (type NUMBER)) 
@@ -76,34 +59,34 @@
     (slot cCalle  (type NUMBER))
 )
 
-(deftemplate Orientacion "Sección Minimental"
+(deftemplate Orientacion
     (slot cOrientacionTemporal (type NUMBER))
     (slot cOrientacionEspacial (type NUMBER))
 )
 
-(deftemplate MemoriaFijacion "Sección Minimental"
+(deftemplate MemoriaFijacion
     (slot cPalabrasRepetidas (type NUMBER))
 )
 
-(deftemplate MemoriaAtencion "Sección Minimental"
+(deftemplate MemoriaAtencion
     (slot cClasificacionAtencion (type NUMBER))
 )
 
-(deftemplate MemoriaRecuerdo "Sección Minimental"
+(deftemplate MemoriaRecuerdo
     (slot cPalabrasRecordadas (type NUMBER))
 )
 
-(deftemplate Memoria "Sección Minimental"
+(deftemplate Memoria
     (slot cMemoriaFijacion (type NUMBER))
     (slot cMemoriaAtencion (type NUMBER))
     (slot cMemoriaRecuerdo (type NUMBER))
 )
 
-(deftemplate LenguajeAccionPonderado "Sección Minimental"
+(deftemplate LenguajeAccionPonderado
     (slot cAccionPonderado (type NUMBER))
 )
 
-(deftemplate Lenguaje "Sección Minimental"
+(deftemplate Lenguaje
     (slot cLenguajeAccion    (type NUMBER))
     (slot cLenguajeEscritura (type STRING) (allowed-strings "SI" "NO"))
     (slot cLenguajeOrden     (type STRING) (allowed-strings "SI" "NO"))
@@ -111,14 +94,14 @@
 )
 
 
-(deftemplate MiniMental_Calculado "Sumatoria Minimental"
+(deftemplate MiniMental_Calculado
     (slot cOrientacion (type NUMBER))
     (slot cMemoria     (type NUMBER))
     (slot cLenguaje    (type NUMBER))
     (slot cDibujo      (type NUMBER))
 )
 
-(deftemplate Diagnostico "Resultado Final"
+(deftemplate Diagnostico
     (slot cMiniMental_Calculado (type NUMBER))
     (slot cOlvido               (type STRING) (allowed-strings "R" "N"))
     (slot cQueja                (type STRING) (allowed-strings "R" "N"))
@@ -127,20 +110,10 @@
     (slot Resultado             (type STRING) (allowed-strings "OlvidoBenigno" "DemenciaLeve" "DemenciaModerada" "DemenciaSevera"))
 )
 
-(deftemplate DiagnosticoDetalle "Detalle del Resultado Final, el Por qué"
-    (slot ResultadoDetalle (type STRING))
-)
-
-;*----------------------------------------------------------------------*
-;* Reglas/Hechos (DefRules)                                             *
-;*----------------------------------------------------------------------*
-
-
 (defrule REGLA-CLIPS-OT-N5-Fecha-1
     (Entrevista (OrientacionTemporal_Fecha "NO"))
     =>
     (assert (OrientacionTemporal (cFecha -0.50))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado para fecha -0.50. Se castiga (se resta) el valor, porque es grave que el paciente no sepa la fecha.")))
     (printout t "REGLA-CLIPS-OT-N5-Fecha-1" crlf)
 )
 
@@ -148,7 +121,6 @@
     (Entrevista (OrientacionTemporal_Fecha "SI")) 
 =>
     (assert (OrientacionTemporal (cFecha 1.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor normal del minimental: 1. Respuesta correcta.")))
     (printout t "REGLA-CLIPS-OT-N5-Fecha-2" crlf)
 )
 
@@ -163,7 +135,6 @@
     (Entrevista (ContestaEstacionAnterior "NO"))
     =>
     (assert (OrientacionTemporal (cEstacion "NO"))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "No se considera correcta la pregunta.")))
     (printout t "Regla-CLIPS-OT-N5-Estacion-1 " crlf)
 )
  
@@ -177,7 +148,6 @@
     (Entrevista (ContestaEstacionAnterior "NO"))
     =>
     (assert (OrientacionTemporal (cEstacion "SI"))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "La respuesta es correcta.")))
     (printout t "Regla-CLIPS-OT-N5-Estacion-2 " crlf)
 )
  
@@ -191,7 +161,6 @@
     (Entrevista (ContestaEstacionAnterior "NO"))
     =>
     (assert (OrientacionTemporal (cEstacion "SI"))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se considera correcta la pregunta. A pesar que se respondió mal la pregunta, el paciente no tiene el nivel escolar para conocer la respuesta.")))
     (printout t "Regla-CLIPS-OT-N5-Estacion-3 " crlf)
  ) 
 
@@ -205,7 +174,6 @@
     (Entrevista (ContestaEstacionAnterior "NO")) 
     => 
     (assert (OrientacionTemporal (cEstacion "SI"))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se considera correcta la pregunta. Se perdona el error, porque el paciente respondió la siguiente estación una semana antes.")))
     (printout t "Regla-CLIPS-OT-N5-Estacion-5 " crlf) 
  ) 
  
@@ -219,7 +187,6 @@
     (Entrevista (ContestaEstacionAnterior "NO" )) 
     => 
     (assert (OrientacionTemporal (cEstacion "SI"))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se considera correcta la pregunta. Se perdona el error, porque el paciente respondió la siguiente estación una semana antes. Además se tiene en cuenta que el nivel escolar lo exime del error.")))
     (printout t "Regla-CLIPS-OT-N5-Estacion-7 " crlf) 
  )
  
@@ -233,7 +200,6 @@
     (Entrevista (ContestaEstacionAnterior "SI"))
     =>
     (assert (OrientacionTemporal (cEstacion "SI"))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se considera correcta la pregunta. Se perdona el error, porque el paciente respondió la estación anterior una semana después.")))
     (printout t "Regla-CLIPS-OT-N5-Estacion-9 " crlf)
  ) 
  
@@ -247,7 +213,6 @@
     (Entrevista (ContestaEstacionAnterior "SI")) 
     =>
     (assert (OrientacionTemporal (cEstacion "SI"))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se considera correcta la pregunta. Se perdona el error, porque el paciente respondió la estación anterior una semana después. Además se tiene en cuenta que el nivel escolar lo exime del error.")))
     (printout t "Regla-CLIPS-OT-N5-Estacion-11 " crlf)
  )
 
@@ -260,7 +225,6 @@
     (Entrevista (ContestaMesAnterior "NO")) 
     =>
     (assert (OrientacionTemporal (cMes -1.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "No se considerar correcta la pregunta. El valor ponderado para es de -1.00. Se castiga (se resta) el valor, porque es grave que el paciente no sepa en qué mes esta.")))
     (printout t "REGLA-CLIPS-OT-N5-MES-1" crlf)
 )
  
@@ -272,7 +236,6 @@
     (Entrevista (ContestaMesAnterior "NO")) 
     =>
     (assert (OrientacionTemporal (cMes 1.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "La respuesta es correcta.")))
     (printout t "REGLA-CLIPS-OT-N5-MES-2" crlf)
 )
 
@@ -284,7 +247,6 @@
     (Entrevista (ContestaMesAnterior "NO")) 
      =>
     (assert (OrientacionTemporal (cMes 1.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se considera correcta la pregunta. Se perdona el error, porque el paciente respondió el siguiente mes estando en el último día del mes.")))
     (printout t "REGLA-CLIPS-OT-N5-MES-3" crlf)
 )
 
@@ -296,7 +258,6 @@
     (Entrevista (ContestaMesAnterior "SI")) 
     =>
     (assert (OrientacionTemporal (cMes 1.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se considera correcta la pregunta. Se perdona el error, porque el paciente respondió el mes anterior estando en los primeros días del mes.")))
     (printout t "REGLA-CLIPS-OT-N5-MES-5" crlf)
 )
 
@@ -307,7 +268,6 @@
     (Entrevista (ContestaAnoAnterior "NO")) 
     =>
     (assert (OrientacionTemporal (cAno -2.50))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado para año -2.50. Se castiga (se resta) el valor, porque es grave que el paciente no sepa el año en que esta.")))
     (printout t "REGLA-CLIPS-OT-N5-ANO-1" crlf)
 )
  
@@ -317,7 +277,6 @@
     (Entrevista ( ContestaAnoAnterior "NO" )) 
     =>
     (assert (OrientacionTemporal (cAno 1.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "La respuesta es correcta.")))
     (printout t "REGLA-CLIPS-OT-N5-ANO-2" crlf)
 )
 
@@ -327,7 +286,6 @@
     (Entrevista ( ContestaAnoAnterior "SI" )) 
     =>
     (assert (OrientacionTemporal (cAno 1.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Se considera correcta la pregunta. Se perdona el error, porque el paciente respondió el año anterior estando en la primera quincena del año.")))
     (printout t "REGLA-CLIPS-OT-N5-ANO-3" crlf)
 ) 
 
@@ -340,47 +298,45 @@
     (OrientacionTemporal (cEstacion "NO")) 
     => 
     (assert (Orientacion (cOrientacionTemporal -4.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Orientación Temporal."))) 
     (printout t REGLA-CLIPS-OT-N4-1 crlf ))
 
-(defrule REGLA-CLIPS-OT-N4-2 (Entrevista (OrientacionTemporal_DiaSemana "SI")) (OrientacionTemporal (cFecha -0.50)) (OrientacionTemporal (cMes -1.00)) (OrientacionTemporal (cAno -2.50)) (OrientacionTemporal (cEstacion "NO")) => (assert (Orientacion (cOrientacionTemporal -3.00))) (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Orientación Temporal."))) (printout t REGLA-CLIPS-OT-N4-2 crlf ))
-(defrule REGLA-CLIPS-OT-N4-3 (Entrevista (OrientacionTemporal_DiaSemana "NO")) (OrientacionTemporal (cFecha 1.00)) (OrientacionTemporal (cMes -1.00)) (OrientacionTemporal (cAno -2.50)) (OrientacionTemporal (cEstacion "NO")) => (assert (Orientacion (cOrientacionTemporal -2.50))) (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Orientación Temporal."))) (printout t REGLA-CLIPS-OT-N4-3 crlf ))
-(defrule REGLA-CLIPS-OT-N4-4 (Entrevista (OrientacionTemporal_DiaSemana "SI")) (OrientacionTemporal (cFecha 1.00)) (OrientacionTemporal (cMes -1.00)) (OrientacionTemporal (cAno -2.50)) (OrientacionTemporal (cEstacion "NO")) => (assert (Orientacion (cOrientacionTemporal -1.50))) (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Orientación Temporal."))) (printout t REGLA-CLIPS-OT-N4-4 crlf ))
-(defrule REGLA-CLIPS-OT-N4-5 (Entrevista (OrientacionTemporal_DiaSemana "NO")) (OrientacionTemporal (cFecha -0.50)) (OrientacionTemporal (cMes 1.00)) (OrientacionTemporal (cAno -2.50)) (OrientacionTemporal (cEstacion "NO")) => (assert (Orientacion (cOrientacionTemporal -2.00))) (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Orientación Temporal."))) (printout t REGLA-CLIPS-OT-N4-5 crlf ))
-(defrule REGLA-CLIPS-OT-N4-6 (Entrevista (OrientacionTemporal_DiaSemana "SI")) (OrientacionTemporal (cFecha -0.50)) (OrientacionTemporal (cMes 1.00)) (OrientacionTemporal (cAno -2.50)) (OrientacionTemporal (cEstacion "NO")) => (assert (Orientacion (cOrientacionTemporal -1.00))) (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Orientación Temporal."))) (printout t REGLA-CLIPS-OT-N4-6 crlf ))
-(defrule REGLA-CLIPS-OT-N4-7 (Entrevista (OrientacionTemporal_DiaSemana "NO")) (OrientacionTemporal (cFecha 1.00)) (OrientacionTemporal (cMes 1.00)) (OrientacionTemporal (cAno -2.50)) (OrientacionTemporal (cEstacion "NO")) => (assert (Orientacion (cOrientacionTemporal -0.50))) (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Orientación Temporal."))) (printout t REGLA-CLIPS-OT-N4-7 crlf ))
-(defrule REGLA-CLIPS-OT-N4-8 (Entrevista (OrientacionTemporal_DiaSemana "SI")) (OrientacionTemporal (cFecha 1.00)) (OrientacionTemporal (cMes 1.00)) (OrientacionTemporal (cAno -2.50)) (OrientacionTemporal (cEstacion "NO")) => (assert (Orientacion (cOrientacionTemporal 0.50))) (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Orientación Temporal."))) (printout t REGLA-CLIPS-OT-N4-8 crlf ))
-(defrule REGLA-CLIPS-OT-N4-9 (Entrevista (OrientacionTemporal_DiaSemana "NO")) (OrientacionTemporal (cFecha -0.50)) (OrientacionTemporal (cMes -1.00)) (OrientacionTemporal (cAno 1.00)) (OrientacionTemporal (cEstacion "NO")) => (assert (Orientacion (cOrientacionTemporal -0.50))) (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Orientación Temporal."))) (printout t REGLA-CLIPS-OT-N4-9 crlf ))
-(defrule REGLA-CLIPS-OT-N4-10 (Entrevista (OrientacionTemporal_DiaSemana "SI")) (OrientacionTemporal (cFecha -0.50)) (OrientacionTemporal (cMes -1.00)) (OrientacionTemporal (cAno 1.00)) (OrientacionTemporal (cEstacion "NO")) => (assert (Orientacion (cOrientacionTemporal 0.50))) (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Orientación Temporal."))) (printout t REGLA-CLIPS-OT-N4-10 crlf ))
-(defrule REGLA-CLIPS-OT-N4-11 (Entrevista (OrientacionTemporal_DiaSemana "NO")) (OrientacionTemporal (cFecha 1.00)) (OrientacionTemporal (cMes -1.00)) (OrientacionTemporal (cAno 1.00)) (OrientacionTemporal (cEstacion "NO")) => (assert (Orientacion (cOrientacionTemporal 1.00))) (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Orientación Temporal."))) (printout t REGLA-CLIPS-OT-N4-11 crlf ))
-(defrule REGLA-CLIPS-OT-N4-12 (Entrevista (OrientacionTemporal_DiaSemana "SI")) (OrientacionTemporal (cFecha 1.00)) (OrientacionTemporal (cMes -1.00)) (OrientacionTemporal (cAno 1.00)) (OrientacionTemporal (cEstacion "NO")) => (assert (Orientacion (cOrientacionTemporal 2.00))) (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Orientación Temporal."))) (printout t REGLA-CLIPS-OT-N4-12 crlf ))
-(defrule REGLA-CLIPS-OT-N4-13 (Entrevista (OrientacionTemporal_DiaSemana "NO")) (OrientacionTemporal (cFecha -0.50)) (OrientacionTemporal (cMes 1.00)) (OrientacionTemporal (cAno 1.00)) (OrientacionTemporal (cEstacion "NO")) => (assert (Orientacion (cOrientacionTemporal 1.50))) (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Orientación Temporal."))) (printout t REGLA-CLIPS-OT-N4-13 crlf ))
-(defrule REGLA-CLIPS-OT-N4-14 (Entrevista (OrientacionTemporal_DiaSemana "SI")) (OrientacionTemporal (cFecha -0.50)) (OrientacionTemporal (cMes 1.00)) (OrientacionTemporal (cAno 1.00)) (OrientacionTemporal (cEstacion "NO")) => (assert (Orientacion (cOrientacionTemporal 2.50))) (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Orientación Temporal."))) (printout t REGLA-CLIPS-OT-N4-14 crlf ))
-(defrule REGLA-CLIPS-OT-N4-15 (Entrevista (OrientacionTemporal_DiaSemana "NO")) (OrientacionTemporal (cFecha 1.00)) (OrientacionTemporal (cMes 1.00)) (OrientacionTemporal (cAno 1.00)) (OrientacionTemporal (cEstacion "NO")) => (assert (Orientacion (cOrientacionTemporal 3.00))) (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Orientación Temporal."))) (printout t REGLA-CLIPS-OT-N4-15 crlf ))
-(defrule REGLA-CLIPS-OT-N4-16 (Entrevista (OrientacionTemporal_DiaSemana "SI")) (OrientacionTemporal (cFecha 1.00)) (OrientacionTemporal (cMes 1.00)) (OrientacionTemporal (cAno 1.00)) (OrientacionTemporal (cEstacion "NO")) => (assert (Orientacion (cOrientacionTemporal 4.00))) (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Orientación Temporal."))) (printout t REGLA-CLIPS-OT-N4-16 crlf ))
-(defrule REGLA-CLIPS-OT-N4-17 (Entrevista (OrientacionTemporal_DiaSemana "NO")) (OrientacionTemporal (cFecha -0.50)) (OrientacionTemporal (cMes -1.00)) (OrientacionTemporal (cAno -2.50)) (OrientacionTemporal (cEstacion "SI")) => (assert (Orientacion (cOrientacionTemporal -3.00))) (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Orientación Temporal."))) (printout t REGLA-CLIPS-OT-N4-17 crlf ))
-(defrule REGLA-CLIPS-OT-N4-18 (Entrevista (OrientacionTemporal_DiaSemana "SI")) (OrientacionTemporal (cFecha -0.50)) (OrientacionTemporal (cMes -1.00)) (OrientacionTemporal (cAno -2.50)) (OrientacionTemporal (cEstacion "SI")) => (assert (Orientacion (cOrientacionTemporal -2.00))) (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Orientación Temporal."))) (printout t REGLA-CLIPS-OT-N4-18 crlf ))
-(defrule REGLA-CLIPS-OT-N4-19 (Entrevista (OrientacionTemporal_DiaSemana "NO")) (OrientacionTemporal (cFecha 1.00)) (OrientacionTemporal (cMes -1.00)) (OrientacionTemporal (cAno -2.50)) (OrientacionTemporal (cEstacion "SI")) => (assert (Orientacion (cOrientacionTemporal -1.50))) (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Orientación Temporal."))) (printout t REGLA-CLIPS-OT-N4-19 crlf ))
-(defrule REGLA-CLIPS-OT-N4-20 (Entrevista (OrientacionTemporal_DiaSemana "SI")) (OrientacionTemporal (cFecha 1.00)) (OrientacionTemporal (cMes -1.00)) (OrientacionTemporal (cAno -2.50)) (OrientacionTemporal (cEstacion "SI")) => (assert (Orientacion (cOrientacionTemporal -0.50))) (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Orientación Temporal."))) (printout t REGLA-CLIPS-OT-N4-20 crlf ))
-(defrule REGLA-CLIPS-OT-N4-21 (Entrevista (OrientacionTemporal_DiaSemana "NO")) (OrientacionTemporal (cFecha -0.50)) (OrientacionTemporal (cMes 1.00)) (OrientacionTemporal (cAno -2.50)) (OrientacionTemporal (cEstacion "SI")) => (assert (Orientacion (cOrientacionTemporal -1.00))) (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Orientación Temporal."))) (printout t REGLA-CLIPS-OT-N4-21 crlf ))
-(defrule REGLA-CLIPS-OT-N4-22 (Entrevista (OrientacionTemporal_DiaSemana "SI")) (OrientacionTemporal (cFecha -0.50)) (OrientacionTemporal (cMes 1.00)) (OrientacionTemporal (cAno -2.50)) (OrientacionTemporal (cEstacion "SI")) => (assert (Orientacion (cOrientacionTemporal 0.00))) (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Orientación Temporal."))) (printout t REGLA-CLIPS-OT-N4-22 crlf ))
-(defrule REGLA-CLIPS-OT-N4-23 (Entrevista (OrientacionTemporal_DiaSemana "NO")) (OrientacionTemporal (cFecha 1.00)) (OrientacionTemporal (cMes 1.00)) (OrientacionTemporal (cAno -2.50)) (OrientacionTemporal (cEstacion "SI")) => (assert (Orientacion (cOrientacionTemporal 0.50))) (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Orientación Temporal."))) (printout t REGLA-CLIPS-OT-N4-23 crlf ))
-(defrule REGLA-CLIPS-OT-N4-24 (Entrevista (OrientacionTemporal_DiaSemana "SI")) (OrientacionTemporal (cFecha 1.00)) (OrientacionTemporal (cMes 1.00)) (OrientacionTemporal (cAno -2.50)) (OrientacionTemporal (cEstacion "SI")) => (assert (Orientacion (cOrientacionTemporal 1.50))) (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Orientación Temporal."))) (printout t REGLA-CLIPS-OT-N4-24 crlf ))
-(defrule REGLA-CLIPS-OT-N4-25 (Entrevista (OrientacionTemporal_DiaSemana "NO")) (OrientacionTemporal (cFecha -0.50)) (OrientacionTemporal (cMes -1.00)) (OrientacionTemporal (cAno 1.00)) (OrientacionTemporal (cEstacion "SI")) => (assert (Orientacion (cOrientacionTemporal 0.50))) (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Orientación Temporal."))) (printout t REGLA-CLIPS-OT-N4-25 crlf ))
-(defrule REGLA-CLIPS-OT-N4-26 (Entrevista (OrientacionTemporal_DiaSemana "SI")) (OrientacionTemporal (cFecha -0.50)) (OrientacionTemporal (cMes -1.00)) (OrientacionTemporal (cAno 1.00)) (OrientacionTemporal (cEstacion "SI")) => (assert (Orientacion (cOrientacionTemporal 1.50))) (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Orientación Temporal."))) (printout t REGLA-CLIPS-OT-N4-26 crlf ))
-(defrule REGLA-CLIPS-OT-N4-27 (Entrevista (OrientacionTemporal_DiaSemana "NO")) (OrientacionTemporal (cFecha 1.00)) (OrientacionTemporal (cMes -1.00)) (OrientacionTemporal (cAno 1.00)) (OrientacionTemporal (cEstacion "SI")) => (assert (Orientacion (cOrientacionTemporal 2.00))) (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Orientación Temporal."))) (printout t REGLA-CLIPS-OT-N4-27 crlf ))
-(defrule REGLA-CLIPS-OT-N4-28 (Entrevista (OrientacionTemporal_DiaSemana "SI")) (OrientacionTemporal (cFecha 1.00)) (OrientacionTemporal (cMes -1.00)) (OrientacionTemporal (cAno 1.00)) (OrientacionTemporal (cEstacion "SI")) => (assert (Orientacion (cOrientacionTemporal 3.00))) (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Orientación Temporal."))) (printout t REGLA-CLIPS-OT-N4-28 crlf ))
-(defrule REGLA-CLIPS-OT-N4-29 (Entrevista (OrientacionTemporal_DiaSemana "NO")) (OrientacionTemporal (cFecha -0.50)) (OrientacionTemporal (cMes 1.00)) (OrientacionTemporal (cAno 1.00)) (OrientacionTemporal (cEstacion "SI")) => (assert (Orientacion (cOrientacionTemporal 2.50))) (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Orientación Temporal."))) (printout t REGLA-CLIPS-OT-N4-29 crlf ))
-(defrule REGLA-CLIPS-OT-N4-30 (Entrevista (OrientacionTemporal_DiaSemana "SI")) (OrientacionTemporal (cFecha -0.50)) (OrientacionTemporal (cMes 1.00)) (OrientacionTemporal (cAno 1.00)) (OrientacionTemporal (cEstacion "SI")) => (assert (Orientacion (cOrientacionTemporal 3.50))) (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Orientación Temporal."))) (printout t REGLA-CLIPS-OT-N4-30 crlf ))
-(defrule REGLA-CLIPS-OT-N4-31 (Entrevista (OrientacionTemporal_DiaSemana "NO")) (OrientacionTemporal (cFecha 1.00)) (OrientacionTemporal (cMes 1.00)) (OrientacionTemporal (cAno 1.00)) (OrientacionTemporal (cEstacion "SI")) => (assert (Orientacion (cOrientacionTemporal 4.00))) (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Orientación Temporal."))) (printout t REGLA-CLIPS-OT-N4-31 crlf ))
-(defrule REGLA-CLIPS-OT-N4-32 (Entrevista (OrientacionTemporal_DiaSemana "SI")) (OrientacionTemporal (cFecha 1.00)) (OrientacionTemporal (cMes 1.00)) (OrientacionTemporal (cAno 1.00)) (OrientacionTemporal (cEstacion "SI")) => (assert (Orientacion (cOrientacionTemporal 5.00))) (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Orientación Temporal."))) (printout t REGLA-CLIPS-OT-N4-32 crlf ))
+(defrule REGLA-CLIPS-OT-N4-2 (Entrevista (OrientacionTemporal_DiaSemana "SI")) (OrientacionTemporal (cFecha -0.50)) (OrientacionTemporal (cMes -1.00)) (OrientacionTemporal (cAno -2.50)) (OrientacionTemporal (cEstacion "NO")) => (assert (Orientacion (cOrientacionTemporal -3.00))) (printout t REGLA-CLIPS-OT-N4-2 crlf ))
+(defrule REGLA-CLIPS-OT-N4-3 (Entrevista (OrientacionTemporal_DiaSemana "NO")) (OrientacionTemporal (cFecha 1.00)) (OrientacionTemporal (cMes -1.00)) (OrientacionTemporal (cAno -2.50)) (OrientacionTemporal (cEstacion "NO")) => (assert (Orientacion (cOrientacionTemporal -2.50))) (printout t REGLA-CLIPS-OT-N4-3 crlf ))
+(defrule REGLA-CLIPS-OT-N4-4 (Entrevista (OrientacionTemporal_DiaSemana "SI")) (OrientacionTemporal (cFecha 1.00)) (OrientacionTemporal (cMes -1.00)) (OrientacionTemporal (cAno -2.50)) (OrientacionTemporal (cEstacion "NO")) => (assert (Orientacion (cOrientacionTemporal -1.50))) (printout t REGLA-CLIPS-OT-N4-4 crlf ))
+(defrule REGLA-CLIPS-OT-N4-5 (Entrevista (OrientacionTemporal_DiaSemana "NO")) (OrientacionTemporal (cFecha -0.50)) (OrientacionTemporal (cMes 1.00)) (OrientacionTemporal (cAno -2.50)) (OrientacionTemporal (cEstacion "NO")) => (assert (Orientacion (cOrientacionTemporal -2.00))) (printout t REGLA-CLIPS-OT-N4-5 crlf ))
+(defrule REGLA-CLIPS-OT-N4-6 (Entrevista (OrientacionTemporal_DiaSemana "SI")) (OrientacionTemporal (cFecha -0.50)) (OrientacionTemporal (cMes 1.00)) (OrientacionTemporal (cAno -2.50)) (OrientacionTemporal (cEstacion "NO")) => (assert (Orientacion (cOrientacionTemporal -1.00))) (printout t REGLA-CLIPS-OT-N4-6 crlf ))
+(defrule REGLA-CLIPS-OT-N4-7 (Entrevista (OrientacionTemporal_DiaSemana "NO")) (OrientacionTemporal (cFecha 1.00)) (OrientacionTemporal (cMes 1.00)) (OrientacionTemporal (cAno -2.50)) (OrientacionTemporal (cEstacion "NO")) => (assert (Orientacion (cOrientacionTemporal -0.50))) (printout t REGLA-CLIPS-OT-N4-7 crlf ))
+(defrule REGLA-CLIPS-OT-N4-8 (Entrevista (OrientacionTemporal_DiaSemana "SI")) (OrientacionTemporal (cFecha 1.00)) (OrientacionTemporal (cMes 1.00)) (OrientacionTemporal (cAno -2.50)) (OrientacionTemporal (cEstacion "NO")) => (assert (Orientacion (cOrientacionTemporal 0.50))) (printout t REGLA-CLIPS-OT-N4-8 crlf ))
+(defrule REGLA-CLIPS-OT-N4-9 (Entrevista (OrientacionTemporal_DiaSemana "NO")) (OrientacionTemporal (cFecha -0.50)) (OrientacionTemporal (cMes -1.00)) (OrientacionTemporal (cAno 1.00)) (OrientacionTemporal (cEstacion "NO")) => (assert (Orientacion (cOrientacionTemporal -0.50))) (printout t REGLA-CLIPS-OT-N4-9 crlf ))
+(defrule REGLA-CLIPS-OT-N4-10 (Entrevista (OrientacionTemporal_DiaSemana "SI")) (OrientacionTemporal (cFecha -0.50)) (OrientacionTemporal (cMes -1.00)) (OrientacionTemporal (cAno 1.00)) (OrientacionTemporal (cEstacion "NO")) => (assert (Orientacion (cOrientacionTemporal 0.50))) (printout t REGLA-CLIPS-OT-N4-10 crlf ))
+(defrule REGLA-CLIPS-OT-N4-11 (Entrevista (OrientacionTemporal_DiaSemana "NO")) (OrientacionTemporal (cFecha 1.00)) (OrientacionTemporal (cMes -1.00)) (OrientacionTemporal (cAno 1.00)) (OrientacionTemporal (cEstacion "NO")) => (assert (Orientacion (cOrientacionTemporal 1.00))) (printout t REGLA-CLIPS-OT-N4-11 crlf ))
+(defrule REGLA-CLIPS-OT-N4-12 (Entrevista (OrientacionTemporal_DiaSemana "SI")) (OrientacionTemporal (cFecha 1.00)) (OrientacionTemporal (cMes -1.00)) (OrientacionTemporal (cAno 1.00)) (OrientacionTemporal (cEstacion "NO")) => (assert (Orientacion (cOrientacionTemporal 2.00))) (printout t REGLA-CLIPS-OT-N4-12 crlf ))
+(defrule REGLA-CLIPS-OT-N4-13 (Entrevista (OrientacionTemporal_DiaSemana "NO")) (OrientacionTemporal (cFecha -0.50)) (OrientacionTemporal (cMes 1.00)) (OrientacionTemporal (cAno 1.00)) (OrientacionTemporal (cEstacion "NO")) => (assert (Orientacion (cOrientacionTemporal 1.50))) (printout t REGLA-CLIPS-OT-N4-13 crlf ))
+(defrule REGLA-CLIPS-OT-N4-14 (Entrevista (OrientacionTemporal_DiaSemana "SI")) (OrientacionTemporal (cFecha -0.50)) (OrientacionTemporal (cMes 1.00)) (OrientacionTemporal (cAno 1.00)) (OrientacionTemporal (cEstacion "NO")) => (assert (Orientacion (cOrientacionTemporal 2.50))) (printout t REGLA-CLIPS-OT-N4-14 crlf ))
+(defrule REGLA-CLIPS-OT-N4-15 (Entrevista (OrientacionTemporal_DiaSemana "NO")) (OrientacionTemporal (cFecha 1.00)) (OrientacionTemporal (cMes 1.00)) (OrientacionTemporal (cAno 1.00)) (OrientacionTemporal (cEstacion "NO")) => (assert (Orientacion (cOrientacionTemporal 3.00))) (printout t REGLA-CLIPS-OT-N4-15 crlf ))
+(defrule REGLA-CLIPS-OT-N4-16 (Entrevista (OrientacionTemporal_DiaSemana "SI")) (OrientacionTemporal (cFecha 1.00)) (OrientacionTemporal (cMes 1.00)) (OrientacionTemporal (cAno 1.00)) (OrientacionTemporal (cEstacion "NO")) => (assert (Orientacion (cOrientacionTemporal 4.00))) (printout t REGLA-CLIPS-OT-N4-16 crlf ))
+(defrule REGLA-CLIPS-OT-N4-17 (Entrevista (OrientacionTemporal_DiaSemana "NO")) (OrientacionTemporal (cFecha -0.50)) (OrientacionTemporal (cMes -1.00)) (OrientacionTemporal (cAno -2.50)) (OrientacionTemporal (cEstacion "SI")) => (assert (Orientacion (cOrientacionTemporal -3.00))) (printout t REGLA-CLIPS-OT-N4-17 crlf ))
+(defrule REGLA-CLIPS-OT-N4-18 (Entrevista (OrientacionTemporal_DiaSemana "SI")) (OrientacionTemporal (cFecha -0.50)) (OrientacionTemporal (cMes -1.00)) (OrientacionTemporal (cAno -2.50)) (OrientacionTemporal (cEstacion "SI")) => (assert (Orientacion (cOrientacionTemporal -2.00))) (printout t REGLA-CLIPS-OT-N4-18 crlf ))
+(defrule REGLA-CLIPS-OT-N4-19 (Entrevista (OrientacionTemporal_DiaSemana "NO")) (OrientacionTemporal (cFecha 1.00)) (OrientacionTemporal (cMes -1.00)) (OrientacionTemporal (cAno -2.50)) (OrientacionTemporal (cEstacion "SI")) => (assert (Orientacion (cOrientacionTemporal -1.50))) (printout t REGLA-CLIPS-OT-N4-19 crlf ))
+(defrule REGLA-CLIPS-OT-N4-20 (Entrevista (OrientacionTemporal_DiaSemana "SI")) (OrientacionTemporal (cFecha 1.00)) (OrientacionTemporal (cMes -1.00)) (OrientacionTemporal (cAno -2.50)) (OrientacionTemporal (cEstacion "SI")) => (assert (Orientacion (cOrientacionTemporal -0.50))) (printout t REGLA-CLIPS-OT-N4-20 crlf ))
+(defrule REGLA-CLIPS-OT-N4-21 (Entrevista (OrientacionTemporal_DiaSemana "NO")) (OrientacionTemporal (cFecha -0.50)) (OrientacionTemporal (cMes 1.00)) (OrientacionTemporal (cAno -2.50)) (OrientacionTemporal (cEstacion "SI")) => (assert (Orientacion (cOrientacionTemporal -1.00))) (printout t REGLA-CLIPS-OT-N4-21 crlf ))
+(defrule REGLA-CLIPS-OT-N4-22 (Entrevista (OrientacionTemporal_DiaSemana "SI")) (OrientacionTemporal (cFecha -0.50)) (OrientacionTemporal (cMes 1.00)) (OrientacionTemporal (cAno -2.50)) (OrientacionTemporal (cEstacion "SI")) => (assert (Orientacion (cOrientacionTemporal 0.00))) (printout t REGLA-CLIPS-OT-N4-22 crlf ))
+(defrule REGLA-CLIPS-OT-N4-23 (Entrevista (OrientacionTemporal_DiaSemana "NO")) (OrientacionTemporal (cFecha 1.00)) (OrientacionTemporal (cMes 1.00)) (OrientacionTemporal (cAno -2.50)) (OrientacionTemporal (cEstacion "SI")) => (assert (Orientacion (cOrientacionTemporal 0.50))) (printout t REGLA-CLIPS-OT-N4-23 crlf ))
+(defrule REGLA-CLIPS-OT-N4-24 (Entrevista (OrientacionTemporal_DiaSemana "SI")) (OrientacionTemporal (cFecha 1.00)) (OrientacionTemporal (cMes 1.00)) (OrientacionTemporal (cAno -2.50)) (OrientacionTemporal (cEstacion "SI")) => (assert (Orientacion (cOrientacionTemporal 1.50))) (printout t REGLA-CLIPS-OT-N4-24 crlf ))
+(defrule REGLA-CLIPS-OT-N4-25 (Entrevista (OrientacionTemporal_DiaSemana "NO")) (OrientacionTemporal (cFecha -0.50)) (OrientacionTemporal (cMes -1.00)) (OrientacionTemporal (cAno 1.00)) (OrientacionTemporal (cEstacion "SI")) => (assert (Orientacion (cOrientacionTemporal 0.50))) (printout t REGLA-CLIPS-OT-N4-25 crlf ))
+(defrule REGLA-CLIPS-OT-N4-26 (Entrevista (OrientacionTemporal_DiaSemana "SI")) (OrientacionTemporal (cFecha -0.50)) (OrientacionTemporal (cMes -1.00)) (OrientacionTemporal (cAno 1.00)) (OrientacionTemporal (cEstacion "SI")) => (assert (Orientacion (cOrientacionTemporal 1.50))) (printout t REGLA-CLIPS-OT-N4-26 crlf ))
+(defrule REGLA-CLIPS-OT-N4-27 (Entrevista (OrientacionTemporal_DiaSemana "NO")) (OrientacionTemporal (cFecha 1.00)) (OrientacionTemporal (cMes -1.00)) (OrientacionTemporal (cAno 1.00)) (OrientacionTemporal (cEstacion "SI")) => (assert (Orientacion (cOrientacionTemporal 2.00))) (printout t REGLA-CLIPS-OT-N4-27 crlf ))
+(defrule REGLA-CLIPS-OT-N4-28 (Entrevista (OrientacionTemporal_DiaSemana "SI")) (OrientacionTemporal (cFecha 1.00)) (OrientacionTemporal (cMes -1.00)) (OrientacionTemporal (cAno 1.00)) (OrientacionTemporal (cEstacion "SI")) => (assert (Orientacion (cOrientacionTemporal 3.00))) (printout t REGLA-CLIPS-OT-N4-28 crlf ))
+(defrule REGLA-CLIPS-OT-N4-29 (Entrevista (OrientacionTemporal_DiaSemana "NO")) (OrientacionTemporal (cFecha -0.50)) (OrientacionTemporal (cMes 1.00)) (OrientacionTemporal (cAno 1.00)) (OrientacionTemporal (cEstacion "SI")) => (assert (Orientacion (cOrientacionTemporal 2.50))) (printout t REGLA-CLIPS-OT-N4-29 crlf ))
+(defrule REGLA-CLIPS-OT-N4-30 (Entrevista (OrientacionTemporal_DiaSemana "SI")) (OrientacionTemporal (cFecha -0.50)) (OrientacionTemporal (cMes 1.00)) (OrientacionTemporal (cAno 1.00)) (OrientacionTemporal (cEstacion "SI")) => (assert (Orientacion (cOrientacionTemporal 3.50))) (printout t REGLA-CLIPS-OT-N4-30 crlf ))
+(defrule REGLA-CLIPS-OT-N4-31 (Entrevista (OrientacionTemporal_DiaSemana "NO")) (OrientacionTemporal (cFecha 1.00)) (OrientacionTemporal (cMes 1.00)) (OrientacionTemporal (cAno 1.00)) (OrientacionTemporal (cEstacion "SI")) => (assert (Orientacion (cOrientacionTemporal 4.00))) (printout t REGLA-CLIPS-OT-N4-31 crlf ))
+(defrule REGLA-CLIPS-OT-N4-32 (Entrevista (OrientacionTemporal_DiaSemana "SI")) (OrientacionTemporal (cFecha 1.00)) (OrientacionTemporal (cMes 1.00)) (OrientacionTemporal (cAno 1.00)) (OrientacionTemporal (cEstacion "SI")) => (assert (Orientacion (cOrientacionTemporal 5.00))) (printout t REGLA-CLIPS-OT-N4-32 crlf ))
 
 
 (defrule REGLA-CLIPS-OE-N5-Pais-1
     (Entrevista (OrientacionEspacial_Pais "NO"))
     =>
     (assert (OrientacionEspacial (cPais -2.50))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "La respuesta es incorrecta, valor ponderado para país -2,5 . Se castiga (se resta) el valor, porque es considerado un error muy grave.")))
     (printout t "REGLA-CLIPS-OE-N5-Pais-1" crlf)
 )
 
@@ -388,7 +344,6 @@
     (Entrevista (OrientacionEspacial_Pais "SI")) 
     =>
     (assert (OrientacionEspacial (cPais 1.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "La respuesta es correcta.")))
     (printout t "REGLA-CLIPS-OE-N5-Pais-2 " crlf)
 )
 
@@ -397,7 +352,6 @@
     (Entrevista (OrientacionEspacial_Ciudad "NO"))
     =>
     (assert (OrientacionEspacial (cCiudad -2.50))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "La respuesta es incorrecta, valor ponderado para ciudad -2,5 . Se castiga (se resta) el valor, porque es considerado un error grave.")))
     (printout t "REGLA-CLIPS-OE-N5-Ciudad-1" crlf)
 )
 
@@ -405,7 +359,6 @@
     (Entrevista (OrientacionEspacial_Ciudad "SI")) 
     =>
     (assert (OrientacionEspacial (cCiudad 1.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "La respuesta es correcta.")))
     (printout t "REGLA-CLIPS-OE-N5-Ciudad-2 " crlf)
 )
 
@@ -414,7 +367,6 @@
     (Entrevista (OrientacionEspacial_Lugar "NO"))
     =>
     (assert (OrientacionEspacial (cLugar -1.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "La respuesta es incorrecta, valor ponderado para lugar -1. Se castiga (se resta) el valor, porque es considerado un error importante.")))
     (printout t "REGLA-CLIPS-OE-N5-Lugar-1" crlf)
 )
 
@@ -422,7 +374,6 @@
     (Entrevista (OrientacionEspacial_Lugar "SI")) 
     =>
     (assert (OrientacionEspacial (cLugar 1.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "La respuesta es correcta.")))
     (printout t "REGLA-CLIPS-OE-N5-Lugar-2 " crlf)
 )
 
@@ -434,7 +385,6 @@
     (test (< ?r 2.00))
     => 
     (assert (OrientacionEspacial (cPiso -0.50))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado para piso -0.5. Se castiga (se resta) el valor, porque es grave que el paciente no sepa en qué piso esta.  Considerando que el consultorio no se encuentra en un entrepiso.")))
     (printout t "REGLA-OE-N5-PISO-1" crlf))
 
 (defrule REGLA-OE-N5-PISO-2 
@@ -444,7 +394,6 @@
     (test (< ?r 2.00)) 
     => 
     (assert (OrientacionEspacial (cPiso 1.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "La respuesta es correcta.")))
     (printout t "REGLA-OE-N5-PISO-2" crlf))
 
 (defrule REGLA-OE-N5-PISO-3 
@@ -454,7 +403,6 @@
     (test (< ?r 2.00)) 
     => 
     (assert (OrientacionEspacial (cPiso 0.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "La respuesta es incorrecta. No se pondera ni se castiga el valor de la pregunta, porque el consultorio se encuentra en un entrepiso.")))
     (printout t "REGLA-OE-N5-PISO-3" crlf))
     
 (defrule REGLA-OE-N5-PISO-5/7 
@@ -463,7 +411,6 @@
     (test (< ?r 2)) 
     => 
     (assert (OrientacionEspacial (cPiso 1.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "La respuesta es incorrecta. Se pondera la respuesta considerándola correcta, porque el consultorio se encuentra en un entrepiso.")))
     (printout t "REGLA-OE-N5-PISO-5/7" crlf))
 
 
@@ -473,7 +420,6 @@
     (Entrevista (ConsultorioEnAvenida "NO" )) 
     => 
     (assert (OrientacionEspacial (cCalle -0.50))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "La respuesta es incorrecta, valor ponderado para calle -0.5. Se castiga (se resta) el valor porque: vino al consultorio por sus propios medios y el consultorio sí se encuentra sobre una avenida.")))
     (printout t "REGLA-OE-N5-CALLE-1" crlf))
 
 (defrule REGLA-OE-N5-CALLE-2 
@@ -482,7 +428,6 @@
     (Entrevista (ConsultorioEnAvenida "NO" )) 
     => 
     (assert (OrientacionEspacial (cCalle 1.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "La respuesta es correcta.")))
     (printout t "REGLA-OE-N5-CALLE-2" crlf))
 
 (defrule REGLA-OE-N5-CALLE-3 
@@ -491,7 +436,6 @@
     (Entrevista (ConsultorioEnAvenida "NO" ))
     => 
     (assert (OrientacionEspacial (cCalle 1.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "La respuesta es incorrecta. Se pondera la respuesta considerándola correcta, porque: vino al consultorio por sus propios medios y el consultorio no se encuentra sobre una avenida.")))
     (printout t "REGLA-OE-N5-CALLE-3" crlf))
 
 (defrule REGLA-OE-N5-CALLE-5/7 
@@ -499,7 +443,6 @@
     (Entrevista (ConsultorioEnAvenida "SI" )) 
     => 
     (assert (OrientacionEspacial (cCalle 1.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "La respuesta es incorrecta. Se pondera la respuesta considerándola correcta, porque: el consultorio no se encuentra sobre una avenida.")))
     (printout t "REGLA-OE-N5-CALLE-5/7" crlf))
 
 
@@ -507,28 +450,24 @@
     (Entrevista (MemoriaFijacion_PalabrasRepetidas 0.00 )) 
     => 
     (assert (MemoriaFijacion (cPalabrasRepetidas -5.00)))
-    (assert (DiagnosticoDetalle (ResultadoDetalle "No repitió ninguna palabra correctamente, valor ponderado para palabra -5. Se castiga (se resta) el valor acorde a los errores cometidos."))) 
     (printout t "REGLA-MF-N5-PALABRA-1" crlf))
 
 (defrule REGLA-MF-N5-PALABRA-2 
     (Entrevista (MemoriaFijacion_PalabrasRepetidas 1.00 )) 
     => 
     (assert (MemoriaFijacion (cPalabrasRepetidas -2.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Repitió una palabra correctamente, valor ponderado para palabra -2. Se castiga (se resta) el valor acorde a los errores cometidos.")))
     (printout t "REGLA-MF-N5-PALABRA-2" crlf))
 
 (defrule REGLA-MF-N5-PALABRA-3 
     (Entrevista (MemoriaFijacion_PalabrasRepetidas 2.00 )) 
     => 
     (assert (MemoriaFijacion (cPalabrasRepetidas -0.50))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Repitió dos palabras correctamente, valor ponderado para palabra -0.5. Se castiga (se resta) el valor acorde a los errores cometidos.")))
     (printout t "REGLA-MF-N5-PALABRA-3" crlf))
 
 (defrule REGLA-MF-N5-PALABRA-4 
     (Entrevista (MemoriaFijacion_PalabrasRepetidas 3.00 )) 
     => 
     (assert (MemoriaFijacion (cPalabrasRepetidas 3.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Repitió todas las palabras correctamente.")))
     (printout t "REGLA-MF-N5-PALABRA-4" crlf))
 
 
@@ -538,7 +477,6 @@
     (Entrevista (PacienteDeprimido "NO" )) 
     => 
     (assert (Memoria (cMemoriaFijacion  -5.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "No repitió ninguna palabra correctamente, valor ponderado para memoria fijación -5. Se castiga (se resta) el valor acorde a los errores cometidos. El paciente no tiene problema auditivos y no se encuentra depremido.")))
     (printout t "REGLA-MF-N4-1" crlf))
 
 (defrule REGLA-MF-N4-2 
@@ -547,7 +485,6 @@
     (Entrevista (PacienteDeprimido "NO" )) 
     => 
     (assert (Memoria (cMemoriaFijacion  -2.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Repitió una palabra correctamente, valor ponderado para memoria fijación -2. Se castiga (se resta) el valor acorde a los errores cometidos. El paciente no tiene problema auditivos y no se encuentra depremido.")))
     (printout t "REGLA-MF-N4-2" crlf))
 
 (defrule REGLA-MF-N4-3 
@@ -556,7 +493,6 @@
     (Entrevista (PacienteDeprimido "NO" )) 
     => 
     (assert (Memoria (cMemoriaFijacion  -0.50))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Repitió dos palabras correctamente, valor ponderado para memoria fijación -0.5. Se castiga (se resta) el valor acorde a los errores cometidos. El paciente no tiene problema auditivos y no se encuentra depremido.")))
     (printout t "REGLA-MF-N4-3" crlf))
 
 (defrule REGLA-MF-N4-4 
@@ -565,7 +501,6 @@
     (Entrevista (PacienteDeprimido "NO" )) 
     => 
     (assert (Memoria (cMemoriaFijacion  3.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Repitió todas las palabras correctamente. El paciente no tiene problema auditivos y no se encuentra depremido.")))
     (printout t "REGLA-MF-N4-4" crlf))
 
 (defrule REGLA-MF-N4-5/8 
@@ -573,14 +508,12 @@
     (Entrevista (PacienteDeprimido "NO" )) 
     => 
     (assert (Memoria (cMemoriaFijacion  3.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "No importa cuántas palabras repitió correctamente, valor ponderado para memoria fijación 3. El paciente tiene problema auditivos y no se encuentra depremido.")))
     (printout t "REGLA-MF-N4-9 - 16" crlf))
 
 (defrule REGLA-MF-N4-9/16 
     (Entrevista (PacienteDeprimido "SI" )) 
     => 
     (assert (Memoria (cMemoriaFijacion  3.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "No importa cuántas palabras repitió correctamente, valor ponderado para memoria fijación 3. El paciente no tiene problema auditivos pero se encuentra depremido.")))
     (printout t "REGLA-MF-N4-9 - 16" crlf))
 
 
@@ -588,42 +521,36 @@
     (Entrevista (MemoriaAtencion_ClasificacionAtencion 0.00 )) 
     => 
     (assert (MemoriaAtencion (cClasificacionAtencion -1.25))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "No presto atención a ninguna palabra correctamente, valor ponderado para memoria atención -1.25. Se castiga (se resta) el valor acorde a los errores cometidos.")))
     (printout t "REGLA-MA-N5-ATENCION-1" crlf))
 
 (defrule REGLA-MA-N5-ATENCION-2 
     (Entrevista (MemoriaAtencion_ClasificacionAtencion 1.00 )) 
     => 
     (assert (MemoriaAtencion (cClasificacionAtencion 0.00)))
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Presto atención a una palabra correctamente, valor ponderado para memoria atención 0. Se castiga (se resta) el valor acorde a los errores cometidos."))) 
     (printout t "REGLA-MA-N5-ATENCION-2" crlf))
 
 (defrule REGLA-MA-N5-ATENCION-3 
     (Entrevista (MemoriaAtencion_ClasificacionAtencion 2.00 )) 
     => 
     (assert (MemoriaAtencion (cClasificacionAtencion 1.25)))
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Presto atención a dos palabras correctamente, valor ponderado para memoria atención 1.25. Se castiga (se resta) el valor acorde a los errores cometidos."))) 
     (printout t "REGLA-MA-N5-ATENCION-3" crlf))
 
 (defrule REGLA-MA-N5-ATENCION-4 
     (Entrevista (MemoriaAtencion_ClasificacionAtencion 3.00 )) 
     => 
     (assert (MemoriaAtencion (cClasificacionAtencion 2.50)))
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Presto atención a tres palabras correctamente, valor ponderado para memoria atención 2.5. Se castiga (se resta) el valor acorde a los errores cometidos."))) 
     (printout t "REGLA-MA-N5-ATENCION-4" crlf))
 
 (defrule REGLA-MA-N5-ATENCION-5 
     (Entrevista (MemoriaAtencion_ClasificacionAtencion 4.00 )) 
     => 
     (assert (MemoriaAtencion (cClasificacionAtencion 3.75)))
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Presto atención a cuatro palabras correctamente, valor ponderado para memoria atención 3.75. Se castiga (se resta) el valor acorde a los errores cometidos."))) 
     (printout t "REGLA-MA-N5-ATENCION-5" crlf))
 
 (defrule REGLA-MA-N5-ATENCION-6 
     (Entrevista (MemoriaAtencion_ClasificacionAtencion 5.00 )) 
     => 
     (assert (MemoriaAtencion (cClasificacionAtencion 5.00)))
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Presto atención a todas las palabras correctamente."))) 
     (printout t "REGLA-MA-N5-ATENCION-6" crlf))
 
 
@@ -632,7 +559,6 @@
     (Entrevista (PacienteDeprimido "SI" )) 
     => 
     (assert (Memoria (cMemoriaFijacion  5.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "No importa cuántas palabras presto atención correctamente, valor ponderado para clasificación atención 5. El paciente no tiene problema auditivos pero  se encuentra depremido.")))
     (printout t "REGLA-MA-N4-1-6" crlf))
 
 (defrule REGLA-MA-N4-7/12 
@@ -640,7 +566,6 @@
     (Entrevista (PacienteDeprimido "NO" )) 
     => 
     (assert (Memoria (cMemoriaFijacion  5.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "No importa cuántas palabras presto atención correctamente, valor ponderado para clasificación atención 5. El paciente tiene problema auditivos pero no se encuentra depremido.")))
     (printout t "REGLA-MA-N4-7-12" crlf))
 
 (defrule REGLA-MA-N4-13 
@@ -649,7 +574,6 @@
     (Entrevista (PacienteDeprimido "NO" )) 
     => 
     (assert (Memoria (cMemoriaFijacion  -1.30))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "No presto atención a ninguna palabra correctamente, valor ponderado para clasificación atención -1.3. Se castiga (se resta) el valor acorde a los errores cometidos. El paciente no tiene problema auditivos y no se encuentra depremido.")))
     (printout t "REGLA-MA-N4-13" crlf))
 
 (defrule REGLA-MA-N4-14 
@@ -658,7 +582,6 @@
     (Entrevista (PacienteDeprimido "NO" )) 
     => 
     (assert (Memoria (cMemoriaFijacion  0.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Presto atención a una palabra correctamente, valor ponderado para clasificación atención 0. Se castiga (se resta) el valor acorde a los errores cometidos. El paciente no tiene problema auditivos y no se encuentra depremido.")))
     (printout t "REGLA-MA-N4-14" crlf))
 
 (defrule REGLA-MA-N4-15 
@@ -667,7 +590,6 @@
     (Entrevista (PacienteDeprimido "NO" )) 
     => 
     (assert (Memoria (cMemoriaFijacion  1.30))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Presto atención a dos palabras correctamente, valor ponderado para clasificación atención 1.3. Se castiga (se resta) el valor acorde a los errores cometidos. El paciente no tiene problema auditivos y no se encuentra depremido.")))
     (printout t "REGLA-MA-N4-15" crlf))
 
 (defrule REGLA-MA-N4-16 
@@ -676,7 +598,6 @@
     (Entrevista (PacienteDeprimido "NO" )) 
     => 
     (assert (Memoria (cMemoriaFijacion  2.50))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Presto atención a tres palabras correctamente, valor ponderado para clasificación atención 2.5. Se castiga (se resta) el valor acorde a los errores cometidos. El paciente no tiene problema auditivos y no se encuentra depremido.")))
     (printout t "REGLA-MA-N4-16" crlf))
 
 (defrule REGLA-MA-N4-17 
@@ -685,7 +606,6 @@
     (Entrevista (PacienteDeprimido "NO" )) 
     => 
     (assert (Memoria (cMemoriaFijacion  3.80))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Presto atención a cuatro palabras correctamente, valor ponderado para clasificación atención 3.8. Se castiga (se resta) el valor acorde a los errores cometidos. El paciente no tiene problema auditivos y no se encuentra depremido.")))
     (printout t "REGLA-MA-N4-17" crlf))
 
 (defrule REGLA-MA-N4-18 
@@ -694,7 +614,6 @@
     (Entrevista (PacienteDeprimido "NO" )) 
     => 
     (assert (Memoria (cMemoriaFijacion  5.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Presto atención a todas las palabras correctamente. El paciente no tiene problema auditivos y no se encuentra depremido.")))
     (printout t "REGLA-MA-N4-18" crlf))
 
 
@@ -702,28 +621,24 @@
     (Entrevista (MemoriaRecuerdo_PalabrasRecordadas 0.00 )) 
     => 
     (assert (MemoriaRecuerdo (cPalabrasRecordadas -5.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "No recordó ninguna palabra, valor ponderado para recuerdo -5. Se castiga (se resta) el valor acorde a los errores cometidos.")))
     (printout t "REGLA-MR-N5-RECUERDO-1" crlf))
 
 (defrule REGLA-MR-N5-RECUERDO-2 
     (Entrevista (MemoriaRecuerdo_PalabrasRecordadas 1.00 )) 
     => 
     (assert (MemoriaRecuerdo (cPalabrasRecordadas -2.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Recordó una palabra, valor ponderado para recuerdo -2. Se castiga (se resta) el valor acorde a los errores cometidos.")))
     (printout t "REGLA-MR-N5-RECUERDO-2" crlf))
 
 (defrule REGLA-MR-N5-RECUERDO-3 
     (Entrevista (MemoriaRecuerdo_PalabrasRecordadas 2.00 )) 
     => 
     (assert (MemoriaRecuerdo (cPalabrasRecordadas -0.50))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Recordó dos palabras, valor ponderado para recuerdo -0.5. Se castiga (se resta) el valor acorde a los errores cometidos.")))
     (printout t "REGLA-MR-N5-RECUERDO-3" crlf))
 
 (defrule REGLA-MR-N5-RECUERDO-4 
     (Entrevista (MemoriaRecuerdo_PalabrasRecordadas 3.00 )) 
     => 
     (assert (MemoriaRecuerdo (cPalabrasRecordadas 3.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Recordó todas las palabras correctamente.")))
     (printout t "REGLA-MR-N5-RECUERDO-4" crlf))
 
 
@@ -733,7 +648,6 @@
     (Entrevista (PacienteDeprimido "NO" )) 
     => 
     (assert (Memoria (cMemoriaFijacion  -5.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "No recordó ninguna palabra, valor ponderado para palabras recordadas -5. Se castiga (se resta) el valor acorde a los errores cometidos. El paciente no tiene problema auditivos y no se encuentra depremido.")))
     (printout t "REGLA-MR-N4-1" crlf))
 
 (defrule REGLA-MR-N4-2 
@@ -742,7 +656,6 @@
     (Entrevista (PacienteDeprimido "NO" )) 
     => 
     (assert (Memoria (cMemoriaFijacion  -2.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Recordó una palabra, valor ponderado para palabras recordadas -2. Se castiga (se resta) el valor acorde a los errores cometidos. El paciente no tiene problema auditivos y no se encuentra depremido.")))
     (printout t "REGLA-MR-N4-2" crlf))
 
 (defrule REGLA-MR-N4-3 
@@ -751,7 +664,6 @@
     (Entrevista (PacienteDeprimido "NO" )) 
     => 
     (assert (Memoria (cMemoriaFijacion  -0.50))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Recordó dos palabras, valor ponderado para palabras recordadas -0.5. Se castiga (se resta) el valor acorde a los errores cometidos. El paciente no tiene problema auditivos y no se encuentra depremido.")))
     (printout t "REGLA-MR-N4-3" crlf))
 
 (defrule REGLA-MR-N4-4 
@@ -760,7 +672,6 @@
     (Entrevista (PacienteDeprimido "NO" )) 
     => 
     (assert (Memoria (cMemoriaFijacion  3.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Recordó todas las palabras correctamente. El paciente no tiene problema auditivos y no se encuentra depremido.")))
     (printout t "REGLA-MR-N4-4" crlf))
 
 (defrule REGLA-MR-N4-5/8 
@@ -768,14 +679,12 @@
     (Entrevista (PacienteDeprimido "NO" )) 
     => 
     (assert (Memoria (cMemoriaFijacion  3.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "No importa cuántas palabras recordó correctamente, valor ponderado para palabras recordadas 3. El paciente tiene problema auditivos pero no se encuentra depremido.")))
     (printout t "REGLA-MR-N4-5-8" crlf))
 
 (defrule REGLA-MR-N4-9/16 
     (Entrevista (PacienteDeprimido "SI" )) 
     => 
     (assert (Memoria (cMemoriaFijacion  3.00))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "No importa cuántas palabras recordó correctamente, valor ponderado para palabras recordadas 3. El paciente no tiene problema auditivos pero  se encuentra depremido.")))
     (printout t "REGLA-MR-N4-9-16" crlf))
     
 
@@ -783,28 +692,24 @@
     (Entrevista (Lenguaje_ClasificacionAccion  0.00  )) 
     => 
     (assert (LenguajeAccionPonderado(cAccionPonderado  -1.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "No realizo ninguna acción de forma correcta, valor ponderado para acción ponderada -1.5. Se castiga (se resta) el valor acorde a las acciones no realizadas o mal realizadas.")))
     (printout t " REGLA-L-N4-ACCIONPONDERADA-0" crlf))
 
 (defrule REGLA-L-N4-ACCIONPONDERADA-1 
     (Entrevista (Lenguaje_ClasificacionAccion  1.00  )) 
     => 
     (assert (LenguajeAccionPonderado(cAccionPonderado  0.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Realizo una acción de forma correcta, valor ponderado para acción ponderada 0. Se castiga (se resta) el valor acorde a las acciones no realizadas o mal realizadas.")))
     (printout t " REGLA-L-N4-ACCIONPONDERADA-1" crlf))
 
 (defrule REGLA-L-N4-ACCIONPONDERADA-2 
     (Entrevista (Lenguaje_ClasificacionAccion  2.00  )) 
     => 
     (assert (LenguajeAccionPonderado(cAccionPonderado  1.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Realizo dos acciones de forma correcta, valor ponderado para acción ponderada 1.5. Se castiga (se resta) el valor acorde a las acciones no realizadas o mal realizadas.")))
     (printout t " REGLA-L-N4-ACCIONPONDERADA-2" crlf))
 
 (defrule REGLA-L-N4-ACCIONPONDERADA-3 
     (Entrevista (Lenguaje_ClasificacionAccion  3.00  )) 
     => 
     (assert (LenguajeAccionPonderado(cAccionPonderado  3.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Realiza correctamente las tres acciones. Tomo el papel con su mano no hábil, lo doblo por la mitad utilizando ambas manos y lo puso en el suelo. ")))
     (printout t " REGLA-L-N4-ACCIONPONDERADA-3" crlf))
 
 
@@ -813,7 +718,6 @@
     (Entrevista (PacienteAnsioso  "NO"  )) 
     => 
     (assert (Lenguaje (cLenguajeAccion  -1.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "No realizo ninguna acción de forma correcta, valor ponderado para acción -1.5. Se castiga (se resta) el valor acorde a las acciones no realizadas o mal realizadas. El paciente no se encuentra ansioso.")))
     (printout t " REGLA-L-N4-ACCION-1" crlf))
 
 (defrule  REGLA-L-N4-ACCION-2 
@@ -821,7 +725,6 @@
     (Entrevista (PacienteAnsioso  "NO"  )) 
     => 
     (assert (Lenguaje (cLenguajeAccion  0.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Realizo una acción de forma correcta, valor ponderado para acción 0. Se castiga (se resta) el valor acorde a las acciones no realizadas o mal realizadas. El paciente no se encuentra ansioso.")))
     (printout t " REGLA-L-N4-ACCION-2" crlf))
 
 (defrule  REGLA-L-N4-ACCION-3 
@@ -829,14 +732,12 @@
     (Entrevista (PacienteAnsioso  "NO"  ))
     => 
     (assert (Lenguaje (cLenguajeAccion  1.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Realizo dos acciones de forma correcta, valor ponderado para acción 1.5. Se castiga (se resta) el valor acorde a las acciones no realizadas o mal realizadas. El paciente no se encuentra ansioso.")))
     (printout t " REGLA-L-N4-ACCION-3" crlf))
 
 (defrule  REGLA-L-N4-ACCION-4/8 
     (LenguajeAccionPonderado (cAccionPonderado  3.00  ))  
     => 
     (assert (Lenguaje (cLenguajeAccion  3.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Realiza correctamente las tres acciones. Tomo el papel con su mano no hábil, lo doblo por la mitad utilizando ambas manos y lo puso en el suelo. No importa si el paciente se encuentra ansioso o no.")))
     (printout t " REGLA-L-N4-ACCION-4/8" crlf))
 
 (defrule  REGLA-L-N4-ACCION-5 
@@ -844,7 +745,6 @@
     (Entrevista (PacienteAnsioso  "SI"  ))
     => 
     (assert (Lenguaje (cLenguajeAccion  0.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "No realizo ninguna acción de forma correcta, valor ponderado para acción 0. Se castiga (se resta) el valor acorde a las acciones no realizadas o mal realizadas. El paciente se encuentra ansioso.")))
     (printout t " REGLA-L-N4-ACCION-5" crlf))
 
 (defrule  REGLA-L-N4-ACCION-6 
@@ -852,7 +752,6 @@
     (Entrevista (PacienteAnsioso  "SI"  )) 
     => 
     (assert (Lenguaje (cLenguajeAccion  1.00 )))
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Realizo una acción de forma correcta, valor ponderado para acción 1. Se castiga (se resta) el valor acorde a las acciones no realizadas o mal realizadas. El paciente se encuentra ansioso."))) 
     (printout t " REGLA-L-N4-ACCION-6" crlf))
 
 (defrule  REGLA-L-N4-ACCION-7 
@@ -860,7 +759,6 @@
     (Entrevista (PacienteAnsioso  "SI"  )) 
     => 
     (assert (Lenguaje (cLenguajeAccion  2.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Realizo dos acciones de forma correcta, valor ponderado para acción 2. Se castiga (se resta) el valor acorde a las acciones no realizadas o mal realizadas. El paciente se encuentra ansioso.")))
     (printout t " REGLA-L-N4-ACCION-7" crlf))
 
 
@@ -870,7 +768,6 @@
     (test (< ?r 6.00))  
     => 
     (assert (Lenguaje (cLenguajeEscritura  "NO" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "No escribe correctamente la frase. La escolaridad es mayor a 6 años.")))
     (printout t " REGLA-L-N4-ESCRITA-1" crlf))
 
 (defrule  REGLA-L-N4-ESCRITA-2 
@@ -879,7 +776,6 @@
     (test (< ?r 6.00))  
     => 
     (assert (Lenguaje (cLenguajeEscritura  "SI" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Escribe correctamente la frase. La escolaridad es mayor a 6 años.")))
     (printout t " REGLA-L-N4-ESCRITA-2" crlf))
 
 (defrule  REGLA-L-N4-ESCRITA-3 
@@ -888,7 +784,6 @@
     (test (< ?r 6.00))  
     => 
     (assert (Lenguaje (cLenguajeEscritura  "NO" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "No escribe correctamente la frase, pero se considera correcta. La escolaridad es menor a 6 años.")))
     (printout t " REGLA-L-N4-ESCRITA-3" crlf))
 
 
@@ -898,7 +793,6 @@
     (Entrevista (PacienteAnsioso "NO"  )) 
     => 
     (assert (Lenguaje(cLenguajeOrden   "NO" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "No cumple correctamente la orden. El paciente no presenta problemas auditivos y tampoco está ansioso.")))
     (printout t " REGLA-L-N4-ORDEN-1" crlf))
 
 (defrule  REGLA-L-N4-ORDEN-2  
@@ -907,7 +801,6 @@
     (Entrevista (PacienteAnsioso "NO"  )) 
     => 
     (assert (Lenguaje(cLenguajeOrden   "SI" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Cumple correctamente la orden. El paciente no presenta problemas auditivos y tampoco está ansioso.")))
     (printout t " REGLA-L-N4-ORDEN-2" crlf))
 
 (defrule  REGLA-L-N4-ORDEN-3/4  
@@ -915,7 +808,6 @@
     (Entrevista (PacienteAnsioso "NO"  )) 
     => 
     (assert (Lenguaje(cLenguajeOrden   "SI" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "No importa si cumplió la orden o no, se considera correcta. El paciente presenta problemas auditivos, pero no está ansioso.")))
     (printout t " REGLA-L-N4-ORDEN-3/4" crlf))
 
 (defrule  REGLA-L-N4-ORDEN-5/6  
@@ -923,7 +815,6 @@
     (Entrevista (PacienteAnsioso "SI"  )) 
     => 
     (assert (Lenguaje(cLenguajeOrden   "SI" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "No importa si cumplió la orden o no, se considera correcta. El paciente no presenta problemas auditivos, pero se encuentra ansioso.")))
     (printout t " REGLA-L-N4-ORDEN-5/6" crlf))
 
 
@@ -932,7 +823,6 @@
     (Entrevista (PacienteConProblemasAuditivos  "NO"  )) 
     => 
     (assert (Lenguaje(cLenguajeFrase   "NO" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "No repite correctamente la frase. El paciente no presenta problemas auditivos.")))
     (printout t " REGLA-L-N4-FRASE-1" crlf))
 
 (defrule  REGLA-L-N4-FRASE-2  
@@ -940,14 +830,12 @@
     (Entrevista (PacienteConProblemasAuditivos  "NO"  ))
     => 
     (assert (Lenguaje(cLenguajeFrase   "SI" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Repite correctamente la frase. El paciente no presenta problemas auditivos.")))
     (printout t " REGLA-L-N4-FRASE-2" crlf))
 
 (defrule  REGLA-L-N4-FRASE-3/4  
     (Entrevista (PacienteConProblemasAuditivos  "SI"  )) 
     => 
     (assert (Lenguaje(cLenguajeFrase   "SI" ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "No se toma en cuenta si se repitió correctamente la frase o no, se considera correcta. El paciente presenta problemas auditivos.")))
     (printout t " REGLA-L-N4-FRASE-3/4" crlf))
 
 
@@ -959,7 +847,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  -1.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-1" crlf))
 
 (defrule  REGLA-L-N3-2  
@@ -970,7 +857,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  -0.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-2" crlf))
 
 (defrule  REGLA-L-N3-3  
@@ -981,7 +867,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  -0.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-3" crlf))
     
 (defrule  REGLA-L-N3-4  
@@ -992,7 +877,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  0.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-4" crlf))
 
 (defrule  REGLA-L-N3-5  
@@ -1003,7 +887,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  ))
     => 
     (assert (MiniMental_Calculado (cLenguaje  -0.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-5" crlf))
 
 (defrule  REGLA-L-N3-6 
@@ -1014,7 +897,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  0.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-6" crlf))
 
 (defrule  REGLA-L-N3-7  
@@ -1025,7 +907,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  0.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-7" crlf))
     
 (defrule  REGLA-L-N3-8  
@@ -1036,7 +917,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  1.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-8" crlf))
     
 (defrule  REGLA-L-N3-9  
@@ -1047,7 +927,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  0.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-9" crlf))
     
 (defrule  REGLA-L-N3-10  
@@ -1058,7 +937,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  1.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-10" crlf))
 
 (defrule  REGLA-L-N3-11  
@@ -1069,7 +947,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  1.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-11" crlf))
     
 (defrule  REGLA-L-N3-12  
@@ -1080,7 +957,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  2.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-12" crlf))
     
 (defrule  REGLA-L-N3-13 
@@ -1091,7 +967,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  1.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-13" crlf))
 
 (defrule  REGLA-L-N3-14  
@@ -1102,7 +977,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  2.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-14" crlf))
 
 (defrule  REGLA-L-N3-15  
@@ -1113,7 +987,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  2.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-15" crlf))
 
 (defrule  REGLA-L-N3-16  
@@ -1124,7 +997,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-16" crlf))
     
 (defrule  REGLA-L-N3-17  
@@ -1135,7 +1007,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  1.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-17" crlf))
     
 (defrule  REGLA-L-N3-18  
@@ -1146,7 +1017,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  2.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-18" crlf))
 
 (defrule  REGLA-L-N3-19  
@@ -1157,7 +1027,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  2.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-19" crlf))
     
 (defrule  REGLA-L-N3-20  
@@ -1168,7 +1037,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  ))
     => 
     (assert (MiniMental_Calculado (cLenguaje  3.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-20" crlf))
 
 (defrule  REGLA-L-N3-21  
@@ -1179,7 +1047,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  2.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-21" crlf))
 
 (defrule  REGLA-L-N3-22  
@@ -1190,7 +1057,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  3.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-22" crlf))
 
 (defrule  REGLA-L-N3-23  
@@ -1201,7 +1067,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  3.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-23" crlf))
     
 (defrule  REGLA-L-N3-24 
@@ -1212,7 +1077,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  4.50 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-24" crlf))
 
 (defrule  REGLA-L-N3-25  
@@ -1223,7 +1087,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  3.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-25" crlf))
     
 (defrule  REGLA-L-N3-26  
@@ -1234,7 +1097,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-26" crlf))
     
 (defrule  REGLA-L-N3-27  
@@ -1245,7 +1107,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-27" crlf))
 
 (defrule  REGLA-L-N3-28  
@@ -1256,7 +1117,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-28" crlf))
     
 (defrule  REGLA-L-N3-29  
@@ -1267,7 +1127,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  4.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-29" crlf))
     
 (defrule  REGLA-L-N3-30  
@@ -1278,7 +1137,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  ))
     => 
     (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-30" crlf))
 
 (defrule  REGLA-L-N3-31 
@@ -1289,7 +1147,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  5.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-31" crlf))
 
 (defrule  REGLA-L-N3-32  
@@ -1300,7 +1157,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  ))
     => 
     (assert (MiniMental_Calculado (cLenguaje  6.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-32" crlf))
 
 (defrule  REGLA-L-N3-33  
@@ -1311,7 +1167,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  1.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-33" crlf))
 
 (defrule  REGLA-L-N3-34  
@@ -1322,7 +1177,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  1.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-34" crlf))
 
 (defrule  REGLA-L-N3-35  
@@ -1333,7 +1187,6 @@
     (Entrevista (Lenguaje_CosasNombradas  0.00  )) 
     => 
     (assert (MiniMental_Calculado (cLenguaje  1.00 ))) 
-    (assert (DiagnosticoDetalle (ResultadoDetalle "Valor ponderado Final para Lenguaje.")))
     (printout t " REGLA-L-N3-35" crlf))
 
 (defrule  REGLA-L-N3-36  
@@ -3299,3 +3152,7 @@
     (assert (Diagnostico (Resultado  "DemenciaSevera" ))) 
     (assert (DiagnosticoDetalle (ResultadoDetalle "Se puede concluir en base a la ponderación del valor de minimental realizado, el nivel de escolaridad del paciente, la frecuencia de sus olvidos, su impacto funcional y el carácter que presenta, que estamos frente a una Demencia Severa.")))
     (printout t " Regla-DIAGNOSTICO-N1-159" crlf))
+
+(deffacts Caso-13
+(Entrevista (Escolaridad 5) (OrientacionTemporal_Fecha "SI") (OrientacionTemporal_Estacion "SI") (EsUnaSemanaAntesCambioEstacion "NO") (EsUnaSemanaDespuesCambioEstacion "NO") (ContestaEstacionSiguiente "NO") (ContestaEstacionAnterior "NO") (OrientacionTemporal_Mes "SI") (EsUltimoDiaMes "NO") (EsPrimerOSegundoDiaMes "SI") (ContestaMesAnterior "NO") (ContestaMesSiguiente "NO") (OrientacionTemporal_DiaSemana "NO") (OrientacionTemporal_Ano "SI") (EsPrimerQuincenaAno "SI") (ContestaAnoAnterior "NO") (OrientacionEspacial_Lugar "SI") (OrientacionEspacial_Ciudad "SI") (OrientacionEspacial_Pais "SI") (OrientacionEspacial_Piso "SI") (ConsultorioEnEntrepiso "SI") (DiferenciaEntrePisoContestadoReal 0) (OrientacionEspacial_Calle "SI") (ConsultorioEnAvenida "SI") (TraidoPorTercero "SI") (MemoriaFijacion_PalabrasRepetidas 0) (PacienteConProblemasAuditivos "SI") (PacienteDeprimido "SI") (MemoriaAtencion_ClasificacionAtencion 0) (MemoriaRecuerdo_PalabrasRecordadas 0) (PacienteAnsioso "SI") (Lenguaje_RepiteFraseCorrectamente "SI") (Lenguaje_ClasificacionAccion 0) (Lenguaje_CumpleOrdenCorrectamente "SI") (Lenguaje_EscribeCorrectamenteFrase "SI") (Lenguaje_CosasNombradas 0) (Dibujo_CopiaCorrectamenteDibujo "SI") (Olvido_OlvidaHechosRecientes "SI") (Olvido_OlvidoProgresa "SI") (Olvido_QuejaOlvidoFamiliar "SI") (Olvido_PacienteMinimizaOlvidos "SI") (Olvido_ImpactoFuncional "SI") (Olvido_ImpactoCaracter "SI"))
+)
